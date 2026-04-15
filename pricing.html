@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       BEEGEN — Pricing Page
+       beegen.co · All-in-one platform for small businesses
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — Beegen</title>
+  <meta name="description" content="Simple, transparent pricing for every stage of growth. Start with a 14-day free trial. No credit card required." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/global.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--cloud, #F4F8FB);
+      color: var(--dark, #0D1B2A);
+      overflow-x: hidden;
+    }
+    :root {
+      --teal:   #02C39A;
+      --navy:   #00152E;
+      --orange: #F37934;
+      --dark:   #0D1B2A;
+      --cloud:  #F4F8FB;
+      --white:  #FFFFFF;
+      --radius: 14px;
+      --transition: 0.25s ease;
+    }
+
+    /* ── NAV ── */
+    #mainNav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(0,21,46,0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      height: 68px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo { text-decoration: none; }
+    .nav-logo-img { display: block; height: 36px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-link {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 7px 13px;
+      border-radius: 8px;
+      transition: color var(--transition), background var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .nav-link:hover { color: #fff; background: rgba(255,255,255,0.07); }
+    .nav-chevron { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 12px;
+      min-width: 200px;
+      padding: 8px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 9px 14px;
+      font-size: 13.5px;
+      border-radius: 8px;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: background var(--transition), color var(--transition);
+    }
+    .nav-dropdown-menu a:hover { background: rgba(255,255,255,0.07); color: #fff; }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; text-decoration: none; font-family: inherit; font-weight: 700; border-radius: 9px; transition: all var(--transition); border: none; }
+    .btn-primary { background: var(--teal); color: var(--navy); }
+    .btn-primary:hover { background: #00d4a5; transform: translateY(-1px); }
+    .btn-ghost { background: transparent; border: 1.5px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.85); }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+    .btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1.5px solid rgba(255,255,255,0.2); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.18); }
+    .btn-outline { background: transparent; border: 1.5px solid rgba(255,255,255,0.3); color: #fff; }
+    .btn-lg { font-size: 16px; padding: 14px 30px; border-radius: 11px; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* Mobile Nav Overlay */
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: var(--navy);
+      flex-direction: column;
+      padding: 24px;
+    }
+    .mobile-nav-overlay.open { display: flex; }
+    .mobile-nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+    .mobile-nav-logo { height: 32px; display: block; }
+    .mobile-nav-close {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mobile-nav-close svg { width: 24px; height: 24px; }
+    .mobile-nav-body { flex: 1; }
+    .mobile-nav-item { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 16px 0;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: inherit;
+    }
+    .mobile-nav-chevron { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+    .mobile-nav-sub { display: none; padding: 0 0 12px 16px; }
+    .mobile-nav-sub.open { display: block; }
+    .mobile-nav-sub a {
+      display: block;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 15px;
+      padding: 8px 0;
+    }
+    .mobile-nav-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 24px;
+    }
+    .mobile-nav-footer a { text-align: center; display: block; padding: 12px 24px; border-radius: 10px; font-weight: 700; font-size: 15px; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: linear-gradient(160deg, #00152E 0%, #0D1B2A 60%, #001A3A 100%);
+      padding: 130px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 40%, rgba(2,195,154,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(243,121,52,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .page-hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--teal); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .page-hero h1 {
+      font-size: clamp(36px, 5.5vw, 62px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .page-hero p {
+      font-size: clamp(16px, 2vw, 19px);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+    .trust-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+    }
+    .trust-line span { display: flex; align-items: center; gap: 5px; }
+    .trust-line span::before { content: '✓'; color: var(--teal); font-weight: 700; }
+    .trust-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.2); }
+
+    /* ── BILLING TOGGLE ── */
+    .billing-toggle-wrap {
+      background: #fff;
+      padding: 56px 24px 40px;
+      text-align: center;
+    }
+    .billing-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(0,21,46,0.06);
+      border-radius: 50px;
+      padding: 6px 16px;
+      position: relative;
+    }
+    .billing-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      cursor: pointer;
+      transition: color var(--transition);
+      padding: 6px 4px;
+      user-select: none;
+    }
+    .billing-label.active { color: var(--teal); }
+    #billingToggle { display: none; }
+    .toggle-track {
+      width: 48px;
+      height: 26px;
+      background: rgba(0,21,46,0.15);
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+    #billingToggle:checked ~ .toggle-track,
+    .toggle-track.annual { background: var(--teal); }
+    .toggle-knob {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform var(--transition);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    #billingToggle:checked ~ .toggle-track .toggle-knob,
+    .toggle-track.annual .toggle-knob { transform: translateX(22px); }
+    #annualBadge {
+      background: var(--orange);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 20px;
+      letter-spacing: 0.03em;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    #annualBadge.visible { opacity: 1; }
+
+    /* ── PRICING CARDS ── */
+    .pricing-section {
+      background: #fff;
+      padding: 0 24px 80px;
+    }
+    .pricing-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .pricing-card {
+      border: 1.5px solid rgba(0,21,46,0.09);
+      border-radius: 20px;
+      padding: 36px 30px 32px;
+      background: var(--cloud);
+      position: relative;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .pricing-card:hover {
+      box-shadow: 0 12px 40px rgba(0,21,46,0.1);
+      transform: translateY(-3px);
+    }
+    .pricing-card.featured {
+      background: var(--navy);
+      border-color: var(--teal);
+      transform: translateY(-12px);
+      box-shadow: 0 20px 60px rgba(0,21,46,0.3);
+    }
+    .pricing-card.featured:hover { transform: translateY(-16px); }
+    .pricing-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--teal);
+      color: var(--navy);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .plan-name {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .pricing-card.featured .plan-name { color: #fff; }
+    .plan-desc {
+      font-size: 13.5px;
+      color: rgba(0,21,46,0.5);
+      margin-bottom: 28px;
+      line-height: 1.55;
+    }
+    .pricing-card.featured .plan-desc { color: rgba(255,255,255,0.5); }
+    .price-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+    .price-dollar {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--dark);
+      align-self: flex-start;
+      margin-top: 8px;
+    }
+    .pricing-card.featured .price-dollar { color: #fff; }
+    .price-amount {
+      font-size: 54px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--dark);
+      letter-spacing: -0.03em;
+    }
+    .pricing-card.featured .price-amount { color: #fff; }
+    .price-period {
+      font-size: 13px;
+      color: rgba(0,21,46,0.4);
+      margin-bottom: 6px;
+    }
+    .pricing-card.featured .price-period { color: rgba(255,255,255,0.45); }
+    .price-note {
+      font-size: 12.5px;
+      color: var(--teal);
+      font-weight: 600;
+      margin-bottom: 28px;
+      min-height: 18px;
+    }
+    .savings-note {
+      font-size: 12px;
+      color: var(--teal);
+      font-weight: 700;
+      display: none;
+      margin-top: 4px;
+    }
+    .savings-note.show { display: block; }
+    .pricing-divider {
+      border: none;
+      border-top: 1px solid rgba(0,21,46,0.08);
+      margin: 24px 0;
+    }
+    .pricing-card.featured .pricing-divider { border-color: rgba(255,255,255,0.1); }
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 32px;
+    }
+    .features-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(0,21,46,0.8);
+    }
+    .pricing-card.featured .features-list li { color: rgba(255,255,255,0.8); }
+    .feat-check {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(2,195,154,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .feat-check svg { width: 10px; height: 10px; stroke: var(--teal); fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .pricing-card.featured .feat-check { background: rgba(2,195,154,0.25); }
+    .pricing-cta {
+      display: block;
+      text-align: center;
+      padding: 13px 24px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .pricing-cta-primary {
+      background: var(--teal);
+      color: var(--navy);
+    }
+    .pricing-cta-primary:hover { background: #00d4a5; transform: translateY(-1px); }
+    .pricing-cta-outline {
+      background: transparent;
+      border: 1.5px solid rgba(0,21,46,0.18);
+      color: var(--dark);
+    }
+    .pricing-cta-outline:hover { border-color: var(--teal); color: var(--teal); }
+    .pricing-cta-featured {
+      background: var(--teal);
+      color: var(--navy);
+    }
+    .pricing-cta-featured:hover { background: #00d4a5; transform: translateY(-1px); }
+
+    /* ── COMPARISON TABLE ── */
+    .comparison-section {
+      background: var(--cloud);
+      padding: 80px 24px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-header h2 {
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .section-header p {
+      font-size: 17px;
+      color: rgba(0,21,46,0.55);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+    .label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(2,195,154,0.1);
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .comparison-table-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow-x: auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0,21,46,0.08);
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: 14px;
+    }
+    .comparison-table thead th {
+      padding: 20px 20px;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--dark);
+      text-align: center;
+      border-bottom: 2px solid rgba(0,21,46,0.06);
+    }
+    .comparison-table thead th:first-child { text-align: left; }
+    .comparison-table thead th.col-featured {
+      background: rgba(2,195,154,0.06);
+      color: var(--teal);
+    }
+    .comparison-table tbody tr:nth-child(even) { background: rgba(0,21,46,0.02); }
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+    .comparison-table tbody td {
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(0,21,46,0.05);
+      text-align: center;
+      color: rgba(0,21,46,0.7);
+    }
+    .comparison-table tbody td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .comparison-table tbody td.col-featured {
+      background: rgba(2,195,154,0.04);
+    }
+    .check-yes { color: var(--teal); font-size: 17px; font-weight: 700; }
+    .check-no { color: rgba(0,21,46,0.25); font-size: 17px; }
+
+    /* ── FAQ ── */
+    .faq-section {
+      background: #fff;
+      padding: 80px 24px;
+    }
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(0,21,46,0.08);
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 22px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      cursor: pointer;
+      font-family: inherit;
+      transition: color var(--transition);
+    }
+    .faq-question:hover { color: var(--teal); }
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(0,21,46,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .faq-icon svg { width: 12px; height: 12px; stroke: var(--dark); fill: none; stroke-width: 3; stroke-linecap: round; transition: stroke var(--transition); }
+    .faq-item.open .faq-icon { background: var(--teal); transform: rotate(45deg); }
+    .faq-item.open .faq-icon svg { stroke: var(--navy); }
+    .faq-answer {
+      display: none;
+      padding: 0 0 22px 0;
+      font-size: 15px;
+      color: rgba(0,21,46,0.65);
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ── COMPETITOR COMPARISON ── */
+    .competitor-section {
+      background: var(--cloud);
+      padding: 80px 24px;
+    }
+    .competitor-table-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0,21,46,0.08);
+    }
+    .competitor-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: 14px;
+    }
+    .competitor-table thead th {
+      padding: 20px 20px;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--dark);
+      text-align: center;
+      border-bottom: 2px solid rgba(0,21,46,0.06);
+    }
+    .competitor-table thead th:first-child { text-align: left; }
+    .competitor-table thead th.col-beegen {
+      background: rgba(2,195,154,0.07);
+      color: var(--teal);
+    }
+    .competitor-table tbody tr:nth-child(even) { background: rgba(0,21,46,0.02); }
+    .competitor-table tbody td {
+      padding: 13px 20px;
+      border-bottom: 1px solid rgba(0,21,46,0.05);
+      text-align: center;
+      color: rgba(0,21,46,0.7);
+    }
+    .competitor-table tbody td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .competitor-table tbody td.col-beegen {
+      background: rgba(2,195,154,0.04);
+      font-weight: 600;
+      color: var(--teal);
+    }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: linear-gradient(135deg, var(--navy) 0%, #001A3A 100%);
+      padding: 90px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(2,195,154,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-band-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .cta-band-inner h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.25; }
+    .cta-band-inner p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 36px; line-height: 1.6; }
+    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    #footer {
+      background: #000e1e;
+      padding: 70px 24px 36px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-brand img { height: 32px; display: block; margin-bottom: 14px; }
+    .footer-brand p { font-size: 13.5px; color: rgba(255,255,255,0.4); line-height: 1.65; max-width: 240px; }
+    .footer-socials { display: flex; gap: 10px; margin-top: 20px; }
+    .social-btn {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 13px; font-weight: 700;
+      transition: background var(--transition), color var(--transition);
+    }
+    .social-btn:hover { background: var(--teal); color: var(--navy); }
+    .footer-col h4 { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.07em; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 13.5px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color var(--transition); }
+    .footer-col ul li a:hover { color: var(--teal); }
+    .footer-bottom {
+      padding-top: 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-card.featured { transform: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-right .btn { display: none; }
+      .nav-right .btn:last-child { display: none; }
+      .hamburger { display: flex; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-card.featured { transform: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-right .btn-ghost { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" id="mainNav" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><img src="assets/logos/beegen-logo-white.svg" alt="Beegen" class="nav-logo-img" id="navLogo" height="36"></a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link" aria-haspopup="true">Features <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="funnels.html" role="menuitem">Funnel Builder</a>
+              <a href="feature-membership.html" role="menuitem">Membership Areas</a>
+              <a href="engage-crm.html" role="menuitem">Engage &amp; CRM</a>
+            </div>
+          </li>
+          <li><a href="templates.html" class="nav-link">Templates</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+        <div class="nav-right">
+          <a href="/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
+          <a href="/register" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Start Free →</a>
+          <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobile-nav-header">
+      <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <nav class="mobile-nav-body">
+      <div class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></div>
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link" aria-expanded="false">Features <svg class="mobile-nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="mobile-nav-sub"><a href="funnels.html">Funnel Builder</a><a href="feature-membership.html">Membership Areas</a><a href="engage-crm.html">Engage &amp; CRM</a></div>
+      </div>
+      <div class="mobile-nav-item"><a href="templates.html" class="mobile-nav-link">Templates</a></div>
+      <div class="mobile-nav-item"><a href="pricing.html" class="mobile-nav-link">Pricing</a></div>
+      <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></div>
+    </nav>
+    <div class="mobile-nav-footer">
+      <a href="/login" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">Log in</a>
+      <a href="/register" class="btn btn-primary">Start Free Trial</a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAGE HERO
+  ============================================================ -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">/</span>
+        <span>Pricing</span>
+      </nav>
+      <h1>Fair Pricing.<br><span style="color:var(--teal)">Endless Growth.</span></h1>
+      <p>Start with an unlimited free trial. No credit card required. Upgrade when you're ready.</p>
+      <div class="trust-line">
+        <span>14-Day Money Back Guarantee</span>
+        <div class="trust-dot" aria-hidden="true"></div>
+        <span>No Credit Card</span>
+        <div class="trust-dot" aria-hidden="true"></div>
+        <span>Cancel Anytime</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BILLING TOGGLE
+  ============================================================ -->
+  <div class="billing-toggle-wrap">
+    <div class="billing-toggle">
+      <label class="billing-label active" id="labelMonthly" for="billingToggle">Monthly</label>
+      <input type="checkbox" id="billingToggle" aria-label="Switch to annual billing">
+      <label for="billingToggle" class="toggle-track" id="toggleTrack">
+        <span class="toggle-knob"></span>
+      </label>
+      <label class="billing-label" id="labelAnnual" for="billingToggle">Annual</label>
+      <span id="annualBadge">Save 33%</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PRICING CARDS
+  ============================================================ -->
+  <section class="pricing-section">
+    <div class="pricing-grid">
+
+      <!-- Personal -->
+      <div class="pricing-card reveal">
+        <div class="plan-name">Personal</div>
+        <div class="plan-desc">Everything you need to launch your first site and start selling online.</div>
+        <div class="price-row">
+          <span class="price-dollar">$</span>
+          <span class="price-amount" id="price-personal">149</span>
+        </div>
+        <div class="price-period">per month</div>
+        <div class="price-note" id="note-personal">&nbsp;</div>
+        <span class="savings-note" id="save-personal">Save $600/year</span>
+        <hr class="pricing-divider">
+        <ul class="features-list">
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>20 Pages</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>1 Funnel</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>5GB Storage</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>10GB Bandwidth</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>2 Contributors</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>5 Store Products</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>0% Transaction Fees</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Email Support</li>
+        </ul>
+        <a href="/register" class="pricing-cta pricing-cta-outline">Start Free Trial</a>
+      </div>
+
+      <!-- Business (Featured) -->
+      <div class="pricing-card featured reveal reveal-delay-1">
+        <div class="pricing-badge">★ Most Popular</div>
+        <div class="plan-name">Business</div>
+        <div class="plan-desc">For growing businesses that need more power, funnels, and analytics.</div>
+        <div class="price-row">
+          <span class="price-dollar">$</span>
+          <span class="price-amount" id="price-business">179</span>
+        </div>
+        <div class="price-period">per month</div>
+        <div class="price-note" id="note-business">&nbsp;</div>
+        <span class="savings-note" id="save-business">Save $720/year</span>
+        <hr class="pricing-divider">
+        <ul class="features-list">
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Unlimited Pages</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>5 Funnels</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Unlimited Storage</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>60GB Bandwidth</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>4 Contributors</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>100 Store Products</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>0% Transaction Fees</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Priority Support</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>A/B Testing</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Advanced Analytics</li>
+        </ul>
+        <a href="/register" class="pricing-cta pricing-cta-featured">Start Free Trial</a>
+      </div>
+
+      <!-- Growth -->
+      <div class="pricing-card reveal reveal-delay-2">
+        <div class="plan-name">Growth</div>
+        <div class="plan-desc">Full-scale operations with dedicated support and custom domains.</div>
+        <div class="price-row">
+          <span class="price-dollar">$</span>
+          <span class="price-amount" id="price-growth">219</span>
+        </div>
+        <div class="price-period">per month</div>
+        <div class="price-note" id="note-growth">&nbsp;</div>
+        <span class="savings-note" id="save-growth">Save $840/year</span>
+        <hr class="pricing-divider">
+        <ul class="features-list">
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Unlimited Pages</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>15 Funnels</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Unlimited Storage</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>120GB Bandwidth</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>5 Contributors</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>100 Store Products</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>0% Transaction Fees</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Priority Support</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>A/B Testing</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Advanced Analytics</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Custom Domain (5)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Dedicated Account Manager</li>
+        </ul>
+        <a href="/register" class="pricing-cta pricing-cta-outline">Start Free Trial</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPARISON TABLE
+  ============================================================ -->
+  <section class="comparison-section">
+    <div class="section-header reveal">
+      <span class="label">Full Breakdown</span>
+      <h2>Compare Every Feature</h2>
+      <p>Know exactly what you get on each plan before you commit.</p>
+    </div>
+    <div class="comparison-table-wrap reveal">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Personal</th>
+            <th class="col-featured">Business</th>
+            <th>Growth</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Website Builder</td>
+            <td><span class="check-yes">✓</span></td>
+            <td class="col-featured"><span class="check-yes">✓</span></td>
+            <td><span class="check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Custom Domain</td>
+            <td>1 Domain</td>
+            <td class="col-featured">3 Domains</td>
+            <td>5 Domains</td>
+          </tr>
+          <tr>
+            <td>Number of Pages</td>
+            <td>20</td>
+            <td class="col-featured">Unlimited</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Funnels</td>
+            <td>1</td>
+            <td class="col-featured">5</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>A/B Testing</td>
+            <td><span class="check-no">✗</span></td>
+            <td class="col-featured"><span class="check-yes">✓</span></td>
+            <td><span class="check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Membership Areas</td>
+            <td><span class="check-no">✗</span></td>
+            <td class="col-featured"><span class="check-yes">✓</span></td>
+            <td><span class="check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Course Builder</td>
+            <td><span class="check-no">✗</span></td>
+            <td class="col-featured"><span class="check-yes">✓</span></td>
+            <td><span class="check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>CRM / Contacts</td>
+            <td>500 Contacts</td>
+            <td class="col-featured">Unlimited</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Email Broadcasts</td>
+            <td>1,000/mo</td>
+            <td class="col-featured">25,000/mo</td>
+            <td>100,000/mo</td>
+          </tr>
+          <tr>
+            <td>Automation Workflows</td>
+            <td><span class="check-no">✗</span></td>
+            <td class="col-featured"><span class="check-yes">✓</span></td>
+            <td><span class="check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Store Products</td>
+            <td>5</td>
+            <td class="col-featured">100</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>Transaction Fees</td>
+            <td>0%</td>
+            <td class="col-featured">0%</td>
+            <td>0%</td>
+          </tr>
+          <tr>
+            <td>Storage</td>
+            <td>5 GB</td>
+            <td class="col-featured">Unlimited</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Bandwidth</td>
+            <td>10 GB</td>
+            <td class="col-featured">60 GB</td>
+            <td>120 GB</td>
+          </tr>
+          <tr>
+            <td>Contributors</td>
+            <td>2</td>
+            <td class="col-featured">4</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Analytics Dashboard</td>
+            <td>Basic</td>
+            <td class="col-featured">Advanced</td>
+            <td>Advanced</td>
+          </tr>
+          <tr>
+            <td>Priority Support</td>
+            <td><span class="check-no">✗</span></td>
+            <td class="col-featured"><span class="check-yes">✓</span></td>
+            <td><span class="check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Dedicated Account Manager</td>
+            <td><span class="check-no">✗</span></td>
+            <td class="col-featured"><span class="check-no">✗</span></td>
+            <td><span class="check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>API Access</td>
+            <td><span class="check-no">✗</span></td>
+            <td class="col-featured"><span class="check-yes">✓</span></td>
+            <td><span class="check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>White Label</td>
+            <td><span class="check-no">✗</span></td>
+            <td class="col-featured"><span class="check-no">✗</span></td>
+            <td><span class="check-yes">✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+  ============================================================ -->
+  <section class="faq-section">
+    <div class="section-header reveal">
+      <span class="label">Got Questions?</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about our plans and billing.</p>
+    </div>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What's included in the free trial?
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          Your free trial gives you full access to all features on the Business plan for 14 days — no restrictions, no watermarks, no paywalls. You can build your site, create funnels, set up your membership area, and connect your custom domain. Everything you'd get as a paying customer is available from day one.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I cancel anytime?
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          Yes, absolutely. You can cancel your subscription at any time directly from your account dashboard — no phone call required, no hoops to jump through. If you cancel, you'll keep access until the end of your current billing period.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do I need a credit card to start?
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          No credit card is required to start your free trial. Sign up with just your email address and start building immediately. You'll only be asked for payment details when you decide to upgrade to a paid plan.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What happens when my trial ends?
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          When your 14-day trial ends, your account will be paused — not deleted. Your data, pages, and funnels are all saved. You'll see a prompt to choose a plan to reactivate. We'll send you reminders a few days before so you're never caught off guard.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I switch plans?
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          Yes — you can upgrade or downgrade at any time from your account settings. When you upgrade, the change is effective immediately and you'll be charged a prorated amount for the remainder of your billing cycle. Downgrades take effect at the next renewal date.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is there a setup fee?
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          No setup fees, ever. The price you see on the pricing page is exactly what you pay — nothing hidden, nothing added at checkout. We believe in complete pricing transparency.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you offer refunds?
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          We offer a 14-day money-back guarantee on all paid plans. If you're not satisfied for any reason within 14 days of your first payment, contact our support team and we'll process a full refund — no questions asked.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What payment methods do you accept?
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          We accept all major credit and debit cards (Visa, Mastercard, American Express, Discover) as well as PayPal. All payments are processed securely through Stripe. We do not store your card details on our servers.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPETITOR COMPARISON
+  ============================================================ -->
+  <section class="competitor-section">
+    <div class="section-header reveal">
+      <span class="label">The Smart Choice</span>
+      <h2>How Beegen Compares</h2>
+      <p>See why thousands of small businesses chose Beegen over the alternatives.</p>
+    </div>
+    <div class="competitor-table-wrap reveal">
+      <table class="competitor-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-beegen">Beegen</th>
+            <th>ClickFunnels</th>
+            <th>Kajabi</th>
+            <th>Kartra</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Starting Price/mo</td>
+            <td class="col-beegen">$149</td>
+            <td>$147</td>
+            <td>$149</td>
+            <td>$119</td>
+          </tr>
+          <tr>
+            <td>Website Builder</td>
+            <td class="col-beegen"><span class="check-yes">✓</span></td>
+            <td>Limited</td>
+            <td><span class="check-yes">✓</span></td>
+            <td>Limited</td>
+          </tr>
+          <tr>
+            <td>Sales Funnels</td>
+            <td class="col-beegen"><span class="check-yes">✓</span></td>
+            <td><span class="check-yes">✓</span></td>
+            <td>Basic</td>
+            <td><span class="check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Membership / Courses</td>
+            <td class="col-beegen"><span class="check-yes">✓</span></td>
+            <td>Add-on</td>
+            <td><span class="check-yes">✓</span></td>
+            <td><span class="check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Built-in CRM</td>
+            <td class="col-beegen"><span class="check-yes">✓</span></td>
+            <td>Limited</td>
+            <td>Basic</td>
+            <td><span class="check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>0% Transaction Fees</td>
+            <td class="col-beegen"><span class="check-yes">✓</span></td>
+            <td><span class="check-no">✗</span></td>
+            <td><span class="check-no">✗</span></td>
+            <td><span class="check-no">✗</span></td>
+          </tr>
+          <tr>
+            <td>Free Trial</td>
+            <td class="col-beegen">14 Days</td>
+            <td>14 Days</td>
+            <td>14 Days</td>
+            <td>30 Days</td>
+          </tr>
+          <tr>
+            <td>Templates Included</td>
+            <td class="col-beegen">150+</td>
+            <td>100+</td>
+            <td>50+</td>
+            <td>500+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA BAND
+  ============================================================ -->
+  <section class="cta-band">
+    <div class="cta-band-inner reveal">
+      <h2>Start Your Free Trial Today</h2>
+      <p>Join 12,000+ businesses already growing with Beegen. No credit card needed.</p>
+      <div class="cta-buttons">
+        <a href="/register" class="btn btn-primary btn-lg">Get Started Free</a>
+        <a href="/demo" class="btn btn-secondary btn-lg">See Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logos/beegen-logo-white.svg" alt="Beegen">
+          <p>The all-in-one platform for websites, funnels, memberships, and CRM. Built for small businesses that mean business.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Twitter">X</a>
+            <a href="#" class="social-btn" aria-label="Instagram">In</a>
+            <a href="#" class="social-btn" aria-label="Facebook">Fb</a>
+            <a href="#" class="social-btn" aria-label="YouTube">Yt</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="funnels.html">Funnel Builder</a></li>
+            <li><a href="feature-membership.html">Membership Areas</a></li>
+            <li><a href="engage-crm.html">CRM</a></li>
+            <li><a href="templates.html">Templates</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/press">Press</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="/help">Help Center</a></li>
+            <li><a href="/docs">Documentation</a></li>
+            <li><a href="/status">System Status</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Beegen. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="/cookies">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js" defer></script>
+
+  <script>
+    // ── Mobile nav ──
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+
+    if (hamburger && mobileNav) {
+      hamburger.addEventListener('click', () => {
+        mobileNav.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+    if (mobileNavClose && mobileNav) {
+      mobileNavClose.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    }
+
+    // Mobile sub-menu toggles
+    document.querySelectorAll('.mobile-nav-body .mobile-nav-link').forEach(btn => {
+      if (btn.tagName === 'BUTTON') {
+        btn.addEventListener('click', () => {
+          const sub = btn.nextElementSibling;
+          if (sub && sub.classList.contains('mobile-nav-sub')) {
+            const open = sub.classList.toggle('open');
+            btn.setAttribute('aria-expanded', open);
+          }
+        });
+      }
+    });
+
+    // ── Billing Toggle ──
+    const toggle = document.getElementById('billingToggle');
+    const toggleTrack = document.getElementById('toggleTrack');
+    const labelMonthly = document.getElementById('labelMonthly');
+    const labelAnnual = document.getElementById('labelAnnual');
+    const annualBadge = document.getElementById('annualBadge');
+
+    const prices = {
+      monthly: { personal: 149, business: 179, growth: 219 },
+      annual:  { personal: 99,  business: 119, growth: 149 }
+    };
+
+    const annualSavings = {
+      personal: (prices.monthly.personal - prices.annual.personal) * 12,
+      business: (prices.monthly.business - prices.annual.business) * 12,
+      growth:   (prices.monthly.growth   - prices.annual.growth)   * 12
+    };
+
+    function updatePricing(isAnnual) {
+      const set = isAnnual ? prices.annual : prices.monthly;
+
+      ['personal', 'business', 'growth'].forEach(plan => {
+        const priceEl = document.getElementById('price-' + plan);
+        const noteEl  = document.getElementById('note-' + plan);
+        const saveEl  = document.getElementById('save-' + plan);
+
+        if (priceEl) {
+          // Animate count
+          const target = set[plan];
+          const current = parseInt(priceEl.textContent);
+          const step = Math.ceil(Math.abs(target - current) / 15);
+          let val = current;
+          const dir = target > current ? 1 : -1;
+          const interval = setInterval(() => {
+            val += dir * step;
+            if ((dir === 1 && val >= target) || (dir === -1 && val <= target)) {
+              val = target;
+              clearInterval(interval);
+            }
+            priceEl.textContent = val;
+          }, 20);
+        }
+
+        if (noteEl) {
+          noteEl.textContent = isAnnual ? 'billed annually' : '\u00A0';
+        }
+
+        if (saveEl) {
+          if (isAnnual) {
+            saveEl.textContent = 'Save $' + annualSavings[plan] + '/year';
+            saveEl.classList.add('show');
+          } else {
+            saveEl.classList.remove('show');
+          }
+        }
+      });
+
+      labelMonthly.classList.toggle('active', !isAnnual);
+      labelAnnual.classList.toggle('active', isAnnual);
+      toggleTrack.classList.toggle('annual', isAnnual);
+      annualBadge.classList.toggle('visible', isAnnual);
+    }
+
+    if (toggle) {
+      toggle.addEventListener('change', () => updatePricing(toggle.checked));
+    }
+    if (toggleTrack) {
+      toggleTrack.addEventListener('click', () => {
+        if (toggle) {
+          toggle.checked = !toggle.checked;
+          updatePricing(toggle.checked);
+        }
+      });
+    }
+
+    // ── FAQ Accordion ──
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(el => {
+          el.classList.remove('open');
+          el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Open clicked if it was closed
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ── Reveal on scroll ──
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealEls.forEach(el => observer.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('revealed'));
+    }
+  </script>
+
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1.revealed { transition-delay: 0.1s; }
+    .reveal-delay-2.revealed { transition-delay: 0.2s; }
+    .reveal-delay-3.revealed { transition-delay: 0.3s; }
+  </style>
+
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work With Us — Beegen</title>
+<meta name="description" content="Done-for-you Beegen setup services. We build your funnels, website, and CRM so you can focus on your business.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/global.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;overflow-x:hidden;}
+:root{--teal:#02C39A;--navy:#00152E;--orange:#F37934;--dark:#0D1B2A;--cloud:#F4F8FB;--white:#fff;--mist:#E8F0F7;--gray-600:#64748B;--shadow:0 4px 24px rgba(0,21,46,.12);--shadow-lg:0 12px 48px rgba(0,21,46,.18);--radius:12px;--radius-lg:20px;--transition:.22s cubic-bezier(.4,0,.2,1);}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,21,46,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06);transition:all .3s;}
+.nav.scrolled{background:#fff;box-shadow:0 1px 24px rgba(0,21,46,.1);}
+.nav.scrolled .nav-link{color:var(--navy);}
+.nav.scrolled .hamburger{color:var(--navy);}
+.nav-inner{max-width:1240px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:72px;}
+.nav-logo img{height:36px;display:block;}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin-left:48px;}
+.nav-link{font-weight:600;font-size:15px;color:rgba(255,255,255,.88);padding:8px 14px;border-radius:8px;text-decoration:none;transition:all .2s;display:flex;align-items:center;gap:5px;}
+.nav-link:hover{background:rgba(255,255,255,.1);}
+.nav.scrolled .nav-link:hover{background:var(--cloud);color:var(--teal);}
+.nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s;}
+.nav-dropdown{position:relative;}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:100%;left:0;background:#fff;border:1px solid rgba(0,21,46,.1);border-radius:14px;box-shadow:var(--shadow-lg);min-width:200px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .2s,transform .2s;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:10px 16px;font-size:14px;font-weight:600;color:var(--navy);border-radius:8px;text-decoration:none;transition:background .15s;}
+.nav-dropdown-menu a:hover{background:var(--cloud);color:var(--teal);}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;color:#fff;}
+.hamburger span{width:22px;height:2px;background:currentColor;display:block;}
+@media(max-width:900px){.nav-links{display:none!important;}.hamburger{display:flex;}.nav-right .btn{display:none;}}
+.mobile-nav-overlay{display:none;position:fixed;inset:0;z-index:200;background:var(--navy);flex-direction:column;overflow-y:auto;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);}
+.mobile-nav-overlay.open{display:flex;transform:translateX(0);}
+.mobile-nav-header{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:72px;border-bottom:1px solid rgba(255,255,255,.1);}
+.mobile-nav-logo{height:30px;}
+.mobile-nav-close{width:40px;height:40px;border-radius:10px;border:none;background:rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.mobile-nav-close svg{width:18px;height:18px;}
+.mobile-nav-body{flex:1;padding:12px 0 20px;}
+.mobile-nav-item{border-bottom:1px solid rgba(255,255,255,.07);}
+.mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;font-size:17px;font-weight:700;color:#fff;text-decoration:none;cursor:pointer;background:none;border:none;width:100%;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;}
+.mobile-nav-chevron{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .22s;}
+.mobile-nav-item.open .mobile-nav-chevron{transform:rotate(180deg);}
+.mobile-nav-sub{display:none;background:rgba(0,0,0,.2);padding:4px 0 8px;}
+.mobile-nav-item.open .mobile-nav-sub{display:block;}
+.mobile-nav-sub a{display:block;padding:11px 24px 11px 40px;font-size:15px;font-weight:600;color:rgba(255,255,255,.75);text-decoration:none;}
+.mobile-nav-footer{padding:20px 20px 32px;display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(255,255,255,.1);}
+.mobile-nav-footer .btn{display:flex;align-items:center;justify-content:center;width:100%;padding:14px;font-size:15px;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;border-radius:10px;padding:13px 26px;border:2px solid transparent;cursor:pointer;text-decoration:none;transition:all .22s;white-space:nowrap;}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--orange);color:#fff;border-color:var(--orange);}
+.btn-primary:hover{background:#d4621c;box-shadow:0 8px 32px rgba(243,121,52,.3);}
+.btn-secondary{background:var(--teal);color:#fff;border-color:var(--teal);}
+.btn-secondary:hover{background:#028090;}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3);}
+.btn-ghost:hover{background:rgba(255,255,255,.22);}
+.btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
+.btn-outline:hover{background:var(--navy);color:#fff;}
+.btn-lg{padding:16px 34px;font-size:17px;border-radius:12px;}
+.container{max-width:1240px;margin:0 auto;padding:0 24px;}
+.section{padding:96px 0;}
+.section-header{text-align:center;margin-bottom:64px;}
+.section-header .label{display:block;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:12px;}
+.section-header h2{font-size:clamp(30px,4vw,48px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.1;}
+.section-header p{font-size:18px;color:var(--gray-600);max-width:560px;margin:0 auto;line-height:1.65;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
+
+/* PAGE HERO */
+.page-hero{min-height:420px;background:linear-gradient(135deg,#00152E 0%,#002147 50%,#013A5C 100%);display:flex;align-items:center;padding:130px 0 80px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(2,195,154,.18) 0%,transparent 55%),radial-gradient(ellipse at 15% 80%,rgba(243,121,52,.1) 0%,transparent 40%);pointer-events:none;}
+.page-hero h1{font-size:clamp(36px,5vw,60px);font-weight:800;color:#fff;line-height:1.08;margin-bottom:16px;}
+.page-hero p{font-size:19px;color:rgba(255,255,255,.75);max-width:580px;line-height:1.65;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:20px;}
+.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none;}
+.breadcrumb a:hover{color:#fff;}
+.breadcrumb span{color:rgba(255,255,255,.28);}
+
+/* SERVICE CARDS */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:80px;}
+@media(max-width:900px){.services-grid{grid-template-columns:1fr;}}
+.service-card{border-radius:24px;padding:40px 36px;border:2px solid var(--mist);background:#fff;transition:all .3s;position:relative;overflow:hidden;}
+.service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);}
+.service-card.featured{border-color:rgba(2,195,154,.4);background:linear-gradient(160deg,rgba(2,195,154,.04) 0%,rgba(2,130,144,.04) 100%);}
+.service-card.featured::before{content:'Most Popular';position:absolute;top:20px;right:-28px;background:var(--teal);color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 40px;transform:rotate(45deg);transform-origin:center;}
+.service-icon{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;}
+.service-icon.teal{background:rgba(2,195,154,.12);color:var(--teal);}
+.service-icon.orange{background:rgba(243,121,52,.12);color:var(--orange);}
+.service-icon.navy{background:rgba(0,21,46,.08);color:var(--navy);}
+.service-icon svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.service-card h3{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:10px;}
+.service-card .service-desc{font-size:15px;color:#475569;line-height:1.65;margin-bottom:24px;}
+.service-includes{margin-bottom:28px;}
+.service-includes h5{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;}
+.service-includes ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.service-includes li{font-size:14px;color:#334155;display:flex;align-items:center;gap:8px;}
+.service-includes li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;}
+.service-price{font-size:13px;color:var(--gray-600);margin-bottom:20px;}
+.service-price strong{font-size:26px;font-weight:800;color:var(--navy);display:block;}
+
+/* INQUIRY FORM */
+.inquiry-wrap{background:var(--cloud);border-radius:28px;padding:56px 48px;max-width:780px;margin:0 auto;}
+@media(max-width:600px){.inquiry-wrap{padding:36px 24px;}}
+.inquiry-wrap h2{font-size:clamp(24px,3vw,36px);font-weight:800;color:var(--navy);margin-bottom:8px;}
+.inquiry-wrap p{font-size:16px;color:var(--gray-600);margin-bottom:36px;}
+.form-group{margin-bottom:20px;}
+.form-group label{display:block;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 16px;border:1.5px solid #D1D9E0;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:var(--navy);transition:border-color .2s;outline:none;background:#fff;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--teal);}
+.form-group textarea{resize:vertical;min-height:120px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:480px){.form-row{grid-template-columns:1fr;}}
+.form-submit{width:100%;padding:16px;font-size:16px;border-radius:12px;border:none;background:var(--orange);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;cursor:pointer;transition:all .22s;}
+.form-submit:hover{background:#d4621c;transform:translateY(-2px);box-shadow:0 8px 32px rgba(243,121,52,.3);}
+.form-success{display:none;text-align:center;padding:40px 24px;}
+.form-success .success-icon{width:64px;height:64px;border-radius:50%;background:rgba(2,195,154,.12);color:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.form-success .success-icon svg{width:32px;height:32px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+.form-success h3{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:8px;}
+.form-success p{font-size:15px;color:var(--gray-600);}
+
+/* PROCESS BAR */
+.process-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-bottom:80px;}
+@media(max-width:768px){.process-bar{grid-template-columns:repeat(2,1fr);gap:24px;}}
+.process-step{text-align:center;padding:32px 16px;position:relative;}
+.process-step:not(:last-child)::after{content:'';position:absolute;right:0;top:40px;width:1px;height:40px;background:var(--mist);}
+@media(max-width:768px){.process-step:nth-child(2)::after,.process-step:nth-child(4)::after{display:none;}}
+.process-num{width:48px;height:48px;border-radius:50%;background:var(--teal);color:#fff;font-size:17px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.process-step h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.process-step p{font-size:13px;color:#64748B;line-height:1.55;}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,#00152E 0%,#002147 50%,#013A5C 100%);padding:96px 0;text-align:center;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(2,195,154,.2) 0%,transparent 60%);pointer-events:none;}
+.cta-band h2{font-size:clamp(28px,4vw,46px);font-weight:800;color:#fff;margin-bottom:16px;}
+.cta-band p{font-size:19px;color:rgba(255,255,255,.72);max-width:520px;margin:0 auto 36px;line-height:1.65;}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+/* FOOTER */
+.footer{background:#0D1B2A;padding:72px 0 32px;}
+.footer-top{background:rgba(2,195,154,.07);border-bottom:1px solid rgba(2,195,154,.15);padding:40px 0;}
+.footer-top .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.footer-top-text h4{color:#fff;font-size:19px;font-weight:700;margin-bottom:5px;}
+.footer-top-text p{color:rgba(255,255,255,.5);font-size:14px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-top:56px;margin-bottom:56px;}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+.footer-brand img{height:32px;opacity:.85;margin-bottom:16px;}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.42);line-height:1.75;max-width:280px;}
+.footer-col h5{font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:20px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,.28);}
+.social-links{display:flex;gap:10px;}
+.social-link{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;transition:background .2s;text-decoration:none;}
+.social-link:hover{background:var(--teal);}
+.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logos/beegen-logo-white.svg" alt="Beegen" id="navLogo"></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="nav-link">Features <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <div class="nav-dropdown-menu">
+          <a href="funnels.html">Funnel Builder</a>
+          <a href="feature-membership.html">Membership Areas</a>
+          <a href="engage-crm.html">Engage &amp; CRM</a>
+        </div>
+      </li>
+      <li><a href="templates.html" class="nav-link">Templates</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
+      <a href="/register" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Start Free →</a>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <nav class="mobile-nav-body">
+    <div class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></div>
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link">Features <svg class="mobile-nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="mobile-nav-sub"><a href="funnels.html">Funnel Builder</a><a href="feature-membership.html">Membership Areas</a><a href="engage-crm.html">Engage &amp; CRM</a></div>
+    </div>
+    <div class="mobile-nav-item"><a href="templates.html" class="mobile-nav-link">Templates</a></div>
+    <div class="mobile-nav-item"><a href="pricing.html" class="mobile-nav-link">Pricing</a></div>
+    <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></div>
+  </nav>
+  <div class="mobile-nav-footer">
+    <a href="/login" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">Log in</a>
+    <a href="/register" class="btn btn-primary">Start Free Trial</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Work With Us</span></nav>
+    <h1 class="reveal">Let's Build Something<br><span style="color:var(--teal)">Together.</span></h1>
+    <p class="reveal reveal-delay-1">Not a DIY person? Our expert team sets up your entire Beegen account — funnels, website, CRM, and all — so you can focus on your customers, not your tech stack.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Done-For-You Services</span>
+      <h2>We Do the Work. You Get the Results.</h2>
+      <p>Choose the package that fits your needs — every engagement includes a dedicated Beegen specialist.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- FUNNEL BUILD -->
+      <div class="service-card reveal">
+        <div class="service-icon teal">
+          <svg viewBox="0 0 24 24"><path d="M3 4h18l-7 8.5V19l-4-2V12.5L3 4z"/></svg>
+        </div>
+        <h3>Funnel Build</h3>
+        <p class="service-desc">We design and build your entire sales funnel — from the opt-in page to the checkout and thank-you page — tailored to your offer.</p>
+        <div class="service-includes">
+          <h5>What's Included</h5>
+          <ul>
+            <li>Strategy call to map your funnel flow</li>
+            <li>Up to 5 custom pages built and styled</li>
+            <li>Copywriting framework &amp; headline guidance</li>
+            <li>Payment integration (Stripe or PayPal)</li>
+            <li>30-day post-launch support</li>
+          </ul>
+        </div>
+        <div class="service-price"><strong>Starting at $497</strong>One-time project fee</div>
+        <a href="#inquiryForm" class="btn btn-secondary" style="width:100%;justify-content:center;">Get Started →</a>
+      </div>
+
+      <!-- FULL WEBSITE + FUNNEL (FEATURED) -->
+      <div class="service-card featured reveal reveal-delay-1">
+        <div class="service-icon orange">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Full Website + Funnel</h3>
+        <p class="service-desc">Complete business presence — a professional website, a high-converting funnel, and a fully configured CRM — in one engagement.</p>
+        <div class="service-includes">
+          <h5>What's Included</h5>
+          <ul>
+            <li>Full website (up to 8 pages) designed &amp; built</li>
+            <li>1 complete sales funnel with upsells</li>
+            <li>CRM setup with tags, pipelines &amp; automations</li>
+            <li>Email sequence (5 emails) written &amp; loaded</li>
+            <li>Domain &amp; hosting configuration</li>
+            <li>60-day post-launch support</li>
+          </ul>
+        </div>
+        <div class="service-price"><strong>Starting at $997</strong>One-time project fee</div>
+        <a href="#inquiryForm" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a>
+      </div>
+
+      <!-- ONGOING MANAGEMENT -->
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon navy">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Ongoing Management</h3>
+        <p class="service-desc">Hand off your Beegen account entirely. We manage updates, monitor performance, run A/B tests, and optimize your funnels each month.</p>
+        <div class="service-includes">
+          <h5>What's Included</h5>
+          <ul>
+            <li>Monthly strategy &amp; performance call</li>
+            <li>Up to 10 hours of hands-on work/month</li>
+            <li>Funnel optimization &amp; A/B testing</li>
+            <li>Email sequence management</li>
+            <li>Priority support response (&lt; 2 hours)</li>
+          </ul>
+        </div>
+        <div class="service-price"><strong>Starting at $297/mo</strong>Ongoing monthly retainer</div>
+        <a href="#inquiryForm" class="btn btn-secondary" style="width:100%;justify-content:center;">Get Started →</a>
+      </div>
+
+    </div>
+
+    <!-- PROCESS -->
+    <div class="section-header" style="margin-bottom:40px;">
+      <span class="label">Our Process</span>
+      <h2>How It Works</h2>
+    </div>
+    <div class="process-bar">
+      <div class="process-step reveal">
+        <div class="process-num">1</div>
+        <h4>Discovery Call</h4>
+        <p>We learn about your business, goals, and audience in a 30-min call.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-num">2</div>
+        <h4>Proposal &amp; Kickoff</h4>
+        <p>You get a clear scope, timeline, and fixed price. No surprises.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-num">3</div>
+        <h4>Build &amp; Review</h4>
+        <p>We build in your Beegen account. You review, give feedback, we refine.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-num">4</div>
+        <h4>Launch &amp; Support</h4>
+        <p>We launch together and stay by your side during the critical first weeks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INQUIRY FORM -->
+<section class="section" id="inquiryForm" style="background:var(--cloud);">
+  <div class="container">
+    <div class="inquiry-wrap reveal">
+      <div id="inquiryFormWrap">
+        <h2>Tell Us About Your Project</h2>
+        <p>Fill in the details below and a Beegen specialist will reach out within 24 hours to discuss your project.</p>
+        <form id="projectForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="bf2f54f7-15c0-48f6-8672-6aaf2812f77c">
+          <input type="hidden" name="subject" value="Beegen Project Inquiry">
+          <input type="hidden" name="redirect" value="false">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name *</label>
+              <input type="text" name="first_name" required placeholder="Alex">
+            </div>
+            <div class="form-group">
+              <label>Last Name *</label>
+              <input type="text" name="last_name" required placeholder="Johnson">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" name="email" required placeholder="alex@company.com">
+            </div>
+            <div class="form-group">
+              <label>Phone (optional)</label>
+              <input type="tel" name="phone" placeholder="+1 (555) 000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Service You're Interested In *</label>
+            <select name="service_interest" required>
+              <option value="" disabled selected>Choose a service…</option>
+              <option value="Funnel Build ($497+)">Funnel Build — Starting at $497</option>
+              <option value="Full Website + Funnel ($997+)">Full Website + Funnel — Starting at $997</option>
+              <option value="Ongoing Management ($297/mo+)">Ongoing Management — Starting at $297/mo</option>
+              <option value="Not sure yet">Not sure yet — help me decide</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Budget Range *</label>
+            <select name="budget" required>
+              <option value="" disabled selected>Select your budget…</option>
+              <option value="Under $500">Under $500</option>
+              <option value="$500–$1,000">$500 – $1,000</option>
+              <option value="$1,000–$2,500">$1,000 – $2,500</option>
+              <option value="$2,500+">$2,500+</option>
+              <option value="Monthly retainer">Monthly retainer</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tell Us About Your Project *</label>
+            <textarea name="project_description" required placeholder="What do you sell? Who is your audience? What are your goals? Any existing assets (logo, copy, etc.)?"></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="projectSubmitBtn">Submit Project Inquiry →</button>
+        </form>
+      </div>
+      <div class="form-success" id="inquirySuccess">
+        <div class="success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3>Inquiry Received!</h3>
+        <p>Thank you! A Beegen specialist will review your project and reach out within 24 hours to schedule your discovery call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container" style="position:relative;z-index:1;">
+    <h2 class="reveal">Prefer to Build It Yourself?</h2>
+    <p class="reveal reveal-delay-1">Beegen is designed so anyone can build a professional funnel or website in minutes — no experience required.</p>
+    <div class="cta-actions reveal reveal-delay-2">
+      <a href="/register" class="btn btn-primary btn-lg">Start Free Trial</a>
+      <a href="templates.html" class="btn btn-ghost btn-lg">Browse Templates</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-top-text"><h4>Ready to replace 5 tools with one?</h4><p>Join 12,000+ businesses already growing with Beegen.</p></div>
+      <a href="/register" class="btn btn-primary btn-lg">Start Free — No Card Needed</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="assets/logos/beegen-logo-white.svg" alt="Beegen"><p>The all-in-one platform for small businesses — website builder, funnels, memberships, and CRM in one login.</p></div>
+      <div class="footer-col"><h5>Features</h5><div class="footer-links"><a href="funnels.html">Funnel Builder</a><a href="feature-membership.html">Membership Areas</a><a href="engage-crm.html">Engage &amp; CRM</a><a href="templates.html">Templates</a></div></div>
+      <div class="footer-col"><h5>Company</h5><div class="footer-links"><a href="about.html">About</a><a href="pricing.html">Pricing</a><a href="project-discuss.html">Work With Us</a><a href="contact.html">Contact</a></div></div>
+      <div class="footer-col"><h5>Legal</h5><div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></div></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Beegen. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+        <a href="#" class="social-link"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="#" class="social-link"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('mainNav');
+const navLogo = document.getElementById('navLogo');
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.getElementById('mobileNav');
+const mobileNavClose = document.getElementById('mobileNavClose');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 40){ nav.classList.add('scrolled'); if(navLogo) navLogo.src='assets/logos/beegen-logo-color.svg'; }
+  else { nav.classList.remove('scrolled'); if(navLogo) navLogo.src='assets/logos/beegen-logo-white.svg'; }
+});
+hamburger.addEventListener('click', () => { mobileNav.classList.add('open'); document.body.style.overflow='hidden'; });
+mobileNavClose.addEventListener('click', () => { mobileNav.classList.remove('open'); document.body.style.overflow=''; });
+document.querySelectorAll('.mobile-nav-item button').forEach(btn => {
+  btn.addEventListener('click', () => { btn.closest('.mobile-nav-item').classList.toggle('open'); });
+});
+// Form submit
+const form = document.getElementById('projectForm');
+const submitBtn = document.getElementById('projectSubmitBtn');
+form && form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  submitBtn.textContent = 'Submitting…';
+  submitBtn.disabled = true;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', { method:'POST', body: new FormData(form) });
+    const data = await res.json();
+    if(data.success){
+      document.getElementById('inquiryFormWrap').style.display = 'none';
+      document.getElementById('inquirySuccess').style.display = 'block';
+    } else { throw new Error(); }
+  } catch {
+    submitBtn.textContent = 'Submit Project Inquiry →';
+    submitBtn.disabled = false;
+    alert('Something went wrong. Please email us at hello@beegen.co');
+  }
+});
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

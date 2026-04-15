@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       BEEGEN — Home Page
+       beegen.co · All-in-one platform for small businesses
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beegen — Website, Funnels &amp; Memberships for Small Business</title>
+  <meta name="description" content="Beegen combines your website, sales funnels, membership areas, and CRM in one powerful platform. Built for coaches, course creators, and small businesses." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/global.css" />
+
+  <!-- ============================================================
+       PAGE-SPECIFIC STYLES
+  ============================================================ -->
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--cloud, #F4F8FB);
+      color: var(--dark, #0D1B2A);
+      overflow-x: hidden;
+    }
+
+    /* ── CSS tokens fallback (in case tokens.css not yet present) ── */
+    :root {
+      --teal:   #02C39A;
+      --navy:   #00152E;
+      --orange: #F37934;
+      --dark:   #0D1B2A;
+      --cloud:  #F4F8FB;
+      --white:  #FFFFFF;
+      --radius: 14px;
+      --transition: 0.25s ease;
+    }
+
+    /* ── NAV ── */
+    #mainNav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(0, 21, 46, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      height: 68px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo img { display: block; height: 36px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.07); }
+
+    /* Dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a::after {
+      content: " ▾";
+      font-size: 10px;
+      opacity: 0.6;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 12px;
+      min-width: 200px;
+      padding: 8px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: block;
+      padding: 9px 14px;
+      font-size: 13.5px;
+      border-radius: 8px;
+    }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .btn-ghost {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.85);
+      padding: 9px 20px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+    .btn-primary {
+      background: var(--teal);
+      color: var(--navy);
+      border: none;
+      padding: 10px 22px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background var(--transition), transform var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-primary:hover { background: #00d4a5; transform: translateY(-1px); }
+    .btn-primary.btn-lg { font-size: 16px; padding: 14px 30px; border-radius: 11px; }
+    .btn-ghost.btn-lg  { font-size: 16px; padding: 13px 28px; border-radius: 11px; }
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      padding: 14px 30px;
+      border-radius: 11px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.18); }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 11px 24px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── MOBILE NAV OVERLAY ── */
+    #mobileNav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: var(--navy);
+      flex-direction: column;
+      padding: 24px;
+    }
+    #mobileNav.open { display: flex; }
+    .mobile-nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    .mobile-nav-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .mobile-nav-items { list-style: none; flex: 1; }
+    .mobile-nav-items > li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .mobile-nav-items > li > a,
+    .mobile-nav-items > li > button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 16px 0;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .mobile-accordion-body {
+      display: none;
+      padding: 0 0 12px 16px;
+    }
+    .mobile-accordion-body.open { display: block; }
+    .mobile-accordion-body a {
+      display: block;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 15px;
+      padding: 8px 0;
+    }
+    .mobile-nav-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 24px;
+    }
+    .mobile-nav-footer a { text-align: center; }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, #00152E 0%, #0D1B2A 60%, #001A3A 100%);
+      overflow: hidden;
+      padding: 120px 24px 80px;
+    }
+
+    /* Animated gradient mesh */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 55% at 15% 40%, rgba(2,195,154,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 45% at 85% 20%, rgba(243,121,52,0.07) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 60% 75%, rgba(2,195,154,0.07) 0%, transparent 60%);
+      animation: mesh-shift 8s ease infinite alternate;
+      pointer-events: none;
+    }
+    @keyframes mesh-shift {
+      0%   { transform: translate(0, 0) scale(1); }
+      33%  { transform: translate(-20px, 10px) scale(1.03); }
+      66%  { transform: translate(15px, -15px) scale(0.98); }
+      100% { transform: translate(5px, 20px) scale(1.02); }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(2,195,154,0.1);
+      border: 1px solid rgba(2,195,154,0.25);
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 22px;
+    }
+    .hero-left h1 {
+      font-size: clamp(40px, 5vw, 62px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.12;
+      margin-bottom: 20px;
+    }
+    .hero-left h1 em { font-style: normal; }
+    .hero-typewriter {
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 22px;
+      min-height: 32px;
+    }
+    .hero-typewriter span {
+      color: rgba(255,255,255,0.85);
+      border-right: 2px solid var(--teal);
+      padding-right: 2px;
+      animation: blink 0.75s step-end infinite;
+    }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    .hero-lead {
+      color: rgba(255,255,255,0.62);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    .btn-play-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      margin-right: 4px;
+    }
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .trust-strip span { display: flex; align-items: center; gap: 5px; }
+    .trust-strip span::before {
+      content: '✓';
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    /* Hero mockup card */
+    .hero-right { position: relative; }
+    .mockup-wrap {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    .mockup-card {
+      background: linear-gradient(145deg, #0d2240, #071529);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 0;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+      animation: float 4s ease infinite;
+      overflow: hidden;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-12px); }
+    }
+    .browser-chrome {
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .browser-dots { display: flex; gap: 6px; }
+    .browser-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .browser-dots span:nth-child(1) { background: #ff5f56; }
+    .browser-dots span:nth-child(2) { background: #ffbd2e; }
+    .browser-dots span:nth-child(3) { background: #27c93f; }
+    .browser-url {
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.45);
+      font-family: monospace;
+    }
+
+    /* Dashboard UI inside card */
+    .mockup-body { padding: 20px; }
+    .mockup-title {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .revenue-stat {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+    .revenue-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 20px;
+    }
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+      height: 60px;
+      margin-bottom: 18px;
+    }
+    .chart-bars .bar {
+      flex: 1;
+      background: rgba(2,195,154,0.2);
+      border-radius: 4px 4px 0 0;
+      transition: background 0.3s;
+    }
+    .chart-bars .bar.active { background: var(--teal); }
+    .chart-bars .bar:nth-child(1) { height: 40%; }
+    .chart-bars .bar:nth-child(2) { height: 65%; }
+    .chart-bars .bar:nth-child(3) { height: 50%; }
+    .chart-bars .bar:nth-child(4) { height: 80%; }
+    .chart-bars .bar:nth-child(5) { height: 60%; }
+    .chart-bars .bar:nth-child(6) { height: 90%; }
+    .chart-bars .bar:nth-child(7) { height: 75%; }
+    .chart-bars .bar.active { height: 95%; }
+
+    /* Funnel diagram */
+    .funnel-diagram {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 16px;
+    }
+    .funnel-step {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 5px;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+    }
+    .funnel-step:nth-child(1) { width: 100%; background: rgba(2,195,154,0.25); }
+    .funnel-step:nth-child(2) { width: 80%;  background: rgba(2,195,154,0.18); }
+    .funnel-step:nth-child(3) { width: 60%;  background: rgba(2,195,154,0.12); }
+    .funnel-step:nth-child(4) { width: 40%;  background: rgba(2,195,154,0.08); }
+    .funnel-pct { color: var(--teal); font-size: 10px; }
+
+    /* Notification badge */
+    .notif-badge {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      background: #fff;
+      color: var(--dark);
+      border-radius: 50px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      white-space: nowrap;
+      z-index: 10;
+      animation: float 3s ease infinite;
+      animation-delay: 0.5s;
+    }
+
+    /* ── SECTION HELPERS ── */
+    section { padding: 90px 24px; }
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .section-label {
+      display: inline-block;
+      background: rgba(2,195,154,0.1);
+      color: var(--teal);
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+    }
+    .section-header h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .section-header p {
+      font-size: 17px;
+      color: #5a6a7a;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+    /* White bg sections: header text stays dark */
+    .bg-navy .section-header h2,
+    .bg-dark .section-header h2 { color: #fff; }
+    .bg-navy .section-header p,
+    .bg-dark .section-header p  { color: rgba(255,255,255,0.55); }
+
+    /* ── LOGO BAR ── */
+    #logoBar { background: var(--cloud); padding: 48px 24px; }
+    .logobar-label {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: #8899a8;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 28px;
+    }
+    .logo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo-pill {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 50px;
+      padding: 10px 24px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #8899aa;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── STATS BAR ── */
+    #statsBar {
+      background: var(--navy);
+      padding: 70px 24px;
+    }
+    .stats-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+    .stat-item { padding: 8px; }
+    .stat-num {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      color: var(--teal);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.4;
+    }
+
+    /* ── FEATURES GRID ── */
+    #features { background: #fff; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--cloud);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,21,46,0.1);
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(2,195,154,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .feature-icon svg { width: 24px; height: 24px; stroke: var(--teal); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .feature-card h3 { font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .feature-card p  { font-size: 14px; color: #607080; line-height: 1.6; }
+
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── HOW IT WORKS ── */
+    #howItWorks { background: var(--cloud); }
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      position: relative;
+    }
+    .steps-row::before {
+      content: '';
+      position: absolute;
+      top: 42px;
+      left: calc(16.66% + 8px);
+      right: calc(16.66% + 8px);
+      height: 2px;
+      background: repeating-linear-gradient(90deg, var(--teal) 0 10px, transparent 10px 20px);
+      opacity: 0.4;
+    }
+    .step-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .step-num {
+      width: 56px;
+      height: 56px;
+      background: var(--teal);
+      color: var(--navy);
+      border-radius: 50%;
+      font-size: 22px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+    }
+    .step-card h3 { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+    .step-card p  { font-size: 14px; color: #607080; line-height: 1.6; }
+
+    /* ── COMPARISON TABLE ── */
+    #comparison { background: #fff; }
+    .compare-wrap { overflow-x: auto; }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      min-width: 640px;
+    }
+    .compare-table th {
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 13px;
+      text-align: center;
+      border-bottom: 2px solid rgba(0,0,0,0.08);
+      white-space: nowrap;
+    }
+    .compare-table th:first-child { text-align: left; }
+    .compare-table th.col-beegen {
+      background: rgba(2,195,154,0.08);
+      color: var(--teal);
+      border-radius: 10px 10px 0 0;
+      font-size: 14px;
+    }
+    .compare-table td {
+      padding: 13px 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      color: #607080;
+    }
+    .compare-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .compare-table td.col-beegen { background: rgba(2,195,154,0.04); font-weight: 600; color: var(--dark); }
+    .compare-table tr:nth-child(even) td { background: rgba(0,0,0,0.018); }
+    .compare-table tr:nth-child(even) td.col-beegen { background: rgba(2,195,154,0.06); }
+    .check { color: var(--teal); font-size: 16px; font-weight: 700; }
+    .cross { color: #ccc; font-size: 16px; }
+    .price-cell { font-weight: 700; color: var(--dark); }
+
+    /* ── TESTIMONIAL MARQUEE ── */
+    #testimonials { background: var(--cloud); overflow: hidden; }
+    .marquee-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: marquee-scroll 36s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .testi-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: var(--radius);
+      padding: 24px;
+      width: 300px;
+      flex-shrink: 0;
+    }
+    .testi-stars { color: #f5a623; font-size: 14px; letter-spacing: 2px; margin-bottom: 10px; }
+    .testi-metric {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .testi-quote { font-size: 13.5px; color: #607080; line-height: 1.6; margin-bottom: 16px; }
+    .testi-author { display: flex; align-items: center; gap: 10px; }
+    .testi-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .testi-name { font-size: 13px; font-weight: 700; color: var(--dark); }
+    .testi-role { font-size: 12px; color: #8899aa; }
+
+    /* ── PRICING PREVIEW ── */
+    #pricingPreview {
+      background: var(--navy);
+      padding: 90px 24px;
+    }
+    #pricingPreview .section-header h2 { color: #fff; }
+    #pricingPreview .section-header p  { color: rgba(255,255,255,0.5); }
+    .pricing-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+    .pricing-toggle span { color: rgba(255,255,255,0.65); font-size: 14px; font-weight: 600; }
+    .pricing-toggle span.active { color: #fff; }
+    .toggle-switch {
+      width: 46px;
+      height: 26px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s;
+    }
+    .toggle-switch.annual { background: var(--teal); }
+    .toggle-knob {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .toggle-switch.annual .toggle-knob { transform: translateX(20px); }
+    .save-badge {
+      background: var(--orange);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 50px;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 880px;
+      margin: 0 auto 32px;
+    }
+    .pricing-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: transform var(--transition);
+    }
+    .pricing-card.featured {
+      background: rgba(2,195,154,0.1);
+      border-color: var(--teal);
+      transform: scale(1.04);
+    }
+    .pricing-card.featured:hover { transform: scale(1.06) translateY(-4px); }
+    .pricing-card:not(.featured):hover { transform: translateY(-4px); }
+    .plan-badge {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+    .plan-name { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .plan-price {
+      font-size: 40px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .plan-price sup { font-size: 20px; vertical-align: super; }
+    .plan-period { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 22px; }
+    .plan-features { list-style: none; text-align: left; margin-bottom: 0; }
+    .plan-features li {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .plan-features li::before {
+      content: '✓';
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .pricing-link {
+      text-align: center;
+      display: block;
+    }
+    .pricing-link a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 2px;
+      transition: color var(--transition);
+    }
+    .pricing-link a:hover { color: var(--teal); border-color: var(--teal); }
+
+    /* ── CTA BAND ── */
+    #ctaBand {
+      background: linear-gradient(135deg, #00152E 0%, #0D1B2A 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 100px 24px;
+    }
+    #ctaBand::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(2,195,154,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-band-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .cta-band-inner h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.25; }
+    .cta-band-inner p  { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 40px; line-height: 1.6; }
+    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    #footer {
+      background: #000e1e;
+      padding: 70px 24px 36px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-brand img { height: 32px; display: block; margin-bottom: 14px; }
+    .footer-brand p { font-size: 13.5px; color: rgba(255,255,255,0.4); line-height: 1.65; max-width: 240px; }
+    .footer-socials { display: flex; gap: 10px; margin-top: 20px; }
+    .social-btn {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      transition: background var(--transition), color var(--transition);
+    }
+    .social-btn:hover { background: var(--teal); color: var(--navy); }
+    .footer-col h4 { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 13.5px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color var(--transition); }
+    .footer-col ul li a:hover { color: var(--teal); }
+    .footer-bottom {
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-actions { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-right { display: none; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps-row { grid-template-columns: 1fr; }
+      .steps-row::before { display: none; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-card.featured { transform: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      section { padding: 64px 16px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a href="/" class="nav-logo" aria-label="Beegen home">
+        <img src="assets/logos/beegen-logo-white.svg" id="navLogo" height="36" alt="Beegen logo" />
+      </a>
+
+      <!-- Center links -->
+      <ul class="nav-links" role="list">
+        <li><a href="/">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">Features</a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="menuitem"><a href="funnels.html">Funnel Builder</a></li>
+            <li role="menuitem"><a href="feature-membership.html">Membership &amp; Courses</a></li>
+            <li role="menuitem"><a href="engage-crm.html">Engage &amp; CRM</a></li>
+          </ul>
+        </li>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+      </ul>
+
+      <!-- Right actions -->
+      <div class="nav-actions">
+        <a href="/login"    class="btn-ghost"   aria-label="Log in to Beegen">Log in</a>
+        <a href="/register" class="btn-primary"  aria-label="Start free trial">Start Free →</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MOBILE NAV OVERLAY
+  ============================================================ -->
+  <div id="mobileNav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+
+    <div class="mobile-nav-header">
+      <a href="/" aria-label="Beegen home">
+        <img src="assets/logos/beegen-logo-white.svg" height="32" alt="Beegen" />
+      </a>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close mobile menu">&#x2715;</button>
+    </div>
+
+    <ul class="mobile-nav-items" role="list">
+      <li><a href="/">Home</a></li>
+      <li>
+        <button id="mobileAccordionBtn" aria-expanded="false" aria-controls="mobileAccordionBody">Features ▾</button>
+        <div class="mobile-accordion-body" id="mobileAccordionBody">
+          <a href="funnels.html">Funnel Builder</a>
+          <a href="feature-membership.html">Membership &amp; Courses</a>
+          <a href="engage-crm.html">Engage &amp; CRM</a>
+        </div>
+      </li>
+      <li><a href="templates.html">Templates</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+
+    <div class="mobile-nav-footer">
+      <a href="/login"    class="btn-outline"  aria-label="Log in">Log in</a>
+      <a href="/register" class="btn-primary"  aria-label="Start free trial">Start Free Trial →</a>
+    </div>
+
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section id="hero" aria-label="Hero — Beegen overview">
+      <div class="hero-inner">
+
+        <!-- Left column -->
+        <div class="hero-left">
+          <div class="hero-label">🚀 All-in-one platform for small business</div>
+
+          <h1>
+            Sell. Teach. Grow.<br />
+            <em style="color:var(--teal)">All in One Place.</em>
+          </h1>
+
+          <div class="hero-typewriter" aria-live="polite">
+            <span id="typewriterText">For Course Creators.</span>
+          </div>
+
+          <p class="hero-lead">
+            Beegen combines your website, sales funnels, membership areas, and CRM in one powerful platform — without the complexity or the crazy price tag.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="/register" class="btn-primary btn-lg" aria-label="Start free — no credit card needed">
+              Start Free — No Card Needed
+            </a>
+            <a href="#demo" class="btn-ghost btn-lg" aria-label="Watch 2-minute product demo">
+              <span class="btn-play-icon" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="white"><path d="M2 1.5l7 3.5-7 3.5V1.5z"/></svg>
+              </span>
+              Watch 2-min Demo
+            </a>
+          </div>
+
+          <div class="trust-strip" aria-label="Trust indicators">
+            <span>14-day money back</span>
+            <span>No credit card</span>
+            <span>Cancel anytime</span>
+            <span>Free setup</span>
+          </div>
+        </div>
+
+        <!-- Right column — CSS product mockup -->
+        <div class="hero-right" aria-hidden="true">
+          <div class="mockup-wrap">
+
+            <!-- Floating notification badge -->
+            <div class="notif-badge">🎉 New sale: $97</div>
+
+            <div class="mockup-card">
+              <!-- Browser chrome -->
+              <div class="browser-chrome">
+                <div class="browser-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="browser-url">yoursite.beegen.co</div>
+              </div>
+
+              <!-- Dashboard body -->
+              <div class="mockup-body">
+                <div class="mockup-title">Today's Revenue</div>
+                <div class="revenue-stat">$4,230</div>
+                <div class="revenue-sub">↑ +18% from yesterday</div>
+
+                <!-- Bar chart -->
+                <div class="chart-bars" aria-label="Revenue chart">
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="bar active"></div>
+                </div>
+
+                <!-- Funnel diagram -->
+                <div class="mockup-title">Active Funnel</div>
+                <div class="funnel-diagram" aria-label="Sales funnel steps">
+                  <div class="funnel-step">
+                    <span>Visitors</span><span class="funnel-pct">100%</span>
+                  </div>
+                  <div class="funnel-step">
+                    <span>Leads</span><span class="funnel-pct">62%</span>
+                  </div>
+                  <div class="funnel-step">
+                    <span>Add to Cart</span><span class="funnel-pct">34%</span>
+                  </div>
+                  <div class="funnel-step">
+                    <span>Purchased</span><span class="funnel-pct">18%</span>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /mockup-card -->
+
+          </div><!-- /mockup-wrap -->
+        </div><!-- /hero-right -->
+
+      </div><!-- /hero-inner -->
+    </section>
+
+    <!-- ============================================================
+         LOGO BAR
+    ============================================================ -->
+    <section id="logoBar" aria-label="Trusted by businesses">
+      <div class="section-inner">
+        <p class="logobar-label">Trusted by businesses worldwide</p>
+        <div class="logo-row" role="list">
+          <div class="logo-pill" role="listitem">ACME Co</div>
+          <div class="logo-pill" role="listitem">TechBrand</div>
+          <div class="logo-pill" role="listitem">CourseHub</div>
+          <div class="logo-pill" role="listitem">GrowthCo</div>
+          <div class="logo-pill" role="listitem">SellFast</div>
+          <div class="logo-pill" role="listitem">ProCoach</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STATS BAR
+    ============================================================ -->
+    <section id="statsBar" aria-label="Platform statistics">
+      <div class="stats-grid">
+
+        <div class="stat-item reveal">
+          <div class="stat-num" data-countup="12000" data-suffix="+">0</div>
+          <div class="stat-label">Businesses using Beegen</div>
+        </div>
+
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-num" data-countup="48000" data-suffix="+">0</div>
+          <div class="stat-label">Funnels created</div>
+        </div>
+
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-num" data-countup="2400000" data-prefix="$" data-suffix="+">0</div>
+          <div class="stat-label">Revenue generated by users</div>
+        </div>
+
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-num" data-countup="200" data-suffix="+">0</div>
+          <div class="stat-label">Templates available</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURES GRID
+    ============================================================ -->
+    <section id="features" aria-label="Platform features">
+      <div class="section-inner">
+
+        <header class="section-header reveal">
+          <div class="section-label">Everything You Need</div>
+          <h2>One Platform. Every Tool.</h2>
+          <p>Stop paying for 5 different tools. Beegen gives you everything in one place, at one price.</p>
+        </header>
+
+        <div class="features-grid">
+
+          <!-- 1. Website Builder -->
+          <article class="feature-card reveal reveal-delay-1" aria-label="Website Builder feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3>Website Builder</h3>
+            <p>Drag-and-drop simplicity meets 200+ professionally designed templates. Connect your custom domain in minutes.</p>
+          </article>
+
+          <!-- 2. Sales Funnels -->
+          <article class="feature-card reveal reveal-delay-2" aria-label="Sales Funnels feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 4h18l-7 9v7l-4-2V13L3 4z"/></svg>
+            </div>
+            <h3>Sales Funnels</h3>
+            <p>One-click upsells, A/B testing, and conversion-optimized templates engineered to maximize revenue at every step.</p>
+          </article>
+
+          <!-- 3. Membership & Courses -->
+          <article class="feature-card reveal reveal-delay-3" aria-label="Membership and Courses feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Membership &amp; Courses</h3>
+            <p>Sell courses and subscriptions, drip content, manage students, and build a thriving community — all in one place.</p>
+          </article>
+
+          <!-- 4. Engage & CRM -->
+          <article class="feature-card reveal reveal-delay-1" aria-label="Engage and CRM feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3>Engage &amp; CRM</h3>
+            <p>Segment contacts, add tags, automate follow-ups, and nurture leads with smart pipelines built right in.</p>
+          </article>
+
+          <!-- 5. E-commerce -->
+          <article class="feature-card reveal reveal-delay-2" aria-label="E-commerce feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+            </div>
+            <h3>E-commerce</h3>
+            <p>Sell physical and digital products with 0% transaction fees, built-in inventory management, and seamless checkout.</p>
+          </article>
+
+          <!-- 6. Analytics -->
+          <article class="feature-card reveal reveal-delay-3" aria-label="Analytics and Reporting feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6"  y1="20" x2="6"  y2="14"/></svg>
+            </div>
+            <h3>Analytics &amp; Reporting</h3>
+            <p>Real-time dashboard, deep funnel analytics, and revenue tracking to help you make smarter decisions faster.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HOW IT WORKS
+    ============================================================ -->
+    <section id="howItWorks" aria-label="How Beegen works">
+      <div class="section-inner">
+
+        <header class="section-header reveal">
+          <div class="section-label">Simple Setup</div>
+          <h2>Up and Running in 3 Simple Steps</h2>
+          <p>No developers. No integrations. No headaches. Just results.</p>
+        </header>
+
+        <div class="steps-row">
+
+          <div class="step-card reveal reveal-delay-1">
+            <div class="step-num" aria-hidden="true">1</div>
+            <h3>Choose Your Template</h3>
+            <p>Browse 200+ designer-crafted templates built for every niche and goal. One click to start customizing.</p>
+          </div>
+
+          <div class="step-card reveal reveal-delay-2">
+            <div class="step-num" aria-hidden="true">2</div>
+            <h3>Build Your Funnel</h3>
+            <p>Drag, drop, and customize pages, emails, and checkout flows without writing a single line of code.</p>
+          </div>
+
+          <div class="step-card reveal reveal-delay-3">
+            <div class="step-num" aria-hidden="true">3</div>
+            <h3>Publish &amp; Grow</h3>
+            <p>Go live in minutes, then track your conversions, revenue, and audience growth in real time from one dashboard.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COMPARISON TABLE
+    ============================================================ -->
+    <section id="comparison" aria-label="Beegen vs competitors comparison">
+      <div class="section-inner">
+
+        <header class="section-header reveal">
+          <div class="section-label">Platform Comparison</div>
+          <h2>Why Switch to Beegen?</h2>
+          <p>See exactly what you get — and what the others charge extra for.</p>
+        </header>
+
+        <div class="compare-wrap reveal">
+          <table class="compare-table" role="table" aria-label="Feature comparison table">
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col" class="col-beegen">✦ Beegen</th>
+                <th scope="col">ClickFunnels</th>
+                <th scope="col">Kajabi</th>
+                <th scope="col">Kartra</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Website Builder</td>
+                <td class="col-beegen"><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>Sales Funnels</td>
+                <td class="col-beegen"><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>Membership / Courses</td>
+                <td class="col-beegen"><span class="check">✓</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>Built-in CRM</td>
+                <td class="col-beegen"><span class="check">✓</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>0% Transaction Fees</td>
+                <td class="col-beegen"><span class="check">✓</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>Price / month</td>
+                <td class="col-beegen price-cell">From $149</td>
+                <td class="price-cell">From $197</td>
+                <td class="price-cell">From $149</td>
+                <td class="price-cell">From $119</td>
+              </tr>
+              <tr>
+                <td>Templates</td>
+                <td class="col-beegen"><span class="check">200+</span></td>
+                <td>100+</td>
+                <td>Themes only</td>
+                <td>50+</td>
+              </tr>
+              <tr>
+                <td>A/B Testing</td>
+                <td class="col-beegen"><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIAL MARQUEE
+    ============================================================ -->
+    <section id="testimonials" aria-label="Customer testimonials">
+      <div class="section-header reveal" style="padding: 0 24px;">
+        <div class="section-label">Social Proof</div>
+        <h2>Real Results from Real Businesses</h2>
+        <p>Thousands of entrepreneurs are already growing with Beegen. Here's what they say.</p>
+      </div>
+
+      <div class="marquee-track" role="list" aria-label="Testimonials carousel">
+
+        <!-- Set 1 -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <div class="testi-metric">$47,830 across 3 funnels</div>
+          <p class="testi-quote">"Beegen gave me everything I needed to launch and scale. Over 130 new leads every single month on autopilot."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">SB</div>
+            <div>
+              <div class="testi-name">Susan Baxter</div>
+              <div class="testi-role">E-commerce Owner</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <div class="testi-metric">$118,830 in course sales</div>
+          <p class="testi-quote">"Switching to Beegen was the best business decision I made. Courses, funnels, and email — all in one roof."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">JS</div>
+            <div>
+              <div class="testi-name">Joseph Silva</div>
+              <div class="testi-role">Course Creator</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <div class="testi-metric">$18,960/month recurring</div>
+          <p class="testi-quote">"27 courses, 600+ active members. Beegen handles all of it beautifully. The recurring revenue changed my life."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">RH</div>
+            <div>
+              <div class="testi-name">Robert Howard</div>
+              <div class="testi-role">Coach</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <div class="testi-metric">No more tool juggling</div>
+          <p class="testi-quote">"Everything I needed was already inside Beegen. No more duct-taping 7 subscriptions together. Absolute game changer."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">RW</div>
+            <div>
+              <div class="testi-name">Rachel Wie</div>
+              <div class="testi-role">Online Educator</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <div class="testi-metric">Agency client favourite</div>
+          <p class="testi-quote">"Our clients absolutely love it. Fast, responsive, and the team is always shipping new improvements. Top-tier product."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">MR</div>
+            <div>
+              <div class="testi-name">Michael Ron</div>
+              <div class="testi-role">Agency Owner</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <div class="testi-metric">Launched in one day</div>
+          <p class="testi-quote">"I launched my entire fitness membership site in a single afternoon and was profitable within the first week. Unreal."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">AT</div>
+            <div>
+              <div class="testi-name">Amanda Torres</div>
+              <div class="testi-role">Fitness Coach</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Set 2 — duplicate for seamless loop -->
+        <article class="testi-card" role="listitem" aria-hidden="true">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-metric">$47,830 across 3 funnels</div>
+          <p class="testi-quote">"Beegen gave me everything I needed to launch and scale. Over 130 new leads every single month on autopilot."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SB</div>
+            <div><div class="testi-name">Susan Baxter</div><div class="testi-role">E-commerce Owner</div></div>
+          </div>
+        </article>
+
+        <article class="testi-card" role="listitem" aria-hidden="true">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-metric">$118,830 in course sales</div>
+          <p class="testi-quote">"Switching to Beegen was the best business decision I made. Courses, funnels, and email — all in one roof."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">JS</div>
+            <div><div class="testi-name">Joseph Silva</div><div class="testi-role">Course Creator</div></div>
+          </div>
+        </article>
+
+        <article class="testi-card" role="listitem" aria-hidden="true">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-metric">$18,960/month recurring</div>
+          <p class="testi-quote">"27 courses, 600+ active members. Beegen handles all of it beautifully. The recurring revenue changed my life."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">RH</div>
+            <div><div class="testi-name">Robert Howard</div><div class="testi-role">Coach</div></div>
+          </div>
+        </article>
+
+        <article class="testi-card" role="listitem" aria-hidden="true">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-metric">No more tool juggling</div>
+          <p class="testi-quote">"Everything I needed was already inside Beegen. No more duct-taping 7 subscriptions together. Absolute game changer."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">RW</div>
+            <div><div class="testi-name">Rachel Wie</div><div class="testi-role">Online Educator</div></div>
+          </div>
+        </article>
+
+        <article class="testi-card" role="listitem" aria-hidden="true">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-metric">Agency client favourite</div>
+          <p class="testi-quote">"Our clients absolutely love it. Fast, responsive, and the team is always shipping new improvements. Top-tier product."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MR</div>
+            <div><div class="testi-name">Michael Ron</div><div class="testi-role">Agency Owner</div></div>
+          </div>
+        </article>
+
+        <article class="testi-card" role="listitem" aria-hidden="true">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-metric">Launched in one day</div>
+          <p class="testi-quote">"I launched my entire fitness membership site in a single afternoon and was profitable within the first week. Unreal."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AT</div>
+            <div><div class="testi-name">Amanda Torres</div><div class="testi-role">Fitness Coach</div></div>
+          </div>
+        </article>
+
+      </div><!-- /marquee-track -->
+    </section>
+
+    <!-- ============================================================
+         PRICING PREVIEW
+    ============================================================ -->
+    <section id="pricingPreview" aria-label="Pricing plans overview">
+      <div class="section-inner">
+
+        <header class="section-header reveal">
+          <div class="section-label" style="background:rgba(2,195,154,0.15);">Pricing</div>
+          <h2 style="color:#fff;">Simple, Transparent Pricing</h2>
+          <p style="color:rgba(255,255,255,0.5);">One price. All features. No surprise fees. Cancel any time.</p>
+        </header>
+
+        <!-- Annual / Monthly toggle -->
+        <div class="pricing-toggle" aria-label="Billing period toggle">
+          <span id="monthlyLabel" class="active">Monthly</span>
+          <button
+            class="toggle-switch"
+            id="billingToggle"
+            role="switch"
+            aria-checked="false"
+            aria-label="Toggle annual billing"
+          >
+            <span class="toggle-knob"></span>
+          </button>
+          <span id="annualLabel">Annual <span class="save-badge">Save 20%</span></span>
+        </div>
+
+        <div class="pricing-grid">
+
+          <!-- Personal -->
+          <div class="pricing-card reveal reveal-delay-1">
+            <div class="plan-name">Personal</div>
+            <div class="plan-price">
+              <sup>$</sup><span class="plan-price-val" data-monthly="149" data-annual="119">149</span>
+            </div>
+            <div class="plan-period">/ month</div>
+            <ul class="plan-features">
+              <li>1 website + 10 funnels</li>
+              <li>Up to 1,000 contacts</li>
+              <li>3 membership sites</li>
+            </ul>
+          </div>
+
+          <!-- Business (featured) -->
+          <div class="pricing-card featured reveal reveal-delay-2" aria-label="Most popular plan">
+            <div class="plan-badge">Most Popular</div>
+            <div class="plan-name">Business</div>
+            <div class="plan-price">
+              <sup>$</sup><span class="plan-price-val" data-monthly="179" data-annual="143">179</span>
+            </div>
+            <div class="plan-period">/ month</div>
+            <ul class="plan-features">
+              <li>5 websites + unlimited funnels</li>
+              <li>Up to 10,000 contacts + CRM</li>
+              <li>Unlimited membership sites</li>
+            </ul>
+          </div>
+
+          <!-- Growth -->
+          <div class="pricing-card reveal reveal-delay-3">
+            <div class="plan-name">Growth</div>
+            <div class="plan-price">
+              <sup>$</sup><span class="plan-price-val" data-monthly="219" data-annual="175">219</span>
+            </div>
+            <div class="plan-period">/ month</div>
+            <ul class="plan-features">
+              <li>Unlimited websites &amp; funnels</li>
+              <li>Unlimited contacts + A/B testing</li>
+              <li>White-label + agency features</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="pricing-link reveal">
+          <a href="pricing.html">See full pricing &amp; feature comparison →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BAND
+    ============================================================ -->
+    <section id="ctaBand" aria-label="Call to action — start your free trial">
+      <div class="cta-band-inner">
+        <h2 class="reveal">Ready to Build Something That Sells?</h2>
+        <p class="reveal reveal-delay-1">Join thousands of entrepreneurs already growing with Beegen. Start your free trial today — no credit card required.</p>
+        <div class="cta-buttons reveal reveal-delay-2">
+          <a href="/register" class="btn-primary btn-lg" aria-label="Start free now">Start Free Now</a>
+          <a href="/demo"     class="btn-secondary"      aria-label="Book a product demo">Book a Demo</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer" aria-label="Site footer">
+    <div class="footer-inner">
+
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" />
+          <p>The all-in-one platform that powers your website, funnels, memberships, and CRM — so you can focus on growing your business.</p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="https://facebook.com/beegen"   class="social-btn" aria-label="Beegen on Facebook"   target="_blank" rel="noopener">f</a>
+            <a href="https://twitter.com/beegen"    class="social-btn" aria-label="Beegen on X (Twitter)" target="_blank" rel="noopener">𝕏</a>
+            <a href="https://instagram.com/beegen"  class="social-btn" aria-label="Beegen on Instagram"  target="_blank" rel="noopener">ig</a>
+            <a href="https://linkedin.com/company/beegen" class="social-btn" aria-label="Beegen on LinkedIn" target="_blank" rel="noopener">in</a>
+            <a href="https://youtube.com/@beegen"   class="social-btn" aria-label="Beegen on YouTube"    target="_blank" rel="noopener">▶</a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="templates.html">Templates</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Product -->
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="funnels.html">Funnel Builder</a></li>
+            <li><a href="feature-membership.html">Membership</a></li>
+            <li><a href="engage-crm.html">Engage &amp; CRM</a></li>
+            <li><a href="roi-calculator.html">ROI Calculator</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /footer-grid -->
+
+      <div class="footer-bottom">
+        <p>© 2024 Beegen. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <script src="js/main.js"></script>
+
+  <script>
+    /* ──────────────────────────────────────────────────────────
+       1. MOBILE NAV
+    ────────────────────────────────────────────────────────── */
+    (function () {
+      var hamburger   = document.getElementById('hamburgerBtn');
+      var mobileNav   = document.getElementById('mobileNav');
+      var closeBtn    = document.getElementById('mobileNavClose');
+      var accordionBtn  = document.getElementById('mobileAccordionBtn');
+      var accordionBody = document.getElementById('mobileAccordionBody');
+
+      function openNav() {
+        mobileNav.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeNav() {
+        mobileNav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openNav);
+      closeBtn.addEventListener('click', closeNav);
+
+      // Close on backdrop click
+      mobileNav.addEventListener('click', function (e) {
+        if (e.target === mobileNav) closeNav();
+      });
+
+      // Accordion
+      accordionBtn.addEventListener('click', function () {
+        var open = accordionBody.classList.toggle('open');
+        accordionBtn.setAttribute('aria-expanded', open);
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileNav.classList.contains('open')) closeNav();
+      });
+    }());
+
+    /* ──────────────────────────────────────────────────────────
+       2. NAV SCROLL SHRINK
+    ────────────────────────────────────────────────────────── */
+    (function () {
+      var nav = document.getElementById('mainNav');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 40) {
+          nav.style.height = '58px';
+        } else {
+          nav.style.height = '68px';
+        }
+      }, { passive: true });
+    }());
+
+    /* ──────────────────────────────────────────────────────────
+       3. TYPEWRITER EFFECT
+    ────────────────────────────────────────────────────────── */
+    (function () {
+      var phrases = [
+        'For Course Creators.',
+        'For Small Businesses.',
+        'For Coaches.',
+        'For Online Sellers.'
+      ];
+      var el = document.getElementById('typewriterText');
+      if (!el) return;
+
+      var phraseIndex = 0;
+      var charIndex   = 0;
+      var isDeleting  = false;
+      var typingSpeed = 60;
+      var pauseDelay  = 2000;
+
+      function type() {
+        var currentPhrase = phrases[phraseIndex];
+        var displayed     = isDeleting
+          ? currentPhrase.substring(0, charIndex - 1)
+          : currentPhrase.substring(0, charIndex + 1);
+
+        el.textContent = displayed;
+
+        if (!isDeleting) {
+          charIndex++;
+          if (charIndex === currentPhrase.length) {
+            isDeleting = true;
+            setTimeout(type, pauseDelay);
+            return;
+          }
+        } else {
+          charIndex--;
+          if (charIndex === 0) {
+            isDeleting  = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+          }
+        }
+        setTimeout(type, isDeleting ? typingSpeed / 2 : typingSpeed);
+      }
+
+      type();
+    }());
+
+    /* ──────────────────────────────────────────────────────────
+       4. SCROLL REVEAL
+    ────────────────────────────────────────────────────────── */
+    (function () {
+      var revealEls = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        // Fallback — just show everything
+        revealEls.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(function (el) { observer.observe(el); });
+    }());
+
+    /* ──────────────────────────────────────────────────────────
+       5. COUNT-UP ANIMATION
+    ────────────────────────────────────────────────────────── */
+    (function () {
+      var countEls = document.querySelectorAll('[data-countup]');
+      if (!('IntersectionObserver' in window)) return;
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el      = entry.target;
+          var target  = parseInt(el.getAttribute('data-countup'), 10);
+          var prefix  = el.getAttribute('data-prefix')  || '';
+          var suffix  = el.getAttribute('data-suffix')  || '';
+          var duration = 2000;
+          var startTime = null;
+
+          function formatNum(n) {
+            if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+            if (n >= 1000)    return Math.round(n / 1000) + 'K';
+            return n.toString();
+          }
+
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased    = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            var current  = Math.round(eased * target);
+            el.textContent = prefix + formatNum(current) + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            }
+          }
+          requestAnimationFrame(step);
+          observer.unobserve(el);
+        });
+      }, { threshold: 0.3 });
+
+      countEls.forEach(function (el) { observer.observe(el); });
+    }());
+
+    /* ──────────────────────────────────────────────────────────
+       6. PRICING TOGGLE (Annual / Monthly)
+    ────────────────────────────────────────────────────────── */
+    (function () {
+      var toggle       = document.getElementById('billingToggle');
+      var monthlyLabel = document.getElementById('monthlyLabel');
+      var annualLabel  = document.getElementById('annualLabel');
+      var priceVals    = document.querySelectorAll('.plan-price-val');
+      var isAnnual     = false;
+
+      if (!toggle) return;
+
+      toggle.addEventListener('click', function () {
+        isAnnual = !isAnnual;
+        toggle.classList.toggle('annual', isAnnual);
+        toggle.setAttribute('aria-checked', isAnnual.toString());
+        monthlyLabel.classList.toggle('active', !isAnnual);
+        annualLabel.classList.toggle('active',  isAnnual);
+
+        priceVals.forEach(function (el) {
+          var price = isAnnual
+            ? el.getAttribute('data-annual')
+            : el.getAttribute('data-monthly');
+          el.textContent = price;
+        });
+      });
+    }());
+  </script>
+
+</body>
+</html>

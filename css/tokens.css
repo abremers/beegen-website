@@ -1,0 +1,52 @@
+/* ── BEEGEN DESIGN TOKENS ──────────────────────────────── */
+:root {
+  /* Brand Colors */
+  --teal:       #02C39A;
+  --teal-dark:  #028090;
+  --teal-light: #5CEBC9;
+  --navy:       #00152E;
+  --navy-mid:   #002147;
+  --orange:     #F37934;
+  --orange-light:#FBA026;
+  --yellow:     #F0F3BD;
+
+  /* Neutrals */
+  --white:      #FFFFFF;
+  --cloud:      #F4F8FB;
+  --mist:       #E8F0F7;
+  --gray-100:   #F1F5F9;
+  --gray-200:   #E2EAF0;
+  --gray-400:   #94A3B8;
+  --gray-600:   #64748B;
+  --gray-800:   #1E293B;
+  --dark:       #0D1B2A;
+
+  /* Gradients */
+  --grad-hero:  linear-gradient(135deg, #00152E 0%, #002147 50%, #013A5C 100%);
+  --grad-teal:  linear-gradient(135deg, #02C39A 0%, #028090 100%);
+  --grad-orange:linear-gradient(135deg, #F37934 0%, #FBA026 100%);
+
+  /* Shadows */
+  --shadow-sm:  0 2px 8px rgba(0,21,46,.08);
+  --shadow:     0 4px 24px rgba(0,21,46,.12);
+  --shadow-lg:  0 12px 48px rgba(0,21,46,.18);
+  --shadow-xl:  0 24px 80px rgba(0,21,46,.24);
+  --shadow-teal:0 8px 32px rgba(2,195,154,.25);
+  --shadow-orange:0 8px 32px rgba(243,121,52,.3);
+
+  /* Typography */
+  --font-display:'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-body:   'Plus Jakarta Sans', -apple-system, sans-serif;
+
+  /* Spacing */
+  --section-y:  96px;
+  --container:  1240px;
+  --radius:     12px;
+  --radius-lg:  20px;
+  --radius-xl:  32px;
+
+  /* Transitions */
+  --ease:       cubic-bezier(.4,0,.2,1);
+  --transition: .22s cubic-bezier(.4,0,.2,1);
+  --transition-slow: .45s cubic-bezier(.4,0,.2,1);
+}
