@@ -186,6 +186,54 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
 .social-link{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;transition:background .2s;text-decoration:none;}
 .social-link:hover{background:var(--teal);}
 .social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6);}
+
+/* ── ENHANCED TEMPLATE MOCKUPS ── */
+.mockup-nav{height:18px;background:rgba(0,21,46,.9);display:flex;align-items:center;gap:4px;padding:0 10px;flex-shrink:0;border-radius:0;}
+.mockup-nav-dot{width:32px;height:6px;border-radius:3px;background:rgba(255,255,255,.2);}
+.mockup-nav-dot.logo{width:40px;background:rgba(2,195,154,.6);}
+.mockup-nav-dot.cta{width:24px;background:rgba(243,121,52,.7);margin-left:auto;}
+
+.mockup-hero-text{display:flex;flex-direction:column;gap:4px;margin-bottom:8px;}
+.mkh1{height:10px;border-radius:2px;background:rgba(255,255,255,.9);width:75%;}
+.mkh2{height:7px;border-radius:2px;background:rgba(255,255,255,.5);width:55%;}
+.mk-cta-row{display:flex;gap:5px;margin-top:4px;}
+.mk-cta{height:14px;border-radius:3px;}
+.mk-cta.primary{width:60px;}
+.mk-cta.ghost{width:44px;background:rgba(255,255,255,.25)!important;}
+
+.mockup-form-block{background:#fff;border-radius:6px;padding:10px;display:flex;flex-direction:column;gap:5px;}
+.mk-field{height:9px;border-radius:3px;background:#E2EAF0;width:100%;}
+.mk-field.short{width:60%;}
+.mk-submit{height:14px;border-radius:3px;width:100%;margin-top:2px;}
+
+.mockup-video-block{position:relative;border-radius:6px;overflow:hidden;height:48px;display:flex;align-items:center;justify-content:center;}
+.mk-play{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;}
+.mk-play::after{content:'';border-left:8px solid #00152E;border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px;}
+
+.mockup-stars{display:flex;gap:2px;margin-bottom:4px;}
+.mk-star{width:8px;height:8px;background:#F59E0B;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+
+.mockup-card-row{display:flex;gap:6px;}
+.mk-card{flex:1;border-radius:5px;background:rgba(255,255,255,.15);padding:6px;display:flex;flex-direction:column;gap:3px;}
+.mk-card-icon{width:14px;height:14px;border-radius:3px;background:rgba(255,255,255,.4);}
+.mk-card-line{height:5px;border-radius:2px;background:rgba(255,255,255,.3);}
+.mk-card-line.short{width:60%;}
+
+.mockup-price-row{display:flex;gap:6px;align-items:flex-end;margin:4px 0;}
+.mk-price-big{font-size:14px;font-weight:800;color:rgba(255,255,255,.9);line-height:1;}
+.mk-price-label{height:6px;width:36px;border-radius:2px;background:rgba(255,255,255,.4);margin-bottom:2px;}
+
+.mockup-pipeline{display:flex;gap:4px;}
+.mk-pipe-col{flex:1;background:rgba(255,255,255,.1);border-radius:4px;padding:4px;display:flex;flex-direction:column;gap:3px;}
+.mk-pipe-card{background:rgba(255,255,255,.2);border-radius:3px;height:14px;}
+.mk-pipe-header{height:7px;border-radius:2px;background:rgba(255,255,255,.4);margin-bottom:2px;}
+
+.mockup-image-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+.mk-img{border-radius:4px;aspect-ratio:4/3;background:rgba(0,0,0,.15);}
+
+/* Override hero block to use dark overlay for hero-text readability */
+.template-preview .mockup-hero-block{display:flex;flex-direction:column;justify-content:flex-end;padding:8px;}
+
 </style>
 </head>
 <body>
@@ -209,8 +257,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
       <li><a href="about.html" class="nav-link">About</a></li>
     </ul>
     <div class="nav-right">
-      <a href="/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
-      <a href="/register" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Start Free →</a>
+      <a href="login.html" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
+      <a href="contact.html" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Start Free →</a>
       <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -231,8 +279,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
     <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></div>
   </nav>
   <div class="mobile-nav-footer">
-    <a href="/login" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">Log in</a>
-    <a href="/register" class="btn btn-primary">Start Free Trial</a>
+    <a href="login.html" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">Log in</a>
+    <a href="contact.html" class="btn btn-primary">Start Free Trial</a>
   </div>
 </div>
 
@@ -255,12 +303,11 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
 
     <!-- Filter Bar -->
     <div class="filter-bar reveal">
-      <a href="#" class="filter-pill active">All</a>
-      <a href="#" class="filter-pill">Funnels</a>
-      <a href="#" class="filter-pill">Websites</a>
-      <a href="#" class="filter-pill">Membership</a>
-      <a href="#" class="filter-pill">Landing Pages</a>
-      <a href="#" class="filter-pill">Email Campaigns</a>
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="funnel">Funnels</button>
+      <button class="filter-pill" data-filter="website">Websites</button>
+      <button class="filter-pill" data-filter="membership">Membership</button>
+      <button class="filter-pill" data-filter="landing">Landing Pages</button>
     </div>
 
     <!-- Template Grid -->
@@ -268,12 +315,20 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
 
       <!-- 1 Course Launch Funnel -->
       <div class="template-card tpl-funnel reveal">
-        <div class="template-preview">
+        <div class="template-preview" style="background:linear-gradient(160deg,#1a0a3a 0%,#2d1065 100%);">
           <div class="mockup-bar"><div class="mockup-dot red"></div><div class="mockup-dot yellow"></div><div class="mockup-dot green"></div><div class="mockup-url"></div></div>
-          <div class="mockup-body">
-            <div class="mockup-hero-block"></div>
-            <div class="mockup-text-lines"><div class="mockup-line w-80"></div><div class="mockup-line w-60"></div></div>
-            <div class="mockup-btn-strip"><div class="mockup-btn"></div><div class="mockup-btn sm"></div></div>
+          <div class="mockup-body" style="padding:10px 12px;gap:6px;">
+            <div class="mockup-hero-block" style="background:linear-gradient(135deg,#7C3AED,#A78BFA);height:60px;padding:8px;">
+              <div class="mkh1"></div><div class="mkh2" style="margin-top:4px;"></div>
+              <div class="mk-cta-row"><div class="mk-cta primary" style="background:#F37934;"></div></div>
+            </div>
+            <div style="display:flex;gap:6px;">
+              <div class="mockup-video-block" style="background:linear-gradient(135deg,#2d1065,#4C1D95);flex:1.2;height:44px;"><div class="mk-play"></div></div>
+              <div class="mockup-form-block" style="flex:1;padding:7px;">
+                <div class="mk-field"></div><div class="mk-field"></div><div class="mk-submit" style="background:#F37934;"></div>
+              </div>
+            </div>
+            <div class="mockup-stars"><div class="mk-star"></div><div class="mk-star"></div><div class="mk-star"></div><div class="mk-star"></div><div class="mk-star"></div></div>
           </div>
         </div>
         <div class="template-info">
@@ -288,13 +343,19 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
 
       <!-- 2 Coaching Discovery Call -->
       <div class="template-card tpl-landing reveal reveal-delay-1">
-        <div class="template-preview">
+        <div class="template-preview" style="background:#F0F9FF;">
           <div class="mockup-bar"><div class="mockup-dot red"></div><div class="mockup-dot yellow"></div><div class="mockup-dot green"></div><div class="mockup-url"></div></div>
-          <div class="mockup-body">
-            <div class="mockup-hero-block"></div>
-            <div class="mockup-text-lines"><div class="mockup-line w-80"></div><div class="mockup-line w-60"></div></div>
-            <div class="mockup-btn-strip"><div class="mockup-btn"></div></div>
-            <div class="mockup-cols"><div class="mockup-col-block"></div><div class="mockup-col-block"></div></div>
+          <div class="mockup-body" style="padding:10px 12px;gap:6px;">
+            <div class="mockup-hero-block" style="background:linear-gradient(135deg,#0EA5E9,#0284C7);height:56px;padding:8px;">
+              <div class="mkh1" style="width:65%;"></div><div class="mkh2" style="margin-top:3px;width:50%;"></div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#0EA5E9,#7C3AED);flex-shrink:0;"></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:4px;"><div class="mockup-line w-80" style="background:#BAE6FD;"></div><div class="mockup-line w-60" style="background:#E0F2FE;"></div></div>
+            </div>
+            <div class="mockup-form-block" style="background:#fff;border:1px solid #BAE6FD;">
+              <div class="mk-field"></div><div class="mk-submit" style="background:#0EA5E9;"></div>
+            </div>
           </div>
         </div>
         <div class="template-info">
@@ -309,13 +370,18 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
 
       <!-- 3 Fitness Studio Website -->
       <div class="template-card tpl-website reveal reveal-delay-2">
-        <div class="template-preview">
-          <div class="mockup-bar"><div class="mockup-dot red"></div><div class="mockup-dot yellow"></div><div class="mockup-dot green"></div><div class="mockup-url"></div></div>
-          <div class="mockup-body">
-            <div class="mockup-hero-block"></div>
-            <div class="mockup-cols"><div class="mockup-col-block"></div><div class="mockup-col-block"></div><div class="mockup-col-block"></div></div>
-            <div class="mockup-text-lines"><div class="mockup-line w-60"></div></div>
-            <div class="mockup-btn-strip"><div class="mockup-btn"></div></div>
+        <div class="template-preview" style="background:#0D1B2A;">
+          <div class="mockup-nav"><div class="mockup-nav-dot logo"></div><div class="mockup-nav-dot"></div><div class="mockup-nav-dot"></div><div class="mockup-nav-dot"></div><div class="mockup-nav-dot cta"></div></div>
+          <div class="mockup-bar" style="background:rgba(0,0,0,.3);"><div class="mockup-dot red"></div><div class="mockup-dot yellow"></div><div class="mockup-dot green"></div><div class="mockup-url" style="background:rgba(255,255,255,.1);"></div></div>
+          <div class="mockup-body" style="padding:8px 12px;gap:6px;">
+            <div class="mockup-hero-block" style="background:linear-gradient(135deg,#111827,#1F2937);height:50px;padding:6px;border:1px solid rgba(2,195,154,.3);">
+              <div class="mkh1" style="width:70%;"></div><div class="mk-cta-row"><div class="mk-cta primary" style="background:#02C39A;width:56px;"></div></div>
+            </div>
+            <div class="mockup-card-row">
+              <div class="mk-card"><div class="mk-card-icon" style="background:rgba(2,195,154,.4);"></div><div class="mk-card-line"></div><div class="mk-card-line short"></div></div>
+              <div class="mk-card"><div class="mk-card-icon" style="background:rgba(243,121,52,.4);"></div><div class="mk-card-line"></div><div class="mk-card-line short"></div></div>
+              <div class="mk-card"><div class="mk-card-icon" style="background:rgba(124,58,237,.4);"></div><div class="mk-card-line"></div><div class="mk-card-line short"></div></div>
+            </div>
           </div>
         </div>
         <div class="template-info">
@@ -330,12 +396,23 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
 
       <!-- 4 Webinar Registration + Replay -->
       <div class="template-card tpl-funnel reveal">
-        <div class="template-preview">
+        <div class="template-preview" style="background:#001a3a;">
           <div class="mockup-bar"><div class="mockup-dot red"></div><div class="mockup-dot yellow"></div><div class="mockup-dot green"></div><div class="mockup-url"></div></div>
-          <div class="mockup-body">
-            <div class="mockup-hero-block"></div>
-            <div class="mockup-text-lines"><div class="mockup-line w-80"></div><div class="mockup-line w-40"></div></div>
-            <div class="mockup-btn-strip"><div class="mockup-btn"></div><div class="mockup-btn sm"></div></div>
+          <div class="mockup-body" style="padding:8px 12px;gap:6px;">
+            <div style="display:flex;gap:6px;">
+              <div class="mockup-video-block" style="background:linear-gradient(135deg,#002147,#013A5C);flex:1.4;height:60px;border:1px solid rgba(2,195,154,.25);">
+                <div class="mk-play" style="width:20px;height:20px;"></div>
+              </div>
+              <div class="mockup-form-block" style="flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);">
+                <div class="mk-field" style="background:rgba(255,255,255,.15);"></div>
+                <div class="mk-field" style="background:rgba(255,255,255,.15);"></div>
+                <div class="mk-submit" style="background:#F37934;"></div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 6px;background:rgba(2,195,154,.1);border-radius:4px;border:1px solid rgba(2,195,154,.2);">
+              <div style="width:8px;height:8px;border-radius:50%;background:#02C39A;flex-shrink:0;"></div>
+              <div style="display:flex;flex-direction:column;gap:2px;flex:1;"><div style="height:5px;width:70%;border-radius:2px;background:rgba(255,255,255,.4);"></div></div>
+            </div>
           </div>
         </div>
         <div class="template-info">
@@ -350,13 +427,25 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
 
       <!-- 5 Online Course Membership -->
       <div class="template-card tpl-membership reveal reveal-delay-1">
-        <div class="template-preview">
+        <div class="template-preview" style="background:#1e1b4b;">
           <div class="mockup-bar"><div class="mockup-dot red"></div><div class="mockup-dot yellow"></div><div class="mockup-dot green"></div><div class="mockup-url"></div></div>
-          <div class="mockup-body">
-            <div class="mockup-hero-block"></div>
-            <div class="mockup-cols"><div class="mockup-col-block"></div><div class="mockup-col-block"></div></div>
-            <div class="mockup-text-lines"><div class="mockup-line w-60"></div></div>
-            <div class="mockup-btn-strip"><div class="mockup-btn"></div></div>
+          <div class="mockup-body" style="padding:8px 12px;gap:6px;">
+            <div style="display:flex;gap:6px;">
+              <div style="width:52px;background:rgba(124,58,237,.3);border-radius:5px;display:flex;flex-direction:column;gap:4px;padding:5px;">
+                <div style="height:6px;border-radius:2px;background:rgba(255,255,255,.5);"></div>
+                <div style="height:5px;border-radius:2px;background:rgba(255,255,255,.2);width:80%;"></div>
+                <div style="height:5px;border-radius:2px;background:rgba(255,255,255,.2);width:90%;"></div>
+                <div style="height:5px;border-radius:2px;background:rgba(167,139,250,.6);width:70%;"></div>
+                <div style="height:5px;border-radius:2px;background:rgba(255,255,255,.2);width:85%;"></div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:5px;">
+                <div class="mockup-video-block" style="background:linear-gradient(135deg,#2d1065,#4C1D95);height:44px;border-radius:5px;">
+                  <div class="mk-play" style="width:18px;height:18px;"></div>
+                </div>
+                <div style="display:flex;gap:3px;"><div style="flex:1;height:8px;border-radius:2px;background:rgba(167,139,250,.5);"></div><div style="height:8px;width:30px;border-radius:2px;background:rgba(167,139,250,.2);"></div></div>
+              </div>
+            </div>
+            <div class="mockup-stars"><div class="mk-star"></div><div class="mk-star"></div><div class="mk-star"></div><div class="mk-star"></div><div class="mk-star" style="background:#CBD5E1;"></div><div style="height:7px;width:32px;border-radius:2px;background:rgba(255,255,255,.2);margin-left:4px;"></div></div>
           </div>
         </div>
         <div class="template-info">
@@ -371,12 +460,22 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
 
       <!-- 6 Real Estate Lead Capture -->
       <div class="template-card tpl-landing reveal reveal-delay-2">
-        <div class="template-preview">
+        <div class="template-preview" style="background:#F0F9FF;">
           <div class="mockup-bar"><div class="mockup-dot red"></div><div class="mockup-dot yellow"></div><div class="mockup-dot green"></div><div class="mockup-url"></div></div>
-          <div class="mockup-body">
-            <div class="mockup-hero-block"></div>
-            <div class="mockup-text-lines"><div class="mockup-line w-80"></div><div class="mockup-line w-60"></div></div>
-            <div class="mockup-btn-strip"><div class="mockup-btn"></div></div>
+          <div class="mockup-body" style="padding:8px 12px;gap:6px;">
+            <div style="display:flex;gap:6px;">
+              <div style="flex:1;background:linear-gradient(135deg,#0c4a6e,#075985);border-radius:5px;height:64px;padding:7px;">
+                <div class="mkh1" style="width:80%;"></div><div class="mkh2" style="margin-top:3px;width:60%;"></div>
+              </div>
+              <div class="mockup-form-block" style="width:70px;border:1px solid #BAE6FD;padding:6px;">
+                <div class="mk-field"></div><div class="mk-field"></div><div class="mk-field"></div><div class="mk-submit" style="background:#0EA5E9;"></div>
+              </div>
+            </div>
+            <div style="display:flex;gap:4px;">
+              <div style="flex:1;height:30px;border-radius:4px;background:linear-gradient(135deg,#e0f2fe,#bae6fd);border:1px solid #7dd3fc;"></div>
+              <div style="flex:1;height:30px;border-radius:4px;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1px solid #86efac;"></div>
+              <div style="flex:1;height:30px;border-radius:4px;background:linear-gradient(135deg,#fef9c3,#fef08a);border:1px solid #fde047;"></div>
+            </div>
           </div>
         </div>
         <div class="template-info">
@@ -391,12 +490,19 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
 
       <!-- 7 Restaurant Website -->
       <div class="template-card tpl-website reveal">
-        <div class="template-preview">
-          <div class="mockup-bar"><div class="mockup-dot red"></div><div class="mockup-dot yellow"></div><div class="mockup-dot green"></div><div class="mockup-url"></div></div>
-          <div class="mockup-body">
-            <div class="mockup-hero-block"></div>
-            <div class="mockup-cols"><div class="mockup-col-block"></div><div class="mockup-col-block"></div><div class="mockup-col-block"></div></div>
-            <div class="mockup-btn-strip"><div class="mockup-btn"></div><div class="mockup-btn sm"></div></div>
+        <div class="template-preview" style="background:#1c0a00;">
+          <div class="mockup-nav" style="background:#2d1400;"><div class="mockup-nav-dot logo" style="background:rgba(251,160,38,.7);"></div><div class="mockup-nav-dot"></div><div class="mockup-nav-dot"></div><div class="mockup-nav-dot cta" style="background:rgba(251,160,38,.7);"></div></div>
+          <div class="mockup-bar" style="background:rgba(0,0,0,.4);"><div class="mockup-dot red"></div><div class="mockup-dot yellow"></div><div class="mockup-dot green"></div><div class="mockup-url" style="background:rgba(255,255,255,.08);"></div></div>
+          <div class="mockup-body" style="padding:8px 12px;gap:6px;">
+            <div class="mockup-hero-block" style="background:linear-gradient(135deg,#431407,#7c2d12);height:52px;padding:6px;">
+              <div class="mkh1" style="width:60%;"></div><div class="mkh2" style="margin-top:3px;"></div>
+              <div class="mk-cta-row"><div class="mk-cta primary" style="background:#FBA026;"></div></div>
+            </div>
+            <div class="mockup-card-row">
+              <div style="flex:1;height:32px;border-radius:4px;background:linear-gradient(135deg,#78350f,#92400e);"></div>
+              <div style="flex:1;height:32px;border-radius:4px;background:linear-gradient(135deg,#7c2d12,#9a3412);"></div>
+              <div style="flex:1;height:32px;border-radius:4px;background:linear-gradient(135deg,#431407,#6b2b0c);"></div>
+            </div>
           </div>
         </div>
         <div class="template-info">
@@ -411,12 +517,21 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
 
       <!-- 8 Free + Shipping Funnel -->
       <div class="template-card tpl-funnel reveal reveal-delay-1">
-        <div class="template-preview">
-          <div class="mockup-bar"><div class="mockup-dot red"></div><div class="mockup-dot yellow"></div><div class="mockup-dot green"></div><div class="mockup-url"></div></div>
-          <div class="mockup-body">
-            <div class="mockup-hero-block"></div>
-            <div class="mockup-text-lines"><div class="mockup-line w-80"></div><div class="mockup-line w-40"></div></div>
-            <div class="mockup-btn-strip"><div class="mockup-btn"></div></div>
+        <div class="template-preview" style="background:#fff7ed;">
+          <div class="mockup-bar" style="background:#fff;border-bottom:1px solid #FED7AA;"><div class="mockup-dot red"></div><div class="mockup-dot yellow"></div><div class="mockup-dot green"></div><div class="mockup-url" style="background:#FED7AA;"></div></div>
+          <div class="mockup-body" style="padding:8px 12px;gap:6px;">
+            <div style="display:flex;gap:6px;align-items:center;">
+              <div style="width:50px;height:50px;border-radius:8px;background:linear-gradient(135deg,#FBA026,#F37934);flex-shrink:0;border:2px solid #FED7AA;"></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
+                <div style="height:8px;width:80%;border-radius:2px;background:#C2410C;"></div>
+                <div style="height:6px;width:55%;border-radius:2px;background:#FED7AA;"></div>
+                <div style="display:flex;align-items:center;gap:4px;"><div style="font-size:10px;font-weight:800;color:#C2410C;line-height:1;">FREE</div><div style="height:5px;width:40px;border-radius:2px;background:#FED7AA;text-decoration:line-through;"></div></div>
+              </div>
+            </div>
+            <div class="mockup-form-block" style="border:1px solid #FED7AA;">
+              <div class="mk-field"></div><div class="mk-field short"></div><div class="mk-submit" style="background:#F37934;"></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:4px;"><div style="width:12px;height:12px;border-radius:2px;background:#FBA026;flex-shrink:0;"></div><div style="height:5px;width:80%;border-radius:2px;background:#FED7AA;"></div></div>
           </div>
         </div>
         <div class="template-info">
@@ -529,7 +644,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
     <h2 class="reveal">Your next customer is one funnel away.</h2>
     <p class="reveal reveal-delay-1">Pick a template, customize it in minutes, and start converting visitors into paying customers today.</p>
     <div class="cta-actions reveal reveal-delay-2">
-      <a href="/register" class="btn btn-primary btn-lg">Start Free — No Card Needed</a>
+      <a href="contact.html" class="btn btn-primary btn-lg">Start Free — No Card Needed</a>
       <a href="pricing.html" class="btn btn-ghost btn-lg">See Pricing</a>
     </div>
   </div>
@@ -540,7 +655,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1E293B;ov
   <div class="footer-top">
     <div class="container">
       <div class="footer-top-text"><h4>Ready to replace 5 tools with one?</h4><p>Join 12,000+ businesses already growing with Beegen.</p></div>
-      <a href="/register" class="btn btn-primary btn-lg">Start Free — No Card Needed</a>
+      <a href="contact.html" class="btn btn-primary btn-lg">Start Free — No Card Needed</a>
     </div>
   </div>
   <div class="container">
@@ -580,6 +695,21 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Filter pills
+const pills = document.querySelectorAll('.filter-pill');
+const cards = document.querySelectorAll('.template-card');
+pills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    pills.forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    const f = pill.dataset.filter;
+    cards.forEach(card => {
+      const show = f === 'all' || card.classList.contains('tpl-' + f);
+      card.style.display = show ? '' : 'none';
+    });
+  });
+});
 </script>
 </body>
 </html>

@@ -781,8 +781,8 @@
           <li><a href="about.html" class="nav-link">About</a></li>
         </ul>
         <div class="nav-right">
-          <a href="/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
-          <a href="/register" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Start Free →</a>
+          <a href="login.html" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Start Free →</a>
           <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
       </div>
@@ -805,8 +805,8 @@
       <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></div>
     </nav>
     <div class="mobile-nav-footer">
-      <a href="/login" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">Log in</a>
-      <a href="/register" class="btn btn-primary">Start Free Trial</a>
+      <a href="login.html" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">Log in</a>
+      <a href="contact.html" class="btn btn-primary">Start Free Trial</a>
     </div>
   </div>
 
@@ -875,7 +875,7 @@
           <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>0% Transaction Fees</li>
           <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Email Support</li>
         </ul>
-        <a href="/register" class="pricing-cta pricing-cta-outline">Start Free Trial</a>
+        <a href="contact.html" class="pricing-cta pricing-cta-outline">Start Free Trial</a>
       </div>
 
       <!-- Business (Featured) -->
@@ -903,7 +903,7 @@
           <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>A/B Testing</li>
           <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Advanced Analytics</li>
         </ul>
-        <a href="/register" class="pricing-cta pricing-cta-featured">Start Free Trial</a>
+        <a href="contact.html" class="pricing-cta pricing-cta-featured">Start Free Trial</a>
       </div>
 
       <!-- Growth -->
@@ -932,7 +932,7 @@
           <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Custom Domain (5)</li>
           <li><span class="feat-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4.5 8.5 11 1"/></svg></span>Dedicated Account Manager</li>
         </ul>
-        <a href="/register" class="pricing-cta pricing-cta-outline">Start Free Trial</a>
+        <a href="contact.html" class="pricing-cta pricing-cta-outline">Start Free Trial</a>
       </div>
 
     </div>
@@ -1267,8 +1267,8 @@
       <h2>Start Your Free Trial Today</h2>
       <p>Join 12,000+ businesses already growing with Beegen. No credit card needed.</p>
       <div class="cta-buttons">
-        <a href="/register" class="btn btn-primary btn-lg">Get Started Free</a>
-        <a href="/demo" class="btn btn-secondary btn-lg">See Demo</a>
+        <a href="contact.html" class="btn btn-primary btn-lg">Get Started Free</a>
+        <a href="contact.html" class="btn btn-secondary btn-lg">See Demo</a>
       </div>
     </div>
   </section>
@@ -1306,7 +1306,7 @@
             <li><a href="/blog">Blog</a></li>
             <li><a href="/careers">Careers</a></li>
             <li><a href="/press">Press</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1431,16 +1431,19 @@
       annualBadge.classList.toggle('visible', isAnnual);
     }
 
+    // Click on "Annual" label also switches the toggle
+    if (labelAnnual) {
+      labelAnnual.addEventListener('click', () => {
+        if (toggle) { toggle.checked = true; updatePricing(true); }
+      });
+    }
+    if (labelMonthly) {
+      labelMonthly.addEventListener('click', () => {
+        if (toggle) { toggle.checked = false; updatePricing(false); }
+      });
+    }
     if (toggle) {
       toggle.addEventListener('change', () => updatePricing(toggle.checked));
-    }
-    if (toggleTrack) {
-      toggleTrack.addEventListener('click', () => {
-        if (toggle) {
-          toggle.checked = !toggle.checked;
-          updatePricing(toggle.checked);
-        }
-      });
     }
 
     // ── FAQ Accordion ──
