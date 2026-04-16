@@ -707,6 +707,8 @@ pills.forEach(pill => {
     cards.forEach(card => {
       const show = f === 'all' || card.classList.contains('tpl-' + f);
       card.style.display = show ? '' : 'none';
+      // Ensure revealed state so opacity:0 from .reveal doesn't hide visible cards
+      if (show) card.classList.add('visible');
     });
   });
 });

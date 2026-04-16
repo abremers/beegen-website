@@ -51,6 +51,8 @@
       height: 68px;
       display: flex;
       align-items: center;
+      transform: translateZ(0);
+      will-change: height;
     }
     .nav-inner {
       width: 100%;
@@ -1380,6 +1382,9 @@
       annual:  { personal: 99,  business: 119, growth: 149 }
     };
 
+    // Track current displayed values to avoid parseInt on possibly-mid-animation text
+    const currentPrices = { personal: 149, business: 179, growth: 219 };
+
     const annualSavings = {
       personal: (prices.monthly.personal - prices.annual.personal) * 12,
       business: (prices.monthly.business - prices.annual.business) * 12,
@@ -1395,12 +1400,14 @@
         const saveEl  = document.getElementById('save-' + plan);
 
         if (priceEl) {
-          // Animate count
+          // Animate count using tracked value, not parsed textContent
           const target = set[plan];
-          const current = parseInt(priceEl.textContent);
-          const step = Math.ceil(Math.abs(target - current) / 15);
-          let val = current;
-          const dir = target > current ? 1 : -1;
+          const from   = currentPrices[plan];
+          currentPrices[plan] = target;
+          const range = Math.abs(target - from);
+          const step  = Math.max(1, Math.ceil(range / 15));
+          let val = from;
+          const dir = target >= from ? 1 : -1;
           const interval = setInterval(() => {
             val += dir * step;
             if ((dir === 1 && val >= target) || (dir === -1 && val <= target)) {

@@ -238,6 +238,9 @@ p {
   right: 0;
   z-index: 100;
   transition: all 0.3s ease;
+  /* GPU compositing: prevents backdrop-filter from causing nav to disappear on scroll */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .nav.scrolled {
