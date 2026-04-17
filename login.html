@@ -3,297 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Log In — Beegen</title>
-<meta name="description" content="Log in to your Beegen account and manage your websites, funnels, memberships, and CRM in one place.">
+<title>Login — Beegen</title>
+<meta name="description" content="Log in to your Beegen account and continue building websites with AI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/global.css">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html,body{height:100%;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;}
-:root{--teal:#02C39A;--navy:#00152E;--orange:#F37934;--dark:#0D1B2A;--cloud:#F4F8FB;--mist:#E8F0F7;--gray-600:#64748B;--shadow:0 4px 24px rgba(0,21,46,.12);--shadow-lg:0 20px 60px rgba(0,21,46,.22);}
-
-/* ── LAYOUT ── */
-.login-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;}
-@media(max-width:768px){.login-wrap{grid-template-columns:1fr;}}
-
-/* ── LEFT PANEL — branding ── */
-.login-left{background:linear-gradient(150deg,#00152E 0%,#002147 55%,#013A5C 100%);padding:48px;display:flex;flex-direction:column;position:relative;overflow:hidden;}
-@media(max-width:768px){.login-left{display:none;}}
-.login-left::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(2,195,154,.2) 0%,transparent 55%),radial-gradient(ellipse at 10% 85%,rgba(243,121,52,.1) 0%,transparent 45%);pointer-events:none;}
-.login-left-inner{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;}
-.ll-logo{height:36px;margin-bottom:auto;}
-.ll-content{margin-bottom:0;}
-.ll-tagline{font-size:clamp(28px,3vw,40px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:20px;}
-.ll-tagline span{color:var(--teal);}
-.ll-sub{font-size:16px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:40px;max-width:380px;}
-.ll-features{display:flex;flex-direction:column;gap:14px;}
-.ll-feat{display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;backdrop-filter:blur(8px);}
-.ll-feat-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.ll-feat-icon.teal{background:rgba(2,195,154,.18);}
-.ll-feat-icon.orange{background:rgba(243,121,52,.18);}
-.ll-feat-icon.blue{background:rgba(2,130,144,.18);}
-.ll-feat-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-.ll-feat-icon.teal svg{color:var(--teal);}
-.ll-feat-icon.orange svg{color:var(--orange);}
-.ll-feat-icon.blue svg{color:#5CEBC9;}
-.ll-feat-text{font-size:14px;font-weight:600;color:rgba(255,255,255,.85);line-height:1.4;}
-.ll-feat-text small{display:block;font-size:12px;font-weight:400;color:rgba(255,255,255,.45);margin-top:2px;}
-.ll-social-proof{margin-top:40px;display:flex;align-items:center;gap:14px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);}
-.ll-avatars{display:flex;}
-.ll-avatar{width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;margin-left:-10px;background:var(--teal);}
-.ll-avatar:first-child{margin-left:0;}
-.ll-avatar:nth-child(2){background:#028090;}
-.ll-avatar:nth-child(3){background:var(--orange);}
-.ll-avatar:nth-child(4){background:#013A5C;}
-.ll-proof-text{font-size:13px;color:rgba(255,255,255,.55);line-height:1.5;}
-.ll-proof-text strong{color:#fff;display:block;}
-
-/* ── RIGHT PANEL — form ── */
-.login-right{background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 32px;}
-.login-right-inner{width:100%;max-width:400px;}
-.login-mobile-logo{display:none;height:32px;margin-bottom:36px;}
-@media(max-width:768px){.login-mobile-logo{display:block;}}
-.login-title{font-size:28px;font-weight:800;color:var(--dark);margin-bottom:6px;}
-.login-sub{font-size:15px;color:var(--gray-600);margin-bottom:32px;line-height:1.5;}
-.login-sub a{color:var(--teal);text-decoration:none;font-weight:600;}
-.login-sub a:hover{text-decoration:underline;}
-
-/* Google SSO */
-.btn-sso{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:13px 20px;border:1.5px solid #E2E8F0;border-radius:10px;background:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600;color:var(--dark);cursor:pointer;transition:all .2s;text-decoration:none;}
-.btn-sso:hover{border-color:#CBD5E1;background:#F8FAFC;transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.07);}
-.btn-sso svg{width:20px;height:20px;flex-shrink:0;}
-.divider{display:flex;align-items:center;gap:14px;margin:24px 0;color:#CBD5E1;font-size:13px;font-weight:600;color:#94A3B8;}
-.divider::before,.divider::after{content:'';flex:1;height:1px;background:#E2E8F0;}
-
-/* Form fields */
-.form-group{margin-bottom:18px;}
-.form-group label{display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px;}
-.form-group label a{font-weight:600;color:var(--teal);text-decoration:none;font-size:12px;}
-.form-group label a:hover{text-decoration:underline;}
-.input-wrap{position:relative;}
-.input-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:#94A3B8;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;}
-.form-group input{width:100%;padding:13px 16px 13px 42px;border:1.5px solid #E2E8F0;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:var(--dark);outline:none;transition:border-color .2s,box-shadow .2s;background:#fff;}
-.form-group input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(2,195,154,.12);}
-.form-group input::placeholder{color:#CBD5E1;}
-.toggle-pw{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:20px;height:20px;cursor:pointer;color:#94A3B8;background:none;border:none;padding:0;display:flex;align-items:center;justify-content:center;transition:color .2s;}
-.toggle-pw:hover{color:var(--dark);}
-.toggle-pw svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-
-/* Remember + forgot */
-.form-row-split{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
-.remember{display:flex;align-items:center;gap:8px;cursor:pointer;}
-.remember input[type="checkbox"]{width:16px;height:16px;accent-color:var(--teal);cursor:pointer;}
-.remember span{font-size:13px;color:#64748B;}
-.forgot-link{font-size:13px;color:var(--teal);text-decoration:none;font-weight:600;}
-.forgot-link:hover{text-decoration:underline;}
-
-/* Submit */
-.btn-login{width:100%;padding:14px;border-radius:10px;border:none;background:var(--orange);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .22s;display:flex;align-items:center;justify-content:center;gap:8px;}
-.btn-login:hover{background:#d4621c;transform:translateY(-2px);box-shadow:0 8px 28px rgba(243,121,52,.35);}
-.btn-login svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
-
-/* Footer links */
-.login-footer-links{margin-top:32px;text-align:center;font-size:13px;color:#94A3B8;}
-.login-footer-links a{color:#64748B;text-decoration:none;margin:0 10px;transition:color .2s;}
-.login-footer-links a:hover{color:var(--teal);}
-.signup-prompt{margin-top:24px;text-align:center;font-size:14px;color:#64748B;padding-top:24px;border-top:1px solid #F1F5F9;}
-.signup-prompt a{color:var(--teal);font-weight:700;text-decoration:none;}
-.signup-prompt a:hover{text-decoration:underline;}
-
-/* Error state */
-.field-error{font-size:12px;color:#EF4444;margin-top:4px;display:none;}
-.form-group.has-error input{border-color:#EF4444;}
-.form-group.has-error .field-error{display:block;}
-.login-error-banner{background:#FEF2F2;border:1px solid #FECACA;border-radius:10px;padding:12px 16px;font-size:14px;color:#DC2626;display:none;margin-bottom:20px;align-items:center;gap:10px;}
-.login-error-banner.show{display:flex;}
-.login-error-banner svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.login-page {
+  min-height: 100vh;
+  background: var(--cloud);
+  display: flex;
+  flex-direction: column;
+}
+.login-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+}
+.login-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 56px 48px;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: var(--shadow-xl);
+  text-align: center;
+  border: 1px solid var(--mist);
+}
+.login-logo {
+  height: 36px;
+  margin: 0 auto 36px;
+  display: block;
+}
+.login-card h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: var(--navy);
+}
+.login-card p {
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 32px;
+}
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 28px 0;
+}
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--mist);
+}
+.login-divider span {
+  font-size: 13px;
+  color: var(--gray-400);
+  font-weight: 600;
+}
+.login-signup {
+  font-size: 15px;
+  color: #64748b;
+  margin: 0;
+}
+.login-signup a {
+  color: var(--teal);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+.login-signup a:hover {
+  color: var(--teal-dark);
+}
 </style>
 </head>
 <body>
 
-<div class="login-wrap">
-
-  <!-- LEFT — Branding panel -->
-  <aside class="login-left">
-    <div class="login-left-inner">
-      <a href="index.html" aria-label="Beegen home">
-        <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" class="ll-logo">
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img id="navLogo" src="assets/logos/beegen-logo-white.svg" alt="Beegen">
       </a>
-      <div class="ll-content">
-        <h2 class="ll-tagline">Everything your<br>business needs,<br><span>in one place.</span></h2>
-        <p class="ll-sub">Websites, funnels, memberships, and CRM — all connected, all in one login. Welcome back.</p>
-        <div class="ll-features">
-          <div class="ll-feat">
-            <div class="ll-feat-icon teal">
-              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <div class="ll-feat-text">Website Builder<small>Drag-and-drop, no code needed</small></div>
-          </div>
-          <div class="ll-feat">
-            <div class="ll-feat-icon orange">
-              <svg viewBox="0 0 24 24"><path d="M3 4h18l-7 8.5V19l-4-2V12.5L3 4z"/></svg>
-            </div>
-            <div class="ll-feat-text">Funnel Builder<small>Convert visitors into customers</small></div>
-          </div>
-          <div class="ll-feat">
-            <div class="ll-feat-icon blue">
-              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
-            <div class="ll-feat-text">CRM &amp; Memberships<small>Manage your contacts and community</small></div>
-          </div>
-        </div>
-        <div class="ll-social-proof">
-          <div class="ll-avatars">
-            <div class="ll-avatar">SM</div>
-            <div class="ll-avatar">JR</div>
-            <div class="ll-avatar">LP</div>
-            <div class="ll-avatar">+</div>
-          </div>
-          <div class="ll-proof-text"><strong>12,000+ businesses</strong> growing with Beegen today</div>
-        </div>
+      <div class="nav-links">
+        <a href="/#how-it-works" class="nav-link">How it Works</a>
+        <a href="/pricing.html" class="nav-link">Pricing</a>
+        <a href="https://app.beegen.co/login" class="nav-link">Login</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://app.beegen.co" class="btn btn-secondary btn-sm">Start Free →</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-  </aside>
+  </div>
+</nav>
 
-  <!-- RIGHT — Login form -->
-  <main class="login-right">
-    <div class="login-right-inner">
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item">
+      <a href="/#how-it-works" class="mobile-nav-link">How it Works</a>
+    </div>
+    <div class="mobile-nav-item">
+      <a href="/pricing.html" class="mobile-nav-link">Pricing</a>
+    </div>
+    <div class="mobile-nav-item">
+      <a href="https://app.beegen.co/login" class="mobile-nav-link">Login</a>
+    </div>
+  </div>
+  <div class="mobile-nav-footer">
+    <a href="https://app.beegen.co" class="btn btn-primary">Start Free →</a>
+  </div>
+</div>
 
-      <img src="assets/logos/beegen-logo-color.svg" alt="Beegen" class="login-mobile-logo">
-
-      <h1 class="login-title">Welcome back</h1>
-      <p class="login-sub">Don't have an account? <a href="contact.html">Get started free →</a></p>
-
-      <!-- SSO -->
-      <a href="#" class="btn-sso" aria-label="Continue with Google">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        Continue with Google
+<!-- ── LOGIN CARD ──────────────────────────────────────────── -->
+<div class="login-page">
+  <main class="login-main">
+    <div class="login-card reveal">
+      <img src="assets/logos/beegen-logo-color.svg" alt="Beegen" class="login-logo">
+      <h2>Welcome back</h2>
+      <p>Continue to your Beegen dashboard</p>
+      <a href="https://app.beegen.co/dashboard" class="btn btn-secondary btn-lg" style="width:100%;justify-content:center;">
+        Go to dashboard →
       </a>
-
-      <div class="divider">or continue with email</div>
-
-      <!-- Error banner -->
-      <div class="login-error-banner" id="errorBanner" role="alert">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span id="errorMsg">Invalid email or password. Please try again.</span>
-      </div>
-
-      <!-- Login form -->
-      <form id="loginForm" novalidate>
-        <div class="form-group" id="emailGroup">
-          <label for="loginEmail">Email address</label>
-          <div class="input-wrap">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <input type="email" id="loginEmail" name="email" placeholder="you@company.com" autocomplete="email" required>
-          </div>
-          <div class="field-error" id="emailError">Please enter a valid email address.</div>
-        </div>
-
-        <div class="form-group" id="passwordGroup">
-          <label for="loginPassword">
-            Password
-            <a href="#" tabindex="-1">Forgot password?</a>
-          </label>
-          <div class="input-wrap">
-            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            <input type="password" id="loginPassword" name="password" placeholder="Your password" autocomplete="current-password" required>
-            <button type="button" class="toggle-pw" aria-label="Toggle password visibility" id="togglePw">
-              <svg viewBox="0 0 24 24" id="eyeIcon"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            </button>
-          </div>
-          <div class="field-error" id="passwordError">Please enter your password.</div>
-        </div>
-
-        <div class="form-row-split">
-          <label class="remember">
-            <input type="checkbox" id="rememberMe">
-            <span>Remember me</span>
-          </label>
-          <a href="#" class="forgot-link">Forgot password?</a>
-        </div>
-
-        <button type="submit" class="btn-login" id="loginBtn">
-          Log In
-          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
-      </form>
-
-      <div class="signup-prompt">
-        New to Beegen? <a href="contact.html">Start your free trial →</a>
-      </div>
-
-      <div class="login-footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="contact.html">Help</a>
-      </div>
-
+      <div class="login-divider"><span>or</span></div>
+      <p class="login-signup">
+        New to Beegen? <a href="https://app.beegen.co">Create a free account →</a>
+      </p>
     </div>
   </main>
 
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
+          <p>Build websites with AI.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Product</h5>
+          <div class="footer-links">
+            <a href="/#how-it-works">How it Works</a>
+            <a href="/pricing.html">Pricing</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Account</h5>
+          <div class="footer-links">
+            <a href="https://app.beegen.co">Sign Up</a>
+            <a href="https://app.beegen.co/login">Login</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <div class="footer-links">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Beegen</p>
+        <p>Built with Beegen AI</p>
+      </div>
+    </div>
+  </footer>
 </div>
 
-<script>
-// Toggle password visibility
-const togglePw = document.getElementById('togglePw');
-const pwInput = document.getElementById('loginPassword');
-togglePw && togglePw.addEventListener('click', () => {
-  const isText = pwInput.type === 'text';
-  pwInput.type = isText ? 'password' : 'text';
-  togglePw.setAttribute('aria-label', isText ? 'Show password' : 'Hide password');
-  document.getElementById('eyeIcon').innerHTML = isText
-    ? '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>'
-    : '<path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
-});
-
-// Client-side form validation + UX (actual auth handled server-side)
-const form = document.getElementById('loginForm');
-const emailInput = document.getElementById('loginEmail');
-const errorBanner = document.getElementById('errorBanner');
-const loginBtn = document.getElementById('loginBtn');
-
-function validateEmail(val){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val); }
-
-form && form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  let valid = true;
-
-  // Validate email
-  const emailGroup = document.getElementById('emailGroup');
-  if(!validateEmail(emailInput.value.trim())){
-    emailGroup.classList.add('has-error');
-    valid = false;
-  } else { emailGroup.classList.remove('has-error'); }
-
-  // Validate password
-  const pwGroup = document.getElementById('passwordGroup');
-  if(!pwInput.value){ pwGroup.classList.add('has-error'); valid = false; }
-  else { pwGroup.classList.remove('has-error'); }
-
-  if(!valid) return;
-
-  // Show loading state
-  loginBtn.textContent = 'Logging in…';
-  loginBtn.disabled = true;
-
-  // Simulate auth call — replace with real endpoint
-  await new Promise(r => setTimeout(r, 1200));
-
-  // Show error (demo — replace with real auth logic)
-  errorBanner.classList.add('show');
-  document.getElementById('errorMsg').textContent = 'This is a demo login. Connect your authentication provider.';
-  loginBtn.innerHTML = 'Log In <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
-  loginBtn.disabled = false;
-});
-
-// Clear errors on input
-[emailInput, pwInput].forEach(input => {
-  input && input.addEventListener('input', () => {
-    errorBanner.classList.remove('show');
-    input.closest('.form-group').classList.remove('has-error');
-  });
-});
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
