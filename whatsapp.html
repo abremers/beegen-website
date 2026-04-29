@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp AI Assistant — Beegen</title>
+<meta name="description" content="Connect an AI assistant to your WhatsApp number. It answers questions, captures leads, and handles bookings 24/7 — so you never miss a customer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/global.css">
+<style>
+/* ── WA HERO ─────────────────────────────────────────────── */
+.wa-hero {
+  min-height: 100vh;
+  background: var(--grad-hero);
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.wa-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(37,211,102,.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 80%, rgba(2,195,154,.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+.wa-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+}
+.wa-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(37,211,102,.15);
+  border: 1px solid rgba(37,211,102,.35);
+  color: #25D366;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+.wa-eyebrow svg { width: 14px; height: 14px; }
+.wa-hero h1 { color: #fff; margin-bottom: 20px; }
+.wa-hero-sub {
+  font-size: 19px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 36px;
+}
+.wa-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: #fff;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+.btn-wa:hover { background: #1da851; transform: translateY(-2px); }
+.btn-wa svg { width: 18px; height: 18px; }
+
+/* ── WA MOCKUP ───────────────────────────────────────────── */
+.wa-mockup {
+  background: #ECE5DD;
+  border-radius: 20px;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  max-width: 340px;
+  margin: 0 auto;
+}
+.wa-mockup-header {
+  background: #075E54;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.wa-mockup-avatar {
+  width: 42px; height: 42px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: #fff; font-weight: 700;
+}
+.wa-mockup-info h4 { color: #fff; font-size: 15px; margin: 0 0 2px; }
+.wa-mockup-info span { color: rgba(255,255,255,.6); font-size: 12px; }
+.wa-mockup-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; min-height: 320px; }
+.wa-bubble {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  position: relative;
+}
+.wa-bubble.user {
+  background: #DCF8C6;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.wa-bubble.bot {
+  background: #fff;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+.wa-bubble .wa-time {
+  font-size: 11px;
+  color: rgba(0,0,0,.35);
+  text-align: right;
+  margin-top: 4px;
+}
+.wa-typing {
+  background: #fff;
+  align-self: flex-start;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+  display: flex; gap: 5px; align-items: center;
+}
+.wa-dot {
+  width: 7px; height: 7px;
+  background: #aaa;
+  border-radius: 50%;
+  animation: waDot 1.2s infinite ease-in-out;
+}
+.wa-dot:nth-child(2) { animation-delay: .2s; }
+.wa-dot:nth-child(3) { animation-delay: .4s; }
+@keyframes waDot {
+  0%, 60%, 100% { transform: translateY(0); opacity: .6; }
+  30% { transform: translateY(-5px); opacity: 1; }
+}
+
+/* ── HOW IT WORKS ────────────────────────────────────────── */
+.wa-steps { background: #fff; padding: var(--section-y) 0; }
+.wa-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 48px;
+}
+.wa-step {
+  text-align: center;
+  padding: 32px 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  transition: box-shadow .2s, transform .2s;
+}
+.wa-step:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+.wa-step-num {
+  width: 48px; height: 48px;
+  background: var(--grad-teal);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+}
+.wa-step h3 { font-size: 18px; margin-bottom: 10px; }
+.wa-step p { color: var(--gray-600); font-size: 15px; line-height: 1.65; }
+
+/* ── FEATURES ────────────────────────────────────────────── */
+.wa-features { background: var(--cloud); padding: var(--section-y) 0; }
+.wa-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.wa-feature-item {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s;
+}
+.wa-feature-item:hover { box-shadow: var(--shadow); }
+.wa-feature-icon {
+  width: 44px; height: 44px;
+  background: rgba(37,211,102,.12);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: #25D366;
+}
+.wa-feature-icon svg { width: 22px; height: 22px; }
+.wa-feature-item h4 { font-size: 16px; margin-bottom: 6px; }
+.wa-feature-item p { color: var(--gray-600); font-size: 14px; line-height: 1.6; margin: 0; }
+
+/* ── PRICING CALLOUT ─────────────────────────────────────── */
+.wa-pricing-band {
+  background: var(--grad-hero);
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.wa-pricing-band::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(37,211,102,.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.wa-pricing-band h2 { color: #fff; margin-bottom: 16px; position: relative; }
+.wa-pricing-band p { color: rgba(255,255,255,.7); font-size: 17px; margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; position: relative; }
+.wa-pricing-band .wa-pricing-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+.wa-add-on-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(37,211,102,.15);
+  border: 1px solid rgba(37,211,102,.3);
+  color: #25D366;
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+/* ── USE CASES ───────────────────────────────────────────── */
+.wa-usecases { background: #fff; padding: var(--section-y) 0; }
+.wa-usecases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.wa-usecase-card {
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  border: 1.5px solid var(--gray-200);
+  transition: border-color .2s, box-shadow .2s;
+}
+.wa-usecase-card:hover { border-color: var(--teal); box-shadow: var(--shadow-teal); }
+.wa-uc-icon { width: 44px; height: 44px; background: rgba(2,195,154,.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; color: var(--teal); }
+.wa-uc-icon svg { width: 22px; height: 22px; }
+.wa-usecase-card h4 { font-size: 16px; margin-bottom: 8px; }
+.wa-usecase-card p { color: var(--gray-600); font-size: 14px; line-height: 1.6; margin: 0; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .wa-hero-inner { grid-template-columns: 1fr; }
+  .wa-mockup { display: none; }
+  .wa-steps-grid { grid-template-columns: 1fr; }
+  .wa-features-grid { grid-template-columns: 1fr; }
+  .wa-usecases-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img id="navLogo" src="assets/logos/beegen-logo-white.svg" alt="Beegen">
+      </a>
+      <div class="nav-links">
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">How it Works</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+        <a href="/whatsapp.html" class="nav-link active" data-i18n="nav.whatsapp">WhatsApp</a>
+        <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Login</a>
+
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle"><span class="lang-label">EN</span></button>
+        <a href="https://app.beegen.co" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Start free</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">How it Works</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Pricing</a></div>
+    <div class="mobile-nav-item"><a href="/whatsapp.html" class="mobile-nav-link" data-i18n="nav.whatsapp">WhatsApp</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Login</a></div>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle" id="langToggleMobile" style="margin-bottom:14px;width:100%;justify-content:center;display:flex;"><span class="lang-label">EN</span></button>
+    <a href="https://app.beegen.co" class="btn btn-primary" data-i18n="nav.start_free">Start free</a>
+  </div>
+</div>
+
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section class="wa-hero">
+  <div class="container">
+    <div class="wa-hero-inner">
+      <div>
+        <div class="wa-eyebrow">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.532 5.862L.057 23.927a.5.5 0 00.596.676l6.282-1.647A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.525-5.17-1.438l-.371-.221-3.851 1.01.977-3.758-.242-.386A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          <span data-i18n="whatsapp.eyebrow">WhatsApp AI</span>
+        </div>
+        <h1 data-i18n-html="whatsapp.hero_h1">Your WhatsApp,<br>working 24/7 for you.</h1>
+        <p class="wa-hero-sub" data-i18n="whatsapp.hero_sub">Connect an AI assistant to your WhatsApp number. It answers questions, captures leads, and handles bookings automatically — while you focus on your business.</p>
+        <div class="wa-hero-actions">
+          <a href="https://app.beegen.co" class="btn-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.532 5.862L.057 23.927a.5.5 0 00.596.676l6.282-1.647A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.525-5.17-1.438l-.371-.221-3.851 1.01.977-3.758-.242-.386A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            <span data-i18n="whatsapp.hero_cta_primary">Add WhatsApp AI to my plan</span>
+          </a>
+          <a href="/contact.html" class="btn btn-ghost btn-lg" style="color:rgba(255,255,255,.8)" data-i18n="whatsapp.hero_cta_secondary">Talk to us first →</a>
+        </div>
+      </div>
+
+      <!-- WA Mockup -->
+      <div class="wa-mockup reveal reveal-delay-2">
+        <div class="wa-mockup-header">
+          <div class="wa-mockup-avatar">B</div>
+          <div class="wa-mockup-info">
+            <h4>Beegen Bot</h4>
+            <span data-i18n="whatsapp.mockup_online">● Online</span>
+          </div>
+        </div>
+        <div class="wa-mockup-body">
+          <div class="wa-bubble user">
+            Hi, what are your hours this weekend?
+            <div class="wa-time">10:02 AM ✓✓</div>
+          </div>
+          <div class="wa-bubble bot">
+            Hi! We're open Saturday 9am–6pm and Sunday 10am–4pm. 😊 Would you like to book an appointment?
+            <div class="wa-time">10:02 AM</div>
+          </div>
+          <div class="wa-bubble user">
+            Yes! Do you have a spot Saturday at 11am?
+            <div class="wa-time">10:03 AM ✓✓</div>
+          </div>
+          <div class="wa-bubble bot">
+            Absolutely! I have 11am available. Can I get your name so I can confirm it? 📅
+            <div class="wa-time">10:03 AM</div>
+          </div>
+          <div class="wa-bubble user">
+            Maria Lopez
+            <div class="wa-time">10:04 AM ✓✓</div>
+          </div>
+          <div class="wa-typing">
+            <div class="wa-dot"></div>
+            <div class="wa-dot"></div>
+            <div class="wa-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ───────────────────────────────────────── -->
+<section class="wa-steps">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="whatsapp.steps_label">Simple setup</span>
+      <h2 data-i18n="whatsapp.steps_title">Live in under 10 minutes</h2>
+      <p data-i18n="whatsapp.steps_sub">No technical setup. No app installs. Just connect and train.</p>
+    </div>
+    <div class="wa-steps-grid">
+      <div class="wa-step reveal reveal-delay-1">
+        <div class="wa-step-num">1</div>
+        <h3 data-i18n="whatsapp.step1_title">Connect your number</h3>
+        <p data-i18n="whatsapp.step1_desc">Link your WhatsApp Business number to Beegen. Works with any existing number — no new SIM needed.</p>
+      </div>
+      <div class="wa-step reveal reveal-delay-2">
+        <div class="wa-step-num">2</div>
+        <h3 data-i18n="whatsapp.step2_title">Train with your content</h3>
+        <p data-i18n="whatsapp.step2_desc">Tell the bot your hours, services, prices, and FAQs. You can update it anytime from your dashboard.</p>
+      </div>
+      <div class="wa-step reveal reveal-delay-3">
+        <div class="wa-step-num">3</div>
+        <h3 data-i18n="whatsapp.step3_title">Go live — AI handles the rest</h3>
+        <p data-i18n="whatsapp.step3_desc">Your AI assistant replies instantly to every message, 24/7. You get a summary of leads and bookings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── USE CASES ──────────────────────────────────────────── -->
+<section class="wa-usecases">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="whatsapp.uc_label">Built for your business</span>
+      <h2 data-i18n="whatsapp.uc_title">Every type of local business</h2>
+      <p data-i18n="whatsapp.uc_sub">The AI adapts to how your business works — not the other way around.</p>
+    </div>
+    <div class="wa-usecases-grid">
+      <div class="wa-usecase-card reveal reveal-delay-1">
+        <div class="wa-uc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2h18l-2 7H5L3 2z"/><path d="M5 9l-1 11h16L19 9"/><path d="M9 13h6"/></svg></div>
+        <h4 data-i18n="whatsapp.uc1_title">Restaurants & Cafés</h4>
+        <p data-i18n="whatsapp.uc1_desc">Answer menu questions, share hours, take reservations, and handle special requests automatically.</p>
+      </div>
+      <div class="wa-usecase-card reveal reveal-delay-2">
+        <div class="wa-uc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h4 data-i18n="whatsapp.uc2_title">Salons & Spas</h4>
+        <p data-i18n="whatsapp.uc2_desc">Book appointments, share service menus and pricing, handle cancellations — all without picking up the phone.</p>
+      </div>
+      <div class="wa-usecase-card reveal reveal-delay-3">
+        <div class="wa-uc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h4 data-i18n="whatsapp.uc3_title">Trades & Home Services</h4>
+        <p data-i18n="whatsapp.uc3_desc">Qualify leads, schedule quotes, share your service area, and follow up automatically.</p>
+      </div>
+      <div class="wa-usecase-card reveal reveal-delay-1">
+        <div class="wa-uc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
+        <h4 data-i18n="whatsapp.uc4_title">Retail & Boutiques</h4>
+        <p data-i18n="whatsapp.uc4_desc">Answer product questions, share availability, give directions, and promote offers.</p>
+      </div>
+      <div class="wa-usecase-card reveal reveal-delay-2">
+        <div class="wa-uc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+        <h4 data-i18n="whatsapp.uc5_title">Gyms & Studios</h4>
+        <p data-i18n="whatsapp.uc5_desc">Handle class inquiries, memberships, trial sign-ups, and schedule changes effortlessly.</p>
+      </div>
+      <div class="wa-usecase-card reveal reveal-delay-3">
+        <div class="wa-uc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h4 data-i18n="whatsapp.uc6_title">Real Estate & Rentals</h4>
+        <p data-i18n="whatsapp.uc6_desc">Answer property questions, schedule viewings, collect buyer info, and send listings automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ───────────────────────────────────────────── -->
+<section class="wa-features">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="whatsapp.feat_label">What it does</span>
+      <h2 data-i18n="whatsapp.feat_title">More than just auto-replies</h2>
+    </div>
+    <div class="wa-features-grid">
+      <div class="wa-feature-item reveal reveal-delay-1">
+        <div class="wa-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <h4 data-i18n="whatsapp.f1_title">24/7 instant replies</h4>
+          <p data-i18n="whatsapp.f1_desc">Customers get an answer in seconds, even at midnight. Never lose a lead to slow response time again.</p>
+        </div>
+      </div>
+      <div class="wa-feature-item reveal reveal-delay-2">
+        <div class="wa-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div>
+          <h4 data-i18n="whatsapp.f2_title">Lead capture</h4>
+          <p data-i18n="whatsapp.f2_desc">The bot collects names, contact details, and intent — and logs them to your Beegen dashboard automatically.</p>
+        </div>
+      </div>
+      <div class="wa-feature-item reveal reveal-delay-3">
+        <div class="wa-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <div>
+          <h4 data-i18n="whatsapp.f3_title">Appointment booking</h4>
+          <p data-i18n="whatsapp.f3_desc">Let customers request and confirm bookings directly in the chat — synced to your calendar.</p>
+        </div>
+      </div>
+      <div class="wa-feature-item reveal reveal-delay-1">
+        <div class="wa-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div>
+          <h4 data-i18n="whatsapp.f4_title">Trained on your business</h4>
+          <p data-i18n="whatsapp.f4_desc">Add your services, prices, FAQs, and policies. The AI always answers with your specific information.</p>
+        </div>
+      </div>
+      <div class="wa-feature-item reveal reveal-delay-2">
+        <div class="wa-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div>
+          <h4 data-i18n="whatsapp.f5_title">Custom bot name & personality</h4>
+          <p data-i18n="whatsapp.f5_desc">Your bot can be "Sofia from Bella Salon" or "Marco from Fix-It Plumbing" — branded to your business.</p>
+        </div>
+      </div>
+      <div class="wa-feature-item reveal reveal-delay-3">
+        <div class="wa-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <div>
+          <h4 data-i18n="whatsapp.f6_title">Conversation dashboard</h4>
+          <p data-i18n="whatsapp.f6_desc">See all chats, leads captured, and bot performance from your Beegen dashboard. Always in control.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING CTA ─────────────────────────────────────────── -->
+<section class="wa-pricing-band">
+  <div class="container">
+    <div class="wa-add-on-badge">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.532 5.862L.057 23.927a.5.5 0 00.596.676l6.282-1.647A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.525-5.17-1.438l-.371-.221-3.851 1.01.977-3.758-.242-.386A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      <span data-i18n="whatsapp.pricing_badge">Available as an add-on with any paid plan</span>
+    </div>
+    <h2 data-i18n="whatsapp.pricing_title">Ready to never miss a customer again?</h2>
+    <p data-i18n="whatsapp.pricing_sub">Add WhatsApp AI to your Starter or Pro plan. Setup takes under 10 minutes.</p>
+    <div class="wa-pricing-ctas">
+      <a href="https://app.beegen.co" class="btn-wa">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.532 5.862L.057 23.927a.5.5 0 00.596.676l6.282-1.647A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.525-5.17-1.438l-.371-.221-3.851 1.01.977-3.758-.242-.386A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        <span data-i18n="whatsapp.pricing_cta_primary">Get started</span>
+      </a>
+      <a href="/pricing.html" class="btn btn-ghost btn-lg" style="color:rgba(255,255,255,.75)" data-i18n="whatsapp.pricing_cta_secondary">See pricing →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
+        <p data-i18n="footer.tagline">Build professional websites with AI. No code required.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.product">Product</h5>
+        <div class="footer-links">
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">How it Works</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Pricing</a>
+          <a href="/whatsapp.html" data-i18n="nav.whatsapp">WhatsApp AI</a>
+          <a href="/blog/" data-i18n="footer.blog">Blog</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.account">Account</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co" data-i18n="footer.signup">Sign Up</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Login</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.legal">Legal</h5>
+        <div class="footer-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="/terms.html" data-i18n="footer.terms">Terms of Service</a>
+          <a href="/contact.html" data-i18n="footer.contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Beegen. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p>Built with Beegen AI</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/i18n.js"></script>
+</body>
+</html>

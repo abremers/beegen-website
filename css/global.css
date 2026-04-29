@@ -367,6 +367,35 @@ p {
   margin-left: auto;
 }
 
+/* Lang Toggle */
+.lang-toggle {
+  background: none;
+  border: 1.5px solid rgba(255,255,255,.45);
+  color: rgba(255,255,255,.85);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all .2s ease;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+.lang-toggle:hover {
+  background: rgba(255,255,255,.15);
+  border-color: rgba(255,255,255,.7);
+}
+.nav.scrolled .lang-toggle {
+  color: var(--navy);
+  border-color: rgba(0,21,46,.3);
+}
+.nav.scrolled .lang-toggle:hover {
+  background: var(--cloud);
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
 /* Hamburger */
 .hamburger {
   display: none;

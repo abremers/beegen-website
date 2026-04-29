@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog de Beegen — Consejos y Guías para Crear Sitios Web con IA</title>
+<meta name="description" content="Guías, consejos e ideas para crear mejores sitios web con IA. Aprende cómo sacar el máximo provecho de Beegen y lanza tu sitio más rápido.">
+<link rel="canonical" href="https://beegen.co/blog">
+<link rel="icon" href="/assets/logos/beegen-logo-color.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beegen">
+<meta property="og:title" content="Blog de Beegen — Consejos y Guías para Crear Sitios Web con IA">
+<meta property="og:description" content="Guías, consejos e ideas para crear mejores sitios web con IA.">
+<meta property="og:url" content="https://beegen.co/blog">
+<meta property="og:image" content="https://beegen.co/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog de Beegen — Consejos y Guías para Crear Sitios Web con IA">
+<meta name="twitter:description" content="Guías, consejos e ideas para crear mejores sitios web con IA.">
+<meta name="twitter:image" content="https://beegen.co/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+.blog-hero {
+  padding: 120px 0 72px;
+  background: var(--espresso);
+}
+.blog-hero h1 {
+  color: var(--linen);
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.blog-hero p {
+  color: var(--warm-stone);
+  font-size: 18px;
+  max-width: 540px;
+}
+.blog-body { background: var(--linen); padding: 64px 0 100px; }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.blog-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(28,8,0,.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.blog-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.blog-card-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
+}
+.blog-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s var(--ease);
+}
+.blog-card:hover .blog-card-thumb img { transform: scale(1.04); }
+.blog-card-body { padding: 24px 28px 28px; flex: 1; display: flex; flex-direction: column; }
+.blog-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--honey);
+  margin-bottom: 12px;
+}
+.blog-card-body h2 { font-size: 18px; line-height: 1.45; color: var(--espresso); margin-bottom: 12px; font-family: var(--font-serif); }
+.blog-card-body p { font-size: 14px; color: var(--warm-stone); line-height: 1.65; margin-bottom: 20px; flex: 1; max-width: none; }
+.blog-meta { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--warm-stone); }
+.blog-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--warm-stone); flex-shrink: 0; }
+.blog-card-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
+
+/* Featured card spans 2 cols */
+.blog-card--featured { grid-column: span 2; }
+.blog-card--featured .blog-card-thumb { aspect-ratio: 21/9; }
+.blog-card--featured .blog-card-body h2 { font-size: 22px; }
+
+@media (max-width: 900px) {
+  .blog-grid { grid-template-columns: 1fr 1fr; }
+  .blog-card--featured { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .blog-grid { grid-template-columns: 1fr; }
+  .blog-card--featured { grid-column: span 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────── -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/assets/logos/beegen-logo-white.svg" alt="beegen" class="nav-logo-img">
+      </a>
+      <div class="nav-links">
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo Funciona</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Precios</a>
+        <a href="/whatsapp.html" class="nav-link" data-i18n="nav.whatsapp">WhatsApp</a>
+        <a href="/blog/" class="nav-link active" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma / Switch language">
+          <span class="lang-label">EN</span>
+        </button>
+        <a href="https://app.beegen.co" class="btn btn-primary btn-sm" data-i18n="nav.start_free">Comenzar gratis</a>
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/beegen-logo-white.svg" alt="beegen" class="nav-logo-img">
+    </a>
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo Funciona</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/whatsapp.html" class="mobile-nav-link" data-i18n="nav.whatsapp">WhatsApp</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link active" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle" id="langToggleMobile" style="margin-bottom:14px;width:100%;justify-content:center;display:flex;"><span class="lang-label">EN</span></button>
+    <a href="https://app.beegen.co" class="btn btn-primary" data-i18n="nav.start_free">Comenzar gratis</a>
+  </div>
+</div>
+
+<!-- ── BLOG HERO ──────────────────────────────────────────── -->
+<div class="blog-hero">
+  <div class="container">
+    <h1 data-i18n="blog.hero_title">El Blog de Beegen</h1>
+    <p data-i18n="blog.hero_sub">Guías, consejos e ideas para construir mejores sitios web con IA — más rápido de lo que imaginabas.</p>
+  </div>
+</div>
+
+<!-- ── BLOG GRID ──────────────────────────────────────────── -->
+<div class="blog-body">
+  <div class="container">
+    <div class="blog-grid">
+
+      <!-- Featured -->
+      <div class="blog-card blog-card--featured">
+        <a href="/blog/build-business-website-with-ai" class="blog-card-link">
+          <div class="blog-card-thumb">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=900&auto=format&fit=crop&q=80"
+                 alt="Laptop on a workspace desk with coffee" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag" data-i18n="blog.tag_tutorial">Tutorial</span>
+            <h2>Cómo Crear un Sitio Web de Negocio en 10 Minutos con IA</h2>
+            <p>La forma antigua tomaba semanas y miles de dólares. Aquí te mostramos cómo pasar de una página en blanco a un sitio web profesional y en vivo en menos de 10 minutos usando IA — sin código, sin diseñador.</p>
+            <div class="blog-meta">
+              <span>Abril 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>6 <span data-i18n="blog.min_read">min de lectura</span></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="blog-card">
+        <a href="/blog/ai-website-prompts-guide" class="blog-card-link">
+          <div class="blog-card-thumb">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&auto=format&fit=crop&q=80"
+                 alt="Person writing notes at a desk" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag" data-i18n="blog.tag_guide">Guía</span>
+            <h2>Cómo Escribir Prompts que Crean Sitios Web Excelentes</h2>
+            <p>La diferencia entre un resultado mediocre y uno excelente está casi completamente en cómo describes lo que quieres. Así es la anatomía de un gran prompt.</p>
+            <div class="blog-meta">
+              <span>Abril 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>5 <span data-i18n="blog.min_read">min de lectura</span></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="blog-card">
+        <a href="/blog/small-business-needs-website" class="blog-card-link">
+          <div class="blog-card-thumb">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&auto=format&fit=crop&q=80"
+                 alt="Small business owner at their counter" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag" data-i18n="blog.tag_insight">Perspectiva</span>
+            <h2>¿Tu Pequeño Negocio Realmente Necesita un Sitio Web en 2026?</h2>
+            <p>Tienes Instagram, Google Maps y quizás una página de Facebook. ¿Vale la pena un sitio web? Los datos pueden sorprenderte.</p>
+            <div class="blog-meta">
+              <span>Abril 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>5 <span data-i18n="blog.min_read">min de lectura</span></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="blog-card">
+        <a href="/blog/best-ai-website-builders-2026" class="blog-card-link">
+          <div class="blog-card-thumb">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&auto=format&fit=crop&q=80"
+                 alt="Laptop with code on screen" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag" data-i18n="blog.tag_comparison">Comparación</span>
+            <h2>Los Mejores Constructores de Sitios Web con IA en 2026 (Comparación Honesta)</h2>
+            <p>Ahora hay docenas de herramientas que dicen crear sitios web con IA. Aquí está lo que realmente las diferencia y cómo elegir la adecuada para tu caso.</p>
+            <div class="blog-meta">
+              <span>Abril 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>7 <span data-i18n="blog.min_read">min de lectura</span></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="blog-card">
+        <a href="/blog/freelancer-ai-website-builder" class="blog-card-link">
+          <div class="blog-card-thumb">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop&q=80"
+                 alt="Freelancers working together at a table" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag" data-i18n="blog.tag_guide">Guía</span>
+            <h2>Cómo los Freelancers Están Creando Sitios para Clientes por Menos de $1</h2>
+            <p>Algunos freelancers cobran $500–$2,000 por sitios web de clientes que les cuestan menos de un dólar generarlos. Aquí está el plan.</p>
+            <div class="blog-meta">
+              <span>Abril 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>6 <span data-i18n="blog.min_read">min de lectura</span></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="margin-bottom:12px;display:inline-flex;">
+          <img src="/assets/logos/beegen-logo-white.svg" alt="beegen" class="nav-logo-img" style="height:28px;">
+        </a>
+        <p style="color:var(--warm-stone);font-size:14px;max-width:220px;" data-i18n="footer.tagline">Crea sitios web profesionales con IA. Sin código.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.product">Producto</h5>
+        <div class="footer-links">
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">Cómo Funciona</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/blog" data-i18n="footer.blog">Blog</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.account">Cuenta</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co" data-i18n="footer.signup">Registrarse</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Iniciar sesión</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.legal">Legal</h5>
+        <div class="footer-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terms.html" data-i18n="footer.terms">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Beegen. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <p>Built with Beegen AI</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script src="/js/i18n.js"></script>
+</body>
+</html>

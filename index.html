@@ -367,13 +367,17 @@
         <img id="navLogo" src="assets/logos/beegen-logo-white.svg" alt="Beegen">
       </a>
       <div class="nav-links">
-        <a href="/#how-it-works" class="nav-link">How it Works</a>
-        <a href="/pricing.html" class="nav-link">Pricing</a>
-        <a href="https://app.beegen.co/login" class="nav-link">Login</a>
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">How it Works</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+        <a href="/whatsapp.html" class="nav-link" data-i18n="nav.whatsapp">WhatsApp</a>
+        <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Login</a>
       </div>
       <div class="nav-right">
-        <a href="https://app.beegen.co" class="btn btn-secondary btn-sm">Start Free →</a>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <button class="lang-toggle" id="langToggle"><span class="lang-label">EN</span></button>
+        <a href="https://app.beegen.co" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Start free</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -385,23 +389,33 @@
 <div class="mobile-nav-overlay" id="mobileNav">
   <div class="mobile-nav-header">
     <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
-    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+    <button class="mobile-nav-close" id="mobileNavClose" data-i18n-aria="nav.close_menu" aria-label="Close menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
   </div>
   <div class="mobile-nav-body">
     <div class="mobile-nav-item">
-      <a href="/#how-it-works" class="mobile-nav-link">How it Works</a>
+      <a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">How it Works</a>
     </div>
     <div class="mobile-nav-item">
-      <a href="/pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Pricing</a>
     </div>
     <div class="mobile-nav-item">
-      <a href="https://app.beegen.co/login" class="mobile-nav-link">Login</a>
+      <a href="/whatsapp.html" class="mobile-nav-link" data-i18n="nav.whatsapp">WhatsApp</a>
+    </div>
+    <div class="mobile-nav-item">
+      <a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a>
+    </div>
+    <div class="mobile-nav-item">
+      <a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact</a>
+    </div>
+    <div class="mobile-nav-item">
+      <a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Login</a>
     </div>
   </div>
   <div class="mobile-nav-footer">
-    <a href="https://app.beegen.co" class="btn btn-primary">Start Free →</a>
+    <button class="lang-toggle" id="langToggleMobile" style="margin-bottom:14px;width:100%;justify-content:center;display:flex;"><span class="lang-label">EN</span></button>
+    <a href="https://app.beegen.co" class="btn btn-primary" data-i18n="nav.start_free">Start free</a>
   </div>
 </div>
 
@@ -412,15 +426,15 @@
       <div>
         <div class="hero-eyebrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          Powered by Claude AI
+          <span data-i18n="hero.label">Built for local businesses</span>
         </div>
-        <h1>Build your website with AI — just describe it.</h1>
-        <p class="hero-sub">Type what you need. Beegen's AI builds a professional, mobile-ready website in seconds. No designers. No developers. No templates to fight with.</p>
+        <h1 data-i18n-html="hero.h1">Describe it.<br>We build it.</h1>
+        <p class="hero-sub" data-i18n="hero.sub">Tell Beegen what your business does. We build a professional, mobile-ready website — in minutes, not months. No designers. No code. No templates.</p>
         <div class="hero-actions">
-          <a href="https://app.beegen.co" class="btn btn-primary btn-lg">Start building free →</a>
-          <a href="/pricing.html" class="btn btn-ghost btn-lg">See pricing</a>
+          <a href="https://app.beegen.co" class="btn btn-primary btn-lg" data-i18n="hero.cta_primary">Build my website free</a>
+          <a href="/#how-it-works" class="btn btn-ghost btn-lg" data-i18n="hero.cta_secondary">See how it works</a>
         </div>
-        <p class="hero-disclaimer">3 free credits included · No credit card required</p>
+        <p class="hero-disclaimer" data-i18n="hero.disclaimer">3 free builds included · No credit card required</p>
       </div>
 
       <!-- Builder UI Mockup -->
@@ -497,23 +511,23 @@
     <div class="trust-strip">
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        No code required
+        <span data-i18n="trust.no_code">No code required</span>
       </div>
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        AI-powered by Claude
+        <span data-i18n="trust.powered">Powered by Claude AI</span>
       </div>
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        Publish in seconds
+        <span data-i18n="trust.live">Live in minutes</span>
       </div>
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-        Mobile responsive
+        <span data-i18n="trust.mobile">Mobile responsive</span>
       </div>
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
-        Your brand, your colors
+        <span data-i18n="trust.edit">Edit anytime</span>
       </div>
     </div>
   </div>
@@ -523,24 +537,25 @@
 <section class="section" id="how-it-works" style="background:#ffffff;">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label">Simple by design</span>
-      <h2>From idea to live website in 3 steps</h2>
+      <span class="label" data-i18n="hiw.label">Simple by design</span>
+      <h2 data-i18n="hiw.title">Your website in three steps</h2>
+      <p data-i18n="hiw.subtitle">A plumber shouldn't need to know what a CMS is. A salon owner shouldn't wait weeks for a website.</p>
     </div>
     <div class="steps-grid">
       <div class="step-card reveal reveal-delay-1">
         <div class="step-badge">1</div>
-        <h3>Describe</h3>
-        <p>Tell Beegen what kind of site you need. Your industry, your vibe, your goal. Be as detailed or as brief as you like.</p>
+        <h3 data-i18n="hiw.s1_title">Describe</h3>
+        <p data-i18n="hiw.s1_desc">Tell us your business, your location, and what you want the site to do. Plain English — no jargon needed.</p>
       </div>
       <div class="step-card reveal reveal-delay-2">
         <div class="step-badge">2</div>
-        <h3>Build</h3>
-        <p>Watch your site come to life in real time. Every section, every colour, every word — generated as you chat.</p>
+        <h3 data-i18n="hiw.s2_title">Build</h3>
+        <p data-i18n="hiw.s2_desc">Watch your site appear section by section. Every word, every layout — generated for your specific business.</p>
       </div>
       <div class="step-card reveal reveal-delay-3">
         <div class="step-badge">3</div>
-        <h3>Publish</h3>
-        <p>Happy with it? Hit Publish and get a live link at yoursite.beegen.co. Share it instantly.</p>
+        <h3 data-i18n="hiw.s3_title">Publish</h3>
+        <p data-i18n="hiw.s3_desc">Your site is live. Share the link, take bookings, get found. Edit anything by describing what to change.</p>
       </div>
     </div>
   </div>
@@ -550,51 +565,51 @@
 <section class="section" style="background: var(--cloud);">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label">Made for every creator</span>
-      <h2>6 site types, infinite possibilities</h2>
+      <span class="label" data-i18n="types.label">Made for every local business</span>
+      <h2 data-i18n="types.title">If you can describe it, we can build it.</h2>
     </div>
     <div class="site-types-grid">
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18M3 14h18M10 4v16M14 4v16M5 4h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z"/></svg>
         </div>
-        <h3>Landing Pages</h3>
-        <p>High-converting pages built to get sign-ups, leads and sales</p>
+        <h3 data-i18n="types.r_title">Restaurants &amp; Cafés</h3>
+        <p data-i18n="types.r_desc">Menu, hours, reservations, and your story — all in one warm, welcoming site.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3 data-i18n="types.s_title">Salons &amp; Spas</h3>
+        <p data-i18n="types.s_desc">Services, pricing, and a booking link. Look as polished as your work.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 data-i18n="types.t_title">Trades &amp; Contractors</h3>
+        <p data-i18n="types.t_desc">Plumbers, electricians, HVAC. Get found locally and get the call.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg>
+        </div>
+        <h3 data-i18n="types.re_title">Retail &amp; Boutiques</h3>
+        <p data-i18n="types.re_desc">Showcase your products, your story, and your store location.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         </div>
-        <h3>Portfolios</h3>
-        <p>Show your work in style. Perfect for designers, photographers, freelancers</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-3">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
-        </div>
-        <h3>Business Sites</h3>
-        <p>Professional presence for service businesses, consultants and agencies</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        </div>
-        <h3>Blogs</h3>
-        <p>Clean reading experience with featured posts, categories and newsletter signup</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg>
-        </div>
-        <h3>Online Stores</h3>
-        <p>Product showcases with trust badges, FAQs and compelling CTAs</p>
+        <h3 data-i18n="types.f_title">Freelancers &amp; Studios</h3>
+        <p data-i18n="types.f_desc">Portfolios, case studies, and client inquiries. Your work, front and centre.</p>
       </div>
       <div class="feature-card reveal reveal-delay-3">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
         </div>
-        <h3>Custom</h3>
-        <p>Something different? Just describe it and Beegen figures it out</p>
+        <h3 data-i18n="types.o_title">Something else</h3>
+        <p data-i18n="types.o_desc">Just describe it. Beegen figures out the right structure for your specific business.</p>
       </div>
     </div>
   </div>
@@ -604,37 +619,37 @@
 <section class="section" style="background:#ffffff;">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label">Built different</span>
-      <h2>Everything you need. Nothing you don't.</h2>
+      <span class="label" data-i18n="features.label">Built different</span>
+      <h2 data-i18n="features.title">Everything you need. Nothing you don't.</h2>
     </div>
     <div class="features-grid">
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
-        <h3>AI that actually gets it</h3>
-        <p>Describe your business once. The AI picks the right sections, writes real copy, and matches your brand. Not a generic template.</p>
+        <h3 data-i18n="features.ai_title">AI that understands your business</h3>
+        <p data-i18n="features.ai_desc">Describe what you do and who you serve. The AI picks the right sections, writes real copy tailored to your business — not a generic template.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </div>
-        <h3>Your brand, out of the box</h3>
-        <p>Upload your logo. Pick your colours. Every generation uses them automatically — no manual tweaking.</p>
+        <h3 data-i18n="features.edit_title">Edit with plain words</h3>
+        <p data-i18n="features.edit_desc">Your site is live. Want to change the headline? Add a new service? Just describe it. No page editors, no drag-and-drop headaches.</p>
       </div>
       <div class="feature-card reveal reveal-delay-3">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         </div>
-        <h3>Live in one click</h3>
-        <p>Publish to a free yoursite.beegen.co subdomain the moment you're ready. Custom domains coming soon.</p>
+        <h3 data-i18n="features.pub_title">Publish in one click</h3>
+        <p data-i18n="features.pub_desc">Your site goes live the moment you're ready. Share it, bookmark it, put it on your business card. It's real and it's yours.</p>
       </div>
       <div class="feature-card reveal reveal-delay-4">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
         </div>
-        <h3>Mobile-ready always</h3>
-        <p>Every site is built responsive from the start. Looks great on phones, tablets and desktops — automatically.</p>
+        <h3 data-i18n="features.resp_title">Looks right on every screen</h3>
+        <p data-i18n="features.resp_desc">Every site is built responsive from the start. Phones, tablets, desktops — your customers see a sharp, well-laid-out page every time.</p>
       </div>
     </div>
   </div>
@@ -644,86 +659,86 @@
 <section class="section" style="background: var(--cloud);">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label">Transparent pricing</span>
-      <h2>Start free. Scale when you're ready.</h2>
-      <p>3 free credits to try it out. Upgrade when you need more.</p>
+      <span class="label" data-i18n="pricing_teaser.label">Transparent pricing</span>
+      <h2 data-i18n="pricing_teaser.title">Start free. Upgrade when you need more.</h2>
+      <p data-i18n="pricing_teaser.subtitle">3 free builds to try it out. No credit card. No surprises.</p>
     </div>
     <div class="pricing-teaser-grid">
       <!-- Free Trial -->
       <div class="pricing-card reveal reveal-delay-1">
-        <div class="pricing-tier">Free Trial</div>
+        <div class="pricing-tier" data-i18n="pricing_teaser.free_tier">Free Trial</div>
         <div class="pricing-price">
           <span class="pricing-amount">$0</span>
         </div>
-        <p class="pricing-desc">3 credits to explore. No commitment.</p>
+        <p class="pricing-desc" data-i18n="pricing_teaser.free_desc">3 builds to see what Beegen can do.</p>
         <ul class="pricing-features">
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            3 total credits
+            <span data-i18n="pricing_teaser.free_f1">3 total builds</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Build &amp; preview sites
+            <span data-i18n="pricing_teaser.free_f2">Preview your site</span>
           </li>
           <li class="pricing-feature" style="opacity:.4;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-            No publishing
+            <span data-i18n="pricing_teaser.free_f3">Publishing not included</span>
           </li>
         </ul>
-        <a href="https://app.beegen.co" class="btn btn-outline" style="width:100%;justify-content:center;">Start free</a>
+        <a href="https://app.beegen.co" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_teaser.free_cta">Start for free</a>
       </div>
       <!-- Starter (featured) -->
       <div class="pricing-card featured reveal reveal-delay-2">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-tier">Starter</div>
+        <div class="pricing-badge" data-i18n="pricing_teaser.starter_badge">Most Popular</div>
+        <div class="pricing-tier" data-i18n="pricing_teaser.starter_tier">Starter</div>
         <div class="pricing-price">
-          <span class="pricing-amount">$19</span>
-          <span class="pricing-period">/mo</span>
+          <span class="pricing-amount">$249</span>
+          <span class="pricing-period" data-i18n="pricing_teaser.per_mo">/mo</span>
         </div>
-        <p class="pricing-desc">30 credits/month. Build and publish.</p>
+        <p class="pricing-desc" data-i18n="pricing_teaser.starter_desc">30 builds/month. Publish and share.</p>
         <ul class="pricing-features">
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            30 credits/month
+            <span data-i18n="pricing_teaser.starter_f1">30 builds per month</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Publish to beegen.co
+            <span data-i18n="pricing_teaser.starter_f2">Publish to beegen.co</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Brand settings
+            <span data-i18n="pricing_teaser.starter_f3">Brand settings</span>
           </li>
         </ul>
-        <a href="https://app.beegen.co" class="btn btn-primary" style="width:100%;justify-content:center;">Get started</a>
+        <a href="https://app.beegen.co" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="pricing_teaser.starter_cta">Get started</a>
       </div>
       <!-- Pro -->
       <div class="pricing-card reveal reveal-delay-3">
-        <div class="pricing-tier">Pro</div>
+        <div class="pricing-tier" data-i18n="pricing_teaser.pro_tier">Pro</div>
         <div class="pricing-price">
-          <span class="pricing-amount">$39</span>
-          <span class="pricing-period">/mo</span>
+          <span class="pricing-amount">$599</span>
+          <span class="pricing-period" data-i18n="pricing_teaser.per_mo">/mo</span>
         </div>
-        <p class="pricing-desc">100 credits/month. For power users.</p>
+        <p class="pricing-desc" data-i18n="pricing_teaser.pro_desc">100 builds/month. For power users.</p>
         <ul class="pricing-features">
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            100 credits/month
+            <span data-i18n="pricing_teaser.pro_f1">100 builds per month</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Everything in Starter
+            <span data-i18n="pricing_teaser.pro_f2">Everything in Starter</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Priority builds
+            <span data-i18n="pricing_teaser.pro_f3">Priority builds</span>
           </li>
         </ul>
-        <a href="https://app.beegen.co" class="btn btn-outline" style="width:100%;justify-content:center;">Get started</a>
+        <a href="https://app.beegen.co" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_teaser.pro_cta">Get started</a>
       </div>
     </div>
     <div class="see-pricing-link reveal">
-      <a href="/pricing.html">See full pricing →</a>
+      <a href="/pricing.html" data-i18n="pricing_teaser.see_full">See full pricing details →</a>
     </div>
   </div>
 </section>
@@ -732,12 +747,12 @@
 <section class="cta-band">
   <div class="container">
     <div class="reveal">
-      <h2>Your website is one conversation away.</h2>
-      <p>Start with 3 free credits. No account setup hassle. No blank page stare.</p>
+      <h2 data-i18n="cta.title">Your website is one conversation away.</h2>
+      <p data-i18n="cta.subtitle">Describe your business. We'll handle the rest.</p>
       <div class="cta-band-actions">
-        <a href="https://app.beegen.co" class="btn btn-primary btn-lg">Build my site for free →</a>
+        <a href="https://app.beegen.co" class="btn btn-primary btn-lg" data-i18n="cta.btn">Build my website free</a>
       </div>
-      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);">Cancel anytime · No credit card for trial</p>
+      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);" data-i18n="cta.footnote">No credit card · Cancel anytime</p>
     </div>
   </div>
 </section>
@@ -748,37 +763,41 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
-        <p>Build websites with AI.</p>
+        <p data-i18n="footer.tagline">Build professional websites with AI. No code required.</p>
       </div>
       <div class="footer-col">
-        <h5>Product</h5>
+        <h5 data-i18n="footer.product">Product</h5>
         <div class="footer-links">
-          <a href="/#how-it-works">How it Works</a>
-          <a href="/pricing.html">Pricing</a>
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">How it Works</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Pricing</a>
+          <a href="/whatsapp.html">WhatsApp AI</a>
+          <a href="/blog/" data-i18n="footer.blog">Blog</a>
+          <a href="/contact.html" data-i18n="footer.contact">Contact</a>
         </div>
       </div>
       <div class="footer-col">
-        <h5>Account</h5>
+        <h5 data-i18n="footer.account">Account</h5>
         <div class="footer-links">
-          <a href="https://app.beegen.co">Sign Up</a>
-          <a href="https://app.beegen.co/login">Login</a>
+          <a href="https://app.beegen.co" data-i18n="footer.signup">Sign Up</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Login</a>
         </div>
       </div>
       <div class="footer-col">
-        <h5>Legal</h5>
+        <h5 data-i18n="footer.legal">Legal</h5>
         <div class="footer-links">
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/terms.html">Terms</a>
+          <a href="/privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="/terms.html" data-i18n="footer.terms">Terms of Service</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Beegen</p>
+      <p>© 2025 Beegen. <span data-i18n="footer.rights">All rights reserved.</span></p>
       <p>Built with Beegen AI</p>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/i18n.js"></script>
 </body>
 </html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing Prompts That Build Great Websites — Beegen Blog</title>
+<meta name="description" content="The difference between a mediocre AI result and a great one is almost entirely in how you describe what you want. Here's the anatomy of a great website prompt.">
+<link rel="canonical" href="https://beegen.co/blog/ai-website-prompts-guide">
+<link rel="icon" href="/assets/logos/beegen-logo-color.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Beegen">
+<meta property="og:title" content="Writing Prompts That Build Great Websites">
+<meta property="og:description" content="The difference between a mediocre AI result and a great one is almost entirely in how you describe what you want.">
+<meta property="og:url" content="https://beegen.co/blog/ai-website-prompts-guide">
+<meta property="og:image" content="https://beegen.co/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Writing Prompts That Build Great Websites">
+<meta name="twitter:description" content="The difference between a mediocre AI result and a great one is almost entirely in how you describe what you want.">
+<meta name="twitter:image" content="https://beegen.co/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/global.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Writing Prompts That Build Great Websites",
+  "description": "The difference between a mediocre AI result and a great one is almost entirely in how you describe what you want. Here's the anatomy of a great website prompt.",
+  "datePublished": "2026-04-22",
+  "dateModified": "2026-04-22",
+  "author": { "@type": "Organization", "name": "Beegen", "url": "https://beegen.co" },
+  "publisher": { "@type": "Organization", "name": "Beegen", "url": "https://beegen.co", "logo": { "@type": "ImageObject", "url": "https://beegen.co/assets/logos/beegen-logo-color.svg" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://beegen.co/blog/ai-website-prompts-guide" }
+}
+</script>
+<style>
+.article-hero { padding: 120px 0 56px; background: linear-gradient(rgba(28,8,0,.72), rgba(28,8,0,.88)), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1400&q=80') center/cover no-repeat; }
+.article-hero .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 13px; color: rgba(255,255,255,.45); }
+.article-hero .breadcrumb a { color: rgba(255,255,255,.45); text-decoration: none; }
+.article-hero .breadcrumb a:hover { color: var(--teal); }
+.article-hero .breadcrumb span { color: rgba(255,255,255,.25); }
+.article-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+.article-hero h1 { color: #fff; max-width: 780px; line-height: 1.2; margin-bottom: 20px; }
+.article-byline { display: flex; align-items: center; gap: 16px; font-size: 14px; color: rgba(255,255,255,.45); }
+.article-byline-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,.3); }
+.article-body { background: var(--cloud); padding: 56px 0 100px; }
+.article-layout { display: grid; grid-template-columns: 1fr 320px; gap: 48px; align-items: start; }
+.article-content { background: #fff; border-radius: var(--radius-lg); border: 1px solid var(--mist); padding: 52px 56px; }
+.article-content h2 { font-size: 22px; color: var(--navy); margin: 40px 0 14px; }
+.article-content h2:first-child { margin-top: 0; }
+.article-content h3 { font-size: 17px; color: var(--navy); margin: 28px 0 10px; }
+.article-content p { font-size: 16px; color: #475569; line-height: 1.8; margin-bottom: 18px; }
+.article-content ul, .article-content ol { padding-left: 24px; margin-bottom: 18px; }
+.article-content li { font-size: 16px; color: #475569; line-height: 1.75; margin-bottom: 8px; }
+.article-content a { color: var(--teal); text-decoration: none; }
+.article-content a:hover { text-decoration: underline; }
+.article-content strong { color: var(--navy); font-weight: 700; }
+.callout { background: rgba(2,195,154,.08); border-left: 3px solid var(--teal); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 28px 0; }
+.callout p { margin: 0; font-size: 15px; color: var(--navy); }
+.prompt-example { border-radius: var(--radius); padding: 20px 24px; margin: 16px 0; font-size: 15px; line-height: 1.7; }
+.prompt-bad { background: #FFF5F5; border: 1px solid #FED7D7; color: #744210; }
+.prompt-bad::before { content: "✗ Weak"; display: block; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #E53E3E; margin-bottom: 8px; }
+.prompt-good { background: rgba(2,195,154,.07); border: 1px solid rgba(2,195,154,.25); color: #1a4a3a; }
+.prompt-good::before { content: "✓ Strong"; display: block; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+.ingredient-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+.ingredient { background: var(--cloud); border-radius: var(--radius); padding: 20px; }
+.ingredient-num { font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+.ingredient h4 { font-size: 15px; color: var(--navy); margin-bottom: 6px; }
+.ingredient p { font-size: 13px; color: var(--gray-600); margin: 0; line-height: 1.5; }
+.sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 20px; }
+.sidebar-cta { background: var(--navy); border-radius: var(--radius-lg); padding: 28px; color: #fff; }
+.sidebar-cta h3 { color: #fff; font-size: 18px; margin-bottom: 10px; }
+.sidebar-cta p { color: rgba(255,255,255,.6); font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+.sidebar-related { background: #fff; border-radius: var(--radius-lg); border: 1px solid var(--mist); padding: 24px; }
+.sidebar-related h4 { font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-400); margin-bottom: 16px; }
+.related-link { display: block; font-size: 14px; color: var(--navy); text-decoration: none; padding: 10px 0; border-bottom: 1px solid var(--mist); line-height: 1.4; font-weight: 700; }
+.related-link:last-child { border-bottom: none; padding-bottom: 0; }
+.related-link:hover { color: var(--teal); }
+@media (max-width: 960px) {
+  .article-layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .article-content { padding: 32px 24px; }
+  .ingredient-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/assets/logos/beegen-logo-white.svg" alt="beegen" class="nav-logo-img">
+      </a>
+      <div class="nav-links">
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo Funciona</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Precios</a>
+        <a href="/whatsapp.html" class="nav-link" data-i18n="nav.whatsapp">WhatsApp</a>
+        <a href="/blog/" class="nav-link active" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma / Switch language">
+          <span class="lang-label">EN</span>
+        </button>
+        <a href="https://app.beegen.co" class="btn btn-primary btn-sm" data-i18n="nav.start_free">Comenzar gratis</a>
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/beegen-logo-white.svg" alt="beegen" class="nav-logo-img">
+    </a>
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo Funciona</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/whatsapp.html" class="mobile-nav-link" data-i18n="nav.whatsapp">WhatsApp</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link active" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
+  </div>
+  <div class="mobile-nav-footer">
+    <a href="https://app.beegen.co" class="btn btn-primary" data-i18n="nav.start_free">Comenzar gratis</a>
+  </div>
+</div>
+
+<div class="article-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/blog">Blog</a>
+      <span>›</span>
+      <span>Guide</span>
+    </nav>
+    <span class="article-tag">Guide</span>
+    <h1>Writing Prompts That Build Great Websites</h1>
+    <div class="article-byline">
+      <span>Beegen Team</span>
+      <span class="article-byline-dot"></span>
+      <span>April 22, 2026</span>
+      <span class="article-byline-dot"></span>
+      <span>5 min read</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="container">
+    <div class="article-layout">
+      <article class="article-content">
+
+        <p>The most common frustration people have with AI website builders is a result that looks generic — like a template rather than a real business's website. The culprit is almost never the AI. It's the prompt.</p>
+
+        <p>An AI website builder is only as good as the brief you give it. Feed it vague input and you get a vague output. Give it a rich, specific description and it can make genuinely smart creative decisions about layout, copy, tone, and structure. Here's how to get into the second category.</p>
+
+        <h2>The Six Ingredients of a Great Website Prompt</h2>
+
+        <div class="ingredient-grid">
+          <div class="ingredient">
+            <div class="ingredient-num">01</div>
+            <h4>Business type and category</h4>
+            <p>What kind of business is this? "Wedding photographer" is better than "photographer." "B2B SaaS for HR teams" is better than "software company."</p>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient-num">02</div>
+            <h4>Your target customer</h4>
+            <p>Who is this site for? Age range, profession, problem they're trying to solve. The AI uses this to set the right tone and emphasis.</p>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient-num">03</div>
+            <h4>What makes you different</h4>
+            <p>Your unique angle, specialisation, or value proposition. This is what goes in the headline and hero copy — don't let the AI guess.</p>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient-num">04</div>
+            <h4>Pages and sections needed</h4>
+            <p>List the specific sections you need: homepage, about, services with pricing, portfolio, contact form, FAQ, testimonials, etc.</p>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient-num">05</div>
+            <h4>Tone and visual vibe</h4>
+            <p>Professional and corporate? Warm and personal? Bold and edgy? Give the AI a direction for both the writing style and the visual feel.</p>
+          </div>
+          <div class="ingredient">
+            <div class="ingredient-num">06</div>
+            <h4>Key details to include</h4>
+            <p>Location, pricing anchors, specific services, credentials, years of experience — anything that should appear on the site.</p>
+          </div>
+        </div>
+
+        <p>You don't need all six in every prompt. But the more you include, the more the AI can do on your behalf without you having to fix things afterward.</p>
+
+        <h2>Weak vs. Strong: Real Examples</h2>
+
+        <h3>Example 1: Personal trainer</h3>
+        <div class="prompt-bad">A website for a personal trainer.</div>
+        <div class="prompt-good">A website for a personal trainer based in Melbourne who specialises in strength training for busy professionals aged 30–50. My USP is that I offer 45-minute sessions at 6am and 7am before the workday starts. I need a homepage with a strong hero, a Services section (1-on-1 training, group sessions, online coaching), a Pricing section (from $95/session), client testimonials, and a booking CTA. Tone: motivating but not bro-ish — think "calm confidence." Dark colour scheme with orange accents.</div>
+
+        <h3>Example 2: Architecture firm</h3>
+        <div class="prompt-bad">Website for an architecture studio.</div>
+        <div class="prompt-good">A portfolio website for a boutique architecture and interior design studio in Copenhagen. We do residential projects only — home extensions, renovations, and new builds. Our clients are homeowners with a budget of €150k+. The aesthetic should be Scandinavian minimalist: lots of white space, clean lines, a neutral palette with warm stone tones. Pages needed: Home (hero image area for project photography), Projects (portfolio grid), About (our story and team), and Contact. Copy should feel calm, considered, and premium — not corporate.</div>
+
+        <h3>Example 3: SaaS product</h3>
+        <div class="prompt-bad">A landing page for my app.</div>
+        <div class="prompt-good">A marketing landing page for a B2B SaaS tool that helps restaurant managers schedule staff shifts and track labour costs. Target user: independent restaurant owners with 5–30 employees who are currently using spreadsheets or pen and paper. Key benefits: cuts scheduling time by 70%, reduces labour cost overruns, mobile-friendly for staff. Pricing starts at $49/month. I need a hero section, a "How it works" section (3 steps), a features section, a pricing table, and a CTA to start a free trial. Tone: practical and straightforward — owners are busy, not interested in hype.</div>
+
+        <h2>How to Refine Without Burning Credits</h2>
+        <p>If your first result is close but not quite right, you don't need to start over with a new credit. Use follow-up messages to make targeted changes:</p>
+
+        <ul>
+          <li><strong>"Make the hero headline more direct and benefit-focused"</strong> — refines copy without rebuilding the layout</li>
+          <li><strong>"The pricing section feels too cluttered — simplify it to two tiers"</strong> — targeted structural edit</li>
+          <li><strong>"Change the colour scheme to dark navy and gold"</strong> — reskins the whole site</li>
+          <li><strong>"Add a FAQ section after the pricing, covering these 4 questions: [paste questions]"</strong> — adds a new section</li>
+          <li><strong>"The tone feels too formal — rewrite the About section to sound more personal and conversational"</strong> — rewrites a specific section</li>
+        </ul>
+
+        <p>Think of it like working with a designer: the first version is a starting point, and you're directing revisions. Each message refines the current site rather than rebuilding from scratch.</p>
+
+        <h2>The One Thing Most People Forget</h2>
+        <p>The single most overlooked element in website prompts is <strong>who the customer is and what they want to feel</strong>. Most people describe the business — what they offer, what they do — without describing the customer's perspective.</p>
+
+        <p>A dentist's website for nervous patients should feel very different from one targeting people who want cosmetic work. A children's tutoring service should feel different from executive coaching. When you tell the AI who the customer is and what they're hoping for, the copy and layout choices it makes are dramatically more on-target.</p>
+
+        <div class="callout">
+          <p><strong>Ready to put this into practice?</strong> <a href="https://app.beegen.co">Start free with 3 credits</a> — no card required. Use one of the example prompt structures above and see what happens.</p>
+        </div>
+
+      </article>
+
+      <aside class="sidebar">
+        <div class="sidebar-cta">
+          <h3>Build your site free</h3>
+          <p>3 free credits. No credit card. Your first website generates in about 30 seconds.</p>
+          <a href="https://app.beegen.co" class="btn btn-primary" style="width:100%;text-align:center;">Start Free →</a>
+        </div>
+        <div class="sidebar-related">
+          <h4>Related Articles</h4>
+          <a href="/blog/build-business-website-with-ai" class="related-link">How to Build a Business Website in 10 Minutes</a>
+          <a href="/blog/small-business-needs-website" class="related-link">Does Your Small Business Need a Website in 2026?</a>
+          <a href="/blog/freelancer-ai-website-builder" class="related-link">How Freelancers Are Building Client Sites for Under $1</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" width="120" height="32" style="margin-bottom:16px;">
+        <p>Build websites with AI.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <div class="footer-links">
+          <a href="/#how-it-works">How it Works</a>
+          <a href="/pricing.html">Pricing</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Account</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co">Sign Up</a>
+          <a href="https://app.beegen.co/login">Login</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <div class="footer-links">
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Beegen</p>
+      <p>Built with Beegen AI</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script src="/js/i18n.js"></script>
+</body>
+</html>

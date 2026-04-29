@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Beegen</title>
+<meta name="description" content="Get in touch with the Beegen team. We help local businesses get online with AI-powered websites. Reach us by WhatsApp or send us a message.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/global.css">
+<style>
+/* ── CONTACT PAGE ────────────────────────────────────────── */
+.contact-hero {
+  background: var(--grad-hero);
+  padding: 120px 0 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.contact-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(2,195,154,.14) 0%, transparent 60%);
+  pointer-events: none;
+}
+.contact-hero h1 { color: #fff; margin-bottom: 14px; position: relative; }
+.contact-hero p  { color: rgba(255,255,255,.7); font-size: 18px; max-width: 520px; margin: 0 auto; position: relative; }
+
+/* ── MAIN LAYOUT ─────────────────────────────────────────── */
+.contact-body {
+  background: var(--cloud);
+  padding: 72px 0 96px;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── FORM ────────────────────────────────────────────────── */
+.contact-form-wrap {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  box-shadow: var(--shadow);
+}
+.contact-form-wrap h2 { font-size: 26px; margin-bottom: 8px; }
+.contact-form-wrap > p { color: var(--gray-600); margin-bottom: 32px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
+.form-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 7px;
+  letter-spacing: .3px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--gray-800);
+  background: var(--gray-100);
+  transition: border-color .2s, box-shadow .2s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(2,195,154,.12);
+  background: #fff;
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-group select { appearance: none; cursor: pointer; }
+
+.contact-submit {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius);
+  background: var(--orange);
+  color: #fff;
+  transition: background .2s, transform .2s;
+  font-family: inherit;
+}
+.contact-submit:hover { background: #d4621c; transform: translateY(-1px); }
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+.form-success-icon {
+  width: 64px; height: 64px;
+  background: rgba(2,195,154,.12);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+}
+.form-success-icon svg { color: var(--teal); }
+.form-success h3 { font-size: 22px; margin-bottom: 10px; }
+.form-success p { color: var(--gray-600); }
+
+/* ── SIDEBAR ─────────────────────────────────────────────── */
+.contact-sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+.contact-wa-card {
+  background: var(--navy);
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.contact-wa-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(37,211,102,.15) 0%, transparent 65%);
+  pointer-events: none;
+}
+.contact-wa-icon {
+  width: 60px; height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+}
+.contact-wa-icon svg { width: 30px; height: 30px; color: #fff; }
+.contact-wa-card h3 { color: #fff; font-size: 20px; margin-bottom: 10px; position: relative; }
+.contact-wa-card p { color: rgba(255,255,255,.65); font-size: 14px; line-height: 1.65; margin-bottom: 24px; position: relative; }
+
+.btn-wa-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  text-decoration: none;
+  width: 100%;
+  transition: background .2s, transform .2s;
+  position: relative;
+}
+.btn-wa-lg:hover { background: #1da851; transform: translateY(-2px); }
+.btn-wa-lg svg { width: 20px; height: 20px; }
+
+.contact-info-card {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  padding: 28px 28px;
+  box-shadow: var(--shadow-sm);
+}
+.contact-info-card h4 { font-size: 16px; margin-bottom: 16px; }
+.contact-info-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.contact-info-item:last-child { margin-bottom: 0; }
+.contact-info-item svg {
+  width: 18px; height: 18px;
+  color: var(--teal);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.contact-info-item p { font-size: 14px; color: var(--gray-600); margin: 0; line-height: 1.5; }
+.contact-info-item strong { color: var(--gray-800); font-size: 14px; display: block; margin-bottom: 2px; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-form-wrap { padding: 32px 24px; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  .contact-sidebar { order: -1; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img id="navLogo" src="assets/logos/beegen-logo-white.svg" alt="Beegen">
+      </a>
+      <div class="nav-links">
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">How it Works</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+        <a href="/whatsapp.html" class="nav-link" data-i18n="nav.whatsapp">WhatsApp</a>
+        <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link active" data-i18n="nav.contact">Contact</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Login</a>
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle"><span class="lang-label">EN</span></button>
+        <a href="https://app.beegen.co" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Start free</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">How it Works</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Pricing</a></div>
+    <div class="mobile-nav-item"><a href="/whatsapp.html" class="mobile-nav-link" data-i18n="nav.whatsapp">WhatsApp</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Login</a></div>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle" id="langToggleMobile" style="margin-bottom:14px;width:100%;justify-content:center;display:flex;"><span class="lang-label">EN</span></button>
+    <a href="https://app.beegen.co" class="btn btn-primary" data-i18n="nav.start_free">Start free</a>
+  </div>
+</div>
+
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section class="contact-hero">
+  <div class="container">
+    <span class="label" style="position:relative" data-i18n="contact.hero_label">Get in touch</span>
+    <h1 data-i18n="contact.hero_h1">We'd love to hear from you</h1>
+    <p data-i18n="contact.hero_sub">Questions about Beegen, pricing, or the WhatsApp feature? We reply fast — usually within a few hours.</p>
+  </div>
+</section>
+
+<!-- ── BODY ───────────────────────────────────────────────── -->
+<section class="contact-body">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <div class="contact-form-wrap">
+        <div id="formContent">
+          <h2 data-i18n="contact.form_title">Send us a message</h2>
+          <p data-i18n="contact.form_sub">Fill in the form and we'll get back to you shortly.</p>
+
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName" data-i18n="contact.label_first">First name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Maria" data-i18n-placeholder="contact.placeholder_first" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName" data-i18n="contact.label_last">Last name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Lopez" data-i18n-placeholder="contact.placeholder_last">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="contact.label_email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="maria@mybusiness.com" data-i18n-placeholder="contact.placeholder_email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone" data-i18n="contact.label_phone">WhatsApp / Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+52 55 1234 5678" data-i18n-placeholder="contact.placeholder_phone">
+            </div>
+            <div class="form-group">
+              <label for="businessType" data-i18n="contact.label_business">Type of business</label>
+              <select id="businessType" name="businessType">
+                <option value="" disabled selected data-i18n="contact.select_default">Select your business type…</option>
+                <option data-i18n="contact.opt_restaurant">Restaurant or Café</option>
+                <option data-i18n="contact.opt_salon">Salon or Spa</option>
+                <option data-i18n="contact.opt_trade">Trade or Home Services</option>
+                <option data-i18n="contact.opt_retail">Retail or Boutique</option>
+                <option data-i18n="contact.opt_gym">Gym or Fitness Studio</option>
+                <option data-i18n="contact.opt_realestate">Real Estate or Rentals</option>
+                <option data-i18n="contact.opt_freelancer">Freelancer or Consultant</option>
+                <option data-i18n="contact.opt_other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message" data-i18n="contact.label_message">Message *</label>
+              <textarea id="message" name="message" placeholder="Tell us what you're looking for — a website, WhatsApp AI, pricing questions, or just a hello…" data-i18n-placeholder="contact.placeholder_message" required></textarea>
+            </div>
+            <button type="submit" class="contact-submit" data-i18n="contact.submit_btn">Send message →</button>
+          </form>
+        </div>
+
+        <!-- Success state -->
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 data-i18n="contact.success_title">Message sent!</h3>
+          <p data-i18n="contact.success_sub">Thanks — we'll get back to you soon. Or reach us directly on WhatsApp for a faster reply.</p>
+          <a href="https://wa.me/13468318036" class="btn-wa-lg" style="width:auto;margin-top:20px;display:inline-flex;">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.532 5.862L.057 23.927a.5.5 0 00.596.676l6.282-1.647A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.525-5.17-1.438l-.371-.221-3.851 1.01.977-3.758-.242-.386A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            <span data-i18n="contact.success_wa_btn">Chat on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="contact-sidebar">
+
+        <!-- WhatsApp CTA -->
+        <div class="contact-wa-card">
+          <div class="contact-wa-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.532 5.862L.057 23.927a.5.5 0 00.596.676l6.282-1.647A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.525-5.17-1.438l-.371-.221-3.851 1.01.977-3.758-.242-.386A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          </div>
+          <h3 data-i18n="contact.wa_card_title">Prefer to chat?</h3>
+          <p data-i18n="contact.wa_card_sub">Reach us directly on WhatsApp. We're real people — we reply in your language, usually within a few hours.</p>
+          <a href="https://wa.me/13468318036?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Beegen" class="btn-wa-lg">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.532 5.862L.057 23.927a.5.5 0 00.596.676l6.282-1.647A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.525-5.17-1.438l-.371-.221-3.851 1.01.977-3.758-.242-.386A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            <span data-i18n="contact.wa_card_btn">Message us on WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Info -->
+        <div class="contact-info-card">
+          <h4 data-i18n="contact.info_title">Other ways to reach us</h4>
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div>
+              <strong data-i18n="contact.info_email_label">Email</strong>
+              <p><a href="mailto:hello@beegen.co" style="color:var(--teal)">hello@beegen.co</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            <div>
+              <strong data-i18n="contact.info_response_label">Response time</strong>
+              <p data-i18n="contact.info_response_text">Usually within a few hours on weekdays. WhatsApp is faster.</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <div>
+              <strong data-i18n="contact.info_lang_label">Languages</strong>
+              <p data-i18n="contact.info_lang_text">We speak English and Spanish. Reply in whichever you prefer.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /sidebar -->
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
+        <p data-i18n="footer.tagline">Build professional websites with AI. No code required.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.product">Product</h5>
+        <div class="footer-links">
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">How it Works</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Pricing</a>
+          <a href="/whatsapp.html" data-i18n="nav.whatsapp">WhatsApp AI</a>
+          <a href="/blog/" data-i18n="footer.blog">Blog</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.account">Account</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co" data-i18n="footer.signup">Sign Up</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Login</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.legal">Legal</h5>
+        <div class="footer-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="/terms.html" data-i18n="footer.terms">Terms of Service</a>
+          <a href="/contact.html" data-i18n="footer.contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Beegen. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p>Built with Beegen AI</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/i18n.js"></script>
+<script>
+// Simple form handler — submits to Formspree or shows success state
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('.contact-submit');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  const data = {
+    firstName: document.getElementById('firstName').value,
+    lastName:  document.getElementById('lastName').value,
+    email:     document.getElementById('email').value,
+    phone:     document.getElementById('phone').value,
+    businessType: document.getElementById('businessType').value,
+    message:   document.getElementById('message').value,
+  };
+
+  // Build mailto fallback while you set up a real backend
+  const subject = encodeURIComponent('New contact from beegen.co — ' + data.firstName);
+  const body    = encodeURIComponent(
+    'Name: ' + data.firstName + ' ' + data.lastName + '\n' +
+    'Email: ' + data.email + '\n' +
+    'Phone: ' + data.phone + '\n' +
+    'Business: ' + data.businessType + '\n\n' +
+    data.message
+  );
+
+  // Show success immediately (swap to a real API call when ready)
+  document.getElementById('formContent').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+
+  // Open mailto as silent fallback
+  setTimeout(() => {
+    window.location.href = 'mailto:hello@beegen.co?subject=' + subject + '&body=' + body;
+  }, 800);
+});
+</script>
+</body>
+</html>

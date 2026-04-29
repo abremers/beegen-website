@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Freelancers Are Building Client Websites for Under $1 Each — Beegen Blog</title>
+<meta name="description" content="Some freelancers are charging $500–$2,000 for client websites that cost them under a dollar to generate. Here's the playbook — the economics, the workflow, and what to watch out for.">
+<link rel="canonical" href="https://beegen.co/blog/freelancer-ai-website-builder">
+<link rel="icon" href="/assets/logos/beegen-logo-color.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Beegen">
+<meta property="og:title" content="How Freelancers Are Building Client Websites for Under $1 Each">
+<meta property="og:description" content="Some freelancers are charging $500–$2,000 for client websites that cost them under a dollar to generate. Here's the playbook.">
+<meta property="og:url" content="https://beegen.co/blog/freelancer-ai-website-builder">
+<meta property="og:image" content="https://beegen.co/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Freelancers Are Building Client Websites for Under $1 Each">
+<meta name="twitter:description" content="Some freelancers are charging $500–$2,000 for websites that cost them under a dollar to generate. Here's the playbook.">
+<meta name="twitter:image" content="https://beegen.co/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/global.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Freelancers Are Building Client Websites for Under $1 Each",
+  "description": "Some freelancers are charging $500–$2,000 for client websites that cost them under a dollar to generate. Here's the playbook.",
+  "datePublished": "2026-04-22",
+  "dateModified": "2026-04-22",
+  "author": { "@type": "Organization", "name": "Beegen", "url": "https://beegen.co" },
+  "publisher": { "@type": "Organization", "name": "Beegen", "url": "https://beegen.co", "logo": { "@type": "ImageObject", "url": "https://beegen.co/assets/logos/beegen-logo-color.svg" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://beegen.co/blog/freelancer-ai-website-builder" }
+}
+</script>
+<style>
+.article-hero { padding: 120px 0 56px; background: linear-gradient(rgba(28,8,0,.72), rgba(28,8,0,.88)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80') center/cover no-repeat; }
+.article-hero .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 13px; color: rgba(255,255,255,.45); }
+.article-hero .breadcrumb a { color: rgba(255,255,255,.45); text-decoration: none; }
+.article-hero .breadcrumb a:hover { color: var(--teal); }
+.article-hero .breadcrumb span { color: rgba(255,255,255,.25); }
+.article-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+.article-hero h1 { color: #fff; max-width: 780px; line-height: 1.2; margin-bottom: 20px; }
+.article-byline { display: flex; align-items: center; gap: 16px; font-size: 14px; color: rgba(255,255,255,.45); }
+.article-byline-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,.3); }
+.article-body { background: var(--cloud); padding: 56px 0 100px; }
+.article-layout { display: grid; grid-template-columns: 1fr 320px; gap: 48px; align-items: start; }
+.article-content { background: #fff; border-radius: var(--radius-lg); border: 1px solid var(--mist); padding: 52px 56px; }
+.article-content h2 { font-size: 22px; color: var(--navy); margin: 40px 0 14px; }
+.article-content h2:first-child { margin-top: 0; }
+.article-content h3 { font-size: 17px; color: var(--navy); margin: 28px 0 10px; }
+.article-content p { font-size: 16px; color: #475569; line-height: 1.8; margin-bottom: 18px; }
+.article-content ul, .article-content ol { padding-left: 24px; margin-bottom: 18px; }
+.article-content li { font-size: 16px; color: #475569; line-height: 1.75; margin-bottom: 8px; }
+.article-content a { color: var(--teal); text-decoration: none; }
+.article-content a:hover { text-decoration: underline; }
+.article-content strong { color: var(--navy); font-weight: 700; }
+.callout { background: rgba(2,195,154,.08); border-left: 3px solid var(--teal); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 28px 0; }
+.callout p { margin: 0; font-size: 15px; color: var(--navy); }
+.math-block { background: var(--navy); border-radius: var(--radius-lg); padding: 32px 36px; margin: 28px 0; color: #fff; }
+.math-block h3 { color: #fff; font-size: 16px; margin-bottom: 20px; letter-spacing: .5px; }
+.math-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.1); font-size: 15px; }
+.math-row:last-child { border-bottom: none; padding-bottom: 0; }
+.math-row .label { color: rgba(255,255,255,.65); }
+.math-row .value { font-weight: 700; color: #fff; }
+.math-row.total .label { color: #fff; font-weight: 700; }
+.math-row.total .value { color: var(--teal); font-size: 20px; }
+.math-divider { border: none; border-top: 1px solid rgba(255,255,255,.2); margin: 10px 0; }
+.sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 20px; }
+.sidebar-cta { background: var(--navy); border-radius: var(--radius-lg); padding: 28px; color: #fff; }
+.sidebar-cta h3 { color: #fff; font-size: 18px; margin-bottom: 10px; }
+.sidebar-cta p { color: rgba(255,255,255,.6); font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+.sidebar-related { background: #fff; border-radius: var(--radius-lg); border: 1px solid var(--mist); padding: 24px; }
+.sidebar-related h4 { font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-400); margin-bottom: 16px; }
+.related-link { display: block; font-size: 14px; color: var(--navy); text-decoration: none; padding: 10px 0; border-bottom: 1px solid var(--mist); line-height: 1.4; font-weight: 700; }
+.related-link:last-child { border-bottom: none; padding-bottom: 0; }
+.related-link:hover { color: var(--teal); }
+@media (max-width: 960px) {
+  .article-layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .article-content { padding: 32px 24px; }
+  .math-block { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/assets/logos/beegen-logo-white.svg" alt="beegen" class="nav-logo-img">
+      </a>
+      <div class="nav-links">
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo Funciona</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Precios</a>
+        <a href="/whatsapp.html" class="nav-link" data-i18n="nav.whatsapp">WhatsApp</a>
+        <a href="/blog/" class="nav-link active" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma / Switch language">
+          <span class="lang-label">EN</span>
+        </button>
+        <a href="https://app.beegen.co" class="btn btn-primary btn-sm" data-i18n="nav.start_free">Comenzar gratis</a>
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/beegen-logo-white.svg" alt="beegen" class="nav-logo-img">
+    </a>
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo Funciona</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/whatsapp.html" class="mobile-nav-link" data-i18n="nav.whatsapp">WhatsApp</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link active" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
+  </div>
+  <div class="mobile-nav-footer">
+    <a href="https://app.beegen.co" class="btn btn-primary" data-i18n="nav.start_free">Comenzar gratis</a>
+  </div>
+</div>
+
+<div class="article-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/blog">Blog</a>
+      <span>›</span>
+      <span>Freelancers</span>
+    </nav>
+    <span class="article-tag">Freelancers</span>
+    <h1>How Freelancers Are Building Client Websites for Under $1 Each</h1>
+    <div class="article-byline">
+      <span>Beegen Team</span>
+      <span class="article-byline-dot"></span>
+      <span>April 22, 2026</span>
+      <span class="article-byline-dot"></span>
+      <span>6 min read</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="container">
+    <div class="article-layout">
+      <article class="article-content">
+
+        <p>There's a quiet category of freelancers and small agencies doing very well right now. They're charging clients anywhere from $300 to $2,000 for a website. The actual cost of generating that website — the AI credit — is $0.26 to $0.63. Their margin is extraordinary, and their delivery time is measured in hours rather than weeks.</p>
+
+        <p>This isn't a secret or a hack. It's a natural outcome of what AI website builders make possible. But there's a workflow to it, and there are limits to understand. Here's how it actually works.</p>
+
+        <h2>The Economics</h2>
+
+        <p>The Beegen Agency plan costs $79/month for 300 credits. That's about $0.26 per credit, and each credit generates one complete website. For a freelancer doing even modest volume, the maths look like this:</p>
+
+        <div class="math-block">
+          <h3>Agency plan — example month</h3>
+          <div class="math-row">
+            <span class="label">Plan cost</span>
+            <span class="value">$79/month</span>
+          </div>
+          <div class="math-row">
+            <span class="label">Client websites delivered (10)</span>
+            <span class="value">10 × $600 avg = $6,000</span>
+          </div>
+          <div class="math-row">
+            <span class="label">Credits used (10 sites × ~5 revisions each)</span>
+            <span class="value">~50 credits ($13)</span>
+          </div>
+          <hr class="math-divider">
+          <div class="math-row total">
+            <span class="label">Gross margin on website production</span>
+            <span class="value">~98.5%</span>
+          </div>
+        </div>
+
+        <p>The economics are not the interesting part, though. The interesting part is what happens to your time. Building a client website the traditional way — from brief to wireframe to design to development — takes an experienced freelancer 20–40 hours per project. With AI generation, the initial build takes 30 minutes. Revisions take another hour or two. The whole production process compresses to a fraction of its former size.</p>
+
+        <p>That time difference is where the real value sits. You can take on more clients, deliver faster, and still charge professional rates — because the output is professional.</p>
+
+        <h2>What the Workflow Actually Looks Like</h2>
+
+        <h3>1. Client discovery (30–60 minutes)</h3>
+        <p>This doesn't change with AI. You still need to understand the client's business, their customers, their competitors, and what they want the site to achieve. In fact, this step becomes more important, because the quality of your briefing directly determines the quality of the AI output. Use a structured intake form to capture everything you need.</p>
+
+        <h3>2. First generation (5 minutes)</h3>
+        <p>Write a detailed prompt from your discovery notes and run the first generation. You'll typically get something that's 60–80% of the way there on the first pass if your prompt is thorough. This is a draft, not a deliverable — don't show it to the client yet.</p>
+
+        <h3>3. Internal refinement (30–60 minutes)</h3>
+        <p>Use follow-up messages to tighten the copy, adjust the layout, set brand colors, and upload the client's logo. This is where your creative judgment adds value — knowing which elements to refine and how to direct the AI toward the client's brand voice.</p>
+
+        <h3>4. Client review (varies)</h3>
+        <p>Present the site to the client. Most clients will have 3–10 change requests. Each one takes a message and about 30 seconds to regenerate. What used to be a back-and-forth over days now happens in a single meeting.</p>
+
+        <h3>5. Publish and hand over</h3>
+        <p>Publish to a beegen.co subdomain or connect the client's custom domain. Hand over the credentials and walk them through making simple text updates themselves, or offer a monthly retainer for ongoing maintenance.</p>
+
+        <h2>Where to Position This With Clients</h2>
+        <p>You don't need to hide that you're using AI. Most clients don't care how you build it — they care about the result and the price. "I use modern AI tools to deliver professional websites in a fraction of the time and cost of traditional agencies" is an honest and compelling pitch.</p>
+
+        <p>That said, the clients best suited to this workflow are:</p>
+        <ul>
+          <li><strong>Small and local businesses</strong> — cafés, tradespeople, photographers, consultants — who need a clean, professional web presence but don't have complex requirements</li>
+          <li><strong>Startups</strong> launching their first marketing site quickly before product-market fit is proven</li>
+          <li><strong>Existing clients</strong> who need a site refresh without a full redesign budget</li>
+        </ul>
+
+        <p>The clients who are not a good fit: e-commerce stores that need inventory management, businesses needing custom web applications, or anyone requiring complex CMS workflows with multiple content editors.</p>
+
+        <h2>Building a Retainer on Top</h2>
+        <p>The delivery model opens up a recurring revenue angle that many freelancers overlook. Once the site is live, clients often need:</p>
+        <ul>
+          <li>Seasonal updates (holiday messaging, new offers, event promotions)</li>
+          <li>New pages as the business grows</li>
+          <li>Copy refreshes every 6–12 months</li>
+          <li>A new section when they add a service</li>
+        </ul>
+
+        <p>A $49–$99/month maintenance retainer — where you commit to making any requested change within 48 hours — is easy to justify for a client who knows how fast you can move. For you, it might mean one 15-minute update per month per client. At 20 retainer clients, that's a meaningful and very low-effort recurring income stream.</p>
+
+        <h2>What You're Actually Selling</h2>
+        <p>It's worth being clear-eyed about what's changed here and what hasn't. AI handles the production. What you're still providing — and what still commands a professional fee — is:</p>
+        <ul>
+          <li>The strategic brief: understanding what a business actually needs from its website</li>
+          <li>The creative direction: knowing what good looks like and how to get there</li>
+          <li>The client relationship: translating vague feedback into precise instructions</li>
+          <li>The accountability: being the person who owns the result</li>
+        </ul>
+
+        <p>Those things don't get automated. They get more valuable as production becomes commoditised.</p>
+
+        <div class="callout">
+          <p><strong>On the Agency plan</strong> you get 300 credits/month at $0.26 each — the best rate for freelancers doing volume. <a href="/pricing.html">See all plans →</a> or <a href="https://app.beegen.co">start free with 3 credits</a>.</p>
+        </div>
+
+      </article>
+
+      <aside class="sidebar">
+        <div class="sidebar-cta">
+          <h3>Agency plan</h3>
+          <p>300 credits/month at $0.26 each. Best value for freelancers and agencies building client sites.</p>
+          <a href="/pricing.html" class="btn btn-primary" style="width:100%;text-align:center;">See Pricing →</a>
+        </div>
+        <div class="sidebar-related">
+          <h4>Related Articles</h4>
+          <a href="/blog/build-business-website-with-ai" class="related-link">How to Build a Business Website in 10 Minutes</a>
+          <a href="/blog/ai-website-prompts-guide" class="related-link">Writing Prompts That Build Great Websites</a>
+          <a href="/blog/best-ai-website-builders-2026" class="related-link">The Best AI Website Builders in 2026</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" width="120" height="32" style="margin-bottom:16px;">
+        <p>Build websites with AI.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <div class="footer-links">
+          <a href="/#how-it-works">How it Works</a>
+          <a href="/pricing.html">Pricing</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Account</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co">Sign Up</a>
+          <a href="https://app.beegen.co/login">Login</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <div class="footer-links">
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Beegen</p>
+      <p>Built with Beegen AI</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script src="/js/i18n.js"></script>
+</body>
+</html>

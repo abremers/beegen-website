@@ -1,0 +1,38 @@
+# Beegen
+> AI website builder powered by Claude. Describe your website, Beegen builds it in seconds.
+
+Beegen lets anyone create a professional, mobile-ready website by typing a description in plain language. No code, no designers, no templates needed. Each message to the AI costs 1 credit and generates or updates the entire website.
+
+## What Beegen Does
+- Builds complete websites from a text description in seconds
+- Powered by Claude AI (Anthropic)
+- Generates responsive HTML/CSS tailored to your brand
+- Supports logo upload and custom colour palettes
+- Publishes to a free yoursite.beegen.co subdomain instantly
+
+## Who It's For
+- Freelancers and solo creators who need a site fast
+- Small business owners without technical skills
+- Agencies building sites for clients at scale
+- Anyone who wants a professional web presence without hiring a developer
+
+## Pricing
+- Free Trial: $0 — 3 credits, build & preview only, no credit card required
+- Starter: $19/month — 30 credits, publish to beegen.co, brand settings
+- Pro: $39/month — 100 credits, priority builds, ~$0.39/credit
+- Agency: $79/month — 300 credits, best value at ~$0.26/credit
+- Top-up packs: 25 credits ($10), 75 credits ($25), 200 credits ($60) — never expire
+
+## How Credits Work
+One message to the AI = one credit. The AI generates or updates your entire website per message. Credits are only deducted after a successful generation.
+
+## Key URLs
+- Homepage: https://beegen.co
+- Pricing: https://beegen.co/pricing
+- App: https://app.beegen.co
+- Sign up: https://app.beegen.co
+
+## Technology
+- AI engine: Claude (Anthropic)
+- Hosting: Vercel
+- Founded: 2025
