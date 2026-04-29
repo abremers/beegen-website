@@ -502,7 +502,7 @@ const BGI18N = {
       topup_price_lg: "$1,199",
       free_f1: "1 sitio publicado — para siempre",
       free_f2: "2 ediciones al mes",
-      free_f3: "Badge \"Impulsado por Beegen\"",
+      free_f3: 'Badge "Impulsado por Beegen"',
       free_f4: "Sin dominio personalizado",
       free_cta: "Empezar gratis",
       starter_f1: "25 ediciones/mes",
