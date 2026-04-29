@@ -50,12 +50,4 @@
   --transition: .22s cubic-bezier(.4,0,.2,1);
   --transition-slow: .45s cubic-bezier(.4,0,.2,1);
 
-  /* ── Legacy brand aliases (blog pages) ── */
-  --espresso:   var(--navy);
-  --linen:      var(--cloud);
-  --honey:      var(--teal);
-  --warm-stone: var(--gray-600);
-  --cream-band: var(--mist);
-  --deep-honey: var(--teal-dark);
-  --font-serif: var(--font-display);
 }

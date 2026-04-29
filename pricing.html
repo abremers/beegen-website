@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing — Beegen AI Website Builder</title>
-<meta name="description" content="Simple, credit-based pricing. Start free with 3 credits. Monthly plans from $19/mo. Top-up packs that never expire. No surprises.">
+<meta name="description" content="Publish one site free, forever. Monthly plans from $19/mo for more edits and no badge. Top-up packs that never expire. No surprises.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="css/tokens.css">
@@ -13,7 +13,7 @@
 /* ── PRICING GRID ─────────────────────────────────────────── */
 .plans-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-bottom: 80px;
 }
@@ -200,7 +200,7 @@
 }
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .plans-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 700px) {
@@ -279,29 +279,29 @@
     </div>
     <div class="plans-grid">
 
-      <!-- Free Trial -->
+      <!-- Free -->
       <div class="pricing-card reveal reveal-delay-1">
-        <div class="pricing-tier" data-i18n="pricing_page.free_tier">Free Trial</div>
+        <div class="pricing-tier" data-i18n="pricing_page.free_tier">Free</div>
         <div class="pricing-price">
           <span class="pricing-amount" data-i18n="pricing_page.price_free">$0</span>
         </div>
-        <p class="pricing-desc" data-i18n="pricing_page.free_desc">Try Beegen with no commitment. 3 credits, no time limit.</p>
+        <p class="pricing-desc" data-i18n="pricing_page.free_desc">Publish one site free. Forever. No credit card.</p>
         <ul class="pricing-features">
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.free_f1">3 credits total</span>
+            <span data-i18n="pricing_page.free_f1">1 published site — forever</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.free_f2">Build &amp; preview sites</span>
+            <span data-i18n="pricing_page.free_f2">2 edits per month</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.free_f3">'Powered by Beegen' badge</span>
           </li>
           <li class="pricing-feature" style="opacity:.4;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-            <span data-i18n="pricing_page.free_f3">No publishing</span>
-          </li>
-          <li class="pricing-feature" style="opacity:.4;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-            <span data-i18n="pricing_page.free_f4">No brand settings</span>
+            <span data-i18n="pricing_page.free_f4">No custom domain</span>
           </li>
         </ul>
         <a href="https://app.beegen.co" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_page.free_cta">Start free</a>
@@ -366,8 +366,8 @@
         <a href="https://app.beegen.co" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="pricing_page.pro_cta">Get Pro</a>
       </div>
 
-      <!-- Agency -->
-      <div class="pricing-card reveal reveal-delay-4">
+      <!-- Agency — hidden from marketing page (enterprise/internal) -->
+      <div class="pricing-card reveal reveal-delay-4" style="display:none;">
         <div class="pricing-tier" data-i18n="pricing_page.agency_tier">Agency</div>
         <div class="pricing-price">
           <span class="pricing-amount" data-i18n="pricing_page.price_agency">$79</span>
