@@ -222,17 +222,17 @@
         <img id="navLogo" src="assets/logos/beegen-logo-white.svg" alt="Beegen">
       </a>
       <div class="nav-links">
-        <a href="/#how-it-works" class="nav-link">How it Works</a>
-        <a href="/pricing.html" class="nav-link active">Pricing</a>
-        <a href="/whatsapp.html" class="nav-link">WhatsApp</a>
-        <a href="/blog/" class="nav-link">Blog</a>
-        <a href="/contact.html" class="nav-link">Contact</a>
-        <a href="https://app.beegen.co/login" class="nav-link">Login</a>
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">How it Works</a>
+        <a href="/pricing.html" class="nav-link active" data-i18n="nav.pricing">Pricing</a>
+        <a href="/whatsapp.html" class="nav-link" data-i18n="nav.whatsapp">WhatsApp</a>
+        <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Login</a>
       </div>
       <div class="nav-right">
         <button class="lang-toggle" id="langToggle"><span class="lang-label">EN</span></button>
-        <a href="https://app.beegen.co" class="btn btn-secondary btn-sm">Start free</a>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <a href="https://app.beegen.co" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Start free</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -249,24 +249,24 @@
     </button>
   </div>
   <div class="mobile-nav-body">
-    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link">How it Works</a></div>
-    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link">Pricing</a></div>
-    <div class="mobile-nav-item"><a href="/whatsapp.html" class="mobile-nav-link">WhatsApp</a></div>
-    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link">Blog</a></div>
-    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link">Contact</a></div>
-    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link">Login</a></div>
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">How it Works</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Pricing</a></div>
+    <div class="mobile-nav-item"><a href="/whatsapp.html" class="mobile-nav-link" data-i18n="nav.whatsapp">WhatsApp</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Login</a></div>
   </div>
   <div class="mobile-nav-footer">
     <button class="lang-toggle" id="langToggleMobile" style="margin-bottom:14px;width:100%;justify-content:center;display:flex;"><span class="lang-label">EN</span></button>
-    <a href="https://app.beegen.co" class="btn btn-primary">Start free</a>
+    <a href="https://app.beegen.co" class="btn btn-primary" data-i18n="nav.start_free">Start free</a>
   </div>
 </div>
 
 <!-- ── PAGE HERO ───────────────────────────────────────────── -->
 <section class="page-hero">
   <div class="container">
-    <h1>Simple, credit-based pricing</h1>
-    <p>Buy what you need. Use it when you want. Monthly plans for regulars, top-up packs for everyone else.</p>
+    <h1 data-i18n="pricing_page.hero_title">Simple, credit-based pricing</h1>
+    <p data-i18n="pricing_page.hero_sub">Buy what you need. Use it when you want. Monthly plans for regulars, top-up packs for everyone else.</p>
   </div>
 </section>
 
@@ -274,125 +274,125 @@
 <section class="section" style="background:#ffffff;">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label">Monthly plans</span>
-      <h2>Pick your plan</h2>
+      <span class="label" data-i18n="pricing_page.monthly_label">Monthly plans</span>
+      <h2 data-i18n="pricing_page.monthly_title">Pick your plan</h2>
     </div>
     <div class="plans-grid">
 
       <!-- Free Trial -->
       <div class="pricing-card reveal reveal-delay-1">
-        <div class="pricing-tier">Free Trial</div>
+        <div class="pricing-tier" data-i18n="pricing_page.free_tier">Free Trial</div>
         <div class="pricing-price">
           <span class="pricing-amount">$0</span>
         </div>
-        <p class="pricing-desc">Try Beegen with no commitment. 3 credits, no time limit.</p>
+        <p class="pricing-desc" data-i18n="pricing_page.free_desc">Try Beegen with no commitment. 3 credits, no time limit.</p>
         <ul class="pricing-features">
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            3 credits total
+            <span data-i18n="pricing_page.free_f1">3 credits total</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Build &amp; preview sites
+            <span data-i18n="pricing_page.free_f2">Build &amp; preview sites</span>
           </li>
           <li class="pricing-feature" style="opacity:.4;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-            No publishing
+            <span data-i18n="pricing_page.free_f3">No publishing</span>
           </li>
           <li class="pricing-feature" style="opacity:.4;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-            No brand settings
+            <span data-i18n="pricing_page.free_f4">No brand settings</span>
           </li>
         </ul>
-        <a href="https://app.beegen.co" class="btn btn-outline" style="width:100%;justify-content:center;">Start free</a>
+        <a href="https://app.beegen.co" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_page.free_cta">Start free</a>
       </div>
 
       <!-- Starter -->
       <div class="pricing-card reveal reveal-delay-2">
-        <div class="pricing-tier">Starter</div>
+        <div class="pricing-tier" data-i18n="pricing_page.starter_tier">Starter</div>
         <div class="pricing-price">
           <span class="pricing-amount">$19</span>
-          <span class="pricing-period">/mo</span>
+          <span class="pricing-period" data-i18n="pricing_page.per_mo">/mo</span>
         </div>
-        <p class="pricing-desc">Perfect for freelancers and solo creators building regularly.</p>
+        <p class="pricing-desc" data-i18n="pricing_page.starter_desc">Perfect for freelancers and solo creators building regularly.</p>
         <ul class="pricing-features">
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            30 credits/month
+            <span data-i18n="pricing_page.starter_f1">30 credits/month</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Publish to beegen.co
+            <span data-i18n="pricing_page.starter_f2">Publish to beegen.co</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Brand settings
+            <span data-i18n="pricing_page.starter_f3">Brand settings</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Logo upload + color pickers
+            <span data-i18n="pricing_page.starter_f4">Logo upload + color pickers</span>
           </li>
         </ul>
-        <a href="https://app.beegen.co" class="btn btn-outline" style="width:100%;justify-content:center;">Get Starter</a>
+        <a href="https://app.beegen.co" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_page.starter_cta">Get Starter</a>
       </div>
 
       <!-- Pro (featured) -->
       <div class="pricing-card featured reveal reveal-delay-3">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-tier">Pro</div>
+        <div class="pricing-badge" data-i18n="pricing_page.pro_badge">Most Popular</div>
+        <div class="pricing-tier" data-i18n="pricing_page.pro_tier">Pro</div>
         <div class="pricing-price">
           <span class="pricing-amount">$39</span>
-          <span class="pricing-period">/mo</span>
+          <span class="pricing-period" data-i18n="pricing_page.per_mo">/mo</span>
         </div>
-        <p class="pricing-desc">For busy creators who build multiple sites per month.</p>
+        <p class="pricing-desc" data-i18n="pricing_page.pro_desc">For busy creators who build multiple sites per month.</p>
         <ul class="pricing-features">
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            100 credits/month
+            <span data-i18n="pricing_page.pro_f1">100 credits/month</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Everything in Starter
+            <span data-i18n="pricing_page.pro_f2">Everything in Starter</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Priority builds
+            <span data-i18n="pricing_page.pro_f3">Priority builds</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            ~$0.39/credit
+            <span data-i18n="pricing_page.pro_f4">~$0.39/credit</span>
           </li>
         </ul>
-        <a href="https://app.beegen.co" class="btn btn-primary" style="width:100%;justify-content:center;">Get Pro</a>
+        <a href="https://app.beegen.co" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="pricing_page.pro_cta">Get Pro</a>
       </div>
 
       <!-- Agency -->
       <div class="pricing-card reveal reveal-delay-4">
-        <div class="pricing-tier">Agency</div>
+        <div class="pricing-tier" data-i18n="pricing_page.agency_tier">Agency</div>
         <div class="pricing-price">
           <span class="pricing-amount">$79</span>
-          <span class="pricing-period">/mo</span>
+          <span class="pricing-period" data-i18n="pricing_page.per_mo">/mo</span>
         </div>
-        <p class="pricing-desc">For agencies and teams shipping sites at scale.</p>
+        <p class="pricing-desc" data-i18n="pricing_page.agency_desc">For agencies and teams shipping sites at scale.</p>
         <ul class="pricing-features">
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            300 credits/month
+            <span data-i18n="pricing_page.agency_f1">300 credits/month</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Everything in Pro
+            <span data-i18n="pricing_page.agency_f2">Everything in Pro</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            ~$0.26/credit
+            <span data-i18n="pricing_page.agency_f3">~$0.26/credit</span>
           </li>
           <li class="pricing-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Best value per credit
+            <span data-i18n="pricing_page.agency_f4">Best value per credit</span>
           </li>
         </ul>
-        <a href="https://app.beegen.co" class="btn btn-outline" style="width:100%;justify-content:center;">Get Agency</a>
+        <a href="https://app.beegen.co" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_page.agency_cta">Get Agency</a>
       </div>
 
     </div>
@@ -403,43 +403,43 @@
 <section class="section" style="background: var(--cloud);">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label">Credit top-ups</span>
-      <h2>Need more credits? Top up anytime.</h2>
-      <p>One-time purchases. Credits never expire.</p>
+      <span class="label" data-i18n="pricing_page.topup_label">Credit top-ups</span>
+      <h2 data-i18n="pricing_page.topup_title">Need more credits? Top up anytime.</h2>
+      <p data-i18n="pricing_page.topup_sub">One-time purchases. Credits never expire.</p>
     </div>
     <div class="topup-grid">
 
       <div class="topup-card reveal reveal-delay-1">
         <div>
-          <div class="topup-credits">25 <span>credits</span></div>
+          <div class="topup-credits">25 <span data-i18n="pricing_page.topup_credits_unit">credits</span></div>
           <div class="topup-rate">~$0.40/credit</div>
         </div>
         <div class="topup-price-block">
           <div class="topup-price">$10</div>
-          <a href="https://app.beegen.co" class="btn btn-outline btn-sm" style="margin-top:10px;">Buy pack</a>
+          <a href="https://app.beegen.co" class="btn btn-outline btn-sm" style="margin-top:10px;" data-i18n="pricing_page.topup_buy_btn">Buy pack</a>
         </div>
       </div>
 
       <div class="topup-card best-value reveal reveal-delay-2">
-        <div class="topup-best-badge">Best Value</div>
+        <div class="topup-best-badge" data-i18n="pricing_page.topup_best_badge">Best Value</div>
         <div>
-          <div class="topup-credits">75 <span>credits</span></div>
+          <div class="topup-credits">75 <span data-i18n="pricing_page.topup_credits_unit">credits</span></div>
           <div class="topup-rate">~$0.33/credit</div>
         </div>
         <div class="topup-price-block">
           <div class="topup-price">$25</div>
-          <a href="https://app.beegen.co" class="btn btn-primary btn-sm" style="margin-top:10px;">Buy pack</a>
+          <a href="https://app.beegen.co" class="btn btn-primary btn-sm" style="margin-top:10px;" data-i18n="pricing_page.topup_buy_btn">Buy pack</a>
         </div>
       </div>
 
       <div class="topup-card reveal reveal-delay-3">
         <div>
-          <div class="topup-credits">200 <span>credits</span></div>
+          <div class="topup-credits">200 <span data-i18n="pricing_page.topup_credits_unit">credits</span></div>
           <div class="topup-rate">~$0.30/credit</div>
         </div>
         <div class="topup-price-block">
           <div class="topup-price">$60</div>
-          <a href="https://app.beegen.co" class="btn btn-outline btn-sm" style="margin-top:10px;">Buy pack</a>
+          <a href="https://app.beegen.co" class="btn btn-outline btn-sm" style="margin-top:10px;" data-i18n="pricing_page.topup_buy_btn">Buy pack</a>
         </div>
       </div>
 
@@ -451,44 +451,44 @@
 <section class="section" style="background:#ffffff;">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label">How credits work</span>
-      <h2>What's a credit?</h2>
+      <span class="label" data-i18n="pricing_page.credit_label">How credits work</span>
+      <h2 data-i18n="pricing_page.credit_title">What's a credit?</h2>
     </div>
     <div class="credit-explainer reveal">
       <div>
-        <h3>One message = one credit</h3>
-        <p>Each message you send to the AI uses 1 credit. The AI then generates or updates your entire website based on your instruction.</p>
-        <p>Complex requests cost the same as simple ones — 1 credit whether you ask for a full site rebuild or just change the headline colour.</p>
-        <p>Credits are only deducted after a successful generation. If a generation fails, your credit is returned.</p>
+        <h3 data-i18n="pricing_page.credit_h3">One message = one credit</h3>
+        <p data-i18n="pricing_page.credit_p1">Each message you send to the AI uses 1 credit. The AI then generates or updates your entire website based on your instruction.</p>
+        <p data-i18n="pricing_page.credit_p2">Complex requests cost the same as simple ones — 1 credit whether you ask for a full site rebuild or just change the headline colour.</p>
+        <p data-i18n="pricing_page.credit_p3">Credits are only deducted after a successful generation. If a generation fails, your credit is returned.</p>
       </div>
       <div class="credit-visual">
         <div class="credit-row">
           <div class="credit-row-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
           </div>
-          <div class="credit-row-text">"Build me a fitness landing page"</div>
-          <div class="credit-row-count">1 credit</div>
+          <div class="credit-row-text" data-i18n="pricing_page.credit_row1">"Build me a fitness landing page"</div>
+          <div class="credit-row-count" data-i18n="pricing_page.credit_count">1 credit</div>
         </div>
         <div class="credit-row">
           <div class="credit-row-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
           </div>
-          <div class="credit-row-text">"Change the primary colour to navy"</div>
-          <div class="credit-row-count">1 credit</div>
+          <div class="credit-row-text" data-i18n="pricing_page.credit_row2">"Change the primary colour to navy"</div>
+          <div class="credit-row-count" data-i18n="pricing_page.credit_count">1 credit</div>
         </div>
         <div class="credit-row">
           <div class="credit-row-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
           </div>
-          <div class="credit-row-text">"Add a testimonials section"</div>
-          <div class="credit-row-count">1 credit</div>
+          <div class="credit-row-text" data-i18n="pricing_page.credit_row3">"Add a testimonials section"</div>
+          <div class="credit-row-count" data-i18n="pricing_page.credit_count">1 credit</div>
         </div>
         <div class="credit-row">
           <div class="credit-row-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
-          <div class="credit-row-text">"Rebuild this as a portfolio site"</div>
-          <div class="credit-row-count">1 credit</div>
+          <div class="credit-row-text" data-i18n="pricing_page.credit_row4">"Rebuild this as a portfolio site"</div>
+          <div class="credit-row-count" data-i18n="pricing_page.credit_count">1 credit</div>
         </div>
       </div>
     </div>
@@ -499,68 +499,68 @@
 <section class="section" style="background: var(--cloud);">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label">Common questions</span>
-      <h2>FAQ</h2>
+      <span class="label" data-i18n="pricing_page.faq_label">Common questions</span>
+      <h2 data-i18n="pricing_page.faq_title">FAQ</h2>
     </div>
     <div class="faq-list reveal">
 
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          Can I try before I buy?
+          <span data-i18n="pricing_page.faq_q1">Can I try before I buy?</span>
           <span class="faq-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
           </span>
         </button>
         <div class="faq-answer">
-          <p>Yes. You get 3 free credits when you sign up — no credit card needed. Use them to build and preview real sites before deciding to upgrade.</p>
+          <p data-i18n="pricing_page.faq_a1">Yes. You get 3 free credits when you sign up — no credit card needed. Use them to build and preview real sites before deciding to upgrade.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          What happens when I run out of credits?
+          <span data-i18n="pricing_page.faq_q2">What happens when I run out of credits?</span>
           <span class="faq-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
           </span>
         </button>
         <div class="faq-answer">
-          <p>You can top up with a credit pack (25, 75, or 200 credits) or upgrade your monthly plan. You won't be charged automatically — you choose when to add more.</p>
+          <p data-i18n="pricing_page.faq_a2">You can top up with a credit pack (25, 75, or 200 credits) or upgrade your monthly plan. You won't be charged automatically — you choose when to add more.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          Do unused credits roll over?
+          <span data-i18n="pricing_page.faq_q3">Do unused credits roll over?</span>
           <span class="faq-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
           </span>
         </button>
         <div class="faq-answer">
-          <p>Monthly plan credits reset at the start of each billing period — they don't roll over. Top-up credits, however, never expire and accumulate in your account until you use them.</p>
+          <p data-i18n="pricing_page.faq_a3">Monthly plan credits reset at the start of each billing period — they don't roll over. Top-up credits, however, never expire and accumulate in your account until you use them.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          Can I publish on the free trial?
+          <span data-i18n="pricing_page.faq_q4">Can I publish on the free trial?</span>
           <span class="faq-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
           </span>
         </button>
         <div class="faq-answer">
-          <p>No. Publishing requires a paid plan (Starter or above). On the free trial you can build, iterate, and preview your site fully — you just can't push it live until you upgrade.</p>
+          <p data-i18n="pricing_page.faq_a4">No. Publishing requires a paid plan (Starter or above). On the free trial you can build, iterate, and preview your site fully — you just can't push it live until you upgrade.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          What's a beegen.co subdomain?
+          <span data-i18n="pricing_page.faq_q5">What's a beegen.co subdomain?</span>
           <span class="faq-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
           </span>
         </button>
         <div class="faq-answer">
-          <p>Every published site gets a free subdomain in the format <strong>yoursite.beegen.co</strong>. You choose the name. It's live instantly and shareable right away. Custom domains are coming soon.</p>
+          <p data-i18n="pricing_page.faq_a5">Every published site gets a free subdomain in the format <strong>yoursite.beegen.co</strong>. You choose the name. It's live instantly and shareable right away. Custom domains are coming soon.</p>
         </div>
       </div>
 
@@ -572,12 +572,12 @@
 <section class="cta-band">
   <div class="container">
     <div class="reveal">
-      <h2>Your website is one conversation away.</h2>
-      <p>Start with 3 free credits. No account setup hassle. No blank page stare.</p>
+      <h2 data-i18n="pricing_page.cta_h2">Your website is one conversation away.</h2>
+      <p data-i18n="pricing_page.cta_sub">Start with 3 free credits. No account setup hassle. No blank page stare.</p>
       <div class="cta-band-actions">
-        <a href="https://app.beegen.co" class="btn btn-primary btn-lg">Build my site for free →</a>
+        <a href="https://app.beegen.co" class="btn btn-primary btn-lg" data-i18n="pricing_page.cta_btn">Build my site for free →</a>
       </div>
-      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);">Cancel anytime · No credit card for trial</p>
+      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);" data-i18n="pricing_page.cta_footnote">Cancel anytime · No credit card for trial</p>
     </div>
   </div>
 </section>
@@ -588,27 +588,27 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
-        <p>Build websites with AI.</p>
+        <p data-i18n="footer.tagline">Build professional websites with AI. No code required.</p>
       </div>
       <div class="footer-col">
-        <h5>Product</h5>
+        <h5 data-i18n="footer.product">Product</h5>
         <div class="footer-links">
-          <a href="/#how-it-works">How it Works</a>
-          <a href="/pricing.html">Pricing</a>
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">How it Works</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Pricing</a>
         </div>
       </div>
       <div class="footer-col">
-        <h5>Account</h5>
+        <h5 data-i18n="footer.account">Account</h5>
         <div class="footer-links">
-          <a href="https://app.beegen.co">Sign Up</a>
-          <a href="https://app.beegen.co/login">Login</a>
+          <a href="https://app.beegen.co" data-i18n="footer.signup">Sign Up</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Login</a>
         </div>
       </div>
       <div class="footer-col">
-        <h5>Legal</h5>
+        <h5 data-i18n="footer.legal">Legal</h5>
         <div class="footer-links">
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/terms.html">Terms</a>
+          <a href="/privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="/terms.html" data-i18n="footer.terms">Terms of Service</a>
         </div>
       </div>
     </div>
@@ -620,6 +620,7 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/i18n.js"></script>
 <script>
 // FAQ accordion
 document.querySelectorAll('.faq-question').forEach(btn => {
