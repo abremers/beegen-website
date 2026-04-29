@@ -13,15 +13,15 @@ const BG = {
 // ── NAV SCROLL BEHAVIOR ────────────────────────────────────
 (function () {
   const nav = document.getElementById('mainNav');
-  const navLogo = document.getElementById('navLogo');
+  const navLogo = document.querySelector('.nav-logo img');
   if (!nav) return;
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY > 60;
     nav.classList.toggle('scrolled', scrolled);
     if (navLogo) {
       navLogo.src = scrolled
-        ? 'assets/logos/beegen-logo-color.svg'
-        : 'assets/logos/beegen-logo-white.svg';
+        ? '/assets/logos/beegen-logo-color.svg'
+        : '/assets/logos/beegen-logo-white.svg';
     }
   }, { passive: true });
 })();
