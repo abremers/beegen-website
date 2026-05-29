@@ -211,7 +211,7 @@
       </div>
       <div class="nav-right">
         <button class="lang-toggle" id="langToggle"><span class="lang-label">EN</span></button>
-        <a href="https://app.beegen.co/login" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Start free</a>
+        <a href="https://app.beegen.co/signup" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Start free</a>
         <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -238,7 +238,7 @@
   </div>
   <div class="mobile-nav-footer">
     <button class="lang-toggle" id="langToggleMobile" style="margin-bottom:14px;width:100%;justify-content:center;display:flex;"><span class="lang-label">EN</span></button>
-    <a href="https://app.beegen.co/login" class="btn btn-primary" data-i18n="nav.start_free">Start free</a>
+    <a href="https://app.beegen.co/signup" class="btn btn-primary" data-i18n="nav.start_free">Start free</a>
   </div>
 </div>
 
@@ -386,8 +386,8 @@
       <div class="footer-col">
         <h5 data-i18n="footer.account">Account</h5>
         <div class="footer-links">
-          <a href="https://app.beegen.co/login" data-i18n="footer.signup">Sign Up</a>
-          <a href="https://app.beegen.co/login" data-i18n="footer.login">Login</a>
+          <a href="https://app.beegen.co/signup" data-i18n="footer.signup">Sign Up</a>
+          <a href="https://app.beegen.co/signup" data-i18n="footer.login">Login</a>
         </div>
       </div>
       <div class="footer-col">
@@ -409,40 +409,40 @@
 <script src="js/main.js?v=2"></script>
 <script src="js/i18n.js?v=2"></script>
 <script>
-// Simple form handler — submits to Formspree or shows success state
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = this.querySelector('.contact-submit');
-  btn.textContent = 'Sending…';
+  const originalText = btn.textContent;
+  btn.textContent = 'Enviando…';
   btn.disabled = true;
 
   const data = {
-    firstName: document.getElementById('firstName').value,
-    lastName:  document.getElementById('lastName').value,
-    email:     document.getElementById('email').value,
-    phone:     document.getElementById('phone').value,
+    firstName:    document.getElementById('firstName').value.trim(),
+    lastName:     document.getElementById('lastName').value.trim(),
+    email:        document.getElementById('email').value.trim(),
+    phone:        document.getElementById('phone').value.trim(),
     businessType: document.getElementById('businessType').value,
-    message:   document.getElementById('message').value,
+    message:      document.getElementById('message').value.trim(),
   };
 
-  // Build mailto fallback while you set up a real backend
-  const subject = encodeURIComponent('New contact from beegen.co — ' + data.firstName);
-  const body    = encodeURIComponent(
-    'Name: ' + data.firstName + ' ' + data.lastName + '\n' +
-    'Email: ' + data.email + '\n' +
-    'Phone: ' + data.phone + '\n' +
-    'Business: ' + data.businessType + '\n\n' +
-    data.message
-  );
-
-  // Show success immediately (swap to a real API call when ready)
-  document.getElementById('formContent').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
-
-  // Open mailto as silent fallback
-  setTimeout(() => {
-    window.location.href = 'mailto:hello@beegen.co?subject=' + subject + '&body=' + body;
-  }, 800);
+  try {
+    const res = await fetch('https://app.beegen.co/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const json = await res.json();
+    if (json.ok) {
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      throw new Error(json.error || 'Error');
+    }
+  } catch (err) {
+    btn.textContent = originalText;
+    btn.disabled = false;
+    alert('Hubo un problema al enviar tu mensaje. Por favor intenta de nuevo o escríbenos a hello@beegen.co');
+  }
 });
 </script>
 </body>

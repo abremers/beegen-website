@@ -24,9 +24,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 70% 30%, rgba(2,195,154,.18) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 80%, rgba(243,121,52,.08) 0%, transparent 50%);
+  background: var(--glow-hero);
   pointer-events: none;
 }
 .hero-inner {
@@ -245,10 +243,10 @@
 
 /* ── TRUST STRIP DARK ────────────────────────────────────── */
 .trust-strip-dark {
-  background: rgba(255,255,255,.04);
+  background: var(--dark);
   border-top: 1px solid rgba(255,255,255,.07);
   border-bottom: 1px solid rgba(255,255,255,.07);
-  padding: 20px 0;
+  padding: 22px 0;
 }
 .trust-strip-dark .trust-strip {
   border: none;
@@ -375,8 +373,10 @@
         <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Login</a>
       </div>
       <div class="nav-right">
-        <button class="lang-toggle" id="langToggle"><span class="lang-label">EN</span></button>
-        <a href="https://app.beegen.co/login" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Start free</a>
+        <button class="lang-toggle" id="langToggle">
+          <span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span>
+        </button>
+        <a href="https://app.beegen.co/signup" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Start free</a>
         <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -414,8 +414,10 @@
     </div>
   </div>
   <div class="mobile-nav-footer">
-    <button class="lang-toggle" id="langToggleMobile" style="margin-bottom:14px;width:100%;justify-content:center;display:flex;"><span class="lang-label">EN</span></button>
-    <a href="https://app.beegen.co/login" class="btn btn-primary" data-i18n="nav.start_free">Start free</a>
+    <button class="lang-toggle" id="langToggleMobile" style="margin-bottom:14px;width:100%;justify-content:center;">
+      <span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span>
+    </button>
+    <a href="https://app.beegen.co/signup" class="btn btn-primary" data-i18n="nav.start_free">Start free</a>
   </div>
 </div>
 
@@ -431,7 +433,7 @@
         <h1 data-i18n-html="hero.h1">Describe it.<br>We build it.</h1>
         <p class="hero-sub" data-i18n="hero.sub">Tell Beegen what your business does. We build a professional, mobile-ready website — in minutes, not months. No designers. No code. No templates.</p>
         <div class="hero-actions">
-          <a href="https://app.beegen.co/login" class="btn btn-primary btn-lg" data-i18n="hero.cta_primary">Build my website free</a>
+          <a href="https://app.beegen.co/signup" class="btn btn-primary btn-lg" data-i18n="hero.cta_primary">Build my website free</a>
           <a href="/#how-it-works" class="btn btn-ghost btn-lg" data-i18n="hero.cta_secondary">See how it works</a>
         </div>
         <p class="hero-disclaimer" data-i18n="hero.disclaimer">3 free builds included · No credit card required</p>
@@ -685,15 +687,16 @@
             <span data-i18n="pricing_teaser.free_f3">Publishing not included</span>
           </li>
         </ul>
-        <a href="https://app.beegen.co/login" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_teaser.free_cta">Start for free</a>
+        <a href="https://app.beegen.co/signup" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_teaser.free_cta">Start for free</a>
       </div>
       <!-- Starter (featured) -->
       <div class="pricing-card featured reveal reveal-delay-2">
         <div class="pricing-badge" data-i18n="pricing_teaser.starter_badge">Most Popular</div>
         <div class="pricing-tier" data-i18n="pricing_teaser.starter_tier">Starter</div>
         <div class="pricing-price">
-          <span class="pricing-amount">$249</span>
-          <span class="pricing-period" data-i18n="pricing_teaser.per_mo">/mo</span>
+          <span class="pricing-amount" data-i18n="pricing_teaser.starter_amount">$249</span>
+          <span class="pricing-code" data-i18n="pricing_teaser.currency_code">MXN</span>
+          <span class="pricing-period" data-i18n="pricing_teaser.per_mo">/mes</span>
         </div>
         <p class="pricing-desc" data-i18n="pricing_teaser.starter_desc">30 builds/month. Publish and share.</p>
         <ul class="pricing-features">
@@ -710,14 +713,15 @@
             <span data-i18n="pricing_teaser.starter_f3">Brand settings</span>
           </li>
         </ul>
-        <a href="https://app.beegen.co/login" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="pricing_teaser.starter_cta">Get started</a>
+        <a href="https://app.beegen.co/signup" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="pricing_teaser.starter_cta">Get started</a>
       </div>
       <!-- Pro -->
       <div class="pricing-card reveal reveal-delay-3">
         <div class="pricing-tier" data-i18n="pricing_teaser.pro_tier">Pro</div>
         <div class="pricing-price">
-          <span class="pricing-amount">$599</span>
-          <span class="pricing-period" data-i18n="pricing_teaser.per_mo">/mo</span>
+          <span class="pricing-amount" data-i18n="pricing_teaser.pro_amount">$599</span>
+          <span class="pricing-code" data-i18n="pricing_teaser.currency_code">MXN</span>
+          <span class="pricing-period" data-i18n="pricing_teaser.per_mo">/mes</span>
         </div>
         <p class="pricing-desc" data-i18n="pricing_teaser.pro_desc">100 builds/month. For power users.</p>
         <ul class="pricing-features">
@@ -734,9 +738,10 @@
             <span data-i18n="pricing_teaser.pro_f3">Priority builds</span>
           </li>
         </ul>
-        <a href="https://app.beegen.co/login" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_teaser.pro_cta">Get started</a>
+        <a href="https://app.beegen.co/signup" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_teaser.pro_cta">Get started</a>
       </div>
     </div>
+    <p class="currency-note" data-i18n="pricing_teaser.currency_note">Todos los precios en pesos mexicanos (MXN).</p>
     <div class="see-pricing-link reveal">
       <a href="/pricing.html" data-i18n="pricing_teaser.see_full">See full pricing details →</a>
     </div>
@@ -750,7 +755,7 @@
       <h2 data-i18n="cta.title">Your website is one conversation away.</h2>
       <p data-i18n="cta.subtitle">Describe your business. We'll handle the rest.</p>
       <div class="cta-band-actions">
-        <a href="https://app.beegen.co/login" class="btn btn-primary btn-lg" data-i18n="cta.btn">Build my website free</a>
+        <a href="https://app.beegen.co/signup" class="btn btn-primary btn-lg" data-i18n="cta.btn">Build my website free</a>
       </div>
       <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);" data-i18n="cta.footnote">No credit card · Cancel anytime</p>
     </div>
@@ -778,8 +783,8 @@
       <div class="footer-col">
         <h5 data-i18n="footer.account">Account</h5>
         <div class="footer-links">
-          <a href="https://app.beegen.co/login" data-i18n="footer.signup">Sign Up</a>
-          <a href="https://app.beegen.co/login" data-i18n="footer.login">Login</a>
+          <a href="https://app.beegen.co/signup" data-i18n="footer.signup">Sign Up</a>
+          <a href="https://app.beegen.co/signup" data-i18n="footer.login">Login</a>
         </div>
       </div>
       <div class="footer-col">

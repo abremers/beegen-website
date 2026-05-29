@@ -115,6 +115,10 @@ const BGI18N = {
       pro_f2: "Everything in Starter",
       pro_f3: "Priority builds",
       pro_cta: "Get started",
+      starter_amount: "$19",
+      pro_amount: "$39",
+      currency_code: "USD",
+      currency_note: "All prices shown in USD.",
       see_full: "See full pricing details →",
       per_mo: "/mo"
     },
@@ -444,6 +448,10 @@ const BGI18N = {
       pro_f2: "Todo lo del Básico",
       pro_f3: "Prioridad en construcciones",
       pro_cta: "Comenzar",
+      starter_amount: "$249",
+      pro_amount: "$599",
+      currency_code: "MXN",
+      currency_note: "Todos los precios en pesos mexicanos (MXN).",
       see_full: "Ver todos los detalles de precios →",
       per_mo: "/mes"
     },
@@ -703,9 +711,9 @@ function bgSetLang(lang) {
     if (val !== null) el.setAttribute('aria-label', val);
   });
 
-  // Lang toggle label: show opposite language
-  document.querySelectorAll('.lang-label').forEach(el => {
-    el.textContent = lang === 'es' ? 'EN' : 'ES';
+  // Pill toggle: highlight the active language option
+  document.querySelectorAll('.lang-toggle .lang-opt').forEach(el => {
+    el.classList.toggle('lang-on', el.dataset.lang === lang);
   });
 }
 

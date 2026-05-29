@@ -25,6 +25,10 @@
   --grad-hero:  linear-gradient(135deg, #00152E 0%, #002147 50%, #013A5C 100%);
   --grad-teal:  linear-gradient(135deg, #02C39A 0%, #028090 100%);
   --grad-orange:linear-gradient(135deg, #F37934 0%, #FBA026 100%);
+  /* Hero atmosphere: layered radial glows composited over --grad-hero */
+  --glow-hero:
+    radial-gradient(ellipse at 70% 30%, rgba(2,195,154,.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(243,121,52,.08) 0%, transparent 50%);
 
   /* Shadows */
   --shadow-sm:  0 2px 8px rgba(0,21,46,.08);
@@ -35,19 +39,38 @@
   --shadow-orange:0 8px 32px rgba(243,121,52,.3);
 
   /* Typography */
-  --font-display:'Plus Jakarta Sans', -apple-system, sans-serif;
-  --font-body:   'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-display:'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body:   'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:   ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
   /* Spacing */
   --section-y:  96px;
   --container:  1240px;
-  --radius:     12px;
-  --radius-lg:  20px;
-  --radius-xl:  32px;
+  --radius-sm:     6px;
+  --radius-button: 9px;
+  --radius:        12px;
+  --radius-card:   14px;
+  --radius-lg:     20px;
+  --radius-xl:     32px;
+  --radius-pill:   100px;
 
   /* Transitions */
   --ease:       cubic-bezier(.4,0,.2,1);
   --transition: .22s cubic-bezier(.4,0,.2,1);
   --transition-slow: .45s cubic-bezier(.4,0,.2,1);
+
+  /* Semantic color aliases */
+  --color-fg:        var(--navy);
+  --color-fg-body:   #475569;
+  --color-fg-muted:  var(--gray-400);
+  --color-bg:        var(--white);
+  --color-bg-tint:   var(--cloud);
+  --color-bg-dark:   var(--navy);
+  --color-bg-deep:   var(--dark);
+  --color-border:    var(--mist);
+  --color-accent:    var(--teal);
+  --color-on-accent: var(--navy);
+  --color-danger:    #ef4444;
+  --color-star:      #F59E0B;
 
 }
