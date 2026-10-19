@@ -313,6 +313,10 @@ const BGI18N = {
       "title": "Contact | Beegen"
     },
     "lp_wa_agent": {
+      "proof1": "Official Meta connection, no QR codes, no disconnects",
+      "proof2": "Shared inbox with assignment and internal notes (with the Ventas bundle)",
+      "proof3": "Pre-approved templates included in Reminders",
+      "proof4": "Support in Spanish on WhatsApp, Monday to Friday 9:00 to 18:00 (Mexico City)",
       "title": "AI WhatsApp agent for your business | Beegen",
       "desc": "An AI agent on your WhatsApp that replies in seconds, books appointments, quotes, charges and invoices. $299 MXN a month per number, 500 conversations included. 14 days free.",
       "eyebrow": "WhatsApp agent",
@@ -617,6 +621,10 @@ const BGI18N = {
       "cta_footnote": "$99 MXN a month at launch · Unlimited reviews"
     },
     "lp_site": {
+      "proof1": "Export your site and use your own domain, no lock-in",
+      "proof2": "Hosting and security certificate included",
+      "proof3": "Every form lead lands in the free CRM",
+      "proof4": "Support in Spanish on WhatsApp, Monday to Friday 9:00 to 18:00 (Mexico City)",
       "title": "AI website that sends every lead to your CRM | Beegen",
       "desc": "Beegen builds your website with AI in minutes: pages, contact form and WhatsApp button. Every lead lands in your free CRM. $149 MXN a month per published site.",
       "eyebrow": "Website",
@@ -678,6 +686,11 @@ const BGI18N = {
       "cta_footnote": "$149 MXN a month per site after the trial · Cancel anytime"
     },
     "lp_crm": {
+      "proof1": "Official Meta connection, no QR codes, no disconnects",
+      "proof2": "Shared inbox with assignment and internal notes (with the Ventas bundle)",
+      "proof3": "Export contacts and history whenever you want, no lock-in",
+      "proof4": "Support in Spanish on WhatsApp, Monday to Friday 9:00 to 18:00 (Mexico City)",
+      "price_note": "Up to 6 times less per seat than WhatsApp CRMs.",
       "title": "Free CRM for Mexican small businesses | Beegen",
       "desc": "Contacts, deals in progress, tasks and every customer's timeline, with everything that happened on web, WhatsApp, Instagram or phone. Free forever with 1 seat.",
       "eyebrow": "Free CRM",
@@ -1147,6 +1160,10 @@ const BGI18N = {
       "title": "Contacto | Beegen"
     },
     "lp_wa_agent": {
+      "proof1": "Conexión oficial vía Meta, sin QR ni desconexiones",
+      "proof2": "Bandeja compartida con asignación y notas internas (con el paquete Ventas)",
+      "proof3": "Plantillas pre-aprobadas incluidas en Recordatorios",
+      "proof4": "Soporte en español por WhatsApp, lunes a viernes de 9:00 a 18:00 (CDMX)",
       "title": "Agente de WhatsApp con IA para tu negocio | Beegen",
       "desc": "Un agente de IA en tu WhatsApp que contesta en segundos, agenda citas, cotiza, cobra y factura. $299 MXN al mes por número, 500 conversaciones incluidas. 14 días gratis.",
       "eyebrow": "Agente de WhatsApp",
@@ -1451,6 +1468,10 @@ const BGI18N = {
       "cta_footnote": "$99 MXN al mes cuando salga · Sin límite de reseñas"
     },
     "lp_site": {
+      "proof1": "Exporta tu sitio y usa tu dominio propio, sin candados",
+      "proof2": "Hosting y certificado de seguridad incluidos",
+      "proof3": "Cada lead del formulario cae en el CRM gratis",
+      "proof4": "Soporte en español por WhatsApp, lunes a viernes de 9:00 a 18:00 (CDMX)",
       "title": "Sitio web con IA que manda cada lead a tu CRM | Beegen",
       "desc": "Beegen construye tu sitio con IA en minutos: páginas, formulario de contacto y botón de WhatsApp. Cada lead cae en tu CRM gratis. $149 MXN al mes por sitio publicado.",
       "eyebrow": "Sitio web",
@@ -1512,6 +1533,11 @@ const BGI18N = {
       "cta_footnote": "$149 MXN al mes por sitio después de la prueba · Cancela cuando quieras"
     },
     "lp_crm": {
+      "proof1": "Conexión oficial vía Meta, sin QR ni desconexiones",
+      "proof2": "Bandeja compartida con asignación y notas internas (con el paquete Ventas)",
+      "proof3": "Exporta contactos e historial cuando quieras, sin candados",
+      "proof4": "Soporte en español por WhatsApp, lunes a viernes de 9:00 a 18:00 (CDMX)",
+      "price_note": "Hasta 6 veces menos por usuario que los CRM de WhatsApp.",
       "title": "CRM gratis para negocios de México | Beegen",
       "desc": "Contactos, ventas en proceso, tareas y la línea de tiempo de cada cliente, con todo lo que pasó por web, WhatsApp, Instagram o llamada. Gratis para siempre con 1 usuario.",
       "eyebrow": "CRM gratis",
