@@ -113,34 +113,24 @@ function countUp(el, target, duration = 1800, prefix = '', suffix = '') {
   });
 })();
 
-// ── PRICING TOGGLE (monthly / annual) ─────────────────────
+// ── FAQ ACCORDION ─────────────────────────────────────────
 (function () {
-  const toggle     = document.getElementById('billingToggle');
-  const labelMonth = document.getElementById('labelMonthly');
-  const labelYear  = document.getElementById('labelAnnual');
-  const badge      = document.getElementById('annualBadge');
-  if (!toggle) return;
-
-  const prices = {
-    personal: { monthly: 149, annual: 99 },
-    business: { monthly: 179, annual: 119 },
-    growth:   { monthly: 219, annual: 149 },
-  };
-
-  function update(isAnnual) {
-    Object.entries(prices).forEach(([plan, p]) => {
-      const el = document.getElementById('price-' + plan);
-      if (el) el.textContent = '$' + (isAnnual ? p.annual : p.monthly);
-      const note = document.getElementById('note-' + plan);
-      if (note) note.textContent = isAnnual ? 'billed annually' : 'billed monthly';
+  const questions = document.querySelectorAll('.faq-question');
+  if (!questions.length) return;
+  questions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
-    if (badge) badge.style.display = isAnnual ? 'inline-flex' : 'none';
-    if (labelMonth) labelMonth.classList.toggle('active', !isAnnual);
-    if (labelYear)  labelYear.classList.toggle('active', isAnnual);
-  }
-
-  toggle.addEventListener('change', () => update(toggle.checked));
-  update(false);
+  });
 })();
 
 // ── SMOOTH ANCHOR SCROLLING ────────────────────────────────
