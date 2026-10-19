@@ -8,7 +8,47 @@
   <url>
     <loc>https://beegen.co/pricing</loc>
     <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://beegen.co/crm</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beegen.co/sitio-web</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beegen.co/whatsapp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beegen.co/recordatorios</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beegen.co/cobros</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beegen.co/facturacion</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beegen.co/resenas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beegen.co/contact</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://beegen.co/blog</loc>
@@ -16,7 +56,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://beegen.co/blog/build-business-website-with-ai</loc>
+    <loc>https://beegen.co/blog/ai-website-prompts-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -26,17 +66,17 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://beegen.co/blog/small-business-needs-website</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://beegen.co/blog/ai-website-prompts-guide</loc>
+    <loc>https://beegen.co/blog/build-business-website-with-ai</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://beegen.co/blog/freelancer-ai-website-builder</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://beegen.co/blog/small-business-needs-website</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
