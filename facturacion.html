@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="lp_invoicing.title">Facturación CFDI desde WhatsApp | Beegen</title>
+<meta name="description" content="El agente de WhatsApp pide RFC, código postal, régimen y uso de CFDI, timbra la factura con un PAC autorizado y envía el PDF y el XML. $149 MXN al mes, 50 folios incluidos.">
+<link rel="canonical" href="https://beegen.co/facturacion.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://beegen.co/facturacion.html">
+<meta property="og:title" content="Facturación CFDI desde WhatsApp | Beegen">
+<meta property="og:description" content="El agente de WhatsApp pide RFC, código postal, régimen y uso de CFDI, timbra la factura con un PAC autorizado y envía el PDF y el XML. $149 MXN al mes, 50 folios incluidos.">
+<meta property="og:image" content="https://beegen.co/assets/og-image.png">
+<meta property="og:locale" content="es_MX">
+<link rel="icon" href="/assets/logos/beegen-logo-color.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/global.css">
+
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img id="navLogo" src="/assets/logos/beegen-logo-white.svg" alt="Beegen">
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-link active" type="button" aria-haspopup="true"><span data-i18n="nav.modules">Módulos</span><svg class="nav-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+            <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+            <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+            <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+            <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+            <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+            <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+            <a href="/pricing.html" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+          </div>
+        </div>
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo funciona</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Precios</a>
+        <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambiar idioma / Switch language"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+        <a href="https://app.beegen.co/signup?module=crm" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Empieza gratis</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" data-i18n-aria="nav.close_menu" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" type="button" aria-expanded="false"><span data-i18n="nav.modules">Módulos</span><svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mobile-nav-sub">
+        <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+        <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+        <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+        <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+        <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+        <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+        <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+        <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+      </div>
+    </div>
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo funciona</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle" id="langToggleMobile" type="button" aria-label="Cambiar idioma / Switch language" style="margin-bottom:14px;width:100%;justify-content:center;"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+    <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary" data-i18n="nav.start_free">Empieza gratis</a>
+  </div>
+</div>
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section class="page-hero lp-hero">
+  <div class="container">
+    <div class="lp-hero-inner">
+      <div>
+        <div class="lp-eyebrow soon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          <span data-i18n="lp_invoicing.eyebrow">Facturación CFDI</span>
+          <span aria-hidden="true">·</span>
+          <span data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h1 data-i18n-html="lp_invoicing.h1">“¿Me das factura?” Que lo conteste el agente.</h1>
+        <p class="lp-hero-sub" data-i18n="lp_invoicing.sub">El agente de WhatsApp pide RFC, código postal, régimen y uso de CFDI, timbra la factura con un PAC autorizado por el SAT y manda el PDF y el XML. Tú no abres el portal.</p>
+        <div class="lp-hero-actions">
+          <a href="https://app.beegen.co/signup?module=invoicing" class="btn btn-primary btn-lg" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+          <a href="/pricing.html" class="btn btn-ghost btn-lg" data-i18n="nav.pricing">Precios</a>
+        </div>
+        <p class="lp-hero-note" data-i18n="lp_invoicing.note">Disponible pronto · Apúntate y te avisamos · Sin compromiso</p>
+      </div>
+      <div class="timeline-card reveal reveal-delay-2">
+        <div class="timeline-head">
+          <div class="timeline-avatar">GA</div>
+          <div>
+            <h4 data-i18n="lp_invoicing.mock_name">Grupo Andrade SA de CV</h4>
+            <span data-i18n="lp_invoicing.mock_sub">Consultoría Mora · Asesoría fiscal</span>
+          </div>
+          <span class="timeline-stage" data-i18n="lp_invoicing.mock_stage">Facturado</span>
+        </div>
+        <div class="timeline-body">
+          <div class="timeline-item">
+            <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_invoicing.mock_t1"><strong>Pago recibido:</strong> $5,800 con tarjeta</div>
+            <div class="timeline-time" data-i18n="lp_invoicing.mock_time1">lun 13:05</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_invoicing.mock_t2">Cliente: “¿Me puedes dar factura?”</div>
+            <div class="timeline-time" data-i18n="lp_invoicing.mock_time2">lun 13:07</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_invoicing.mock_t3"><strong>Agente de WhatsApp</strong> validó RFC, CP y régimen fiscal</div>
+            <div class="timeline-time" data-i18n="lp_invoicing.mock_time3">lun 13:09</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_invoicing.mock_t4"><strong>CFDI timbrado</strong> · Folio 0045 · PDF y XML enviados</div>
+            <div class="timeline-time" data-i18n="lp_invoicing.mock_time4">lun 13:10</div>
+          </div>
+          <div class="timeline-item dim">
+            <div class="timeline-icon navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_invoicing.mock_t5">Datos fiscales guardados en el contacto</div>
+            <div class="timeline-time" data-i18n="lp_invoicing.mock_time5">lun 13:10</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ───────────────────────────────────────── -->
+<section class="section" id="how-it-works" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_invoicing.steps_label">Así funciona</span>
+      <h2 data-i18n="lp_invoicing.steps_title">La factura sale del chat, no del portal</h2>
+      <p data-i18n="lp_invoicing.steps_sub">Configuras una vez y el agente se encarga de cada “¿me das factura?”.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-badge">1</div>
+        <h3 data-i18n="lp_invoicing.s1_title">Sube tu CSD</h3>
+        <p data-i18n="lp_invoicing.s1_desc">Carga tu certificado de sello digital y tus datos fiscales una sola vez. Timbramos con un PAC autorizado por el SAT.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-badge">2</div>
+        <h3 data-i18n="lp_invoicing.s2_title">El agente pide los datos</h3>
+        <p data-i18n="lp_invoicing.s2_desc">Cuando el cliente pide factura, el agente valida RFC, código postal, régimen y uso de CFDI antes de timbrar.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-badge">3</div>
+        <h3 data-i18n="lp_invoicing.s3_title">Factura enviada y guardada</h3>
+        <p data-i18n="lp_invoicing.s3_desc">PDF y XML al cliente por WhatsApp o correo, y una copia en la venta del CRM.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICE ──────────────────────────────────────────────── -->
+<section class="section" id="precio" style="background: var(--cloud);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_invoicing.price_label">Precio</span>
+      <h2 data-i18n="lp_invoicing.price_title">Un precio fijo con 50 folios</h2>
+    </div>
+    <div class="pricing-card featured price-single reveal">
+      <div class="pricing-badge" data-i18n="mod.status_soon">Pronto</div>
+      <div class="pricing-tier" data-i18n="mod.invoicing_name">Facturación CFDI</div>
+      <div class="pricing-price">
+        <span class="pricing-amount">$149</span>
+        <span class="pricing-period"><span data-i18n="mod.per_month">MXN al mes</span></span>
+      </div>
+      <p class="pricing-desc" data-i18n="lp_invoicing.price_desc">Incluye 50 folios al mes. Cada folio extra cuesta $2 MXN. Sin costo por el PAC.</p>
+      <ul class="pricing-features">
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_invoicing.price_f1">50 folios al mes</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_invoicing.price_f2">Timbrado con PAC autorizado por el SAT</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_invoicing.price_f3">PDF y XML por WhatsApp y correo</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_invoicing.price_f4">$2 MXN por folio extra</span>
+          </li>
+      </ul>
+      <a href="https://app.beegen.co/signup?module=invoicing" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+      <p class="pricing-desc" style="margin:14px 0 0;text-align:center;font-size:13px;" data-i18n="mod.iva">IVA incluido</p>
+        <p class="pricing-desc" style="margin:14px 0 0;text-align:center;font-size:13px;" data-i18n="mod.soon_hint">Te avisamos por WhatsApp o correo cuando esté listo. Sin compromiso.</p>
+    </div>
+    <p class="price-bundle-note reveal"><span data-i18n="lp_invoicing.bundle_note">Incluido en Beegen Negocio ($899).</span> <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a></p>
+  </div>
+</section>
+
+<!-- ── CONNECTED TO THE CRM ───────────────────────────────── -->
+<section class="section" id="crm" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_invoicing.connect_label">Conectado al CRM</span>
+      <h2 data-i18n="lp_invoicing.connect_title">La factura nace del pago y vive en el cliente</h2>
+      <p data-i18n="lp_invoicing.connect_sub">Nada de volver a pedir datos ni buscar XML en el correo.</p>
+    </div>
+    <div class="module-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+        <h3 data-i18n="lp_invoicing.c1_title">Desde el pago</h3>
+        <p data-i18n="lp_invoicing.c1_desc">Con Cobros, al confirmarse un pago, el agente ofrece la factura y la timbra en el mismo chat.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3 data-i18n="lp_invoicing.c2_title">Datos fiscales en el contacto</h3>
+        <p data-i18n="lp_invoicing.c2_desc">RFC, régimen y uso de CFDI se guardan una vez. La siguiente factura sale sin preguntar nada.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3 data-i18n="lp_invoicing.c3_title">Factura global</h3>
+        <p data-i18n="lp_invoicing.c3_desc">Las ventas sin RFC se agrupan en el CFDI global de público en general cada mes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────── -->
+<section class="section" id="faq" style="background:var(--cloud);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_invoicing.faq_label">Preguntas frecuentes</span>
+      <h2 data-i18n="lp_invoicing.faq_title">Lo que nos preguntan sobre facturación</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_invoicing.faq_q1">¿Con qué PAC timbran?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_invoicing.faq_a1">Con un Proveedor Autorizado de Certificación del SAT. Tú solo subes tu CSD y tus datos fiscales; el timbrado, los folios y el XML son nuestro problema.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_invoicing.faq_q2">¿Puedo facturar sin que el cliente escriba por WhatsApp?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_invoicing.faq_a2">Sí. Desde cualquier venta en el CRM puedes emitir la factura con un clic usando los datos fiscales guardados del contacto.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_invoicing.faq_q3">¿Qué pasa si el RFC está mal?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_invoicing.faq_a3">El agente valida el RFC, el código postal y el régimen contra las reglas del SAT antes de timbrar. Si algo no coincide, se lo pide de nuevo al cliente en lugar de generar una factura que luego hay que cancelar.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_invoicing.faq_q4">¿Cuándo estará disponible?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_invoicing.faq_a4">Estamos terminando la integración con el PAC. Si te apuntas, te avisamos en cuanto salga y tus 14 días de prueba empiezan ese día.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ────────────────────────────────────────────── -->
+<section class="cta-band">
+  <div class="container">
+    <div class="reveal">
+      <h2 data-i18n="lp_invoicing.cta_h2">Deja de facturar a mano.</h2>
+      <p data-i18n="lp_invoicing.cta_sub">Apúntate y sé de los primeros en timbrar desde WhatsApp.</p>
+      <div class="cta-band-actions">
+        <a href="https://app.beegen.co/signup?module=invoicing" class="btn btn-primary btn-lg" data-i18n="lp_invoicing.cta_btn">Apúntate, disponible pronto</a>
+      </div>
+      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);" data-i18n="lp_invoicing.cta_footnote">$149 MXN al mes cuando salga · 50 folios incluidos</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid footer-grid-5">
+      <div class="footer-brand">
+        <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
+        <p data-i18n="footer.tagline">El sistema de ventas para los negocios de México: un CRM gratis, un agente de WhatsApp que actúa y módulos desde $99 MXN al mes.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.modules">Módulos</h5>
+        <div class="footer-links">
+          <a href="/crm.html" data-i18n="footer.crm">CRM gratis</a>
+          <a href="/sitio-web.html" data-i18n="footer.site">Sitio web</a>
+          <a href="/whatsapp.html" data-i18n="footer.wa_agent">Agente de WhatsApp</a>
+          <a href="/recordatorios.html" data-i18n="footer.reminders">Recordatorios</a>
+          <a href="/cobros.html" data-i18n="footer.payments">Cobros</a>
+          <a href="/facturacion.html" data-i18n="footer.invoicing">Facturación CFDI</a>
+          <a href="/resenas.html" data-i18n="footer.reviews">Reseñas Google</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.product">Producto</h5>
+        <div class="footer-links">
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">Cómo funciona</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/blog/" data-i18n="footer.blog">Blog</a>
+          <a href="/contact.html" data-i18n="footer.contact">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.account">Cuenta</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co/signup?module=crm" data-i18n="footer.signup">Registrarse</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Iniciar sesión</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.legal">Legal</h5>
+        <div class="footer-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terms.html" data-i18n="footer.terms">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Beegen. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <p data-i18n="footer.made_in">Hecho en México para negocios de México.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=3"></script>
+<script src="/js/i18n.js?v=3"></script>
+</body>
+</html>

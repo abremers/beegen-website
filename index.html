@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beegen — Build Your Website with AI</title>
-<meta name="description" content="Describe your website, Beegen's AI builds it in seconds. No code, no designers, no templates. Powered by Claude AI. Start free with 3 credits.">
+<title data-i18n="home.title">Beegen: Meta te contesta. Beegen te vende.</title>
+<meta name="description" content="El sistema de ventas para negocios de México: un CRM gratis, un agente de WhatsApp que agenda, cobra, factura y pide reseñas, y módulos desde $99 MXN al mes con IVA incluido.">
+<link rel="canonical" href="https://beegen.co/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://beegen.co/">
+<meta property="og:title" content="Beegen: Meta te contesta. Beegen te vende.">
+<meta property="og:description" content="El sistema de ventas para negocios de México: un CRM gratis, un agente de WhatsApp que agenda, cobra, factura y pide reseñas, y módulos desde $99 MXN al mes con IVA incluido.">
+<meta property="og:image" content="https://beegen.co/assets/og-image.png">
+<meta property="og:locale" content="es_MX">
+<link rel="icon" href="/assets/logos/beegen-logo-color.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="css/tokens.css">
-<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/global.css">
 <style>
 /* ── HERO ────────────────────────────────────────────────── */
 .hero {
@@ -55,7 +63,7 @@
   font-size: 19px;
   color: rgba(255,255,255,.75);
   line-height: 1.7;
-  max-width: 520px;
+  max-width: 540px;
   margin-bottom: 40px;
 }
 .hero-actions {
@@ -67,7 +75,7 @@
 }
 .hero-disclaimer { font-size: 13px; color: rgba(255,255,255,.45); }
 
-/* ── BUILDER MOCKUP ──────────────────────────────────────── */
+/* ── CRM MOCKUP (app frame around the timeline) ──────────── */
 .builder-mockup {
   background: #0D1B2A;
   border-radius: 16px;
@@ -98,147 +106,11 @@
   text-align: center;
   font-family: monospace;
 }
-.mockup-body {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  min-height: 320px;
-}
-.mockup-chat {
-  background: #0a1520;
-  border-right: 1px solid rgba(255,255,255,.07);
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.chat-header {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.25);
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255,255,255,.06);
-}
-.chat-msg {
-  max-width: 90%;
-  font-size: 12px;
-  line-height: 1.55;
-  padding: 10px 12px;
-  border-radius: 10px;
-}
-.chat-msg.user {
-  background: rgba(2,195,154,.18);
-  color: rgba(255,255,255,.9);
-  align-self: flex-end;
-  border-bottom-right-radius: 3px;
-}
-.chat-msg.ai {
-  background: rgba(255,255,255,.07);
-  color: rgba(255,255,255,.7);
-  align-self: flex-start;
-  border-bottom-left-radius: 3px;
-}
-.chat-msg.ai .ai-badge {
-  display: block;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 4px;
-}
-.chat-typing {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 8px 12px;
-  background: rgba(255,255,255,.05);
-  border-radius: 10px;
-  align-self: flex-start;
-  width: 48px;
-}
-.chat-typing span {
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--teal);
-  animation: typingDot 1.2s infinite;
-}
-.chat-typing span:nth-child(2) { animation-delay: .2s; }
-.chat-typing span:nth-child(3) { animation-delay: .4s; }
-@keyframes typingDot {
-  0%,80%,100% { opacity:.3; transform:scale(1); }
-  40% { opacity:1; transform:scale(1.2); }
-}
-.chat-input-row {
-  margin-top: auto;
-  background: rgba(255,255,255,.06);
-  border-radius: 8px;
-  padding: 8px 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid rgba(255,255,255,.1);
-}
-.chat-input-row span { font-size: 11px; color: rgba(255,255,255,.25); flex: 1; }
-.chat-input-row svg { width: 14px; height: 14px; color: var(--teal); }
-
-.mockup-preview {
-  background: #f4f8fb;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.preview-header {
-  background: #00152E;
-  border-radius: 6px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  padding: 0 12px;
-  gap: 8px;
-}
-.preview-logo-dot { width: 18px; height: 6px; background: var(--teal); border-radius: 3px; }
-.preview-nav-dots { display: flex; gap: 8px; margin-left: auto; }
-.preview-nav-dot { width: 24px; height: 4px; background: rgba(255,255,255,.2); border-radius: 2px; }
-.preview-hero-block {
-  background: linear-gradient(135deg, #00152E, #013A5C);
-  border-radius: 6px;
-  padding: 20px;
-  text-align: center;
-}
-.preview-hero-title { height: 10px; background: rgba(255,255,255,.8); border-radius: 5px; margin: 0 auto 8px; width: 70%; }
-.preview-hero-sub   { height: 6px;  background: rgba(255,255,255,.3); border-radius: 3px; margin: 0 auto 14px; width: 55%; }
-.preview-hero-btn   { display: inline-block; width: 80px; height: 24px; background: var(--teal); border-radius: 6px; }
-.preview-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-.preview-card {
-  background: #ffffff;
-  border-radius: 6px;
-  padding: 10px;
-  border: 1px solid #e2eaf0;
-}
-.preview-card-icon { width: 18px; height: 18px; background: rgba(2,195,154,.2); border-radius: 4px; margin-bottom: 6px; }
-.preview-card-line { height: 5px; background: #e2eaf0; border-radius: 3px; margin-bottom: 4px; }
-.preview-card-line.short { width: 60%; }
-.preview-status {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 10px;
-  color: var(--teal);
-  font-weight: 700;
-  padding-top: 4px;
-}
-.preview-status-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--teal);
-  animation: statusPulse 1.5s infinite;
-}
-@keyframes statusPulse {
-  0%,100% { opacity:1; }
-  50% { opacity:.4; }
+.hero-timeline .timeline-card {
+  max-width: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
 }
 
 /* ── TRUST STRIP DARK ────────────────────────────────────── */
@@ -248,83 +120,60 @@
   border-bottom: 1px solid rgba(255,255,255,.07);
   padding: 22px 0;
 }
-.trust-strip-dark .trust-strip {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
+.trust-strip-dark .trust-strip { border: none; margin: 0; padding: 0; }
 .trust-strip-dark .trust-item { color: rgba(255,255,255,.55); }
 .trust-strip-dark .trust-item svg { color: var(--teal); }
 
-/* ── HOW IT WORKS ────────────────────────────────────────── */
-.steps-grid {
+/* ── LEAD LOOP ───────────────────────────────────────────── */
+.loop-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  position: relative;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 32px;
+  align-items: center;
 }
-.steps-grid::before {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: calc(33.333% - 20px);
-  right: calc(33.333% - 20px);
-  height: 2px;
-  background: linear-gradient(90deg, var(--teal) 0%, rgba(2,195,154,.3) 100%);
-  pointer-events: none;
-}
-.step-card {
-  text-align: center;
-  padding: 40px 32px;
+.loop-col { display: flex; flex-direction: column; gap: 12px; }
+.loop-col .label { margin-bottom: 4px; color: var(--gray-400); }
+.loop-chip {
   background: #ffffff;
-  border-radius: var(--radius-lg);
   border: 1px solid var(--mist);
-  transition: all .3s ease;
-}
-.step-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(2,195,154,.2);
-}
-.step-badge {
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  background: rgba(2,195,154,.1);
-  color: var(--teal);
+  border-radius: var(--radius);
+  padding: 14px 18px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto 24px;
-  font-size: 24px;
-  font-weight: 800;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--navy);
+  box-shadow: var(--shadow-sm);
 }
-.step-card h3 { font-size: 22px; margin-bottom: 12px; }
-.step-card p { font-size: 15px; color: #64748b; line-height: 1.65; }
-
-/* ── SITE TYPES GRID ─────────────────────────────────────── */
-.site-types-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-/* ── FEATURES 2-COL ──────────────────────────────────────── */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-/* ── PRICING TEASER ──────────────────────────────────────── */
-.pricing-teaser-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 40px;
-}
-.see-pricing-link {
+.loop-chip svg { width: 20px; height: 20px; color: var(--teal); flex-shrink: 0; }
+.loop-chip.action svg { color: var(--orange); }
+.loop-center {
+  background: var(--navy);
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
   text-align: center;
+  min-width: 260px;
+  max-width: 320px;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  overflow: hidden;
 }
+.loop-center::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(2,195,154,.25) 0%, transparent 60%);
+  pointer-events: none;
+}
+.loop-center > * { position: relative; }
+.loop-center .feature-icon { margin: 0 auto 16px; background: rgba(2,195,154,.18); }
+.loop-center h3 { color: #ffffff; font-size: 22px; margin-bottom: 8px; }
+.loop-center p { color: rgba(255,255,255,.65); font-size: 14px; }
+
+/* ── GRIDS ───────────────────────────────────────────────── */
+.site-types-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.see-pricing-link { text-align: center; margin-top: 40px; }
 .see-pricing-link a {
   font-size: 16px;
   font-weight: 700;
@@ -342,13 +191,11 @@
   .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
   .hero-actions { justify-content: center; }
   .hero-sub { margin-left: auto; margin-right: auto; }
-  .steps-grid::before { display: none; }
-  .steps-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero-timeline { text-align: left; max-width: 480px; margin: 0 auto; }
   .site-types-grid { grid-template-columns: repeat(2, 1fr); }
   .features-grid { grid-template-columns: 1fr; }
-  .pricing-teaser-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
-  .mockup-body { grid-template-columns: 1fr; }
-  .mockup-chat { display: none; }
+  .loop-grid { grid-template-columns: 1fr; }
+  .loop-center { max-width: none; }
 }
 @media (max-width: 600px) {
   .site-types-grid { grid-template-columns: 1fr; }
@@ -362,22 +209,32 @@
   <div class="container">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img id="navLogo" src="assets/logos/beegen-logo-white.svg" alt="Beegen">
+        <img id="navLogo" src="/assets/logos/beegen-logo-white.svg" alt="Beegen">
       </a>
       <div class="nav-links">
-        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">How it Works</a>
-        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a>
-        <a href="/whatsapp.html" class="nav-link" data-i18n="nav.whatsapp">WhatsApp</a>
+        <div class="nav-dropdown">
+          <button class="nav-link" type="button" aria-haspopup="true"><span data-i18n="nav.modules">Módulos</span><svg class="nav-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+            <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+            <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+            <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+            <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+            <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+            <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+            <a href="/pricing.html" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+          </div>
+        </div>
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo funciona</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Precios</a>
         <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
-        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
-        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Login</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
       </div>
       <div class="nav-right">
-        <button class="lang-toggle" id="langToggle">
-          <span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span>
-        </button>
-        <a href="https://app.beegen.co/signup" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Start free</a>
-        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Open menu" aria-expanded="false">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambiar idioma / Switch language"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+        <a href="https://app.beegen.co/signup?module=crm" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Empieza gratis</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Abrir menú" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -388,118 +245,97 @@
 <!-- Mobile Nav -->
 <div class="mobile-nav-overlay" id="mobileNav">
   <div class="mobile-nav-header">
-    <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
-    <button class="mobile-nav-close" id="mobileNavClose" data-i18n-aria="nav.close_menu" aria-label="Close menu">
+    <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" data-i18n-aria="nav.close_menu" aria-label="Cerrar menú">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
   </div>
   <div class="mobile-nav-body">
     <div class="mobile-nav-item">
-      <a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">How it Works</a>
+      <button class="mobile-nav-link" type="button" aria-expanded="false"><span data-i18n="nav.modules">Módulos</span><svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mobile-nav-sub">
+        <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+        <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+        <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+        <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+        <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+        <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+        <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+        <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+      </div>
     </div>
-    <div class="mobile-nav-item">
-      <a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Pricing</a>
-    </div>
-    <div class="mobile-nav-item">
-      <a href="/whatsapp.html" class="mobile-nav-link" data-i18n="nav.whatsapp">WhatsApp</a>
-    </div>
-    <div class="mobile-nav-item">
-      <a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a>
-    </div>
-    <div class="mobile-nav-item">
-      <a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact</a>
-    </div>
-    <div class="mobile-nav-item">
-      <a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Login</a>
-    </div>
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo funciona</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
   </div>
   <div class="mobile-nav-footer">
-    <button class="lang-toggle" id="langToggleMobile" style="margin-bottom:14px;width:100%;justify-content:center;">
-      <span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span>
-    </button>
-    <a href="https://app.beegen.co/signup" class="btn btn-primary" data-i18n="nav.start_free">Start free</a>
+    <button class="lang-toggle" id="langToggleMobile" type="button" aria-label="Cambiar idioma / Switch language" style="margin-bottom:14px;width:100%;justify-content:center;"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+    <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary" data-i18n="nav.start_free">Empieza gratis</a>
   </div>
 </div>
-
 <!-- ── HERO ───────────────────────────────────────────────── -->
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
       <div>
         <div class="hero-eyebrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          <span data-i18n="hero.label">Built for local businesses</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span data-i18n="home.eyebrow">El sistema de ventas para tu negocio</span>
         </div>
-        <h1 data-i18n-html="hero.h1">Describe it.<br>We build it.</h1>
-        <p class="hero-sub" data-i18n="hero.sub">Tell Beegen what your business does. We build a professional, mobile-ready website — in minutes, not months. No designers. No code. No templates.</p>
+        <h1 data-i18n-html="home.h1">Meta te contesta.<br>Beegen te vende.</h1>
+        <p class="hero-sub" data-i18n="home.sub">Cada lead de tu web, WhatsApp, Instagram o llamada cae en un CRM gratis. Un agente de IA los atiende, agenda, cobra, factura y pide reseñas. Tú pagas solo por los módulos que usas, desde $99 MXN al mes.</p>
         <div class="hero-actions">
-          <a href="https://app.beegen.co/signup" class="btn btn-primary btn-lg" data-i18n="hero.cta_primary">Build my website free</a>
-          <a href="/#how-it-works" class="btn btn-ghost btn-lg" data-i18n="hero.cta_secondary">See how it works</a>
+          <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary btn-lg" data-i18n="home.cta_primary">Empieza gratis con el CRM</a>
+          <a href="#modulos" class="btn btn-ghost btn-lg" data-i18n="home.cta_secondary">Ver módulos y precios</a>
         </div>
-        <p class="hero-disclaimer" data-i18n="hero.disclaimer">3 free builds included · No credit card required</p>
+        <p class="hero-disclaimer" data-i18n="home.disclaimer">CRM gratis para siempre · 14 días de prueba por módulo · Sin tarjeta</p>
       </div>
 
-      <!-- Builder UI Mockup -->
-      <div class="builder-mockup reveal reveal-delay-2">
-        <div class="mockup-bar">
-          <div class="mockup-dots">
-            <div class="mockup-dot"></div>
-            <div class="mockup-dot"></div>
-            <div class="mockup-dot"></div>
+      <!-- CRM timeline mockup -->
+      <div class="hero-timeline reveal reveal-delay-2">
+        <div class="builder-mockup">
+          <div class="mockup-bar">
+            <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
+            <div class="mockup-url">app.beegen.co/crm</div>
           </div>
-          <div class="mockup-url">app.beegen.co</div>
+          <div class="timeline-card">
+        <div class="timeline-head">
+          <div class="timeline-avatar">ML</div>
+          <div>
+            <h4 data-i18n="home.mock_name">Mariana López</h4>
+            <span data-i18n="home.mock_sub">Estética Luna · Cliente nuevo</span>
+          </div>
+          <span class="timeline-stage" data-i18n="home.mock_stage">Pagado</span>
         </div>
-        <div class="mockup-body">
-          <div class="mockup-chat">
-            <div class="chat-header">AI Builder</div>
-            <div class="chat-msg user">Build me a fitness coaching landing page with a bold hero and pricing section</div>
-            <div class="chat-msg ai">
-              <span class="ai-badge">Beegen AI</span>
-              Building your site now — adding hero, services, pricing, and contact sections...
-            </div>
-            <div class="chat-typing">
-              <span></span><span></span><span></span>
-            </div>
-            <div class="chat-input-row">
-              <span>Describe what to change…</span>
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
-            </div>
+        <div class="timeline-body">
+          <div class="timeline-item">
+            <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+            <div class="timeline-text" data-i18n-html="home.mock_t1"><strong>Formulario web:</strong> “¿Tienen cita para balayage el sábado?”</div>
+            <div class="timeline-time" data-i18n="home.mock_time1">lun 22:41</div>
           </div>
-          <div class="mockup-preview">
-            <div class="preview-header">
-              <div class="preview-logo-dot"></div>
-              <div class="preview-nav-dots">
-                <div class="preview-nav-dot"></div>
-                <div class="preview-nav-dot"></div>
-                <div class="preview-nav-dot"></div>
-              </div>
-            </div>
-            <div class="preview-hero-block">
-              <div class="preview-hero-title"></div>
-              <div class="preview-hero-sub"></div>
-              <div class="preview-hero-btn"></div>
-            </div>
-            <div class="preview-cards">
-              <div class="preview-card">
-                <div class="preview-card-icon"></div>
-                <div class="preview-card-line"></div>
-                <div class="preview-card-line short"></div>
-              </div>
-              <div class="preview-card">
-                <div class="preview-card-icon"></div>
-                <div class="preview-card-line"></div>
-                <div class="preview-card-line short"></div>
-              </div>
-              <div class="preview-card">
-                <div class="preview-card-icon"></div>
-                <div class="preview-card-line"></div>
-                <div class="preview-card-line short"></div>
-              </div>
-            </div>
-            <div class="preview-status">
-              <div class="preview-status-dot"></div>
-              Generating live…
-            </div>
+          <div class="timeline-item">
+            <div class="timeline-icon wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+            <div class="timeline-text" data-i18n-html="home.mock_t2"><strong>Agente de WhatsApp</strong> confirmó cita: sábado 11:00 con Sofi</div>
+            <div class="timeline-time" data-i18n="home.mock_time2">lun 22:42</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+            <div class="timeline-text" data-i18n-html="home.mock_t3"><strong>Recordatorio</strong> enviado el viernes 18:00 · Leído</div>
+            <div class="timeline-time" data-i18n="home.mock_time3">vie 18:00</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+            <div class="timeline-text" data-i18n-html="home.mock_t4"><strong>Cobro:</strong> $1,450 pagado por SPEI</div>
+            <div class="timeline-time" data-i18n="home.mock_time4">sáb 12:10</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div class="timeline-text" data-i18n-html="home.mock_t5"><strong>Reseña Google</strong> solicitada · ★★★★★ recibida</div>
+            <div class="timeline-time" data-i18n="home.mock_time5">sáb 15:30</div>
+          </div>
+        </div>
           </div>
         </div>
       </div>
@@ -512,24 +348,24 @@
   <div class="container">
     <div class="trust-strip">
       <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span data-i18n="trust.no_code">No code required</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        <span data-i18n="home.trust_crm">CRM gratis para siempre</span>
       </div>
       <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        <span data-i18n="trust.powered">Powered by Claude AI</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+        <span data-i18n="home.trust_mx">CFDI, OXXO y SPEI</span>
       </div>
       <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        <span data-i18n="trust.live">Live in minutes</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span data-i18n="home.trust_mxn">Precios en MXN con IVA incluido</span>
       </div>
       <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-        <span data-i18n="trust.mobile">Mobile responsive</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8z"/></svg>
+        <span data-i18n="home.trust_ai">Agente con IA de Claude</span>
       </div>
       <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
-        <span data-i18n="trust.edit">Edit anytime</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+        <span data-i18n="home.trust_cancel">Cancela cuando quieras</span>
       </div>
     </div>
   </div>
@@ -539,211 +375,256 @@
 <section class="section" id="how-it-works" style="background:#ffffff;">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label" data-i18n="hiw.label">Simple by design</span>
-      <h2 data-i18n="hiw.title">Your website in three steps</h2>
-      <p data-i18n="hiw.subtitle">A plumber shouldn't need to know what a CMS is. A salon owner shouldn't wait weeks for a website.</p>
+      <span class="label" data-i18n="home.hiw_label">Así funciona</span>
+      <h2 data-i18n="home.hiw_title">Tres pasos para que tu negocio venda solo</h2>
+      <p data-i18n="home.hiw_sub">Sin instalar nada ni capacitar a nadie. Empiezas con el módulo que te duele y creces desde el CRM.</p>
     </div>
     <div class="steps-grid">
       <div class="step-card reveal reveal-delay-1">
         <div class="step-badge">1</div>
-        <h3 data-i18n="hiw.s1_title">Describe</h3>
-        <p data-i18n="hiw.s1_desc">Tell us your business, your location, and what you want the site to do. Plain English — no jargon needed.</p>
+        <h3 data-i18n="home.s1_title">Conecta un canal</h3>
+        <p data-i18n="home.s1_desc">Tu WhatsApp, tu sitio con formulario o tus DMs de Instagram. Diez minutos con el registro oficial de Meta.</p>
       </div>
       <div class="step-card reveal reveal-delay-2">
         <div class="step-badge">2</div>
-        <h3 data-i18n="hiw.s2_title">Build</h3>
-        <p data-i18n="hiw.s2_desc">Watch your site appear section by section. Every word, every layout — generated for your specific business.</p>
+        <h3 data-i18n="home.s2_title">El agente atiende y actúa</h3>
+        <p data-i18n="home.s2_desc">Contesta, califica, agenda la cita, manda el link de pago, timbra la factura y pide la reseña.</p>
       </div>
       <div class="step-card reveal reveal-delay-3">
         <div class="step-badge">3</div>
-        <h3 data-i18n="hiw.s3_title">Publish</h3>
-        <p data-i18n="hiw.s3_desc">Your site is live. Share the link, take bookings, get found. Edit anything by describing what to change.</p>
+        <h3 data-i18n="home.s3_title">Todo queda en tu CRM</h3>
+        <p data-i18n="home.s3_desc">Cada cliente tiene su línea de tiempo. Tú y tu equipo ven lo mismo y entran a la conversación cuando hace falta.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── WHAT YOU CAN BUILD ──────────────────────────────────── -->
-<section class="section" style="background: var(--cloud);">
+<!-- ── LEAD LOOP ───────────────────────────────────────────── -->
+<section class="section" id="crm" style="background: var(--cloud);">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label" data-i18n="types.label">Made for every local business</span>
-      <h2 data-i18n="types.title">If you can describe it, we can build it.</h2>
+      <span class="label" data-i18n="home.loop_label">Un solo lugar</span>
+      <h2 data-i18n="home.loop_title">Todos tus leads entran a un CRM. De ahí salen ventas.</h2>
+      <p data-i18n="home.loop_sub">No importa por dónde te escriban: el contacto se crea una vez y la conversación sigue en cualquier canal.</p>
     </div>
-    <div class="site-types-grid">
-      <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18M3 14h18M10 4v16M14 4v16M5 4h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z"/></svg>
-        </div>
-        <h3 data-i18n="types.r_title">Restaurants &amp; Cafés</h3>
-        <p data-i18n="types.r_desc">Menu, hours, reservations, and your story — all in one warm, welcoming site.</p>
+    <div class="loop-grid reveal">
+      <div class="loop-col">
+        <span class="label" data-i18n="home.loop_in">Entran por</span>
+        <div class="loop-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span data-i18n="home.in_web">Formulario de tu sitio web</span></div>
+        <div class="loop-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span data-i18n="home.in_wa">WhatsApp</span></div>
+        <div class="loop-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg><span data-i18n="home.in_ig">Instagram y Messenger</span></div>
+        <div class="loop-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span data-i18n="home.in_call">Llamadas a tu WhatsApp</span></div>
       </div>
-      <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-        </div>
-        <h3 data-i18n="types.s_title">Salons &amp; Spas</h3>
-        <p data-i18n="types.s_desc">Services, pricing, and a booking link. Look as polished as your work.</p>
+      <div class="loop-center">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <span class="label" data-i18n="home.center_label">El centro</span>
+        <h3 data-i18n="home.center_title">CRM de Beegen</h3>
+        <p data-i18n="home.center_sub">Contacto, línea de tiempo, pipeline y tareas. Gratis, con 1 usuario incluido.</p>
       </div>
-      <div class="feature-card reveal reveal-delay-3">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-        </div>
-        <h3 data-i18n="types.t_title">Trades &amp; Contractors</h3>
-        <p data-i18n="types.t_desc">Plumbers, electricians, HVAC. Get found locally and get the call.</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg>
-        </div>
-        <h3 data-i18n="types.re_title">Retail &amp; Boutiques</h3>
-        <p data-i18n="types.re_desc">Showcase your products, your story, and your store location.</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <h3 data-i18n="types.f_title">Freelancers &amp; Studios</h3>
-        <p data-i18n="types.f_desc">Portfolios, case studies, and client inquiries. Your work, front and centre.</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-3">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
-        </div>
-        <h3 data-i18n="types.o_title">Something else</h3>
-        <p data-i18n="types.o_desc">Just describe it. Beegen figures out the right structure for your specific business.</p>
+      <div class="loop-col">
+        <span class="label" data-i18n="home.loop_out">El agente hace</span>
+        <div class="loop-chip action"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span data-i18n="home.out_book">Agenda la cita</span></div>
+        <div class="loop-chip action"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg><span data-i18n="home.out_pay">Manda el link de pago</span></div>
+        <div class="loop-chip action"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><span data-i18n="home.out_invoice">Timbra el CFDI</span></div>
+        <div class="loop-chip action"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><span data-i18n="home.out_remind">Recuerda y da seguimiento</span></div>
+        <div class="loop-chip action"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span data-i18n="home.out_review">Pide la reseña en Google</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FEATURES ────────────────────────────────────────────── -->
+<!-- ── WHY BEEGEN ──────────────────────────────────────────── -->
 <section class="section" style="background:#ffffff;">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label" data-i18n="features.label">Built different</span>
-      <h2 data-i18n="features.title">Everything you need. Nothing you don't.</h2>
+      <span class="label" data-i18n="home.feat_label">Por qué Beegen y no solo un bot</span>
+      <h2 data-i18n="home.feat_title">Contestar es lo fácil. Vender es lo que importa.</h2>
     </div>
     <div class="features-grid">
       <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3 data-i18n="features.ai_title">AI that understands your business</h3>
-        <p data-i18n="features.ai_desc">Describe what you do and who you serve. The AI picks the right sections, writes real copy tailored to your business — not a generic template.</p>
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3 data-i18n="home.f1_title">Acciones, no solo respuestas</h3>
+        <p data-i18n="home.f1_desc">Meta ya contesta tu WhatsApp. Beegen agenda, cotiza, cobra, factura y da seguimiento desde la misma conversación.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        </div>
-        <h3 data-i18n="features.edit_title">Edit with plain words</h3>
-        <p data-i18n="features.edit_desc">Your site is live. Want to change the headline? Add a new service? Just describe it. No page editors, no drag-and-drop headaches.</p>
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3 data-i18n="home.f2_title">Tu información es tuya</h3>
+        <p data-i18n="home.f2_desc">Todo vive en tu CRM: exportable, compartido con tu equipo y con la línea de tiempo de cada cliente en cada canal.</p>
       </div>
       <div class="feature-card reveal reveal-delay-3">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        </div>
-        <h3 data-i18n="features.pub_title">Publish in one click</h3>
-        <p data-i18n="features.pub_desc">Your site goes live the moment you're ready. Share it, bookmark it, put it on your business card. It's real and it's yours.</p>
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <h3 data-i18n="home.f3_title">Hecho para México</h3>
+        <p data-i18n="home.f3_desc">CFDI, OXXO, SPEI, meses sin intereses, precios en pesos con IVA incluido y soporte en español.</p>
       </div>
       <div class="feature-card reveal reveal-delay-4">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-        </div>
-        <h3 data-i18n="features.resp_title">Looks right on every screen</h3>
-        <p data-i18n="features.resp_desc">Every site is built responsive from the start. Phones, tablets, desktops — your customers see a sharp, well-laid-out page every time.</p>
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/></svg></div>
+        <h3 data-i18n="home.f4_title">El mismo agente en todos tus canales</h3>
+        <p data-i18n="home.f4_desc">WhatsApp, Instagram, Messenger, chat web y llamadas. Un agente, una bandeja compartida, un CRM.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── PRICING TEASER ──────────────────────────────────────── -->
+<!-- ── BUSINESS TYPES ──────────────────────────────────────── -->
 <section class="section" style="background: var(--cloud);">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label" data-i18n="pricing_teaser.label">Transparent pricing</span>
-      <h2 data-i18n="pricing_teaser.title">Start free. Upgrade when you need more.</h2>
-      <p data-i18n="pricing_teaser.subtitle">3 free builds to try it out. No credit card. No surprises.</p>
+      <span class="label" data-i18n="home.types_label">Para cada negocio local</span>
+      <h2 data-i18n="home.types_title">Si vendes por WhatsApp, Beegen es para ti.</h2>
     </div>
-    <div class="pricing-teaser-grid">
-      <!-- Free Trial -->
-      <div class="pricing-card reveal reveal-delay-1">
-        <div class="pricing-tier" data-i18n="pricing_teaser.free_tier">Free Trial</div>
-        <div class="pricing-price">
-          <span class="pricing-amount">$0</span>
-        </div>
-        <p class="pricing-desc" data-i18n="pricing_teaser.free_desc">3 builds to see what Beegen can do.</p>
-        <ul class="pricing-features">
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_teaser.free_f1">3 total builds</span>
-          </li>
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_teaser.free_f2">Preview your site</span>
-          </li>
-          <li class="pricing-feature" style="opacity:.4;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-            <span data-i18n="pricing_teaser.free_f3">Publishing not included</span>
-          </li>
-        </ul>
-        <a href="https://app.beegen.co/signup" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_teaser.free_cta">Start for free</a>
+    <div class="site-types-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2h18l-2 7H5L3 2z"/><path d="M5 9l-1 11h16L19 9"/><path d="M9 13h6"/></svg></div>
+        <h3 data-i18n="home.t1_title">Restaurantes y cafés</h3>
+        <p data-i18n="home.t1_desc">Reservaciones por WhatsApp, recordatorio el mismo día y reseña después de la visita.</p>
       </div>
-      <!-- Starter (featured) -->
-      <div class="pricing-card featured reveal reveal-delay-2">
-        <div class="pricing-badge" data-i18n="pricing_teaser.starter_badge">Most Popular</div>
-        <div class="pricing-tier" data-i18n="pricing_teaser.starter_tier">Starter</div>
-        <div class="pricing-price">
-          <span class="pricing-amount" data-i18n="pricing_teaser.starter_amount">$249</span>
-          <span class="pricing-code" data-i18n="pricing_teaser.currency_code">MXN</span>
-          <span class="pricing-period" data-i18n="pricing_teaser.per_mo">/mes</span>
-        </div>
-        <p class="pricing-desc" data-i18n="pricing_teaser.starter_desc">30 builds/month. Publish and share.</p>
-        <ul class="pricing-features">
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_teaser.starter_f1">30 builds per month</span>
-          </li>
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_teaser.starter_f2">Publish to beegen.co</span>
-          </li>
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_teaser.starter_f3">Brand settings</span>
-          </li>
-        </ul>
-        <a href="https://app.beegen.co/signup" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="pricing_teaser.starter_cta">Get started</a>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3 data-i18n="home.t2_title">Salones y spas</h3>
+        <p data-i18n="home.t2_desc">Citas, recordatorios que evitan plantones y cobro de anticipo desde el chat.</p>
       </div>
-      <!-- Pro -->
-      <div class="pricing-card reveal reveal-delay-3">
-        <div class="pricing-tier" data-i18n="pricing_teaser.pro_tier">Pro</div>
-        <div class="pricing-price">
-          <span class="pricing-amount" data-i18n="pricing_teaser.pro_amount">$599</span>
-          <span class="pricing-code" data-i18n="pricing_teaser.currency_code">MXN</span>
-          <span class="pricing-period" data-i18n="pricing_teaser.per_mo">/mes</span>
-        </div>
-        <p class="pricing-desc" data-i18n="pricing_teaser.pro_desc">100 builds/month. For power users.</p>
-        <ul class="pricing-features">
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_teaser.pro_f1">100 builds per month</span>
-          </li>
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_teaser.pro_f2">Everything in Starter</span>
-          </li>
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_teaser.pro_f3">Priority builds</span>
-          </li>
-        </ul>
-        <a href="https://app.beegen.co/signup" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_teaser.pro_cta">Get started</a>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3 data-i18n="home.t3_title">Oficios y servicios a domicilio</h3>
+        <p data-i18n="home.t3_desc">Cotización en PDF desde el chat, anticipo por SPEI y factura al terminar.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></div>
+        <h3 data-i18n="home.t4_title">Tiendas y boutiques</h3>
+        <p data-i18n="home.t4_desc">Catálogo en Instagram y WhatsApp, link de pago y seguimiento al que no compró.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        <h3 data-i18n="home.t5_title">Freelancers y consultores</h3>
+        <p data-i18n="home.t5_desc">Formulario web, cotización, cobro y CFDI sin salir del CRM.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3 data-i18n="home.t6_title">Clínicas y consultorios</h3>
+        <p data-i18n="home.t6_desc">Agenda, recordatorios de cita, cobro de consulta y factura al paciente.</p>
       </div>
     </div>
-    <p class="currency-note" data-i18n="pricing_teaser.currency_note">Todos los precios en pesos mexicanos (MXN).</p>
+  </div>
+</section>
+
+<!-- ── MODULES ─────────────────────────────────────────────── -->
+<section class="section" id="modulos" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="home.mods_label">Precios claros</span>
+      <h2 data-i18n="home.mods_title">Un CRM gratis. Módulos desde $99 MXN al mes.</h2>
+      <p data-i18n="home.mods_sub">Paga solo por lo que usas. Cada módulo tiene 14 días de prueba, sin tarjeta. IVA incluido.</p>
+    </div>
+    <div class="module-grid">
+      <div class="module-card featured module-wide reveal" id="mod-crm">
+        <div>
+          <div class="module-head" style="justify-content:flex-start;">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <span class="module-status live" data-i18n="mod.status_live">Disponible</span>
+          </div>
+          <h3 data-i18n="mod.crm_name">CRM</h3>
+          <p data-i18n="mod.crm_tag">Tus contactos, tus ventas y la historia de cada cliente. Gratis para siempre.</p>
+        </div>
+        <div class="module-wide-cta">
+          <div class="module-price"><span class="module-amount">$0</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.crm_unit">1 usuario incluido</span></span></div>
+          <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary" data-i18n="mod.cta_free">Crear mi CRM gratis</a>
+          <a href="/crm.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+        </div>
+      </div>
+      <div class="module-card reveal reveal-delay-2">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <span class="module-status live" data-i18n="mod.status_live">Disponible</span>
+        </div>
+        <h3 data-i18n="mod.site_name">Sitio web</h3>
+        <div class="module-price"><span class="module-amount">$149</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.site_unit">por sitio publicado</span></span></div>
+        <p data-i18n="mod.site_tag">Tu sitio con formulario y botón de WhatsApp. Cada lead cae en el CRM.</p>
+        <a href="/sitio-web.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+      </div>
+      <div class="module-card featured reveal reveal-delay-3">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <span class="module-status live" data-i18n="mod.status_live">Disponible</span>
+        </div>
+        <h3 data-i18n="mod.wa_agent_name">Agente de WhatsApp</h3>
+        <div class="module-price"><span class="module-amount">$299</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.wa_agent_unit">por número</span></span></div>
+        <p data-i18n="mod.wa_agent_tag">Contesta, agenda, cotiza y cobra desde tu WhatsApp, a cualquier hora.</p>
+        <a href="/whatsapp.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+      </div>
+      <div class="module-card reveal reveal-delay-1">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.reminders_name">Recordatorios y seguimientos</h3>
+        <div class="module-price"><span class="module-amount">$99</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
+        <p data-i18n="mod.reminders_tag">Recordatorio de cita, aviso de pago y seguimiento, enviados solos.</p>
+        <a href="/recordatorios.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+      </div>
+      <div class="module-card reveal reveal-delay-2">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.payments_name">Cobros</h3>
+        <div class="module-price"><span class="module-amount">$0</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.payments_unit">+ 1% por pago cobrado</span></span></div>
+        <p data-i18n="mod.payments_tag">Link de pago en el chat: tarjeta, OXXO, SPEI y meses sin intereses.</p>
+        <a href="/cobros.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+      </div>
+      <div class="module-card reveal reveal-delay-3">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.invoicing_name">Facturación CFDI</h3>
+        <div class="module-price"><span class="module-amount">$149</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
+        <p data-i18n="mod.invoicing_tag">El agente pide los datos fiscales y timbra la factura por ti.</p>
+        <a href="/facturacion.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+      </div>
+      <div class="module-card reveal reveal-delay-1">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.reviews_name">Reseñas Google</h3>
+        <div class="module-price"><span class="module-amount">$99</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
+        <p data-i18n="mod.reviews_tag">Pide la reseña justo después de cada venta, con el link directo.</p>
+        <a href="/resenas.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+      </div>
+      <div class="module-card reveal reveal-delay-2">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.social_channels_name">Instagram y Messenger</h3>
+        <div class="module-price"><span class="module-amount">$99</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.social_channels_unit">por cuenta conectada</span></span></div>
+        <p data-i18n="mod.social_channels_tag">El mismo agente y la misma bandeja en tus DMs de Instagram y Messenger.</p>
+        <a href="https://app.beegen.co/signup?module=social_channels" class="module-link" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+      </div>
+      <div class="module-card reveal reveal-delay-3">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.voice_name">Voz</h3>
+        <div class="module-price"><span class="module-amount">$299</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
+        <p data-i18n="mod.voice_tag">Las llamadas a tu WhatsApp las atiende el agente y quedan en el CRM.</p>
+        <a href="https://app.beegen.co/signup?module=voice" class="module-link" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+      </div>
+      <div class="module-card reveal reveal-delay-1">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.quotes_name">Cotizaciones</h3>
+        <div class="module-price"><span class="module-amount">$99</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
+        <p data-i18n="mod.quotes_tag">Cotización en PDF desde el chat, con link para aceptar y pagar.</p>
+        <a href="https://app.beegen.co/signup?module=quotes" class="module-link" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+      </div>
+    </div>
+    <p class="currency-note"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.iva">IVA incluido</span></p>
     <div class="see-pricing-link reveal">
-      <a href="/pricing.html" data-i18n="pricing_teaser.see_full">See full pricing details →</a>
+      <a href="/pricing.html" data-i18n="home.mods_link">Ver precios, paquetes y preguntas frecuentes →</a>
     </div>
   </div>
 </section>
@@ -752,12 +633,12 @@
 <section class="cta-band">
   <div class="container">
     <div class="reveal">
-      <h2 data-i18n="cta.title">Your website is one conversation away.</h2>
-      <p data-i18n="cta.subtitle">Describe your business. We'll handle the rest.</p>
+      <h2 data-i18n="home.cta_title">Tu próximo cliente ya te escribió. ¿Quién le contesta?</h2>
+      <p data-i18n="home.cta_sub">Empieza con el CRM gratis y agrega el agente de WhatsApp cuando quieras.</p>
       <div class="cta-band-actions">
-        <a href="https://app.beegen.co/signup" class="btn btn-primary btn-lg" data-i18n="cta.btn">Build my website free</a>
+        <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary btn-lg" data-i18n="home.cta_btn">Empezar gratis</a>
       </div>
-      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);" data-i18n="cta.footnote">No credit card · Cancel anytime</p>
+      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);" data-i18n="home.cta_footnote">Sin tarjeta · Cancela cuando quieras</p>
     </div>
   </div>
 </section>
@@ -765,44 +646,56 @@
 <!-- ── FOOTER ──────────────────────────────────────────────── -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-grid footer-grid-5">
       <div class="footer-brand">
-        <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
-        <p data-i18n="footer.tagline">Build professional websites with AI. No code required.</p>
+        <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
+        <p data-i18n="footer.tagline">El sistema de ventas para los negocios de México: un CRM gratis, un agente de WhatsApp que actúa y módulos desde $99 MXN al mes.</p>
       </div>
       <div class="footer-col">
-        <h5 data-i18n="footer.product">Product</h5>
+        <h5 data-i18n="footer.modules">Módulos</h5>
         <div class="footer-links">
-          <a href="/#how-it-works" data-i18n="footer.how_it_works">How it Works</a>
-          <a href="/pricing.html" data-i18n="footer.pricing">Pricing</a>
-          <a href="/whatsapp.html">WhatsApp AI</a>
-          <a href="/blog/" data-i18n="footer.blog">Blog</a>
-          <a href="/contact.html" data-i18n="footer.contact">Contact</a>
+          <a href="/crm.html" data-i18n="footer.crm">CRM gratis</a>
+          <a href="/sitio-web.html" data-i18n="footer.site">Sitio web</a>
+          <a href="/whatsapp.html" data-i18n="footer.wa_agent">Agente de WhatsApp</a>
+          <a href="/recordatorios.html" data-i18n="footer.reminders">Recordatorios</a>
+          <a href="/cobros.html" data-i18n="footer.payments">Cobros</a>
+          <a href="/facturacion.html" data-i18n="footer.invoicing">Facturación CFDI</a>
+          <a href="/resenas.html" data-i18n="footer.reviews">Reseñas Google</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
         </div>
       </div>
       <div class="footer-col">
-        <h5 data-i18n="footer.account">Account</h5>
+        <h5 data-i18n="footer.product">Producto</h5>
         <div class="footer-links">
-          <a href="https://app.beegen.co/signup" data-i18n="footer.signup">Sign Up</a>
-          <a href="https://app.beegen.co/signup" data-i18n="footer.login">Login</a>
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">Cómo funciona</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/blog/" data-i18n="footer.blog">Blog</a>
+          <a href="/contact.html" data-i18n="footer.contact">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.account">Cuenta</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co/signup?module=crm" data-i18n="footer.signup">Registrarse</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Iniciar sesión</a>
         </div>
       </div>
       <div class="footer-col">
         <h5 data-i18n="footer.legal">Legal</h5>
         <div class="footer-links">
-          <a href="/privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
-          <a href="/terms.html" data-i18n="footer.terms">Terms of Service</a>
+          <a href="/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terms.html" data-i18n="footer.terms">Términos de Servicio</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Beegen. <span data-i18n="footer.rights">All rights reserved.</span></p>
-      <p>Built with Beegen AI</p>
+      <p>© 2026 Beegen. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <p data-i18n="footer.made_in">Hecho en México para negocios de México.</p>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js?v=2"></script>
-<script src="js/i18n.js?v=2"></script>
+<script src="/js/main.js?v=3"></script>
+<script src="/js/i18n.js?v=3"></script>
 </body>
 </html>

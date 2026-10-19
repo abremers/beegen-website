@@ -1,214 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pricing — Beegen AI Website Builder</title>
-<meta name="description" content="Publish one site free, forever. Monthly plans from $19/mo for more edits and no badge. Top-up packs that never expire. No surprises.">
+<title data-i18n="pricing_page.title">Precios: módulos desde $99 MXN al mes | Beegen</title>
+<meta name="description" content="CRM gratis. Agente de WhatsApp $299, Sitio web $149, Recordatorios $99, Cobros 0 + 1%, Facturación CFDI $149, Reseñas $99. Paquetes desde $499 MXN al mes, IVA incluido. 14 días de prueba por módulo.">
+<link rel="canonical" href="https://beegen.co/pricing">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://beegen.co/pricing">
+<meta property="og:title" content="Precios: módulos desde $99 MXN al mes | Beegen">
+<meta property="og:description" content="CRM gratis. Agente de WhatsApp $299, Sitio web $149, Recordatorios $99, Cobros 0 + 1%, Facturación CFDI $149, Reseñas $99. Paquetes desde $499 MXN al mes, IVA incluido. 14 días de prueba por módulo.">
+<meta property="og:image" content="https://beegen.co/assets/og-image.png">
+<meta property="og:locale" content="es_MX">
+<link rel="icon" href="/assets/logos/beegen-logo-color.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="css/tokens.css">
-<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/global.css">
 <style>
-/* ── PRICING GRID ─────────────────────────────────────────── */
 .plans-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  margin-bottom: 80px;
+  max-width: 900px;
+  margin: 0 auto 32px;
 }
-
-/* ── TOP-UP PACKS ─────────────────────────────────────────── */
-.topup-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.topup-card {
-  background: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  border: 2px solid var(--mist);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  transition: all .3s ease;
-  position: relative;
-}
-.topup-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(2,195,154,.25);
-}
-.topup-card.best-value {
-  border-color: var(--teal);
-  background: linear-gradient(180deg, rgba(2,195,154,.04) 0%, #fff 100%);
-}
-.topup-best-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--teal);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  padding: 4px 14px;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-.topup-credits {
-  font-size: 36px;
-  font-weight: 800;
-  color: var(--navy);
-  line-height: 1;
-}
-.topup-credits span {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--gray-600);
-}
-.topup-rate {
-  font-size: 13px;
-  color: var(--gray-400);
-  margin-top: 4px;
-}
-.topup-price-block { text-align: right; }
-.topup-price {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--navy);
-}
-
-/* ── WHAT IS A CREDIT ─────────────────────────────────────── */
-.credit-explainer {
+.plans-grid .pricing-card { display: flex; flex-direction: column; }
+.plans-grid .pricing-features { flex: 1; }
+.annual-card {
+  max-width: 900px;
+  margin: 0 auto;
   background: rgba(2,195,154,.06);
   border: 1px solid rgba(2,195,154,.2);
   border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.annual-card h3 { font-size: 24px; margin-bottom: 10px; }
+.annual-card p { font-size: 16px; line-height: 1.65; }
+.annual-card .pricing-features { margin: 0; }
+.dfy-card {
+  background: var(--navy);
+  border-radius: var(--radius-xl);
   padding: 48px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
   align-items: center;
-}
-.credit-explainer h3 {
-  font-size: 26px;
-  margin-bottom: 16px;
-}
-.credit-explainer p {
-  font-size: 16px;
-  color: #475569;
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-.credit-explainer p:last-child { margin-bottom: 0; }
-.credit-visual {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.credit-row {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 14px 20px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  border: 1px solid var(--mist);
-}
-.credit-row-icon {
-  width: 36px; height: 36px;
-  border-radius: 10px;
-  background: rgba(2,195,154,.1);
-  color: var(--teal);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.credit-row-icon svg { width: 18px; height: 18px; }
-.credit-row-text { font-size: 14px; font-weight: 600; color: var(--navy); }
-.credit-row-count {
-  margin-left: auto;
-  background: rgba(2,195,154,.12);
-  color: var(--teal);
-  font-size: 12px;
-  font-weight: 800;
-  padding: 3px 10px;
-  border-radius: 20px;
-}
-
-/* ── FAQ ──────────────────────────────────────────────────── */
-.faq-list {
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.faq-item {
-  border-bottom: 1px solid var(--mist);
-}
-.faq-question {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 22px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  font-family: inherit;
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--navy);
-  cursor: pointer;
-  text-align: left;
-  transition: color .2s ease;
-}
-.faq-question:hover { color: var(--teal); }
-.faq-icon {
-  width: 22px; height: 22px;
-  border-radius: 50%;
-  background: rgba(2,195,154,.1);
-  color: var(--teal);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: transform .25s ease, background .2s ease;
-}
-.faq-icon svg { width: 12px; height: 12px; stroke: currentColor; }
-.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--teal); color: #fff; }
-.faq-answer {
-  max-height: 0;
+  position: relative;
   overflow: hidden;
-  transition: max-height .35s ease, padding .35s ease;
-  padding: 0;
 }
-.faq-item.open .faq-answer {
-  max-height: 400px;
-  padding-bottom: 20px;
+.dfy-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 85% 30%, rgba(2,195,154,.22) 0%, transparent 55%);
+  pointer-events: none;
 }
-.faq-answer p {
-  font-size: 16px;
-  color: #475569;
-  line-height: 1.7;
-}
-
-/* ── RESPONSIVE ──────────────────────────────────────────── */
+.dfy-card > * { position: relative; }
+.dfy-card .label { margin-bottom: 12px; display: block; }
+.dfy-card h3 { color: #fff; font-size: 28px; margin-bottom: 12px; }
+.dfy-card p { color: rgba(255,255,255,.72); font-size: 16px; max-width: 560px; }
+.dfy-price { text-align: center; }
+.dfy-amount { font-size: 40px; font-weight: 800; color: #fff; line-height: 1; white-space: nowrap; }
+.dfy-unit { font-size: 14px; color: rgba(255,255,255,.55); margin: 8px 0 20px; }
 @media (max-width: 900px) {
-  .plans-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 700px) {
-  .plans-grid { grid-template-columns: 1fr; }
-  .topup-grid { grid-template-columns: 1fr; }
-  .topup-card { flex-direction: column; align-items: flex-start; }
-  .topup-price-block { text-align: left; }
-  .credit-explainer { grid-template-columns: 1fr; }
+  .plans-grid { grid-template-columns: 1fr; max-width: 520px; }
+  .annual-card { grid-template-columns: 1fr; padding: 28px; }
+  .dfy-card { grid-template-columns: 1fr; padding: 32px 28px; text-align: center; }
+  .dfy-card p { margin: 0 auto; }
 }
 </style>
 </head>
@@ -219,20 +81,32 @@
   <div class="container">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img id="navLogo" src="assets/logos/beegen-logo-white.svg" alt="Beegen">
+        <img id="navLogo" src="/assets/logos/beegen-logo-white.svg" alt="Beegen">
       </a>
       <div class="nav-links">
-        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">How it Works</a>
-        <a href="/pricing.html" class="nav-link active" data-i18n="nav.pricing">Pricing</a>
-        <a href="/whatsapp.html" class="nav-link" data-i18n="nav.whatsapp">WhatsApp</a>
+        <div class="nav-dropdown">
+          <button class="nav-link" type="button" aria-haspopup="true"><span data-i18n="nav.modules">Módulos</span><svg class="nav-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+            <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+            <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+            <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+            <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+            <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+            <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+            <a href="/pricing.html" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+          </div>
+        </div>
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo funciona</a>
+        <a href="/pricing.html" class="nav-link active" data-i18n="nav.pricing">Precios</a>
         <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
-        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
-        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Login</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
       </div>
       <div class="nav-right">
-        <button class="lang-toggle" id="langToggle"><span class="lang-label">EN</span></button>
-        <a href="https://app.beegen.co/signup" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Start free</a>
-        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Open menu" aria-expanded="false">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambiar idioma / Switch language"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+        <a href="https://app.beegen.co/signup?module=crm" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Empieza gratis</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Abrir menú" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -243,327 +117,413 @@
 <!-- Mobile Nav -->
 <div class="mobile-nav-overlay" id="mobileNav">
   <div class="mobile-nav-header">
-    <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
-    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+    <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" data-i18n-aria="nav.close_menu" aria-label="Cerrar menú">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
   </div>
   <div class="mobile-nav-body">
-    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">How it Works</a></div>
-    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Pricing</a></div>
-    <div class="mobile-nav-item"><a href="/whatsapp.html" class="mobile-nav-link" data-i18n="nav.whatsapp">WhatsApp</a></div>
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" type="button" aria-expanded="false"><span data-i18n="nav.modules">Módulos</span><svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mobile-nav-sub">
+        <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+        <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+        <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+        <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+        <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+        <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+        <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+        <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+      </div>
+    </div>
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo funciona</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
     <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
-    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact</a></div>
-    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Login</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
   </div>
   <div class="mobile-nav-footer">
-    <button class="lang-toggle" id="langToggleMobile" style="margin-bottom:14px;width:100%;justify-content:center;display:flex;"><span class="lang-label">EN</span></button>
-    <a href="https://app.beegen.co/signup" class="btn btn-primary" data-i18n="nav.start_free">Start free</a>
+    <button class="lang-toggle" id="langToggleMobile" type="button" aria-label="Cambiar idioma / Switch language" style="margin-bottom:14px;width:100%;justify-content:center;"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+    <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary" data-i18n="nav.start_free">Empieza gratis</a>
   </div>
 </div>
-
 <!-- ── PAGE HERO ───────────────────────────────────────────── -->
 <section class="page-hero">
   <div class="container">
-    <h1 data-i18n="pricing_page.hero_title">Simple, credit-based pricing</h1>
-    <p data-i18n="pricing_page.hero_sub">Buy what you need. Use it when you want. Monthly plans for regulars, top-up packs for everyone else.</p>
+    <h1 data-i18n="pricing_page.hero_title">Paga solo por los módulos que usas.</h1>
+    <p data-i18n="pricing_page.hero_sub">El CRM es gratis. Cada módulo cuesta entre $99 y $299 MXN al mes, IVA incluido, con 14 días de prueba sin tarjeta.</p>
   </div>
 </section>
 
-<!-- ── MONTHLY PLANS ───────────────────────────────────────── -->
-<section class="section" style="background:#ffffff;">
+<!-- ── MODULES ────────────────────────────────────────────── -->
+<section class="section" id="modulos" style="background:#ffffff;">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label" data-i18n="pricing_page.monthly_label">Monthly plans</span>
-      <h2 data-i18n="pricing_page.monthly_title">Pick your plan</h2>
+      <span class="label" data-i18n="pricing_page.mods_label">Módulos</span>
+      <h2 data-i18n="pricing_page.mods_title">Arma tu Beegen</h2>
+      <p data-i18n="pricing_page.mods_sub">Empieza con uno. Agrega los demás desde el CRM cuando los necesites.</p>
+    </div>
+    <div class="module-grid">
+      <div class="module-card featured module-wide reveal" id="mod-crm">
+        <div>
+          <div class="module-head" style="justify-content:flex-start;">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <span class="module-status live" data-i18n="mod.status_live">Disponible</span>
+          </div>
+          <h3 data-i18n="mod.crm_name">CRM</h3>
+          <p data-i18n="mod.crm_tag">Tus contactos, tus ventas y la historia de cada cliente. Gratis para siempre.</p>
+        </div>
+        <ul class="module-meta">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><span data-i18n="pricing_page.included">Incluye</span>: <span data-i18n="mod.crm_inc">Contactos ilimitados, pipeline, tareas e importación</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg><span><span data-i18n="pricing_page.overage">Si te pasas</span>: <span data-i18n="mod.crm_over">$99 MXN al mes por usuario extra</span></span></li>
+        </ul>
+        <div class="module-wide-cta">
+          <div class="module-price"><span class="module-amount">$0</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.crm_unit">1 usuario incluido</span></span></div>
+          <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary" data-i18n="mod.cta_free">Crear mi CRM gratis</a>
+          <a href="/crm.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+        </div>
+      </div>
+      <div class="module-card reveal reveal-delay-2" id="mod-site">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <span class="module-status live" data-i18n="mod.status_live">Disponible</span>
+        </div>
+        <h3 data-i18n="mod.site_name">Sitio web</h3>
+        <div class="module-price"><span class="module-amount">$149</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.site_unit">por sitio publicado</span></span></div>
+        <p data-i18n="mod.site_tag">Tu sitio con formulario y botón de WhatsApp. Cada lead cae en el CRM.</p>
+        <ul class="module-meta">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><span data-i18n="pricing_page.included">Incluye</span>: <span data-i18n="mod.site_inc">Ediciones ilimitadas, dominio propio, formularios</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg><span><span data-i18n="pricing_page.overage">Si te pasas</span>: <span data-i18n="mod.site_over">Sin cargos por uso</span></span></li>
+        </ul>
+        <a href="https://app.beegen.co/signup?module=site" class="btn btn-primary" data-i18n="mod.cta_trial">Probar 14 días gratis</a>
+        <a href="/sitio-web.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+      </div>
+      <div class="module-card featured reveal reveal-delay-3" id="mod-wa_agent">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <span class="module-status live" data-i18n="mod.status_live">Disponible</span>
+        </div>
+        <h3 data-i18n="mod.wa_agent_name">Agente de WhatsApp</h3>
+        <div class="module-price"><span class="module-amount">$299</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.wa_agent_unit">por número</span></span></div>
+        <p data-i18n="mod.wa_agent_tag">Contesta, agenda, cotiza y cobra desde tu WhatsApp, a cualquier hora.</p>
+        <ul class="module-meta">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><span data-i18n="pricing_page.included">Incluye</span>: <span data-i18n="mod.wa_agent_inc">500 conversaciones con IA al mes</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg><span><span data-i18n="pricing_page.overage">Si te pasas</span>: <span data-i18n="mod.wa_agent_over">$1.50 MXN por conversación extra</span></span></li>
+        </ul>
+        <a href="https://app.beegen.co/signup?module=wa_agent" class="btn btn-primary" data-i18n="mod.cta_trial">Probar 14 días gratis</a>
+        <a href="/whatsapp.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+      </div>
+      <div class="module-card reveal reveal-delay-1" id="mod-reminders">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.reminders_name">Recordatorios y seguimientos</h3>
+        <div class="module-price"><span class="module-amount">$99</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
+        <p data-i18n="mod.reminders_tag">Recordatorio de cita, aviso de pago y seguimiento, enviados solos.</p>
+        <ul class="module-meta">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><span data-i18n="pricing_page.included">Incluye</span>: <span data-i18n="mod.reminders_inc">200 mensajes de plantilla al mes</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg><span><span data-i18n="pricing_page.overage">Si te pasas</span>: <span data-i18n="mod.reminders_over">Costo de Meta + 20% por mensaje extra</span></span></li>
+        </ul>
+        <a href="https://app.beegen.co/signup?module=reminders" class="btn btn-outline" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+        <a href="/recordatorios.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+      </div>
+      <div class="module-card reveal reveal-delay-2" id="mod-payments">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.payments_name">Cobros</h3>
+        <div class="module-price"><span class="module-amount">$0</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.payments_unit">+ 1% por pago cobrado</span></span></div>
+        <p data-i18n="mod.payments_tag">Link de pago en el chat: tarjeta, OXXO, SPEI y meses sin intereses.</p>
+        <ul class="module-meta">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><span data-i18n="pricing_page.included">Incluye</span>: <span data-i18n="mod.payments_inc">Links de pago ilimitados, estatus en cada venta</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg><span><span data-i18n="pricing_page.overage">Si te pasas</span>: <span data-i18n="mod.payments_over">1% sobre cada pago, más la comisión del procesador</span></span></li>
+        </ul>
+        <a href="https://app.beegen.co/signup?module=payments" class="btn btn-outline" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+        <a href="/cobros.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+      </div>
+      <div class="module-card reveal reveal-delay-3" id="mod-invoicing">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.invoicing_name">Facturación CFDI</h3>
+        <div class="module-price"><span class="module-amount">$149</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
+        <p data-i18n="mod.invoicing_tag">El agente pide los datos fiscales y timbra la factura por ti.</p>
+        <ul class="module-meta">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><span data-i18n="pricing_page.included">Incluye</span>: <span data-i18n="mod.invoicing_inc">50 folios al mes</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg><span><span data-i18n="pricing_page.overage">Si te pasas</span>: <span data-i18n="mod.invoicing_over">$2 MXN por folio extra</span></span></li>
+        </ul>
+        <a href="https://app.beegen.co/signup?module=invoicing" class="btn btn-outline" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+        <a href="/facturacion.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+      </div>
+      <div class="module-card reveal reveal-delay-1" id="mod-reviews">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.reviews_name">Reseñas Google</h3>
+        <div class="module-price"><span class="module-amount">$99</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
+        <p data-i18n="mod.reviews_tag">Pide la reseña justo después de cada venta, con el link directo.</p>
+        <ul class="module-meta">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><span data-i18n="pricing_page.included">Incluye</span>: <span data-i18n="mod.reviews_inc">Solicitudes ilimitadas, Perfil de Negocio sincronizado</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg><span><span data-i18n="pricing_page.overage">Si te pasas</span>: <span data-i18n="mod.reviews_over">Sin cargos por uso</span></span></li>
+        </ul>
+        <a href="https://app.beegen.co/signup?module=reviews" class="btn btn-outline" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+        <a href="/resenas.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+      </div>
+      <div class="module-card reveal reveal-delay-2" id="mod-social_channels">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.social_channels_name">Instagram y Messenger</h3>
+        <div class="module-price"><span class="module-amount">$99</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.social_channels_unit">por cuenta conectada</span></span></div>
+        <p data-i18n="mod.social_channels_tag">El mismo agente y la misma bandeja en tus DMs de Instagram y Messenger.</p>
+        <ul class="module-meta">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><span data-i18n="pricing_page.included">Incluye</span>: <span data-i18n="mod.social_channels_inc">Comparte las conversaciones del agente de WhatsApp</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg><span><span data-i18n="pricing_page.overage">Si te pasas</span>: <span data-i18n="mod.social_channels_over">$1.50 MXN por conversación extra</span></span></li>
+        </ul>
+        <a href="https://app.beegen.co/signup?module=social_channels" class="btn btn-outline" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+      </div>
+      <div class="module-card reveal reveal-delay-3" id="mod-voice">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.voice_name">Voz</h3>
+        <div class="module-price"><span class="module-amount">$299</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
+        <p data-i18n="mod.voice_tag">Las llamadas a tu WhatsApp las atiende el agente y quedan en el CRM.</p>
+        <ul class="module-meta">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><span data-i18n="pricing_page.included">Incluye</span>: <span data-i18n="mod.voice_inc">100 minutos al mes</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg><span><span data-i18n="pricing_page.overage">Si te pasas</span>: <span data-i18n="mod.voice_over">$3 MXN por minuto extra</span></span></li>
+        </ul>
+        <a href="https://app.beegen.co/signup?module=voice" class="btn btn-outline" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+      </div>
+      <div class="module-card reveal reveal-delay-1" id="mod-quotes">
+        <div class="module-head">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></div>
+          <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h3 data-i18n="mod.quotes_name">Cotizaciones</h3>
+        <div class="module-price"><span class="module-amount">$99</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
+        <p data-i18n="mod.quotes_tag">Cotización en PDF desde el chat, con link para aceptar y pagar.</p>
+        <ul class="module-meta">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><span data-i18n="pricing_page.included">Incluye</span>: <span data-i18n="mod.quotes_inc">Catálogo de servicios, cotizaciones ilimitadas</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg><span><span data-i18n="pricing_page.overage">Si te pasas</span>: <span data-i18n="mod.quotes_over">Sin cargos por uso</span></span></li>
+        </ul>
+        <a href="https://app.beegen.co/signup?module=quotes" class="btn btn-outline" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+      </div>
+    </div>
+    <p class="currency-note"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.iva">IVA incluido</span></p>
+  </div>
+</section>
+
+<!-- ── BUNDLES ────────────────────────────────────────────── -->
+<section class="section" id="paquetes" style="background: var(--cloud);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="pricing_page.bundles_label">Paquetes</span>
+      <h2 data-i18n="pricing_page.bundles_title">Dos paquetes que salen más baratos</h2>
+      <p data-i18n="pricing_page.bundles_sub">Para quien ya sabe que quiere más de un módulo.</p>
     </div>
     <div class="plans-grid">
-
-      <!-- Free -->
-      <div class="pricing-card reveal reveal-delay-1">
-        <div class="pricing-tier" data-i18n="pricing_page.free_tier">Free</div>
+      <div class="pricing-card featured reveal reveal-delay-1">
+        <div class="pricing-badge" data-i18n="pricing_page.ventas_badge">El más elegido</div>
+        <div class="pricing-tier" data-i18n="pricing_page.ventas_name">Beegen Ventas</div>
         <div class="pricing-price">
-          <span class="pricing-amount" data-i18n="pricing_page.price_free">$0</span>
+          <span class="pricing-amount">$499</span>
+          <span class="pricing-period" data-i18n="mod.per_month">MXN al mes</span>
         </div>
-        <p class="pricing-desc" data-i18n="pricing_page.free_desc">Publish one site free. Forever. No credit card.</p>
+        <p class="pricing-desc" data-i18n="pricing_page.ventas_desc">Para el negocio que vende por WhatsApp y quiere cobrar y dar seguimiento sin perseguir a nadie.</p>
         <ul class="pricing-features">
           <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.free_f1">1 published site — forever</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.ventas_f1">Agente de WhatsApp (1 número)</span>
           </li>
           <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.free_f2">2 edits per month</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.ventas_f2">Recordatorios y seguimientos</span>
           </li>
           <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.free_f3">'Powered by Beegen' badge</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.ventas_f3">Cobros</span>
           </li>
-          <li class="pricing-feature" style="opacity:.4;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-            <span data-i18n="pricing_page.free_f4">No custom domain</span>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.ventas_f4">Reseñas Google</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.ventas_f5">CRM con 3 usuarios</span>
           </li>
         </ul>
-        <a href="https://app.beegen.co/signup" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_page.free_cta">Start free</a>
+        <a href="https://app.beegen.co/signup?module=wa_agent&bundle=ventas" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="pricing_page.ventas_cta">Empezar con Ventas</a>
       </div>
-
-      <!-- Starter -->
       <div class="pricing-card reveal reveal-delay-2">
-        <div class="pricing-tier" data-i18n="pricing_page.starter_tier">Starter</div>
+        <div class="pricing-tier" data-i18n="pricing_page.negocio_name">Beegen Negocio</div>
         <div class="pricing-price">
-          <span class="pricing-amount" data-i18n="pricing_page.price_starter">$19</span>
-          <span class="pricing-period" data-i18n="pricing_page.per_mo">/mo</span>
+          <span class="pricing-amount">$899</span>
+          <span class="pricing-period" data-i18n="mod.per_month">MXN al mes</span>
         </div>
-        <p class="pricing-desc" data-i18n="pricing_page.starter_desc">Perfect for freelancers and solo creators building regularly.</p>
+        <p class="pricing-desc" data-i18n="pricing_page.negocio_desc">Todo Beegen, para equipos y negocios con más de un número de WhatsApp.</p>
         <ul class="pricing-features">
           <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.starter_f1">30 credits/month</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.negocio_f1">Todos los módulos</span>
           </li>
           <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.starter_f2">Publish to beegen.co</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.negocio_f2">2 números de WhatsApp</span>
           </li>
           <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.starter_f3">Brand settings</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.negocio_f3">CRM con 5 usuarios</span>
           </li>
           <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.starter_f4">Logo upload + color pickers</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.negocio_f4">Instagram, Messenger y Voz incluidos</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.negocio_f5">Facturación CFDI y Cotizaciones</span>
           </li>
         </ul>
-        <a href="https://app.beegen.co/signup" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_page.starter_cta">Get Starter</a>
+        <a href="https://app.beegen.co/signup?module=wa_agent&bundle=negocio" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_page.negocio_cta">Empezar con Negocio</a>
       </div>
-
-      <!-- Pro (featured) -->
-      <div class="pricing-card featured reveal reveal-delay-3">
-        <div class="pricing-badge" data-i18n="pricing_page.pro_badge">Most Popular</div>
-        <div class="pricing-tier" data-i18n="pricing_page.pro_tier">Pro</div>
-        <div class="pricing-price">
-          <span class="pricing-amount" data-i18n="pricing_page.price_pro">$39</span>
-          <span class="pricing-period" data-i18n="pricing_page.per_mo">/mo</span>
-        </div>
-        <p class="pricing-desc" data-i18n="pricing_page.pro_desc">For busy creators who build multiple sites per month.</p>
-        <ul class="pricing-features">
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.pro_f1">100 credits/month</span>
-          </li>
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.pro_f2">Everything in Starter</span>
-          </li>
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.pro_f3">Priority builds</span>
-          </li>
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.pro_f4">~$0.39/credit</span>
-          </li>
-        </ul>
-        <a href="https://app.beegen.co/signup" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="pricing_page.pro_cta">Get Pro</a>
-      </div>
-
-      <!-- Agency — hidden from marketing page (enterprise/internal) -->
-      <div class="pricing-card reveal reveal-delay-4" style="display:none;">
-        <div class="pricing-tier" data-i18n="pricing_page.agency_tier">Agency</div>
-        <div class="pricing-price">
-          <span class="pricing-amount" data-i18n="pricing_page.price_agency">$79</span>
-          <span class="pricing-period" data-i18n="pricing_page.per_mo">/mo</span>
-        </div>
-        <p class="pricing-desc" data-i18n="pricing_page.agency_desc">For agencies and teams shipping sites at scale.</p>
-        <ul class="pricing-features">
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.agency_f1">300 credits/month</span>
-          </li>
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.agency_f2">Everything in Pro</span>
-          </li>
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.agency_f3">~$0.26/credit</span>
-          </li>
-          <li class="pricing-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span data-i18n="pricing_page.agency_f4">Best value per credit</span>
-          </li>
-        </ul>
-        <a href="https://app.beegen.co/signup" class="btn btn-outline" style="width:100%;justify-content:center;" data-i18n="pricing_page.agency_cta">Get Agency</a>
-      </div>
-
     </div>
-  </div>
-</section>
-
-<!-- ── TOP-UP PACKS ────────────────────────────────────────── -->
-<section class="section" style="background: var(--cloud);">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="label" data-i18n="pricing_page.topup_label">Credit top-ups</span>
-      <h2 data-i18n="pricing_page.topup_title">Need more credits? Top up anytime.</h2>
-      <p data-i18n="pricing_page.topup_sub">One-time purchases. Credits never expire.</p>
-    </div>
-    <div class="topup-grid">
-
-      <div class="topup-card reveal reveal-delay-1">
-        <div>
-          <div class="topup-credits">25 <span data-i18n="pricing_page.topup_credits_unit">credits</span></div>
-          <div class="topup-rate">~$0.40/credit</div>
-        </div>
-        <div class="topup-price-block">
-          <div class="topup-price" data-i18n="pricing_page.topup_price_sm">$10</div>
-          <a href="https://app.beegen.co/signup" class="btn btn-outline btn-sm" style="margin-top:10px;" data-i18n="pricing_page.topup_buy_btn">Buy pack</a>
-        </div>
-      </div>
-
-      <div class="topup-card best-value reveal reveal-delay-2">
-        <div class="topup-best-badge" data-i18n="pricing_page.topup_best_badge">Best Value</div>
-        <div>
-          <div class="topup-credits">75 <span data-i18n="pricing_page.topup_credits_unit">credits</span></div>
-          <div class="topup-rate">~$0.33/credit</div>
-        </div>
-        <div class="topup-price-block">
-          <div class="topup-price" data-i18n="pricing_page.topup_price_md">$25</div>
-          <a href="https://app.beegen.co/signup" class="btn btn-primary btn-sm" style="margin-top:10px;" data-i18n="pricing_page.topup_buy_btn">Buy pack</a>
-        </div>
-      </div>
-
-      <div class="topup-card reveal reveal-delay-3">
-        <div>
-          <div class="topup-credits">200 <span data-i18n="pricing_page.topup_credits_unit">credits</span></div>
-          <div class="topup-rate">~$0.30/credit</div>
-        </div>
-        <div class="topup-price-block">
-          <div class="topup-price" data-i18n="pricing_page.topup_price_lg">$60</div>
-          <a href="https://app.beegen.co/signup" class="btn btn-outline btn-sm" style="margin-top:10px;" data-i18n="pricing_page.topup_buy_btn">Buy pack</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── WHAT'S A CREDIT ─────────────────────────────────────── -->
-<section class="section" style="background:#ffffff;">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="label" data-i18n="pricing_page.credit_label">How credits work</span>
-      <h2 data-i18n="pricing_page.credit_title">What's a credit?</h2>
-    </div>
-    <div class="credit-explainer reveal">
+    <p class="currency-note" style="margin:0 auto 40px;max-width:720px;" data-i18n="pricing_page.bundle_note">Los módulos marcados como “Pronto” se activan en tu paquete en cuanto salgan, sin costo extra.</p>
+    <div class="annual-card reveal">
       <div>
-        <h3 data-i18n="pricing_page.credit_h3">One message = one credit</h3>
-        <p data-i18n="pricing_page.credit_p1">Each message you send to the AI uses 1 credit. The AI then generates or updates your entire website based on your instruction.</p>
-        <p data-i18n="pricing_page.credit_p2">Complex requests cost the same as simple ones — 1 credit whether you ask for a full site rebuild or just change the headline colour.</p>
-        <p data-i18n="pricing_page.credit_p3">Credits are only deducted after a successful generation. If a generation fails, your credit is returned.</p>
+        <h3 data-i18n="pricing_page.annual_title">Paga el año y te regalamos dos meses</h3>
+        <p data-i18n="pricing_page.annual_desc">Cualquier módulo o paquete anual cuesta 10 meses en lugar de 12. Puedes pagarlo en OXXO o por SPEI, sin tarjeta de la empresa.</p>
       </div>
-      <div class="credit-visual">
-        <div class="credit-row">
-          <div class="credit-row-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-          </div>
-          <div class="credit-row-text" data-i18n="pricing_page.credit_row1">"Build me a fitness landing page"</div>
-          <div class="credit-row-count" data-i18n="pricing_page.credit_count">1 credit</div>
-        </div>
-        <div class="credit-row">
-          <div class="credit-row-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
-          </div>
-          <div class="credit-row-text" data-i18n="pricing_page.credit_row2">"Change the primary colour to navy"</div>
-          <div class="credit-row-count" data-i18n="pricing_page.credit_count">1 credit</div>
-        </div>
-        <div class="credit-row">
-          <div class="credit-row-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-          </div>
-          <div class="credit-row-text" data-i18n="pricing_page.credit_row3">"Add a testimonials section"</div>
-          <div class="credit-row-count" data-i18n="pricing_page.credit_count">1 credit</div>
-        </div>
-        <div class="credit-row">
-          <div class="credit-row-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          </div>
-          <div class="credit-row-text" data-i18n="pricing_page.credit_row4">"Rebuild this as a portfolio site"</div>
-          <div class="credit-row-count" data-i18n="pricing_page.credit_count">1 credit</div>
-        </div>
+      <ul class="pricing-features">
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.annual_f1">12 meses al precio de 10</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.annual_f2">Pago único en OXXO, SPEI o tarjeta</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="pricing_page.annual_f3">Factura CFDI de Beegen incluida</span>
+          </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── DONE-FOR-YOU ONBOARDING ────────────────────────────── -->
+<section class="section" id="onboarding" style="background:#ffffff;">
+  <div class="container">
+    <div class="dfy-card reveal">
+      <div>
+        <span class="label" data-i18n="pricing_page.dfy_label">Onboarding</span>
+        <h3 data-i18n="pricing_page.dfy_title">¿Prefieres que lo hagamos por ti?</h3>
+        <p data-i18n="pricing_page.dfy_desc">Construimos tu sitio, conectamos tu número, cargamos tu información y dejamos las plantillas aprobadas. Tú solo revisas.</p>
+      </div>
+      <div class="dfy-price">
+        <div class="dfy-amount" data-i18n="pricing_page.dfy_price">$999 a $1,999</div>
+        <div class="dfy-unit" data-i18n="pricing_page.dfy_unit">MXN, pago único</div>
+        <a href="/contact.html" class="btn btn-primary" data-i18n="pricing_page.dfy_cta">Pedir onboarding</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── FAQ ────────────────────────────────────────────────── -->
-<section class="section" style="background: var(--cloud);">
+<section class="section" id="faq" style="background:var(--cloud);">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label" data-i18n="pricing_page.faq_label">Common questions</span>
-      <h2 data-i18n="pricing_page.faq_title">FAQ</h2>
+      <span class="label" data-i18n="pricing_page.faq_label">Preguntas frecuentes</span>
+      <h2 data-i18n="pricing_page.faq_title">Lo que todos preguntan antes de empezar</h2>
     </div>
     <div class="faq-list reveal">
-
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span data-i18n="pricing_page.faq_q1">Can I try before I buy?</span>
-          <span class="faq-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="pricing_page.faq_q1">¿Qué es un módulo?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
         <div class="faq-answer">
-          <p data-i18n="pricing_page.faq_a1">Yes. You get 3 free credits when you sign up — no credit card needed. Use them to build and preview real sites before deciding to upgrade.</p>
+          <p data-i18n="pricing_page.faq_a1">Cada función de Beegen es un módulo que compras por separado: el agente de WhatsApp, el sitio web, los recordatorios, los cobros, la facturación. Todos se conectan al mismo CRM, que es gratis. Puedes tener uno o todos.</p>
         </div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span data-i18n="pricing_page.faq_q2">What happens when I run out of credits?</span>
-          <span class="faq-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="pricing_page.faq_q2">¿Cómo funciona la prueba de 14 días?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
         <div class="faq-answer">
-          <p data-i18n="pricing_page.faq_a2">You can top up with a credit pack (25, 75, or 200 credits) or upgrade your monthly plan. You won't be charged automatically — you choose when to add more.</p>
+          <p data-i18n="pricing_page.faq_a2">Cada módulo tiene su propia prueba de 14 días, sin tarjeta. Puedes probar Cobros mientras ya pagas el agente de WhatsApp. Al terminar la prueba, el módulo se pausa hasta que lo actives; no te cobramos nada sin que lo pidas.</p>
         </div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span data-i18n="pricing_page.faq_q3">Do unused credits roll over?</span>
-          <span class="faq-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="pricing_page.faq_q3">¿Qué es un usuario y cuándo pago por uno?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
         <div class="faq-answer">
-          <p data-i18n="pricing_page.faq_a3">Monthly plan credits reset at the start of each billing period — they don't roll over. Top-up credits, however, never expire and accumulate in your account until you use them.</p>
+          <p data-i18n="pricing_page.faq_a3">Un usuario es una persona de tu equipo con acceso al CRM y a la bandeja compartida. El primero es gratis. Cada usuario extra cuesta $99 MXN al mes. Beegen Ventas incluye 3 y Beegen Negocio incluye 5. El sitio web y el agente no cobran por usuario.</p>
         </div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span data-i18n="pricing_page.faq_q4">Can I publish on the free trial?</span>
-          <span class="faq-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="pricing_page.faq_q4">¿Qué pasa si me paso del uso incluido?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
         <div class="faq-answer">
-          <p data-i18n="pricing_page.faq_a4">No. Publishing requires a paid plan (Starter or above). On the free trial you can build, iterate, and preview your site fully — you just can't push it live until you upgrade.</p>
+          <p data-i18n="pricing_page.faq_a4">Sigues trabajando y pagas solo el excedente al final del mes: $1.50 MXN por conversación extra con IA, $2 MXN por folio extra de CFDI, $3 MXN por minuto extra de voz y el costo de Meta más 20% por mensaje de plantilla extra. Lo ves en tiempo real en tu panel.</p>
         </div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span data-i18n="pricing_page.faq_q5">What's a beegen.co subdomain?</span>
-          <span class="faq-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="pricing_page.faq_q5">¿Qué incluyen los paquetes?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
         <div class="faq-answer">
-          <p data-i18n="pricing_page.faq_a5">Every published site gets a free subdomain in the format <strong>yoursite.beegen.co</strong>. You choose the name. It's live instantly and shareable right away. Custom domains are coming soon.</p>
+          <p data-i18n="pricing_page.faq_a5">Beegen Ventas ($499) incluye el agente de WhatsApp, recordatorios, cobros, reseñas y 3 usuarios de CRM. Beegen Negocio ($899) incluye todos los módulos, 2 números de WhatsApp y 5 usuarios. Los límites de uso incluidos son los mismos que en cada módulo por separado.</p>
         </div>
       </div>
-
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="pricing_page.faq_q6">¿Puedo pagar sin tarjeta?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="pricing_page.faq_a6">Sí. El plan anual (10 meses por 12) se puede pagar en OXXO o por SPEI en un solo pago. El plan mensual requiere tarjeta de crédito o débito.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="pricing_page.faq_q7">¿Los precios incluyen IVA? ¿Me dan factura?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="pricing_page.faq_a7">Sí a las dos. Todos los precios de esta página ya incluyen IVA y Beegen emite tu CFDI automáticamente con cada pago. Solo capturas tu RFC y tus datos fiscales una vez.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="pricing_page.faq_q8">Ya tengo un plan Starter o Pro. ¿Qué cambia?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="pricing_page.faq_a8">Nada que tengas que hacer. Tu plan actual se convierte en el módulo Sitio web y, si tenías WhatsApp, en el agente de WhatsApp con el mismo número. Conservas tu precio y puedes agregar módulos nuevos cuando quieras.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="pricing_page.faq_q9">¿Puedo cancelar cuando quiera?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="pricing_page.faq_a9">Sí. Cancelas cualquier módulo desde tu panel y sigue activo hasta el final del periodo pagado. Tu CRM y tus datos se quedan contigo, y puedes exportarlos cuando quieras.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -572,12 +532,12 @@
 <section class="cta-band">
   <div class="container">
     <div class="reveal">
-      <h2 data-i18n="pricing_page.cta_h2">Your website is one conversation away.</h2>
-      <p data-i18n="pricing_page.cta_sub">Start with 3 free credits. No account setup hassle. No blank page stare.</p>
+      <h2 data-i18n="pricing_page.cta_h2">Empieza con el CRM gratis. Agrega módulos cuando los necesites.</h2>
+      <p data-i18n="pricing_page.cta_sub">Sin tarjeta. Sin contrato. Precios en pesos con IVA incluido.</p>
       <div class="cta-band-actions">
-        <a href="https://app.beegen.co/signup" class="btn btn-primary btn-lg" data-i18n="pricing_page.cta_btn">Build my site for free →</a>
+        <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary btn-lg" data-i18n="pricing_page.cta_btn">Crear mi CRM gratis</a>
       </div>
-      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);" data-i18n="pricing_page.cta_footnote">Cancel anytime · No credit card for trial</p>
+      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);" data-i18n="pricing_page.cta_footnote">14 días de prueba por módulo · Cancela cuando quieras</p>
     </div>
   </div>
 </section>
@@ -585,58 +545,56 @@
 <!-- ── FOOTER ──────────────────────────────────────────────── -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-grid footer-grid-5">
       <div class="footer-brand">
-        <img src="assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
-        <p data-i18n="footer.tagline">Build professional websites with AI. No code required.</p>
+        <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
+        <p data-i18n="footer.tagline">El sistema de ventas para los negocios de México: un CRM gratis, un agente de WhatsApp que actúa y módulos desde $99 MXN al mes.</p>
       </div>
       <div class="footer-col">
-        <h5 data-i18n="footer.product">Product</h5>
+        <h5 data-i18n="footer.modules">Módulos</h5>
         <div class="footer-links">
-          <a href="/#how-it-works" data-i18n="footer.how_it_works">How it Works</a>
-          <a href="/pricing.html" data-i18n="footer.pricing">Pricing</a>
+          <a href="/crm.html" data-i18n="footer.crm">CRM gratis</a>
+          <a href="/sitio-web.html" data-i18n="footer.site">Sitio web</a>
+          <a href="/whatsapp.html" data-i18n="footer.wa_agent">Agente de WhatsApp</a>
+          <a href="/recordatorios.html" data-i18n="footer.reminders">Recordatorios</a>
+          <a href="/cobros.html" data-i18n="footer.payments">Cobros</a>
+          <a href="/facturacion.html" data-i18n="footer.invoicing">Facturación CFDI</a>
+          <a href="/resenas.html" data-i18n="footer.reviews">Reseñas Google</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
         </div>
       </div>
       <div class="footer-col">
-        <h5 data-i18n="footer.account">Account</h5>
+        <h5 data-i18n="footer.product">Producto</h5>
         <div class="footer-links">
-          <a href="https://app.beegen.co/signup" data-i18n="footer.signup">Sign Up</a>
-          <a href="https://app.beegen.co/signup" data-i18n="footer.login">Login</a>
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">Cómo funciona</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/blog/" data-i18n="footer.blog">Blog</a>
+          <a href="/contact.html" data-i18n="footer.contact">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.account">Cuenta</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co/signup?module=crm" data-i18n="footer.signup">Registrarse</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Iniciar sesión</a>
         </div>
       </div>
       <div class="footer-col">
         <h5 data-i18n="footer.legal">Legal</h5>
         <div class="footer-links">
-          <a href="/privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
-          <a href="/terms.html" data-i18n="footer.terms">Terms of Service</a>
+          <a href="/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terms.html" data-i18n="footer.terms">Términos de Servicio</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Beegen</p>
-      <p>Built with Beegen AI</p>
+      <p>© 2026 Beegen. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <p data-i18n="footer.made_in">Hecho en México para negocios de México.</p>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js?v=2"></script>
-<script src="js/i18n.js?v=2"></script>
-<script>
-// FAQ accordion
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item   = btn.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => {
-      i.classList.remove('open');
-      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-    });
-    if (!isOpen) {
-      item.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
-    }
-  });
-});
-</script>
+<script src="/js/main.js?v=3"></script>
+<script src="/js/i18n.js?v=3"></script>
 </body>
 </html>

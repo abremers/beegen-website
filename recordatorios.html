@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="lp_reminders.title">Recordatorios de cita y seguimientos por WhatsApp | Beegen</title>
+<meta name="description" content="Recordatorios de cita, avisos de pago pendiente y seguimientos automáticos por WhatsApp con plantillas aprobadas por Meta. $99 MXN al mes, 200 mensajes incluidos.">
+<link rel="canonical" href="https://beegen.co/recordatorios.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://beegen.co/recordatorios.html">
+<meta property="og:title" content="Recordatorios de cita y seguimientos por WhatsApp | Beegen">
+<meta property="og:description" content="Recordatorios de cita, avisos de pago pendiente y seguimientos automáticos por WhatsApp con plantillas aprobadas por Meta. $99 MXN al mes, 200 mensajes incluidos.">
+<meta property="og:image" content="https://beegen.co/assets/og-image.png">
+<meta property="og:locale" content="es_MX">
+<link rel="icon" href="/assets/logos/beegen-logo-color.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/global.css">
+
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img id="navLogo" src="/assets/logos/beegen-logo-white.svg" alt="Beegen">
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-link active" type="button" aria-haspopup="true"><span data-i18n="nav.modules">Módulos</span><svg class="nav-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+            <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+            <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+            <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+            <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+            <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+            <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+            <a href="/pricing.html" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+          </div>
+        </div>
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo funciona</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Precios</a>
+        <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambiar idioma / Switch language"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+        <a href="https://app.beegen.co/signup?module=crm" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Empieza gratis</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" data-i18n-aria="nav.close_menu" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" type="button" aria-expanded="false"><span data-i18n="nav.modules">Módulos</span><svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mobile-nav-sub">
+        <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+        <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+        <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+        <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+        <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+        <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+        <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+        <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+      </div>
+    </div>
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo funciona</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle" id="langToggleMobile" type="button" aria-label="Cambiar idioma / Switch language" style="margin-bottom:14px;width:100%;justify-content:center;"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+    <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary" data-i18n="nav.start_free">Empieza gratis</a>
+  </div>
+</div>
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section class="page-hero lp-hero">
+  <div class="container">
+    <div class="lp-hero-inner">
+      <div>
+        <div class="lp-eyebrow soon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          <span data-i18n="lp_reminders.eyebrow">Recordatorios y seguimientos</span>
+          <span aria-hidden="true">·</span>
+          <span data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h1 data-i18n-html="lp_reminders.h1">Un cliente que no llega te cuesta más que la cita.</h1>
+        <p class="lp-hero-sub" data-i18n="lp_reminders.sub">Beegen manda el recordatorio de la cita, el aviso de pago pendiente y el “¿ya lo decidiste?” por WhatsApp, con plantillas aprobadas por Meta. Sin que tengas que acordarte.</p>
+        <div class="lp-hero-actions">
+          <a href="https://app.beegen.co/signup?module=reminders" class="btn btn-primary btn-lg" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+          <a href="/pricing.html" class="btn btn-ghost btn-lg" data-i18n="nav.pricing">Precios</a>
+        </div>
+        <p class="lp-hero-note" data-i18n="lp_reminders.note">Disponible pronto · Apúntate y te avisamos · Sin compromiso</p>
+      </div>
+      <div class="timeline-card reveal reveal-delay-2">
+        <div class="timeline-head">
+          <div class="timeline-avatar">CP</div>
+          <div>
+            <h4 data-i18n="lp_reminders.mock_name">Carlos Pérez</h4>
+            <span data-i18n="lp_reminders.mock_sub">Dental Roma · Limpieza</span>
+          </div>
+          <span class="timeline-stage" data-i18n="lp_reminders.mock_stage">Confirmado</span>
+        </div>
+        <div class="timeline-body">
+          <div class="timeline-item">
+            <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_reminders.mock_t1"><strong>Cita</strong> creada: jueves 16:00 con la Dra. Ruiz</div>
+            <div class="timeline-time" data-i18n="lp_reminders.mock_time1">lun 09:12</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_reminders.mock_t2"><strong>Recordatorio</strong> enviado 24 h antes · Leído</div>
+            <div class="timeline-time" data-i18n="lp_reminders.mock_time2">mié 16:00</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_reminders.mock_t3">Cliente respondió: “¿Puede ser a las 17:00?”</div>
+            <div class="timeline-time" data-i18n="lp_reminders.mock_time3">mié 16:04</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_reminders.mock_t4"><strong>Agente de WhatsApp</strong> movió la cita a 17:00</div>
+            <div class="timeline-time" data-i18n="lp_reminders.mock_time4">mié 16:04</div>
+          </div>
+          <div class="timeline-item dim">
+            <div class="timeline-icon navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_reminders.mock_t5"><strong>Aviso de pago</strong> pendiente programado para el viernes</div>
+            <div class="timeline-time" data-i18n="lp_reminders.mock_time5">jue 17:40</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ───────────────────────────────────────── -->
+<section class="section" id="how-it-works" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_reminders.steps_label">Así funciona</span>
+      <h2 data-i18n="lp_reminders.steps_title">Tres pasos y se te olvida que existen</h2>
+      <p data-i18n="lp_reminders.steps_sub">Los recordatorios salen de las citas y las ventas que ya están en tu CRM.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-badge">1</div>
+        <h3 data-i18n="lp_reminders.s1_title">Elige qué recordar</h3>
+        <p data-i18n="lp_reminders.s1_desc">Citas, pagos pendientes, cotizaciones sin respuesta o ventas que llevan días sin moverse en el CRM.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-badge">2</div>
+        <h3 data-i18n="lp_reminders.s2_title">Aprueba las plantillas</h3>
+        <p data-i18n="lp_reminders.s2_desc">Te proponemos los mensajes en tu tono. Meta los aprueba y quedan listos para enviarse.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-badge">3</div>
+        <h3 data-i18n="lp_reminders.s3_title">Se envían solos</h3>
+        <p data-i18n="lp_reminders.s3_desc">Beegen manda cada recordatorio en el momento correcto y registra la respuesta en el CRM.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICE ──────────────────────────────────────────────── -->
+<section class="section" id="precio" style="background: var(--cloud);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_reminders.price_label">Precio</span>
+      <h2 data-i18n="lp_reminders.price_title">Menos que un plantón al mes</h2>
+    </div>
+    <div class="pricing-card featured price-single reveal">
+      <div class="pricing-badge" data-i18n="mod.status_soon">Pronto</div>
+      <div class="pricing-tier" data-i18n="mod.reminders_name">Recordatorios y seguimientos</div>
+      <div class="pricing-price">
+        <span class="pricing-amount">$99</span>
+        <span class="pricing-period"><span data-i18n="mod.per_month">MXN al mes</span></span>
+      </div>
+      <p class="pricing-desc" data-i18n="lp_reminders.price_desc">Incluye 200 mensajes de plantilla al mes. Los extras se cobran al costo de Meta más 20%.</p>
+      <ul class="pricing-features">
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_reminders.price_f1">200 mensajes de plantilla al mes</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_reminders.price_f2">Recordatorios de cita, pago y seguimiento</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_reminders.price_f3">Avisos de ventas estancadas en el CRM</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_reminders.price_f4">Costo de Meta + 20% por mensaje extra</span>
+          </li>
+      </ul>
+      <a href="https://app.beegen.co/signup?module=reminders" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+      <p class="pricing-desc" style="margin:14px 0 0;text-align:center;font-size:13px;" data-i18n="mod.iva">IVA incluido</p>
+        <p class="pricing-desc" style="margin:14px 0 0;text-align:center;font-size:13px;" data-i18n="mod.soon_hint">Te avisamos por WhatsApp o correo cuando esté listo. Sin compromiso.</p>
+    </div>
+    <p class="price-bundle-note reveal"><span data-i18n="lp_reminders.bundle_note">Incluido en Beegen Ventas ($499) y Beegen Negocio ($899).</span> <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a></p>
+  </div>
+</section>
+
+<!-- ── CONNECTED TO THE CRM ───────────────────────────────── -->
+<section class="section" id="crm" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_reminders.connect_label">Conectado al CRM</span>
+      <h2 data-i18n="lp_reminders.connect_title">Sale de tu agenda y vuelve a tu CRM</h2>
+      <p data-i18n="lp_reminders.connect_sub">No hay nada que copiar ni programar a mano. Cada recordatorio nace de un dato que ya tienes.</p>
+    </div>
+    <div class="module-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3 data-i18n="lp_reminders.c1_title">Desde tu agenda y tu pipeline</h3>
+        <p data-i18n="lp_reminders.c1_desc">Los recordatorios se disparan desde las citas y las ventas que ya están en el CRM.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3 data-i18n="lp_reminders.c2_title">El agente toma la respuesta</h3>
+        <p data-i18n="lp_reminders.c2_desc">Si el cliente contesta “¿puedo cambiar la hora?”, el agente de WhatsApp lo resuelve y actualiza la cita.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+        <h3 data-i18n="lp_reminders.c3_title">Cobra en el mismo mensaje</h3>
+        <p data-i18n="lp_reminders.c3_desc">Con Cobros, el aviso de pago lleva el link para pagar con tarjeta, OXXO o SPEI.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────── -->
+<section class="section" id="faq" style="background:var(--cloud);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_reminders.faq_label">Preguntas frecuentes</span>
+      <h2 data-i18n="lp_reminders.faq_title">Lo que nos preguntan sobre recordatorios</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_reminders.faq_q1">¿Meta permite mandar mensajes primero?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_reminders.faq_a1">Sí, con plantillas aprobadas y con el consentimiento del cliente, que Beegen registra cuando te escribe o llena tu formulario. Los mensajes promocionales sin permiso no se envían.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_reminders.faq_q2">¿Cuánto cuesta cada mensaje?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_reminders.faq_a2">Los primeros 200 del mes están incluidos. A partir de ahí pagas lo que cobra Meta por la plantilla más 20%. Lo ves desglosado en tu panel antes de que se cobre.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_reminders.faq_q3">¿Puedo escribir mis propios textos?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_reminders.faq_a3">Sí. Editas cada plantilla con tus palabras y variables como el nombre, la hora o el monto. Nosotros la mandamos a aprobación con Meta, que normalmente tarda unas horas.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_reminders.faq_q4">¿Cuándo estará disponible?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_reminders.faq_a4">Estamos terminando el módulo. Si te apuntas, te avisamos en cuanto salga y tus 14 días de prueba empiezan ese día, no hoy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ────────────────────────────────────────────── -->
+<section class="cta-band">
+  <div class="container">
+    <div class="reveal">
+      <h2 data-i18n="lp_reminders.cta_h2">Que nadie se te olvide.</h2>
+      <p data-i18n="lp_reminders.cta_sub">Apúntate y sé de los primeros en activar los recordatorios con 14 días de prueba.</p>
+      <div class="cta-band-actions">
+        <a href="https://app.beegen.co/signup?module=reminders" class="btn btn-primary btn-lg" data-i18n="lp_reminders.cta_btn">Apúntate, disponible pronto</a>
+      </div>
+      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);" data-i18n="lp_reminders.cta_footnote">$99 MXN al mes cuando salga · Sin compromiso</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid footer-grid-5">
+      <div class="footer-brand">
+        <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
+        <p data-i18n="footer.tagline">El sistema de ventas para los negocios de México: un CRM gratis, un agente de WhatsApp que actúa y módulos desde $99 MXN al mes.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.modules">Módulos</h5>
+        <div class="footer-links">
+          <a href="/crm.html" data-i18n="footer.crm">CRM gratis</a>
+          <a href="/sitio-web.html" data-i18n="footer.site">Sitio web</a>
+          <a href="/whatsapp.html" data-i18n="footer.wa_agent">Agente de WhatsApp</a>
+          <a href="/recordatorios.html" data-i18n="footer.reminders">Recordatorios</a>
+          <a href="/cobros.html" data-i18n="footer.payments">Cobros</a>
+          <a href="/facturacion.html" data-i18n="footer.invoicing">Facturación CFDI</a>
+          <a href="/resenas.html" data-i18n="footer.reviews">Reseñas Google</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.product">Producto</h5>
+        <div class="footer-links">
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">Cómo funciona</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/blog/" data-i18n="footer.blog">Blog</a>
+          <a href="/contact.html" data-i18n="footer.contact">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.account">Cuenta</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co/signup?module=crm" data-i18n="footer.signup">Registrarse</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Iniciar sesión</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.legal">Legal</h5>
+        <div class="footer-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terms.html" data-i18n="footer.terms">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Beegen. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <p data-i18n="footer.made_in">Hecho en México para negocios de México.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=3"></script>
+<script src="/js/i18n.js?v=3"></script>
+</body>
+</html>
