@@ -46,6 +46,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://beegen.co/instagram-messenger</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beegen.co/cotizaciones</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beegen.co/agencias</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://beegen.co/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

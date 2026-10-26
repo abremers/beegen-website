@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="lp_social.title">Agente de IA para DMs de Instagram y Messenger | Beegen</title>
+<meta name="description" content="El mismo agente que atiende tu WhatsApp contesta tus DMs de Instagram y Messenger, califica, agenda y deja todo en el CRM. $99 MXN al mes por cuenta conectada; las conversaciones salen de las 200 del agente de WhatsApp.">
+<link rel="canonical" href="https://beegen.co/instagram-messenger">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://beegen.co/instagram-messenger">
+<meta property="og:title" content="Agente de IA para DMs de Instagram y Messenger | Beegen">
+<meta property="og:description" content="El mismo agente que atiende tu WhatsApp contesta tus DMs de Instagram y Messenger, califica, agenda y deja todo en el CRM. $99 MXN al mes por cuenta conectada; las conversaciones salen de las 200 del agente de WhatsApp.">
+<meta property="og:image" content="https://beegen.co/assets/og-image.png">
+<meta property="og:locale" content="es_MX">
+<link rel="icon" href="/assets/logos/beegen-logo-color.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+/* ── IG DM MOCKUP ────────────────────────────────────────── */
+.ig-mockup { background: #ffffff; border-radius: 20px; box-shadow: var(--shadow-xl); overflow: hidden; max-width: 340px; margin: 0 auto; color: var(--navy); }
+.ig-mockup-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--mist); }
+.ig-mockup-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, #F58529, #DD2A7B 55%, #8134AF); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 15px; }
+.ig-mockup-info h4 { font-size: 15px; margin: 0 0 2px; }
+.ig-mockup-info span { font-size: 12px; color: var(--gray-600); }
+.ig-mockup-body { padding: 18px 16px 14px; display: flex; flex-direction: column; gap: 8px; min-height: 280px; }
+.ig-bubble { max-width: 82%; padding: 10px 14px; border-radius: 18px; font-size: 14px; line-height: 1.4; }
+.ig-bubble.user { align-self: flex-end; background: #3797F0; color: #fff; border-bottom-right-radius: 6px; }
+.ig-bubble.bot { align-self: flex-start; background: #EFEFEF; color: var(--navy); border-bottom-left-radius: 6px; }
+.ig-time { font-size: 10px; color: var(--gray-600); margin: 2px 8px 4px; }
+.ig-time.right { text-align: right; }
+.ig-typing { align-self: flex-start; background: #EFEFEF; padding: 10px 14px; border-radius: 18px; display: flex; gap: 4px; }
+.ig-typing .wa-dot { width: 7px; height: 7px; background: #aaa; border-radius: 50%; animation: igDot 1.2s infinite ease-in-out; }
+.ig-typing .wa-dot:nth-child(2) { animation-delay: .2s; }
+.ig-typing .wa-dot:nth-child(3) { animation-delay: .4s; }
+@keyframes igDot { 0%, 60%, 100% { transform: translateY(0); opacity: .6; } 30% { transform: translateY(-5px); opacity: 1; } }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img id="navLogo" src="/assets/logos/beegen-logo-white.svg" alt="Beegen">
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-link active" type="button" aria-haspopup="true"><span data-i18n="nav.modules">Módulos</span><svg class="nav-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+            <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+            <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+            <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+            <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+            <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+            <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+            <a href="/instagram-messenger.html" data-i18n="nav.social_channels">Instagram y Messenger</a>
+            <a href="/cotizaciones.html" data-i18n="nav.quotes">Cotizaciones</a>
+            <a href="/agencias.html" data-i18n="nav.agencies">Para agencias</a>
+            <a href="/pricing.html" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+          </div>
+        </div>
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo funciona</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Precios</a>
+        <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambiar idioma / Switch language"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+        <a href="https://app.beegen.co/signup?module=crm" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Empieza gratis</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" data-i18n-aria="nav.close_menu" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" type="button" aria-expanded="false"><span data-i18n="nav.modules">Módulos</span><svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mobile-nav-sub">
+        <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+        <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+        <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+        <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+        <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+        <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+        <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+        <a href="/instagram-messenger.html" data-i18n="nav.social_channels">Instagram y Messenger</a>
+        <a href="/cotizaciones.html" data-i18n="nav.quotes">Cotizaciones</a>
+        <a href="/agencias.html" data-i18n="nav.agencies">Para agencias</a>
+        <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+      </div>
+    </div>
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo funciona</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle" id="langToggleMobile" type="button" aria-label="Cambiar idioma / Switch language" style="margin-bottom:14px;width:100%;justify-content:center;"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+    <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary" data-i18n="nav.start_free">Empieza gratis</a>
+  </div>
+</div>
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section class="page-hero lp-hero">
+  <div class="container">
+    <div class="lp-hero-inner">
+      <div>
+        <div class="lp-eyebrow soon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+          <span data-i18n="lp_social.eyebrow">Instagram y Messenger</span>
+          <span aria-hidden="true">·</span>
+          <span data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h1 data-i18n-html="lp_social.h1">Los DMs también son ventas. Que alguien los conteste.</h1>
+        <p class="lp-hero-sub" data-i18n="lp_social.sub">Conecta tu cuenta de Instagram o tu página de Facebook y el agente de Beegen responde los mensajes directos igual que en WhatsApp: califica, agenda, cotiza y deja todo en el CRM. Una sola bandeja para los tres canales.</p>
+        <div class="lp-hero-actions">
+          <a href="https://app.beegen.co/signup?module=social_channels" class="btn btn-primary btn-lg" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+          <a href="/pricing.html" class="btn btn-ghost btn-lg" data-i18n="nav.pricing">Precios</a>
+        </div>
+        <p class="lp-hero-note" data-i18n="lp_social.note">Disponible pronto · Requiere el agente de WhatsApp · $99 MXN al mes por cuenta</p>
+      </div>
+      <div class="ig-mockup reveal reveal-delay-2">
+        <div class="ig-mockup-header">
+          <div class="ig-mockup-avatar">EL</div>
+          <div class="ig-mockup-info">
+            <h4 data-i18n="lp_social.mock_name">estetica.luna</h4>
+            <span data-i18n="lp_social.mock_status">Instagram · Suele responder en segundos</span>
+          </div>
+        </div>
+        <div class="ig-mockup-body">
+          <div class="ig-bubble user" data-i18n="lp_social.dm1">Hola! Vi el post del balayage, ¿cuánto cuesta?</div>
+          <div class="ig-time right" data-i18n="lp_social.t1">18:40</div>
+          <div class="ig-bubble bot" data-i18n="lp_social.dm2">¡Hola! El balayage va desde $1,800 según el largo. ¿Te agendo una valoración gratis esta semana?</div>
+          <div class="ig-time" data-i18n="lp_social.t2">18:40</div>
+          <div class="ig-bubble user" data-i18n="lp_social.dm3">Sí, el jueves</div>
+          <div class="ig-time right" data-i18n="lp_social.t3">18:42</div>
+          <div class="ig-bubble bot" data-i18n="lp_social.dm4">Listo: jueves 17:00 con Sofi. Si me pasas tu WhatsApp te mando la confirmación también por ahí 📅</div>
+          <div class="ig-time" data-i18n="lp_social.t4">18:42</div>
+          <div class="ig-typing"><div class="wa-dot"></div><div class="wa-dot"></div><div class="wa-dot"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROOF POINTS ───────────────────────────────────────── -->
+<div style="background:#ffffff;">
+  <div class="container">
+    <div class="trust-strip" style="margin-top:0;border-top:none;">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span data-i18n="lp_social.proof1">Conexión oficial por la API de Meta para mensajes de Instagram y Messenger</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        <span data-i18n="lp_social.proof2">Un solo contacto en el CRM, aunque te escriba por tres canales</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <span data-i18n="lp_social.proof3">Las conversaciones salen de las 200 del agente de WhatsApp, sin cuota aparte</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <span data-i18n="lp_social.proof4">Soporte en español por WhatsApp, lunes a viernes de 9:00 a 18:00 (CDMX)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HOW IT WORKS ───────────────────────────────────────── -->
+<section class="section" id="how-it-works" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_social.steps_label">Así funciona</span>
+      <h2 data-i18n="lp_social.steps_title">Conectas la cuenta, el agente hace el resto</h2>
+      <p data-i18n="lp_social.steps_sub">Sin configurar nada nuevo. El agente ya conoce tu negocio por WhatsApp.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-badge">1</div>
+        <h3 data-i18n="lp_social.s1_title">Conecta tu cuenta</h3>
+        <p data-i18n="lp_social.s1_desc">Una cuenta profesional de Instagram o una página de Facebook, con el login de Meta. Sin apps de terceros ni compartir contraseñas.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-badge">2</div>
+        <h3 data-i18n="lp_social.s2_title">El agente ya conoce tu negocio</h3>
+        <p data-i18n="lp_social.s2_desc">Usa la misma información, catálogo y tono que en WhatsApp. No configuras nada dos veces.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-badge">3</div>
+        <h3 data-i18n="lp_social.s3_title">Una bandeja, tres canales</h3>
+        <p data-i18n="lp_social.s3_desc">WhatsApp, Instagram y Messenger en la misma lista. Tú y tu equipo contestan desde un solo lugar y el cliente no nota la diferencia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO IT IS FOR ──────────────────────────────────────── -->
+<section class="section" id="para-quien" style="background:var(--cloud);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_social.who_label">Para quién es</span>
+      <h2 data-i18n="lp_social.who_title">Si tus clientes te escriben por Instagram, esto es para ti</h2>
+    </div>
+    <div class="module-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M3 9a3 3 0 006 0 3 3 0 006 0 3 3 0 006 0"/><path d="M5 12v9h14v-9"/></svg></div>
+        <h3 data-i18n="lp_social.w1_title">Tiendas y boutiques</h3>
+        <p data-i18n="lp_social.w1_desc">El “¿cuánto cuesta?” y el “¿lo tienes en mediano?” contestados en segundos, con link de pago si tienes Cobros activo.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg></div>
+        <h3 data-i18n="lp_social.w2_title">Restaurantes y cafés</h3>
+        <p data-i18n="lp_social.w2_desc">Reservaciones por DM, confirmadas al momento y recordadas el mismo día.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h3 data-i18n="lp_social.w3_title">Salones, spas y clínicas</h3>
+        <p data-i18n="lp_social.w3_desc">Valoraciones agendadas desde el post que los trajo, con anticipo si lo quieres.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICE ──────────────────────────────────────────────── -->
+<section class="section" id="precio" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_social.price_label">Precio</span>
+      <h2 data-i18n="lp_social.price_title">Un precio por cuenta. La cuota, compartida.</h2>
+    </div>
+    <div class="pricing-card featured price-single reveal">
+      <div class="pricing-badge" data-i18n="mod.status_soon">Pronto</div>
+      <div class="pricing-tier" data-i18n="mod.social_channels_name">Instagram y Messenger</div>
+      <div class="pricing-price">
+        <span class="pricing-amount">$99</span>
+        <span class="pricing-period"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.social_channels_unit">por cuenta conectada</span></span>
+      </div>
+      <p class="pricing-desc" data-i18n="lp_social.price_desc">Cada cuenta de Instagram o página de Facebook conectada cuesta $99 MXN al mes. Las conversaciones con IA salen de las 200 incluidas en tu agente de WhatsApp; las extras cuestan $2 MXN cada una.</p>
+      <ul class="pricing-features">
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_social.price_f1">DMs de Instagram y Messenger con el mismo agente</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_social.price_f2">Comparte las 200 conversaciones con IA del agente de WhatsApp</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_social.price_f3">Mismo contacto y línea de tiempo en el CRM</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_social.price_f4">Requiere el módulo Agente de WhatsApp ($299)</span>
+          </li>
+      </ul>
+      <a href="https://app.beegen.co/signup?module=social_channels" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+      <p class="pricing-desc" style="margin:14px 0 0;text-align:center;font-size:13px;" data-i18n="mod.iva">IVA incluido</p>
+        <p class="pricing-desc" style="margin:14px 0 0;text-align:center;font-size:13px;" data-i18n="mod.soon_hint">Te avisamos por WhatsApp o correo cuando esté listo. Sin compromiso.</p>
+    </div>
+    <p class="price-bundle-note reveal"><span data-i18n="lp_social.bundle_note">Incluido en Beegen Negocio ($899).</span> <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a></p>
+  </div>
+</section>
+
+<!-- ── CONNECTED TO THE CRM ───────────────────────────────── -->
+<section class="section" id="crm" style="background:var(--cloud);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_social.connect_label">Conectado al CRM</span>
+      <h2 data-i18n="lp_social.connect_title">Un cliente, todos los canales</h2>
+      <p data-i18n="lp_social.connect_sub">Instagram no es una bandeja aparte. Es otra puerta al mismo CRM.</p>
+    </div>
+    <div class="module-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1.5"/><circle cx="3.5" cy="12" r="1.5"/><circle cx="3.5" cy="18" r="1.5"/></svg></div>
+        <h3><span data-i18n="lp_social.c1_title">Un contacto, tres canales</span></h3>
+        <p data-i18n="lp_social.c1_desc">Si Mariana te escribe hoy por Instagram y mañana por WhatsApp, es un contacto con una sola línea de tiempo.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3><span data-i18n="lp_social.c2_title">Pasa a WhatsApp cuando conviene</span></h3>
+        <p data-i18n="lp_social.c2_desc">Si el cliente prefiere WhatsApp, el agente le pide su número y sigue ahí, en el mismo contacto.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/></svg></div>
+        <h3><span data-i18n="lp_social.c3_title">Bandeja compartida</span> <span class="module-status soon" data-i18n="mod.status_soon">Pronto</span></h3>
+        <p data-i18n="lp_social.c3_desc">Llega con Beegen Ventas: tu equipo verá las mismas conversaciones, se asignará clientes y tomará el control cuando quiera.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────── -->
+<section class="section" id="faq" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_social.faq_label">Preguntas frecuentes</span>
+      <h2 data-i18n="lp_social.faq_title">Antes de conectar Instagram</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_social.faq_q1">¿Necesito el agente de WhatsApp?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_social.faq_a1">Sí. Instagram y Messenger son canales del mismo agente. El módulo de $99 agrega la cuenta y comparte las conversaciones incluidas; no funciona por separado.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_social.faq_q2">¿Una conversación de Instagram cuenta igual que una de WhatsApp?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_social.faq_a2">Sí. Un contacto por ventana de 24 horas, en cualquier canal, es una conversación. Las 200 incluidas son para todos tus canales juntos, y las extras cuestan $2 MXN cada una.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_social.faq_q3">¿Qué tipo de cuenta de Instagram necesito?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_social.faq_a3">Una cuenta profesional (de negocio o de creador) vinculada a una página de Facebook. Es un requisito de Meta, no nuestro; te guiamos para hacerlo en minutos.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_social.faq_q4">¿Responde comentarios en publicaciones?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_social.faq_a4">Por ahora, solo mensajes directos. Si necesitas respuestas a comentarios, apúntate y cuéntanos.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_social.faq_q5">¿Cuándo estará disponible?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_social.faq_a5">Estamos terminando el módulo. Si te apuntas, te avisamos en cuanto salga y tus 14 días de prueba empiezan ese día, no hoy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ────────────────────────────────────────────── -->
+<section class="cta-band">
+  <div class="container">
+    <div class="reveal">
+      <h2 data-i18n="lp_social.cta_h2">Que tus DMs también vendan.</h2>
+      <p data-i18n="lp_social.cta_sub">Apúntate y sé de los primeros en conectar Instagram y Messenger con 14 días de prueba.</p>
+      <div class="cta-band-actions">
+        <a href="https://app.beegen.co/signup?module=social_channels" class="btn btn-primary btn-lg" data-i18n="lp_social.cta_btn">Apúntate, disponible pronto</a>
+      </div>
+      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);" data-i18n="lp_social.cta_footnote">$99 MXN al mes por cuenta cuando salga · Sin compromiso</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid footer-grid-5">
+      <div class="footer-brand">
+        <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
+        <p data-i18n="footer.tagline">El sistema de ventas para los negocios de México: un CRM gratis, un agente de WhatsApp que actúa y módulos desde $99 MXN al mes.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.modules">Módulos</h5>
+        <div class="footer-links">
+          <a href="/crm.html" data-i18n="footer.crm">CRM gratis</a>
+          <a href="/sitio-web.html" data-i18n="footer.site">Sitio web</a>
+          <a href="/whatsapp.html" data-i18n="footer.wa_agent">Agente de WhatsApp</a>
+          <a href="/recordatorios.html" data-i18n="footer.reminders">Recordatorios</a>
+          <a href="/cobros.html" data-i18n="footer.payments">Cobros</a>
+          <a href="/facturacion.html" data-i18n="footer.invoicing">Facturación CFDI</a>
+          <a href="/resenas.html" data-i18n="footer.reviews">Reseñas Google</a>
+          <a href="/instagram-messenger.html" data-i18n="footer.social_channels">Instagram y Messenger</a>
+          <a href="/cotizaciones.html" data-i18n="footer.quotes">Cotizaciones</a>
+          <a href="/agencias.html" data-i18n="footer.agencies">Para agencias</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.product">Producto</h5>
+        <div class="footer-links">
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">Cómo funciona</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/blog/" data-i18n="footer.blog">Blog</a>
+          <a href="/contact.html" data-i18n="footer.contact">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.account">Cuenta</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co/signup?module=crm" data-i18n="footer.signup">Registrarse</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Iniciar sesión</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.legal">Legal</h5>
+        <div class="footer-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terms.html" data-i18n="footer.terms">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Beegen. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <p data-i18n="footer.made_in">Hecho en México para negocios de México.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=3"></script>
+<script src="/js/i18n.js?v=3"></script>
+</body>
+</html>
