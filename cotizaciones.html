@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="lp_quotes.title">Cotizaciones en PDF desde WhatsApp, aceptadas y pagadas en un link | Beegen</title>
+<meta name="description" content="El agente arma la cotización en PDF desde el chat, el cliente la acepta en una página pública y paga con Cobros. Factura con Facturación CFDI. $99 MXN al mes.">
+<link rel="canonical" href="https://beegen.co/cotizaciones">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://beegen.co/cotizaciones">
+<meta property="og:title" content="Cotizaciones en PDF desde WhatsApp, aceptadas y pagadas en un link | Beegen">
+<meta property="og:description" content="El agente arma la cotización en PDF desde el chat, el cliente la acepta en una página pública y paga con Cobros. Factura con Facturación CFDI. $99 MXN al mes.">
+<meta property="og:image" content="https://beegen.co/assets/og-image.png">
+<meta property="og:locale" content="es_MX">
+<link rel="icon" href="/assets/logos/beegen-logo-color.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+
+</style>
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img id="navLogo" src="/assets/logos/beegen-logo-white.svg" alt="Beegen">
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-link active" type="button" aria-haspopup="true"><span data-i18n="nav.modules">Módulos</span><svg class="nav-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+            <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+            <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+            <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+            <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+            <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+            <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+            <a href="/instagram-messenger.html" data-i18n="nav.social_channels">Instagram y Messenger</a>
+            <a href="/cotizaciones.html" data-i18n="nav.quotes">Cotizaciones</a>
+            <a href="/agencias.html" data-i18n="nav.agencies">Para agencias</a>
+            <a href="/pricing.html" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+          </div>
+        </div>
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo funciona</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Precios</a>
+        <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambiar idioma / Switch language"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+        <a href="https://app.beegen.co/signup?module=crm" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Empieza gratis</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" data-i18n-aria="nav.close_menu" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" type="button" aria-expanded="false"><span data-i18n="nav.modules">Módulos</span><svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mobile-nav-sub">
+        <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+        <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+        <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+        <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+        <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+        <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+        <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+        <a href="/instagram-messenger.html" data-i18n="nav.social_channels">Instagram y Messenger</a>
+        <a href="/cotizaciones.html" data-i18n="nav.quotes">Cotizaciones</a>
+        <a href="/agencias.html" data-i18n="nav.agencies">Para agencias</a>
+        <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+      </div>
+    </div>
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo funciona</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle" id="langToggleMobile" type="button" aria-label="Cambiar idioma / Switch language" style="margin-bottom:14px;width:100%;justify-content:center;"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+    <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary" data-i18n="nav.start_free">Empieza gratis</a>
+  </div>
+</div>
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section class="page-hero lp-hero">
+  <div class="container">
+    <div class="lp-hero-inner">
+      <div>
+        <div class="lp-eyebrow soon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg>
+          <span data-i18n="lp_quotes.eyebrow">Cotizaciones</span>
+          <span aria-hidden="true">·</span>
+          <span data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h1 data-i18n-html="lp_quotes.h1">Cotiza en el chat. Cobra en el mismo link.</h1>
+        <p class="lp-hero-sub" data-i18n="lp_quotes.sub">El agente de Beegen toma lo que pide el cliente, arma la cotización con tu catálogo y la manda en PDF con un link. El cliente la acepta o la rechaza desde su celular, paga con Cobros y recibe su factura con Facturación CFDI. Todo queda en la venta del CRM.</p>
+        <div class="lp-hero-actions">
+          <a href="https://app.beegen.co/signup?module=quotes" class="btn btn-primary btn-lg" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+          <a href="/pricing.html" class="btn btn-ghost btn-lg" data-i18n="nav.pricing">Precios</a>
+        </div>
+        <p class="lp-hero-note" data-i18n="lp_quotes.note">Disponible pronto · Apúntate y te avisamos · $99 MXN al mes</p>
+      </div>
+      <div class="timeline-card reveal reveal-delay-2">
+        <div class="timeline-head">
+          <div class="timeline-avatar">TH</div>
+          <div>
+            <h4 data-i18n="lp_quotes.mock_name">Taller Hernández</h4>
+            <span data-i18n="lp_quotes.mock_sub">Herrería · Portón con motor</span>
+          </div>
+          <span class="timeline-stage" data-i18n="lp_quotes.mock_stage">Cotización aceptada</span>
+        </div>
+        <div class="timeline-body">
+          <div class="timeline-item">
+            <div class="timeline-icon wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_quotes.mock_t1">Cliente por WhatsApp: “portón de 3 metros con motor, ¿cuánto?”</div>
+            <div class="timeline-time" data-i18n="lp_quotes.mock_time1">mar 10:15</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_quotes.mock_t2"><strong>Agente de WhatsApp</strong> mandó la cotización #0147 en PDF: $18,500</div>
+            <div class="timeline-time" data-i18n="lp_quotes.mock_time2">mar 10:19</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_quotes.mock_t3"><strong>Aceptada</strong> desde el link público</div>
+            <div class="timeline-time" data-i18n="lp_quotes.mock_time3">mar 13:02</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_quotes.mock_t4"><strong>Cobro:</strong> anticipo de $9,250 pagado con tarjeta</div>
+            <div class="timeline-time" data-i18n="lp_quotes.mock_time4">mar 13:05</div>
+          </div>
+          <div class="timeline-item dim">
+            <div class="timeline-icon navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+            <div class="timeline-text" data-i18n-html="lp_quotes.mock_t5"><strong>CFDI</strong> timbrado y enviado</div>
+            <div class="timeline-time" data-i18n="lp_quotes.mock_time5">mar 13:05</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROOF POINTS ───────────────────────────────────────── -->
+<div style="background:#ffffff;">
+  <div class="container">
+    <div class="trust-strip" style="margin-top:0;border-top:none;">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        <span data-i18n="lp_quotes.proof1">PDF con tu logo, vigencia y condiciones</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        <span data-i18n="lp_quotes.proof2">Página pública para aceptar o rechazar, sin crear cuenta</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+        <span data-i18n="lp_quotes.proof3">Se convierte en cobro y en factura con un clic</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <span data-i18n="lp_quotes.proof4">Soporte en español por WhatsApp, lunes a viernes de 9:00 a 18:00 (CDMX)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HOW IT WORKS ───────────────────────────────────────── -->
+<section class="section" id="how-it-works" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_quotes.steps_label">Así funciona</span>
+      <h2 data-i18n="lp_quotes.steps_title">Del “¿cuánto?” al “pagado” sin abrir Word</h2>
+      <p data-i18n="lp_quotes.steps_sub">La cotización nace en el chat y vive en la venta.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-badge">1</div>
+        <h3 data-i18n="lp_quotes.s1_title">Carga tu catálogo</h3>
+        <p data-i18n="lp_quotes.s1_desc">Servicios, productos y precios, con variantes. El agente solo cotiza lo que está ahí; nunca inventa un precio.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-badge">2</div>
+        <h3 data-i18n="lp_quotes.s2_title">El agente arma la cotización</h3>
+        <p data-i18n="lp_quotes.s2_desc">Desde el chat de WhatsApp o desde una venta del CRM. La revisas si quieres, o dejas que salga sola con las reglas que definas.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-badge">3</div>
+        <h3 data-i18n="lp_quotes.s3_title">El cliente acepta y paga</h3>
+        <p data-i18n="lp_quotes.s3_desc">Abre el link, ve la cotización, la acepta y paga con Cobros: tarjeta, OXXO o SPEI. Con Facturación CFDI, la factura sale sola.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO IT IS FOR ──────────────────────────────────────── -->
+<section class="section" id="para-quien" style="background:var(--cloud);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_quotes.who_label">Para quién es</span>
+      <h2 data-i18n="lp_quotes.who_title">Si cotizas antes de vender, esto te ahorra la tarde</h2>
+    </div>
+    <div class="module-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3 data-i18n="lp_quotes.w1_title">Oficios y servicios a domicilio</h3>
+        <p data-i18n="lp_quotes.w1_desc">Herrería, plomería, remodelación: cotizas desde la obra y cobras el anticipo antes de irte.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3 data-i18n="lp_quotes.w2_title">Agencias y freelancers</h3>
+        <p data-i18n="lp_quotes.w2_desc">Propuestas con alcance y vigencia; el cliente acepta y el proyecto arranca con anticipo.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3 data-i18n="lp_quotes.w3_title">Eventos y catering</h3>
+        <p data-i18n="lp_quotes.w3_desc">Paquetes por persona, cambios en el chat y pago en parcialidades.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICE ──────────────────────────────────────────────── -->
+<section class="section" id="precio" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_quotes.price_label">Precio</span>
+      <h2 data-i18n="lp_quotes.price_title">Un precio fijo. Cotizaciones ilimitadas.</h2>
+    </div>
+    <div class="pricing-card featured price-single reveal">
+      <div class="pricing-badge" data-i18n="mod.status_soon">Pronto</div>
+      <div class="pricing-tier" data-i18n="mod.quotes_name">Cotizaciones</div>
+      <div class="pricing-price">
+        <span class="pricing-amount">$99</span>
+        <span class="pricing-period"><span data-i18n="mod.per_month">MXN al mes</span></span>
+      </div>
+      <p class="pricing-desc" data-i18n="lp_quotes.price_desc">Incluye el catálogo, cotizaciones ilimitadas en PDF, la página pública para aceptar y el historial en cada venta. Cobros y Facturación CFDI se activan por separado.</p>
+      <ul class="pricing-features">
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_quotes.price_f1">Cotizaciones ilimitadas en PDF con tu marca</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_quotes.price_f2">Página pública para aceptar o rechazar</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_quotes.price_f3">Acepta y paga con Cobros (0 + 2%)</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_quotes.price_f4">Factura al aceptar con Facturación CFDI ($149)</span>
+          </li>
+      </ul>
+      <a href="https://app.beegen.co/signup?module=quotes" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+      <p class="pricing-desc" style="margin:14px 0 0;text-align:center;font-size:13px;" data-i18n="mod.iva">IVA incluido</p>
+        <p class="pricing-desc" style="margin:14px 0 0;text-align:center;font-size:13px;" data-i18n="mod.soon_hint">Te avisamos por WhatsApp o correo cuando esté listo. Sin compromiso.</p>
+    </div>
+    <p class="price-bundle-note reveal"><span data-i18n="lp_quotes.bundle_note">Incluido en Beegen Negocio ($899).</span> <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a></p>
+  </div>
+</section>
+
+<!-- ── CONNECTED TO THE CRM ───────────────────────────────── -->
+<section class="section" id="crm" style="background:var(--cloud);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_quotes.connect_label">Conectado al CRM</span>
+      <h2 data-i18n="lp_quotes.connect_title">Nace en el chat, se cierra en la venta</h2>
+      <p data-i18n="lp_quotes.connect_sub">Nada que copiar de una herramienta a otra. Cada cotización mueve la venta.</p>
+    </div>
+    <div class="module-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1.5"/><circle cx="3.5" cy="12" r="1.5"/><circle cx="3.5" cy="18" r="1.5"/></svg></div>
+        <h3><span data-i18n="lp_quotes.c1_title">Nace en el chat o en la venta</span></h3>
+        <p data-i18n="lp_quotes.c1_desc">Cada cotización queda ligada al cliente y a la venta, con su versión, su estatus y quién la aceptó.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+        <h3><span data-i18n="lp_quotes.c2_title">Pasa a Cobros</span></h3>
+        <p data-i18n="lp_quotes.c2_desc">Cuando el cliente acepta, el anticipo o el total se cobra en el mismo link. Pagado, pendiente o vencido se ve en la venta.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+        <h3><span data-i18n="lp_quotes.c3_title">Factura con Facturación CFDI</span></h3>
+        <p data-i18n="lp_quotes.c3_desc">Con Facturación CFDI activo, la factura se timbra al entrar el pago, con los datos fiscales guardados del cliente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────── -->
+<section class="section" id="faq" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_quotes.faq_label">Preguntas frecuentes</span>
+      <h2 data-i18n="lp_quotes.faq_title">Lo que nos preguntan sobre cotizaciones</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_quotes.faq_q1">¿Puedo editar la cotización antes de que salga?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_quotes.faq_a1">Sí. Puedes pedir que el agente te la mande a revisar antes, o definir reglas (monto máximo, qué servicios) para que salga sola.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_quotes.faq_q2">¿El cliente necesita cuenta para aceptar?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_quotes.faq_a2">No. Abre el link, ve el PDF y acepta con un botón. La aceptación y su hora quedan registradas en la venta.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_quotes.faq_q3">¿Qué pasa si la rechaza?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_quotes.faq_a3">Puede decir por qué y el agente te avisa con el motivo. La venta se marca como perdida en el CRM, o mandas una nueva versión.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_quotes.faq_q4">¿Necesito Cobros o Facturación CFDI para usar Cotizaciones?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_quotes.faq_a4">No. Sin ellos, la cotización se acepta y tú cobras como siempre. Con Cobros, el link incluye el pago; con Facturación CFDI, la factura sale al pagar.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_quotes.faq_q5">¿Cuándo estará disponible?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_quotes.faq_a5">Estamos terminando el módulo. Si te apuntas, te avisamos en cuanto salga y tus 14 días de prueba empiezan ese día, no hoy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ────────────────────────────────────────────── -->
+<section class="cta-band">
+  <div class="container">
+    <div class="reveal">
+      <h2 data-i18n="lp_quotes.cta_h2">Deja de cotizar en Word.</h2>
+      <p data-i18n="lp_quotes.cta_sub">Apúntate y sé de los primeros en cotizar desde WhatsApp con 14 días de prueba.</p>
+      <div class="cta-band-actions">
+        <a href="https://app.beegen.co/signup?module=quotes" class="btn btn-primary btn-lg" data-i18n="lp_quotes.cta_btn">Apúntate, disponible pronto</a>
+      </div>
+      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);" data-i18n="lp_quotes.cta_footnote">$99 MXN al mes cuando salga · Sin compromiso</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid footer-grid-5">
+      <div class="footer-brand">
+        <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
+        <p data-i18n="footer.tagline">El sistema de ventas para los negocios de México: un CRM gratis, un agente de WhatsApp que actúa y módulos desde $99 MXN al mes.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.modules">Módulos</h5>
+        <div class="footer-links">
+          <a href="/crm.html" data-i18n="footer.crm">CRM gratis</a>
+          <a href="/sitio-web.html" data-i18n="footer.site">Sitio web</a>
+          <a href="/whatsapp.html" data-i18n="footer.wa_agent">Agente de WhatsApp</a>
+          <a href="/recordatorios.html" data-i18n="footer.reminders">Recordatorios</a>
+          <a href="/cobros.html" data-i18n="footer.payments">Cobros</a>
+          <a href="/facturacion.html" data-i18n="footer.invoicing">Facturación CFDI</a>
+          <a href="/resenas.html" data-i18n="footer.reviews">Reseñas Google</a>
+          <a href="/instagram-messenger.html" data-i18n="footer.social_channels">Instagram y Messenger</a>
+          <a href="/cotizaciones.html" data-i18n="footer.quotes">Cotizaciones</a>
+          <a href="/agencias.html" data-i18n="footer.agencies">Para agencias</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.product">Producto</h5>
+        <div class="footer-links">
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">Cómo funciona</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/blog/" data-i18n="footer.blog">Blog</a>
+          <a href="/contact.html" data-i18n="footer.contact">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.account">Cuenta</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co/signup?module=crm" data-i18n="footer.signup">Registrarse</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Iniciar sesión</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.legal">Legal</h5>
+        <div class="footer-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terms.html" data-i18n="footer.terms">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Beegen. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <p data-i18n="footer.made_in">Hecho en México para negocios de México.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=3"></script>
+<script src="/js/i18n.js?v=3"></script>
+</body>
+</html>

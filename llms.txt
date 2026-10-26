@@ -7,21 +7,24 @@ Beegen is built for micro and small businesses in Mexico that sell on WhatsApp. 
 
 ## Modules and pricing (MXN per month, IVA included)
 - CRM (`crm`): free forever, 1 seat included, unlimited contacts (fair use), pipeline, tasks, import. $99 per extra seat. Available now. https://beegen.co/crm
-- Sitio web / Website (`site`): $149 per published site. AI-built site with pages, contact form and WhatsApp button; unlimited edits (fair use), custom domain. Every form submission creates a contact in the CRM. Available now. https://beegen.co/sitio-web
-- Agente de WhatsApp / WhatsApp agent (`wa_agent`): $299 per number, 500 AI conversations per month included, $1.50 per extra conversation. Answers, qualifies, books, quotes, charges and hands off to a human with context. Available now. https://beegen.co/whatsapp
-- Recordatorios y seguimientos / Reminders (`reminders`): $99, 200 template messages included, Meta cost + 20% per extra. Appointment reminders, payment nudges, follow-ups via Meta-approved templates. Coming soon. https://beegen.co/recordatorios
-- Cobros / Payments (`payments`): $0 monthly + 1% per payment collected (plus processor fees). Payment links from the chat or a deal; card, OXXO, SPEI, interest-free installments via Stripe, Conekta or Mercado Pago. Coming soon. https://beegen.co/cobros
-- Facturación CFDI / Invoicing (`invoicing`): $149, 50 folios included, $2 per extra folio. The agent collects RFC, postal code, tax regime and CFDI use and stamps the invoice through a SAT-authorized PAC. Coming soon. https://beegen.co/facturacion
+- Sitio web / Website (`site`): $149 per published site. AI-built site with pages, contact form and WhatsApp button; 100 AI edits per site per month (fair use), custom domain. Every form submission creates a contact in the CRM. Available now. https://beegen.co/sitio-web
+- Agente de WhatsApp / WhatsApp agent (`wa_agent`): $299 per number, 200 AI conversations per month included (a conversation is one contact per 24-hour window, on any channel), $2 per extra conversation. Answers, qualifies, books, quotes, charges and hands off to a human with context. Calls to the WhatsApp number are answered by the agent in chat, at no extra cost. Available now. https://beegen.co/whatsapp
+- Recordatorios y seguimientos / Reminders (`reminders`): $99, 200 utility messages included, $1 per utility message beyond 200, marketing messages $1 each from the first. Appointment reminders, payment nudges, follow-ups via Meta-approved templates, plus 7 included automations (stuck deal, no-show, payment reminder, low review, inactive contact, welcome new lead, appointment 24 h and 2 h before). Coming soon. https://beegen.co/recordatorios
+- Cobros / Payments (`payments`): $0 monthly + 2% per payment collected, plus Stripe's fee. Payment links from the chat or a deal; card, OXXO, SPEI, interest-free installments via Stripe. Coming soon. https://beegen.co/cobros
+- Facturación CFDI / Invoicing (`invoicing`): $149, 30 folios included, $3 per extra folio. The agent collects RFC, postal code, tax regime and CFDI use and stamps the invoice through a SAT-authorized PAC. Coming soon. https://beegen.co/facturacion
 - Reseñas Google / Google reviews (`reviews`): $99. Asks for a Google review after a booking or payment with the direct link. Coming soon. https://beegen.co/resenas
-- Instagram y Messenger (`social_channels`): $99 per connected account; shares the WhatsApp agent's conversation quota. Coming soon.
-- Voz / Voice (`voice`): $299, 100 minutes included, $3 per extra minute. Calls to the WhatsApp number handled by the agent. Coming soon.
-- Cotizaciones / Quotes (`quotes`): $99. PDF quotes from a chat or deal with accept-and-pay link. Coming soon.
+- Instagram y Messenger (`social_channels`): $99 per connected account; requires the WhatsApp agent and its conversations count against the agent's 200. Coming soon. https://beegen.co/instagram-messenger
+- Cotizaciones / Quotes (`quotes`): $99. PDF quotes from a chat or deal, public accept/decline page, accept and pay through Cobros, invoice through Facturación CFDI. Coming soon. https://beegen.co/cotizaciones
+- Voz / Voice: no longer a separate module. Calls to the WhatsApp number are answered by the agent in chat as part of the WhatsApp agent.
+
+## For agencies
+- Espacio para agencias / Agency workspace: $1,499 per month per agency. Sign up at https://app.beegen.co/signup?next=/dashboard/agency. Create and run every client's Beegen from one account, client switching in a click, light white-label (agency logo and name), unlimited clients. Clients keep their own subscriptions at list price; the resale price is the agency's. Coming soon. https://beegen.co/agencias
 
 ## Bundles
 - Beegen Ventas: $499 per month. WhatsApp agent (1 number), reminders, payments, Google reviews, CRM with 3 seats.
-- Beegen Negocio: $899 per month. Every module, 2 WhatsApp numbers, CRM with 5 seats.
+- Beegen Negocio: $899 per month. Every module (including Instagram y Messenger and Cotizaciones), 2 WhatsApp numbers, CRM with 5 seats.
 - Annual prepay: 12 months for the price of 10, payable at OXXO or by SPEI in one payment.
-- Done-for-you onboarding: $999 to $1,999 one-time (site built, number connected, knowledge loaded, templates approved).
+- Done-for-you onboarding, one-time: Arranque $999 (number connected, business information loaded, agent answering in the business's tone within 48 hours) and Completo $1,999 (everything in Arranque plus website published, reminder templates approved by Meta, Payments and Invoicing set up). Requested via WhatsApp from the pricing page.
 
 ## Trials and billing
 - Every module has an independent 14-day free trial, no card required.
@@ -33,7 +36,8 @@ Beegen is built for micro and small businesses in Mexico that sell on WhatsApp. 
 ## Key URLs
 - Homepage: https://beegen.co
 - Pricing: https://beegen.co/pricing
-- Module landing pages: https://beegen.co/crm, https://beegen.co/sitio-web, https://beegen.co/whatsapp, https://beegen.co/recordatorios, https://beegen.co/cobros, https://beegen.co/facturacion, https://beegen.co/resenas
+- Module landing pages: https://beegen.co/crm, https://beegen.co/sitio-web, https://beegen.co/whatsapp, https://beegen.co/recordatorios, https://beegen.co/cobros, https://beegen.co/facturacion, https://beegen.co/resenas, https://beegen.co/instagram-messenger, https://beegen.co/cotizaciones
+- Agencies: https://beegen.co/agencias
 - Contact: https://beegen.co/contact
 - App: https://app.beegen.co
 - Sign up for a module: https://app.beegen.co/signup?module=<module id>

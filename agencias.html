@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="lp_agencies.title">Beegen para agencias: todos tus clientes en un espacio | Beegen</title>
+<meta name="description" content="Un espacio de trabajo para agencias: cambia de cliente en un clic, marca blanca ligera y cada cliente con su propia suscripción. El precio al que lo revendes es tuyo. $1,499 MXN al mes por agencia.">
+<link rel="canonical" href="https://beegen.co/agencias">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://beegen.co/agencias">
+<meta property="og:title" content="Beegen para agencias: todos tus clientes en un espacio | Beegen">
+<meta property="og:description" content="Un espacio de trabajo para agencias: cambia de cliente en un clic, marca blanca ligera y cada cliente con su propia suscripción. El precio al que lo revendes es tuyo. $1,499 MXN al mes por agencia.">
+<meta property="og:image" content="https://beegen.co/assets/og-image.png">
+<meta property="og:locale" content="es_MX">
+<link rel="icon" href="/assets/logos/beegen-logo-color.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+/* ── AGENCY WORKSPACE MOCKUP ─────────────────────────────── */
+.agency-mock { background: #ffffff; border-radius: var(--radius-lg); border: 1px solid var(--mist); box-shadow: var(--shadow-xl); overflow: hidden; max-width: 460px; margin: 0 auto; color: var(--navy); }
+.agency-mock-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--mist); background: var(--cloud); }
+.agency-mock-head h4 { font-size: 15px; margin: 0 0 2px; }
+.agency-mock-head span { font-size: 12px; color: var(--gray-600); }
+.agency-mock-switch { font-size: 12px; font-weight: 700; color: var(--teal); background: rgba(2,195,154,.12); border-radius: 100px; padding: 6px 12px; white-space: nowrap; }
+.agency-mock table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.agency-mock th { text-align: left; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--gray-600); padding: 10px 16px 6px; }
+.agency-mock td { padding: 10px 16px; border-top: 1px solid var(--mist); vertical-align: middle; line-height: 1.35; }
+.agency-mock td:first-child { font-weight: 700; }
+.agency-mock .st { display: inline-block; font-size: 11px; font-weight: 800; border-radius: 20px; padding: 3px 9px; white-space: nowrap; }
+.agency-mock .st.live { background: rgba(2,195,154,.12); color: var(--teal-dark); }
+.agency-mock .st.trial { background: rgba(0,21,46,.08); color: var(--navy); }
+.agency-mock .st.due { background: rgba(243,121,52,.12); color: var(--orange); }
+@media (max-width: 480px) { .agency-mock th:nth-child(2), .agency-mock td:nth-child(2) { display: none; } }
+.lp-hero-actions .btn-wa { padding: 15px 28px; font-size: 16px; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img id="navLogo" src="/assets/logos/beegen-logo-white.svg" alt="Beegen">
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-link active" type="button" aria-haspopup="true"><span data-i18n="nav.modules">Módulos</span><svg class="nav-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+            <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+            <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+            <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+            <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+            <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+            <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+            <a href="/instagram-messenger.html" data-i18n="nav.social_channels">Instagram y Messenger</a>
+            <a href="/cotizaciones.html" data-i18n="nav.quotes">Cotizaciones</a>
+            <a href="/agencias.html" data-i18n="nav.agencies">Para agencias</a>
+            <a href="/pricing.html" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+          </div>
+        </div>
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo funciona</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Precios</a>
+        <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambiar idioma / Switch language"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+        <a href="https://app.beegen.co/signup?module=crm" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Empieza gratis</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" data-i18n-aria="nav.close_menu" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" type="button" aria-expanded="false"><span data-i18n="nav.modules">Módulos</span><svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mobile-nav-sub">
+        <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+        <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+        <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+        <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+        <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+        <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+        <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+        <a href="/instagram-messenger.html" data-i18n="nav.social_channels">Instagram y Messenger</a>
+        <a href="/cotizaciones.html" data-i18n="nav.quotes">Cotizaciones</a>
+        <a href="/agencias.html" data-i18n="nav.agencies">Para agencias</a>
+        <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+      </div>
+    </div>
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo funciona</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle" id="langToggleMobile" type="button" aria-label="Cambiar idioma / Switch language" style="margin-bottom:14px;width:100%;justify-content:center;"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+    <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary" data-i18n="nav.start_free">Empieza gratis</a>
+  </div>
+</div>
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section class="page-hero lp-hero">
+  <div class="container">
+    <div class="lp-hero-inner">
+      <div>
+        <div class="lp-eyebrow soon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          <span data-i18n="lp_agencies.eyebrow">Para agencias</span>
+          <span aria-hidden="true">·</span>
+          <span data-i18n="mod.status_soon">Pronto</span>
+        </div>
+        <h1 data-i18n-html="lp_agencies.h1">Vende Beegen a tus clientes. Opéralo desde un solo lugar.</h1>
+        <p class="lp-hero-sub" data-i18n="lp_agencies.sub">El espacio para agencias te deja crear y administrar el Beegen de todos tus clientes desde una sola cuenta: cambias de cliente en un clic, pones tu marca en lo que ve el cliente y cada uno paga su propia suscripción. Lo que cobres por tu servicio lo decides tú.</p>
+        <div class="lp-hero-actions">
+          <a href="https://app.beegen.co/signup?next=/dashboard/agency" class="btn btn-primary btn-lg" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+          <a href="/pricing.html" class="btn btn-ghost btn-lg" data-i18n="nav.pricing">Precios</a>
+        </div>
+        <p class="lp-hero-note" data-i18n="lp_agencies.note">Disponible pronto · $1,499 MXN al mes por agencia · Clientes ilimitados</p>
+      </div>
+      <div class="agency-mock reveal reveal-delay-2">
+        <div class="agency-mock-head">
+          <div>
+            <h4 data-i18n="lp_agencies.mock_title">Agencia Norte</h4>
+            <span data-i18n="lp_agencies.mock_sub">12 clientes · 3 personas del equipo</span>
+          </div>
+          <span class="agency-mock-switch" data-i18n="lp_agencies.mock_switch">Cambiar de cliente</span>
+        </div>
+        <table>
+          <thead><tr><th data-i18n="lp_agencies.mock_h_client">Cliente</th><th data-i18n="lp_agencies.mock_h_modules">Módulos</th><th data-i18n="lp_agencies.mock_h_status">Estatus</th></tr></thead>
+          <tbody>
+            <tr><td data-i18n="lp_agencies.mock_c1">Estética Luna</td><td data-i18n="lp_agencies.mock_m1">Agente de WhatsApp, Recordatorios</td><td><span class="st live" data-i18n="lp_agencies.mock_s1">Activo</span></td></tr>
+            <tr><td data-i18n="lp_agencies.mock_c2">Dental Roma</td><td data-i18n="lp_agencies.mock_m2">Beegen Ventas</td><td><span class="st trial" data-i18n="lp_agencies.mock_s2">Prueba, 9 días</span></td></tr>
+            <tr><td data-i18n="lp_agencies.mock_c3">Taller Hernández</td><td data-i18n="lp_agencies.mock_m3">Cotizaciones, Cobros</td><td><span class="st live" data-i18n="lp_agencies.mock_s3">Activo</span></td></tr>
+            <tr><td data-i18n="lp_agencies.mock_c4">Café Centro</td><td data-i18n="lp_agencies.mock_m4">Sitio web</td><td><span class="st due" data-i18n="lp_agencies.mock_s4">Pago pendiente</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROOF POINTS ───────────────────────────────────────── -->
+<div style="background:#ffffff;">
+  <div class="container">
+    <div class="trust-strip" style="margin-top:0;border-top:none;">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+        <span data-i18n="lp_agencies.proof1">Un login, todos los clientes, cambio en un clic</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><path d="M7 7h.01"/></svg>
+        <span data-i18n="lp_agencies.proof2">Marca blanca ligera: tu logo y tu nombre en lo que ve el cliente</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l3-2 3 2 3-2 3 2 3-2 3 2V2l-3 2-3-2-3 2-3-2-3 2z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        <span data-i18n="lp_agencies.proof3">Cada cliente con su propia suscripción y su propio CFDI</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <span data-i18n="lp_agencies.proof4">Soporte en español por WhatsApp, lunes a viernes de 9:00 a 18:00 (CDMX)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HOW IT WORKS ───────────────────────────────────────── -->
+<section class="section" id="how-it-works" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_agencies.steps_label">Así funciona</span>
+      <h2 data-i18n="lp_agencies.steps_title">Configuras una vez, operas a todos</h2>
+      <p data-i18n="lp_agencies.steps_sub">Conservas tu forma de trabajar. Beegen pone el producto y el panel.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-badge">1</div>
+        <h3 data-i18n="lp_agencies.s1_title">Crea el espacio de tu agencia</h3>
+        <p data-i18n="lp_agencies.s1_desc">Tu cuenta, tu logo, tu equipo. Invita a quien opera las cuentas y decide qué puede ver cada persona.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-badge">2</div>
+        <h3 data-i18n="lp_agencies.s2_title">Agrega a tus clientes</h3>
+        <p data-i18n="lp_agencies.s2_desc">Creas su Beegen desde tu panel o vinculas uno que ya existe. Eliges qué módulos activar y quién recibe la prueba.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-badge">3</div>
+        <h3 data-i18n="lp_agencies.s3_title">Opera y cobra como quieras</h3>
+        <p data-i18n="lp_agencies.s3_desc">Cambias de cliente en un clic. Cada cliente le paga a Beegen su suscripción; tu servicio y tu margen los defines tú.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO IT IS FOR ──────────────────────────────────────── -->
+<section class="section" id="para-quien" style="background:var(--cloud);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_agencies.who_label">Para quién es</span>
+      <h2 data-i18n="lp_agencies.who_title">Si operas cuentas de otros negocios, este es tu panel</h2>
+    </div>
+    <div class="module-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 11-5.8-1.6"/></svg></div>
+        <h3 data-i18n="lp_agencies.w1_title">Agencias de marketing digital</h3>
+        <p data-i18n="lp_agencies.w1_desc">Vendes anuncios en Meta; ahora también vendes quién contesta los leads, con tu nombre.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3 data-i18n="lp_agencies.w2_title">Consultores de WhatsApp y CRM</h3>
+        <p data-i18n="lp_agencies.w2_desc">Implementas y operas cuentas para varios negocios y necesitas moverte entre ellas sin cerrar sesión.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <h3 data-i18n="lp_agencies.w3_title">Freelancers que hacen sitios</h3>
+        <p data-i18n="lp_agencies.w3_desc">Entregas el sitio con CRM y agente, y cobras el mantenimiento mensual.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICE ──────────────────────────────────────────────── -->
+<section class="section" id="precio" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_agencies.price_label">Precio</span>
+      <h2 data-i18n="lp_agencies.price_title">Un precio para la agencia. Los módulos, por cliente.</h2>
+    </div>
+    <div class="pricing-card featured price-single reveal">
+      <div class="pricing-badge" data-i18n="mod.status_soon">Pronto</div>
+      <div class="pricing-tier" data-i18n="mod.agencies_name">Espacio para agencias</div>
+      <div class="pricing-price">
+        <span class="pricing-amount">$1,499</span>
+        <span class="pricing-period"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.agencies_unit">por agencia</span></span>
+      </div>
+      <p class="pricing-desc" data-i18n="lp_agencies.price_desc">La agencia paga $1,499 MXN al mes por el espacio de trabajo. Cada cliente mantiene su propia suscripción a los módulos que usa, a precio de lista. Lo que cobres por tu servicio es tuyo.</p>
+      <ul class="pricing-features">
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_agencies.price_f1">Clientes ilimitados y cambio de cliente en un clic</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_agencies.price_f2">Marca blanca ligera: tu logo y tu nombre</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_agencies.price_f3">Los clientes conservan su suscripción, sus datos y su CFDI</span>
+          </li>
+          <li class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span data-i18n="lp_agencies.price_f4">El precio de reventa lo fija la agencia</span>
+          </li>
+      </ul>
+      <a href="https://app.beegen.co/signup?next=/dashboard/agency" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="mod.cta_soon">Apúntate, disponible pronto</a>
+      <p class="pricing-desc" style="margin:14px 0 0;text-align:center;font-size:13px;" data-i18n="mod.iva">IVA incluido</p>
+        <p class="pricing-desc" style="margin:14px 0 0;text-align:center;font-size:13px;" data-i18n="mod.soon_hint">Te avisamos por WhatsApp o correo cuando esté listo. Sin compromiso.</p>
+    </div>
+    <p class="price-bundle-note reveal"><span data-i18n="lp_agencies.bundle_note">Los clientes pueden empezar con cualquier módulo o paquete; el espacio para agencias se vende por separado.</span> <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a></p>
+  </div>
+</section>
+
+<!-- ── CONNECTED TO THE CRM ───────────────────────────────── -->
+<section class="section" id="crm" style="background:var(--cloud);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_agencies.connect_label">Qué incluye</span>
+      <h2 data-i18n="lp_agencies.connect_title">Hecho para operar, no solo para revender</h2>
+      <p data-i18n="lp_agencies.connect_sub">Lo que necesitas para llevar muchas cuentas sin mezclarlas.</p>
+    </div>
+    <div class="module-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></div>
+        <h3><span data-i18n="lp_agencies.c1_title">Cambio de cliente</span></h3>
+        <p data-i18n="lp_agencies.c1_desc">Un menú para saltar entre clientes. Cada uno conserva su CRM, su bandeja y sus números completamente separados.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><path d="M7 7h.01"/></svg></div>
+        <h3><span data-i18n="lp_agencies.c2_title">Marca blanca ligera</span></h3>
+        <p data-i18n="lp_agencies.c2_desc">Tu logo y tu nombre en el panel y en los correos que recibe tu cliente. El motor sigue siendo Beegen y así lo decimos.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l3-2 3 2 3-2 3 2 3-2 3 2V2l-3 2-3-2-3 2-3-2-3 2z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <h3><span data-i18n="lp_agencies.c3_title">Cobro separado</span></h3>
+        <p data-i18n="lp_agencies.c3_desc">Cada cliente paga su suscripción directo y recibe su propio CFDI. Tú no intermedias sus pagos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────── -->
+<section class="section" id="faq" style="background:#ffffff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" data-i18n="lp_agencies.faq_label">Preguntas frecuentes</span>
+      <h2 data-i18n="lp_agencies.faq_title">Lo que nos preguntan las agencias</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_agencies.faq_q1">¿Quién paga los módulos de cada cliente?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_agencies.faq_a1">El cliente, directo a Beegen, a precio de lista y con su propio CFDI. La agencia paga solo los $1,499 del espacio.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_agencies.faq_q2">¿Puedo cobrar mi propio precio?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_agencies.faq_a2">Sí. Lo que cobres por configurar, operar o mantener la cuenta es un acuerdo entre tú y tu cliente. Beegen no pide comisión sobre eso.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_agencies.faq_q3">¿Qué tan “marca blanca” es?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_agencies.faq_a3">Ligera: tu logo y tu nombre en el panel que ve el cliente. El dominio, el motor y el soporte técnico siguen siendo de Beegen.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_agencies.faq_q4">¿Qué pasa si un cliente se va de la agencia?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_agencies.faq_a4">Su Beegen sigue siendo suyo. Se desvincula del espacio de la agencia y conserva su suscripción, sus contactos y su historial.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_agencies.faq_q5">¿Hay descuento por volumen?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_agencies.faq_a5">Cuéntanos cuántos clientes operas y lo vemos contigo.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span data-i18n="lp_agencies.faq_q6">¿Cuándo estará disponible?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="lp_agencies.faq_a6">Estamos terminando el espacio. Si te apuntas, te avisamos en cuanto salga y a las primeras agencias las acompañamos personalmente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ────────────────────────────────────────────── -->
+<section class="cta-band">
+  <div class="container">
+    <div class="reveal">
+      <h2 data-i18n="lp_agencies.cta_h2">Tu agencia, con un producto más que vender.</h2>
+      <p data-i18n="lp_agencies.cta_sub">Apúntate y te avisamos cuando el espacio para agencias esté listo. O escríbenos hoy por WhatsApp.</p>
+      <div class="cta-band-actions">
+        <a href="https://app.beegen.co/signup?next=/dashboard/agency" class="btn btn-primary btn-lg" data-i18n="lp_agencies.cta_btn">Apúntate, disponible pronto</a>
+        <a href="https://wa.me/13468318036?text=Hola%2C%20tengo%20una%20agencia%20y%20me%20interesa%20el%20espacio%20para%20agencias%20de%20Beegen." class="btn btn-ghost btn-lg" data-i18n="lp_agencies.cta_wa" data-i18n-wa="lp_agencies.cta_wa_text" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      </div>
+      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);" data-i18n="lp_agencies.cta_footnote">$1,499 MXN al mes por agencia cuando salga · Sin compromiso</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid footer-grid-5">
+      <div class="footer-brand">
+        <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
+        <p data-i18n="footer.tagline">El sistema de ventas para los negocios de México: un CRM gratis, un agente de WhatsApp que actúa y módulos desde $99 MXN al mes.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.modules">Módulos</h5>
+        <div class="footer-links">
+          <a href="/crm.html" data-i18n="footer.crm">CRM gratis</a>
+          <a href="/sitio-web.html" data-i18n="footer.site">Sitio web</a>
+          <a href="/whatsapp.html" data-i18n="footer.wa_agent">Agente de WhatsApp</a>
+          <a href="/recordatorios.html" data-i18n="footer.reminders">Recordatorios</a>
+          <a href="/cobros.html" data-i18n="footer.payments">Cobros</a>
+          <a href="/facturacion.html" data-i18n="footer.invoicing">Facturación CFDI</a>
+          <a href="/resenas.html" data-i18n="footer.reviews">Reseñas Google</a>
+          <a href="/instagram-messenger.html" data-i18n="footer.social_channels">Instagram y Messenger</a>
+          <a href="/cotizaciones.html" data-i18n="footer.quotes">Cotizaciones</a>
+          <a href="/agencias.html" data-i18n="footer.agencies">Para agencias</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.product">Producto</h5>
+        <div class="footer-links">
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">Cómo funciona</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/blog/" data-i18n="footer.blog">Blog</a>
+          <a href="/contact.html" data-i18n="footer.contact">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.account">Cuenta</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co/signup?module=crm" data-i18n="footer.signup">Registrarse</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Iniciar sesión</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.legal">Legal</h5>
+        <div class="footer-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terms.html" data-i18n="footer.terms">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Beegen. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <p data-i18n="footer.made_in">Hecho en México para negocios de México.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=3"></script>
+<script src="/js/i18n.js?v=3"></script>
+</body>
+</html>
