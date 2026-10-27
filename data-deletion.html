@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eliminación de datos / Data Deletion — Beegen</title>
+<meta name="description" content="Cómo eliminar tu cuenta de Beegen y tus datos. How to request deletion of your Beegen account data.">
+<link rel="canonical" href="https://beegen.co/data-deletion">
+<link rel="icon" href="/assets/logos/beegen-logo-color.svg" type="image/svg+xml">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/global.css">
+<style>
+.legal-page { background: var(--cloud); min-height: 100vh; }
+.legal-hero { padding: 120px 0 60px; background: var(--navy); color: #fff; }
+.legal-hero h1 { color: #fff; margin-bottom: 12px; }
+.legal-hero p { color: rgba(255,255,255,.6); font-size: 15px; }
+.legal-body { padding: 60px 0 100px; }
+.legal-content { max-width: 760px; margin: 0 auto; background: #fff; border-radius: var(--radius-lg); padding: 56px; border: 1px solid var(--mist); }
+.legal-content h2 { font-size: 20px; margin: 36px 0 12px; color: var(--navy); }
+.legal-content h2:first-child { margin-top: 0; }
+.legal-content p, .legal-content li { font-size: 16px; color: #475569; line-height: 1.75; margin-bottom: 14px; }
+.legal-content ul { padding-left: 24px; }
+.legal-content a { color: var(--teal); text-decoration: none; }
+.legal-content a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img id="navLogo" src="/assets/logos/beegen-logo-white.svg" alt="Beegen">
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-link" type="button" aria-haspopup="true"><span data-i18n="nav.modules">Módulos</span><svg class="nav-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+            <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+            <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+            <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+            <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+            <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+            <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+            <a href="/instagram-messenger.html" data-i18n="nav.social_channels">Instagram y Messenger</a>
+            <a href="/cotizaciones.html" data-i18n="nav.quotes">Cotizaciones</a>
+            <a href="/agencias.html" data-i18n="nav.agencies">Para agencias</a>
+            <a href="/pricing.html" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+          </div>
+        </div>
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo funciona</a>
+        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Precios</a>
+        <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambiar idioma / Switch language"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+        <a href="https://app.beegen.co/signup?module=crm" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Empieza gratis</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" data-i18n-aria="nav.close_menu" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" type="button" aria-expanded="false"><span data-i18n="nav.modules">Módulos</span><svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mobile-nav-sub">
+        <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
+        <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
+        <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+        <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
+        <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
+        <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
+        <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
+        <a href="/instagram-messenger.html" data-i18n="nav.social_channels">Instagram y Messenger</a>
+        <a href="/cotizaciones.html" data-i18n="nav.quotes">Cotizaciones</a>
+        <a href="/agencias.html" data-i18n="nav.agencies">Para agencias</a>
+        <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+      </div>
+    </div>
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo funciona</a></div>
+    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle" id="langToggleMobile" type="button" aria-label="Cambiar idioma / Switch language" style="margin-bottom:14px;width:100%;justify-content:center;"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+    <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary" data-i18n="nav.start_free">Empieza gratis</a>
+  </div>
+</div>
+
+<div class="legal-page">
+  <div class="legal-hero">
+    <div class="container">
+      <h1>Eliminación de datos</h1>
+      <p>Data Deletion Instructions · Última actualización / Last updated: 27 de octubre de 2026 / October 27, 2026</p>
+    </div>
+  </div>
+
+  <div class="legal-body">
+    <div class="container">
+      <div class="legal-content">
+
+        <p>Tienes derecho a eliminar tu cuenta de Beegen y todos los datos personales asociados. Esta página explica exactamente cómo hacerlo y qué pasa después. <em>English version below.</em></p>
+
+        <h2>1. Qué se elimina</h2>
+        <p>Al eliminar tu cuenta borramos de forma permanente:</p>
+        <ul>
+          <li>Tu cuenta y tus credenciales de acceso</li>
+          <li>Tu perfil (nombre, correo, identificadores de facturación)</li>
+          <li>Todos los sitios web creados en Beegen, en borrador y publicados, y sus dominios personalizados</li>
+          <li>Logotipos y archivos que subiste</li>
+          <li>Los formularios recibidos a través de tus sitios</li>
+          <li>Tu configuración de WhatsApp: token de acceso, PIN de registro, identificadores del número y de la cuenta de WhatsApp Business, base de conocimiento, citas y el historial de conversaciones</li>
+          <li>Tus cuentas de Instagram y Messenger conectadas: tokens de acceso y conversaciones</li>
+          <li>Contactos, empresas, oportunidades, notas y tareas del CRM</li>
+          <li>Tus suscripciones (se cancelan en Stripe en el mismo paso)</li>
+        </ul>
+
+        <h2>2. Cómo solicitar la eliminación</h2>
+        <p>Hay dos caminos; cualquiera de los dos es suficiente.</p>
+        <p><strong>Opción A: desde tu cuenta (inmediato).</strong> Inicia sesión en <a href="https://app.beegen.co/login">app.beegen.co</a> y ve a <strong>Dashboard → Configuración → Eliminar mi cuenta</strong>. Escribe tu correo para confirmar. La eliminación ocurre en ese momento: primero cancelamos tus suscripciones y avisamos a Meta que dejaremos de recibir los mensajes de tu número de WhatsApp, después borramos todo lo listado arriba y por último tu usuario. Recibirás un correo de confirmación.</p>
+        <p><strong>Opción B: por correo.</strong> Escribe a <a href="mailto:privacy@beegen.co">privacy@beegen.co</a> desde el correo registrado en tu cuenta de Beegen, con:</p>
+        <ul>
+          <li>Asunto: <strong>Solicitud de eliminación de datos</strong></li>
+          <li>El correo asociado a tu cuenta de Beegen</li>
+          <li>Si solo quieres eliminar un número de WhatsApp o una cuenta de Instagram o Messenger y no toda la cuenta, indícalo (también puedes hacerlo tú desde el panel: WhatsApp → Eliminar número, o Instagram y Messenger → Desconectar)</li>
+        </ul>
+        <p>Confirmamos la recepción en 3 días hábiles y completamos la eliminación en un máximo de 30 días.</p>
+        <p><strong>Si llegaste desde Facebook o Meta.</strong> Si eliminaste la app de Beegen desde la configuración de tu cuenta de Facebook, Meta nos envía la solicitud automáticamente a nuestro endpoint de eliminación de datos y te muestra un <strong>código de confirmación</strong> y un enlace de estado. Beegen no guarda datos ligados a tu identificador de Facebook; lo que conservamos es la conexión de WhatsApp Business, Instagram o Messenger de un negocio. Con ese código localizamos la cuenta de Beegen correspondiente y eliminamos su configuración en un máximo de 30 días. Puedes consultar el estado en el enlace que Meta te muestra o escribirnos citando el código.</p>
+
+        <h2>3. Plazos y confirmación</h2>
+        <p>Con la Opción A los datos desaparecen de nuestra base de datos al instante; las copias de seguridad se purgan en un plazo de 30 días. Con la Opción B completamos la eliminación en un máximo de 30 días desde tu solicitud. En ambos casos recibes un correo de confirmación. Los sitios publicados dejan de estar en línea en cuanto se elimina la cuenta.</p>
+
+        <h2>4. Qué debemos conservar</h2>
+        <ul>
+          <li>Facturas y registros fiscales (normalmente 7 años, según la legislación mexicana). Contienen solo folio, monto y fecha; no incluyen datos de WhatsApp.</li>
+          <li>Registros de prevención de fraude cuando exista base legal para conservarlos.</li>
+        </ul>
+
+        <h2>5. Terceros</h2>
+        <p>Eliminamos tus datos de nuestros sistemas y de los proveedores que los procesan por nosotros (Supabase, Vercel, Stripe, Resend, Anthropic) conforme a sus propios procedimientos de eliminación.</p>
+        <p>Si conectaste un número de WhatsApp Business de Meta, al eliminar la cuenta borramos el token de acceso y el PIN que guardábamos (cifrados) y pedimos a Meta que deje de enviarnos los mensajes de ese número. Para que el token también quede inválido del lado de Meta, revoca el acceso de Beegen en tu Meta Business Suite → Configuración del negocio → Integraciones.</p>
+
+        <h2>6. Dudas</h2>
+        <p>Escríbenos a <a href="mailto:privacy@beegen.co">privacy@beegen.co</a>. Respondemos en 3 días hábiles.</p>
+
+        <hr style="border:none;border-top:1px solid var(--mist);margin:48px 0 36px;">
+
+        <p>You have the right to request deletion of your Beegen account and all personal data associated with it. This section repeats the instructions above in English.</p>
+
+        <h2>1. What will be deleted</h2>
+        <ul>
+          <li>Your account and login credentials</li>
+          <li>Your profile (name, email, billing identifiers)</li>
+          <li>All websites you built on Beegen, draft and published, and their custom domains</li>
+          <li>Logos and files you uploaded</li>
+          <li>Form submissions collected through your sites</li>
+          <li>Your WhatsApp configuration: access token, registration PIN, phone number and WhatsApp Business Account identifiers, knowledge base, appointments and conversation history</li>
+          <li>Your connected Instagram and Messenger accounts: access tokens and conversations</li>
+          <li>CRM contacts, companies, opportunities, notes and tasks</li>
+          <li>Your subscriptions (cancelled in Stripe in the same step)</li>
+        </ul>
+
+        <h2>2. How to request deletion</h2>
+        <p><strong>Option A: Self-service (immediate).</strong> Log in at <a href="https://app.beegen.co/login">app.beegen.co</a> and go to <strong>Dashboard → Settings → Delete my account</strong>. Type your email to confirm. Deletion happens right then: we first cancel your subscriptions and tell Meta to stop delivering your WhatsApp number's messages to us, then delete everything listed above, and finally your user. You receive a confirmation email.</p>
+        <p><strong>Option B: Email request.</strong> Email <a href="mailto:privacy@beegen.co">privacy@beegen.co</a> from the address registered to your Beegen account, with:</p>
+        <ul>
+          <li>Subject line: <strong>Data Deletion Request</strong></li>
+          <li>The email address associated with your Beegen account</li>
+          <li>Whether you want only one WhatsApp number or one Instagram or Messenger account removed rather than the whole account (you can also do that yourself from the dashboard: WhatsApp → Delete number, or Instagram and Messenger → Disconnect)</li>
+        </ul>
+        <p>We confirm receipt within 3 business days and complete the deletion within 30 days.</p>
+        <p><strong>If you came from Facebook or Meta.</strong> If you removed the Beegen app from your Facebook account settings, Meta sends the request to our data deletion callback and shows you a <strong>confirmation code</strong> and a status link. Beegen keeps no data keyed by your Facebook id; what we hold is a business's WhatsApp Business, Instagram or Messenger connection. With that code we locate the matching Beegen account and delete its configuration within 30 days. Check progress at the status link Meta shows you, or email us quoting the code.</p>
+
+        <h2>3. Timeline and confirmation</h2>
+        <p>With Option A the data leaves our database immediately; backups are purged within 30 days. With Option B we complete the deletion within 30 days of your request. Either way you receive an email confirmation. Published sites go offline as soon as the account is deleted.</p>
+
+        <h2>4. What we are required to keep</h2>
+        <ul>
+          <li>Invoices and tax records (typically 7 years under Mexican law). They contain only invoice number, amount and date, no WhatsApp data.</li>
+          <li>Fraud prevention records where we have a legal basis to retain them.</li>
+        </ul>
+
+        <h2>5. Third-party services</h2>
+        <p>We delete your data from our own systems and from the processors that hold it on our behalf (Supabase, Vercel, Stripe, Resend, Anthropic) under their own deletion procedures.</p>
+        <p>If you connected a Meta WhatsApp Business number, deleting the account removes the access token and PIN we stored (encrypted) and asks Meta to stop delivering that number's messages to us. To invalidate the token on Meta's side as well, revoke Beegen's access in Meta Business Suite → Business settings → Integrations.</p>
+
+        <h2>6. Questions</h2>
+        <p>Email <a href="mailto:privacy@beegen.co">privacy@beegen.co</a>. We answer within 3 business days.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-grid footer-grid-5">
+      <div class="footer-brand">
+        <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" style="height:32px;margin-bottom:16px;">
+        <p data-i18n="footer.tagline">El sistema de ventas para los negocios de México: un CRM gratis, un agente de WhatsApp que actúa y módulos desde $99 MXN al mes.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.modules">Módulos</h5>
+        <div class="footer-links">
+          <a href="/crm.html" data-i18n="footer.crm">CRM gratis</a>
+          <a href="/sitio-web.html" data-i18n="footer.site">Sitio web</a>
+          <a href="/whatsapp.html" data-i18n="footer.wa_agent">Agente de WhatsApp</a>
+          <a href="/recordatorios.html" data-i18n="footer.reminders">Recordatorios</a>
+          <a href="/cobros.html" data-i18n="footer.payments">Cobros</a>
+          <a href="/facturacion.html" data-i18n="footer.invoicing">Facturación CFDI</a>
+          <a href="/resenas.html" data-i18n="footer.reviews">Reseñas Google</a>
+          <a href="/instagram-messenger.html" data-i18n="footer.social_channels">Instagram y Messenger</a>
+          <a href="/cotizaciones.html" data-i18n="footer.quotes">Cotizaciones</a>
+          <a href="/agencias.html" data-i18n="footer.agencies">Para agencias</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.product">Producto</h5>
+        <div class="footer-links">
+          <a href="/#how-it-works" data-i18n="footer.how_it_works">Cómo funciona</a>
+          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/blog/" data-i18n="footer.blog">Blog</a>
+          <a href="/contact.html" data-i18n="footer.contact">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.account">Cuenta</h5>
+        <div class="footer-links">
+          <a href="https://app.beegen.co/signup?module=crm" data-i18n="footer.signup">Registrarse</a>
+          <a href="https://app.beegen.co/login" data-i18n="footer.login">Iniciar sesión</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.legal">Legal</h5>
+        <div class="footer-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terms.html" data-i18n="footer.terms">Términos de Servicio</a>
+          <a href="/data-deletion.html" data-i18n="footer.data_deletion">Eliminación de datos</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Beegen. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <p data-i18n="footer.made_in">Hecho en México para negocios de México.</p>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script src="/js/main.js?v=3"></script>
+<script src="/js/i18n.js?v=3"></script>
+</body>
+</html>
