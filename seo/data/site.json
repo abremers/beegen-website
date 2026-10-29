@@ -53,10 +53,36 @@
       "hub_intro_es": "Cada comparación usa solo datos publicados por cada empresa, con el enlace a la fuente y la fecha en que los revisamos. Si ves un dato incorrecto, escríbenos y lo corregimos.",
       "hub_min_indexable_children": 3,
       "groups": [
-        { "category": "whatsapp_crm", "title_es": "CRMs e inboxes de WhatsApp", "categories": ["whatsapp_crm", "crm", "inbox"] },
-        { "category": "website_builder", "title_es": "Creadores de sitios web", "categories": ["website_builder"] },
-        { "category": "platform_native", "title_es": "Herramientas de Meta", "categories": ["platform_native"] }
+        {
+          "category": "whatsapp_crm",
+          "title_es": "CRMs e inboxes de WhatsApp",
+          "categories": [
+            "whatsapp_crm",
+            "crm",
+            "inbox"
+          ]
+        },
+        {
+          "category": "website_builder",
+          "title_es": "Creadores de sitios web",
+          "categories": [
+            "website_builder"
+          ]
+        },
+        {
+          "category": "platform_native",
+          "title_es": "Herramientas de Meta",
+          "categories": [
+            "platform_native"
+          ]
+        }
       ]
     }
+  },
+  "link_check_bot_blocked_hosts": {
+    "description": "Hosts that answer 403 to automated requests. A 403 from them is reported as a note, not a failure; any other error still fails. A person opens these links during review.",
+    "hosts": [
+      "leadsalescrm.zendesk.com"
+    ]
   }
 }

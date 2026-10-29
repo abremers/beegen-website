@@ -31,13 +31,13 @@ jobs:
     env:
       HAS_PLATFORM_TOKEN: ${{ secrets.PLATFORM_READ_TOKEN != '' }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Check out the platform registry (read-only)
         if: env.HAS_PLATFORM_TOKEN == 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: abremers/beegen-platform
           ref: main
@@ -52,7 +52,7 @@ jobs:
         if: env.HAS_PLATFORM_TOKEN != 'true'
         run: echo "::notice::PLATFORM_READ_TOKEN is not set; the snapshot drift check (validator 5) is skipped."
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: npm
@@ -88,9 +88,10 @@ jobs:
 
       - name: Upload screenshots and report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: seo-validate
           path: seo/.artifacts/
           if-no-files-found: ignore
+          include-hidden-files: true
           retention-days: 14

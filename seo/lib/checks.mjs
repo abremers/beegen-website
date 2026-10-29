@@ -343,9 +343,12 @@ export async function runChecks({ offline = false, browser = false } = {}) {
       .filter((u) => !u.startsWith('https://app.beegen.co/') && !u.startsWith('https://beegen.co/'))
     if (offline) r.skip(`--offline: ${external.length} external links not requested`)
     else {
+      const botBlocked = new Set(data.site.link_check_bot_blocked_hosts?.hosts ?? [])
       for (const url of external) {
         const res = await linkOk(url)
-        if (!res.ok) r.fail(`external link ${url} returned ${res.status}`)
+        if (res.ok) continue
+        if (res.status === 403 && botBlocked.has(new URL(url).hostname)) r.note(`external link ${url} returned 403 to the checker (host blocks bots; open it by hand during review)`)
+        else r.fail(`external link ${url} returned ${res.status}`)
       }
       r.note(`${external.length} external links requested`)
     }
