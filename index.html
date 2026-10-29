@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -201,6 +201,83 @@
   .site-types-grid { grid-template-columns: 1fr; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://beegen.co/#organization",
+      "name": "Beegen",
+      "url": "https://beegen.co/",
+      "logo": "https://beegen.co/assets/logos/beegen-logo-color.svg"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://beegen.co/#website",
+      "url": "https://beegen.co/",
+      "name": "Beegen",
+      "inLanguage": "es-MX",
+      "publisher": {
+        "@id": "https://beegen.co/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Beegen",
+      "url": "https://beegen.co/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "es-MX",
+      "description": "El sistema de ventas para negocios de México: un CRM gratis, un agente de WhatsApp que agenda, cobra, factura y pide reseñas, y módulos desde $99 MXN al mes con IVA incluido.",
+      "provider": {
+        "@id": "https://beegen.co/#organization"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "CRM",
+          "price": 0,
+          "priceCurrency": "MXN",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 0,
+            "priceCurrency": "MXN",
+            "valueAddedTaxIncluded": true,
+            "unitText": "1 usuario incluido; $99 MXN al mes por asiento extra"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Sitio web",
+          "price": 149,
+          "priceCurrency": "MXN",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 149,
+            "priceCurrency": "MXN",
+            "valueAddedTaxIncluded": true,
+            "unitText": "por sitio publicado al mes"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Agente de WhatsApp",
+          "price": 299,
+          "priceCurrency": "MXN",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 299,
+            "priceCurrency": "MXN",
+            "valueAddedTaxIncluded": true,
+            "unitText": "por número al mes, 200 conversaciones con IA incluidas, $2 MXN por conversación extra"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -215,23 +292,23 @@
         <div class="nav-dropdown">
           <button class="nav-link" type="button" aria-haspopup="true"><span data-i18n="nav.modules">Módulos</span><svg class="nav-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="nav-dropdown-menu">
-            <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
-            <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
-            <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
-            <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
-            <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
-            <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
-            <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
-            <a href="/instagram-messenger.html" data-i18n="nav.social_channels">Instagram y Messenger</a>
-            <a href="/cotizaciones.html" data-i18n="nav.quotes">Cotizaciones</a>
-            <a href="/agencias.html" data-i18n="nav.agencies">Para agencias</a>
-            <a href="/pricing.html" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+            <a href="/crm" data-i18n="nav.crm">CRM gratis</a>
+            <a href="/sitio-web" data-i18n="nav.site">Sitio web</a>
+            <a href="/whatsapp" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+            <a href="/recordatorios" data-i18n="nav.reminders">Recordatorios</a>
+            <a href="/cobros" data-i18n="nav.payments">Cobros</a>
+            <a href="/facturacion" data-i18n="nav.invoicing">Facturación CFDI</a>
+            <a href="/resenas" data-i18n="nav.reviews">Reseñas Google</a>
+            <a href="/instagram-messenger" data-i18n="nav.social_channels">Instagram y Messenger</a>
+            <a href="/cotizaciones" data-i18n="nav.quotes">Cotizaciones</a>
+            <a href="/agencias" data-i18n="nav.agencies">Para agencias</a>
+            <a href="/pricing" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
           </div>
         </div>
         <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo funciona</a>
-        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Precios</a>
+        <a href="/pricing" class="nav-link" data-i18n="nav.pricing">Precios</a>
         <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
-        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="/contact" class="nav-link" data-i18n="nav.contact">Contacto</a>
         <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
       </div>
       <div class="nav-right">
@@ -257,23 +334,23 @@
     <div class="mobile-nav-item">
       <button class="mobile-nav-link" type="button" aria-expanded="false"><span data-i18n="nav.modules">Módulos</span><svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
       <div class="mobile-nav-sub">
-        <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
-        <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
-        <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
-        <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
-        <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
-        <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
-        <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
-        <a href="/instagram-messenger.html" data-i18n="nav.social_channels">Instagram y Messenger</a>
-        <a href="/cotizaciones.html" data-i18n="nav.quotes">Cotizaciones</a>
-        <a href="/agencias.html" data-i18n="nav.agencies">Para agencias</a>
-        <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+        <a href="/crm" data-i18n="nav.crm">CRM gratis</a>
+        <a href="/sitio-web" data-i18n="nav.site">Sitio web</a>
+        <a href="/whatsapp" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+        <a href="/recordatorios" data-i18n="nav.reminders">Recordatorios</a>
+        <a href="/cobros" data-i18n="nav.payments">Cobros</a>
+        <a href="/facturacion" data-i18n="nav.invoicing">Facturación CFDI</a>
+        <a href="/resenas" data-i18n="nav.reviews">Reseñas Google</a>
+        <a href="/instagram-messenger" data-i18n="nav.social_channels">Instagram y Messenger</a>
+        <a href="/cotizaciones" data-i18n="nav.quotes">Cotizaciones</a>
+        <a href="/agencias" data-i18n="nav.agencies">Para agencias</a>
+        <a href="/pricing" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
       </div>
     </div>
     <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo funciona</a></div>
-    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/pricing" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
     <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
-    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="/contact" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
     <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
   </div>
   <div class="mobile-nav-footer">
@@ -534,7 +611,7 @@
         <div class="module-wide-cta">
           <div class="module-price"><span class="module-amount">$0</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.crm_unit">1 usuario incluido</span></span></div>
           <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary" data-i18n="mod.cta_free">Crear mi CRM gratis</a>
-          <a href="/crm.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+          <a href="/crm" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
         </div>
       </div>
       <div class="module-card reveal reveal-delay-2">
@@ -545,7 +622,7 @@
         <h3 data-i18n="mod.site_name">Sitio web</h3>
         <div class="module-price"><span class="module-amount">$149</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.site_unit">por sitio publicado</span></span></div>
         <p data-i18n="mod.site_tag">Tu sitio con formulario y botón de WhatsApp. Cada lead cae en el CRM.</p>
-        <a href="/sitio-web.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+        <a href="/sitio-web" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
       </div>
       <div class="module-card featured reveal reveal-delay-3">
         <div class="module-head">
@@ -555,7 +632,7 @@
         <h3 data-i18n="mod.wa_agent_name">Agente de WhatsApp</h3>
         <div class="module-price"><span class="module-amount">$299</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.wa_agent_unit">por número</span></span></div>
         <p data-i18n="mod.wa_agent_tag">Contesta, agenda, cotiza y cobra desde tu WhatsApp, a cualquier hora.</p>
-        <a href="/whatsapp.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+        <a href="/whatsapp" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
       </div>
       <div class="module-card reveal reveal-delay-1">
         <div class="module-head">
@@ -565,7 +642,7 @@
         <h3 data-i18n="mod.reminders_name">Recordatorios y seguimientos</h3>
         <div class="module-price"><span class="module-amount">$99</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
         <p data-i18n="mod.reminders_tag">Recordatorio de cita, aviso de pago y seguimiento, enviados solos.</p>
-        <a href="/recordatorios.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+        <a href="/recordatorios" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
       </div>
       <div class="module-card reveal reveal-delay-2">
         <div class="module-head">
@@ -575,7 +652,7 @@
         <h3 data-i18n="mod.payments_name">Cobros</h3>
         <div class="module-price"><span class="module-amount">$0</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.payments_unit">+ 2% por pago cobrado</span></span></div>
         <p data-i18n="mod.payments_tag">Link de pago en el chat: tarjeta, OXXO, SPEI y meses sin intereses.</p>
-        <a href="/cobros.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+        <a href="/cobros" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
       </div>
       <div class="module-card reveal reveal-delay-3">
         <div class="module-head">
@@ -585,7 +662,7 @@
         <h3 data-i18n="mod.invoicing_name">Facturación CFDI</h3>
         <div class="module-price"><span class="module-amount">$149</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
         <p data-i18n="mod.invoicing_tag">El agente pide los datos fiscales y timbra la factura por ti.</p>
-        <a href="/facturacion.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+        <a href="/facturacion" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
       </div>
       <div class="module-card reveal reveal-delay-1">
         <div class="module-head">
@@ -595,7 +672,7 @@
         <h3 data-i18n="mod.reviews_name">Reseñas Google</h3>
         <div class="module-price"><span class="module-amount">$99</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
         <p data-i18n="mod.reviews_tag">Pide la reseña justo después de cada venta, con el link directo.</p>
-        <a href="/resenas.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+        <a href="/resenas" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
       </div>
       <div class="module-card reveal reveal-delay-2">
         <div class="module-head">
@@ -605,7 +682,7 @@
         <h3 data-i18n="mod.social_channels_name">Instagram y Messenger</h3>
         <div class="module-price"><span class="module-amount">$99</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.social_channels_unit">por cuenta conectada</span></span></div>
         <p data-i18n="mod.social_channels_tag">El mismo agente y la misma bandeja en tus DMs de Instagram y Messenger.</p>
-        <a href="/instagram-messenger.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+        <a href="/instagram-messenger" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
       </div>
       <div class="module-card reveal reveal-delay-1">
         <div class="module-head">
@@ -615,12 +692,12 @@
         <h3 data-i18n="mod.quotes_name">Cotizaciones</h3>
         <div class="module-price"><span class="module-amount">$99</span><span class="module-unit"><span data-i18n="mod.per_month">MXN al mes</span></span></div>
         <p data-i18n="mod.quotes_tag">Cotización en PDF desde el chat, con una página pública para aceptar y pagar.</p>
-        <a href="/cotizaciones.html" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
+        <a href="/cotizaciones" class="module-link" data-i18n="mod.see_more">Ver cómo funciona →</a>
       </div>
     </div>
     <p class="currency-note"><span data-i18n="mod.per_month">MXN al mes</span> · <span data-i18n="mod.iva">IVA incluido</span></p>
     <div class="see-pricing-link reveal">
-      <a href="/pricing.html" data-i18n="home.mods_link">Ver precios, paquetes y preguntas frecuentes →</a>
+      <a href="/pricing" data-i18n="home.mods_link">Ver precios, paquetes y preguntas frecuentes →</a>
     </div>
   </div>
 </section>
@@ -650,26 +727,26 @@
       <div class="footer-col">
         <h5 data-i18n="footer.modules">Módulos</h5>
         <div class="footer-links">
-          <a href="/crm.html" data-i18n="footer.crm">CRM gratis</a>
-          <a href="/sitio-web.html" data-i18n="footer.site">Sitio web</a>
-          <a href="/whatsapp.html" data-i18n="footer.wa_agent">Agente de WhatsApp</a>
-          <a href="/recordatorios.html" data-i18n="footer.reminders">Recordatorios</a>
-          <a href="/cobros.html" data-i18n="footer.payments">Cobros</a>
-          <a href="/facturacion.html" data-i18n="footer.invoicing">Facturación CFDI</a>
-          <a href="/resenas.html" data-i18n="footer.reviews">Reseñas Google</a>
-          <a href="/instagram-messenger.html" data-i18n="footer.social_channels">Instagram y Messenger</a>
-          <a href="/cotizaciones.html" data-i18n="footer.quotes">Cotizaciones</a>
-          <a href="/agencias.html" data-i18n="footer.agencies">Para agencias</a>
-          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/crm" data-i18n="footer.crm">CRM gratis</a>
+          <a href="/sitio-web" data-i18n="footer.site">Sitio web</a>
+          <a href="/whatsapp" data-i18n="footer.wa_agent">Agente de WhatsApp</a>
+          <a href="/recordatorios" data-i18n="footer.reminders">Recordatorios</a>
+          <a href="/cobros" data-i18n="footer.payments">Cobros</a>
+          <a href="/facturacion" data-i18n="footer.invoicing">Facturación CFDI</a>
+          <a href="/resenas" data-i18n="footer.reviews">Reseñas Google</a>
+          <a href="/instagram-messenger" data-i18n="footer.social_channels">Instagram y Messenger</a>
+          <a href="/cotizaciones" data-i18n="footer.quotes">Cotizaciones</a>
+          <a href="/agencias" data-i18n="footer.agencies">Para agencias</a>
+          <a href="/pricing" data-i18n="footer.pricing">Precios</a>
         </div>
       </div>
       <div class="footer-col">
         <h5 data-i18n="footer.product">Producto</h5>
         <div class="footer-links">
           <a href="/#how-it-works" data-i18n="footer.how_it_works">Cómo funciona</a>
-          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/pricing" data-i18n="footer.pricing">Precios</a>
           <a href="/blog/" data-i18n="footer.blog">Blog</a>
-          <a href="/contact.html" data-i18n="footer.contact">Contacto</a>
+          <a href="/contact" data-i18n="footer.contact">Contacto</a>
         </div>
       </div>
       <div class="footer-col">
@@ -682,9 +759,9 @@
       <div class="footer-col">
         <h5 data-i18n="footer.legal">Legal</h5>
         <div class="footer-links">
-          <a href="/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
-          <a href="/terms.html" data-i18n="footer.terms">Términos de Servicio</a>
-          <a href="/data-deletion.html" data-i18n="footer.data_deletion">Eliminación de datos</a>
+          <a href="/privacy" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terms" data-i18n="footer.terms">Términos de Servicio</a>
+          <a href="/data-deletion" data-i18n="footer.data_deletion">Eliminación de datos</a>
         </div>
       </div>
     </div>

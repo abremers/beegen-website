@@ -2521,7 +2521,7 @@ function bgSetLang(lang) {
   try { localStorage.setItem('bLang', lang); } catch(e) {}
 
   // Set html lang attribute
-  document.documentElement.lang = lang === 'es' ? 'es' : 'en';
+  document.documentElement.lang = lang === 'es' ? 'es-MX' : 'en';
 
   // Text content
   document.querySelectorAll('[data-i18n]').forEach(el => {

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="lp_wa_agent.title">Agente de WhatsApp con IA para tu negocio | Beegen</title>
 <meta name="description" content="Un agente de IA en tu WhatsApp que contesta en segundos, agenda citas, cotiza, cobra y factura. $299 MXN al mes por número, 200 conversaciones con IA incluidas. 14 días gratis.">
-<link rel="canonical" href="https://beegen.co/whatsapp.html">
+<link rel="canonical" href="https://beegen.co/whatsapp">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://beegen.co/whatsapp.html">
+<meta property="og:url" content="https://beegen.co/whatsapp">
 <meta property="og:title" content="Agente de WhatsApp con IA para tu negocio | Beegen">
 <meta property="og:description" content="Un agente de IA en tu WhatsApp que contesta en segundos, agenda citas, cotiza, cobra y factura. $299 MXN al mes por número, 200 conversaciones con IA incluidas. 14 días gratis.">
 <meta property="og:image" content="https://beegen.co/assets/og-image.png">
@@ -45,6 +45,45 @@
 .btn-wa:hover { background: #1da851; transform: translateY(-2px); }
 .btn-wa svg { width: 18px; height: 18px; }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://beegen.co/#organization",
+      "name": "Beegen",
+      "url": "https://beegen.co/",
+      "logo": "https://beegen.co/assets/logos/beegen-logo-color.svg"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Agente de WhatsApp de Beegen",
+      "url": "https://beegen.co/whatsapp",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "es-MX",
+      "description": "Un agente de IA en tu WhatsApp que contesta en segundos, agenda citas, cotiza, cobra y factura. $299 MXN al mes por número, 200 conversaciones con IA incluidas. 14 días gratis.",
+      "provider": {
+        "@id": "https://beegen.co/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Agente de WhatsApp",
+        "price": 299,
+        "priceCurrency": "MXN",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": 299,
+          "priceCurrency": "MXN",
+          "valueAddedTaxIncluded": true,
+          "unitText": "por número al mes, 200 conversaciones con IA incluidas, $2 MXN por conversación extra"
+        }
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -59,23 +98,23 @@
         <div class="nav-dropdown">
           <button class="nav-link active" type="button" aria-haspopup="true"><span data-i18n="nav.modules">Módulos</span><svg class="nav-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="nav-dropdown-menu">
-            <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
-            <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
-            <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
-            <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
-            <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
-            <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
-            <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
-            <a href="/instagram-messenger.html" data-i18n="nav.social_channels">Instagram y Messenger</a>
-            <a href="/cotizaciones.html" data-i18n="nav.quotes">Cotizaciones</a>
-            <a href="/agencias.html" data-i18n="nav.agencies">Para agencias</a>
-            <a href="/pricing.html" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+            <a href="/crm" data-i18n="nav.crm">CRM gratis</a>
+            <a href="/sitio-web" data-i18n="nav.site">Sitio web</a>
+            <a href="/whatsapp" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+            <a href="/recordatorios" data-i18n="nav.reminders">Recordatorios</a>
+            <a href="/cobros" data-i18n="nav.payments">Cobros</a>
+            <a href="/facturacion" data-i18n="nav.invoicing">Facturación CFDI</a>
+            <a href="/resenas" data-i18n="nav.reviews">Reseñas Google</a>
+            <a href="/instagram-messenger" data-i18n="nav.social_channels">Instagram y Messenger</a>
+            <a href="/cotizaciones" data-i18n="nav.quotes">Cotizaciones</a>
+            <a href="/agencias" data-i18n="nav.agencies">Para agencias</a>
+            <a href="/pricing" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
           </div>
         </div>
         <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo funciona</a>
-        <a href="/pricing.html" class="nav-link" data-i18n="nav.pricing">Precios</a>
+        <a href="/pricing" class="nav-link" data-i18n="nav.pricing">Precios</a>
         <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
-        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="/contact" class="nav-link" data-i18n="nav.contact">Contacto</a>
         <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
       </div>
       <div class="nav-right">
@@ -101,23 +140,23 @@
     <div class="mobile-nav-item">
       <button class="mobile-nav-link" type="button" aria-expanded="false"><span data-i18n="nav.modules">Módulos</span><svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
       <div class="mobile-nav-sub">
-        <a href="/crm.html" data-i18n="nav.crm">CRM gratis</a>
-        <a href="/sitio-web.html" data-i18n="nav.site">Sitio web</a>
-        <a href="/whatsapp.html" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
-        <a href="/recordatorios.html" data-i18n="nav.reminders">Recordatorios</a>
-        <a href="/cobros.html" data-i18n="nav.payments">Cobros</a>
-        <a href="/facturacion.html" data-i18n="nav.invoicing">Facturación CFDI</a>
-        <a href="/resenas.html" data-i18n="nav.reviews">Reseñas Google</a>
-        <a href="/instagram-messenger.html" data-i18n="nav.social_channels">Instagram y Messenger</a>
-        <a href="/cotizaciones.html" data-i18n="nav.quotes">Cotizaciones</a>
-        <a href="/agencias.html" data-i18n="nav.agencies">Para agencias</a>
-        <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+        <a href="/crm" data-i18n="nav.crm">CRM gratis</a>
+        <a href="/sitio-web" data-i18n="nav.site">Sitio web</a>
+        <a href="/whatsapp" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+        <a href="/recordatorios" data-i18n="nav.reminders">Recordatorios</a>
+        <a href="/cobros" data-i18n="nav.payments">Cobros</a>
+        <a href="/facturacion" data-i18n="nav.invoicing">Facturación CFDI</a>
+        <a href="/resenas" data-i18n="nav.reviews">Reseñas Google</a>
+        <a href="/instagram-messenger" data-i18n="nav.social_channels">Instagram y Messenger</a>
+        <a href="/cotizaciones" data-i18n="nav.quotes">Cotizaciones</a>
+        <a href="/agencias" data-i18n="nav.agencies">Para agencias</a>
+        <a href="/pricing" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
       </div>
     </div>
     <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo funciona</a></div>
-    <div class="mobile-nav-item"><a href="/pricing.html" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/pricing" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
     <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
-    <div class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="/contact" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
     <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
   </div>
   <div class="mobile-nav-footer">
@@ -140,7 +179,7 @@
         <p class="lp-hero-sub" data-i18n="lp_wa_agent.sub">El agente de Beegen responde en segundos, califica al cliente y agenda la cita. Con los módulos de Cobros y Facturación, también cobra y factura. Todo queda en tu CRM. Tú entras solo cuando hace falta.</p>
         <div class="lp-hero-actions">
           <a href="https://app.beegen.co/signup?module=wa_agent" class="btn-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.532 5.862L.057 23.927a.5.5 0 00.596.676l6.282-1.647A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.525-5.17-1.438l-.371-.221-3.851 1.01.977-3.758-.242-.386A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg><span data-i18n="mod.cta_trial">Probar 14 días gratis</span></a>
-          <a href="/pricing.html" class="btn btn-ghost btn-lg" data-i18n="nav.pricing">Precios</a>
+          <a href="/pricing" class="btn btn-ghost btn-lg" data-i18n="nav.pricing">Precios</a>
         </div>
         <p class="lp-hero-note" data-i18n="lp_wa_agent.note">14 días gratis · Sin tarjeta · Tu número actual, sin SIM nueva</p>
       </div>
@@ -257,7 +296,7 @@
       <a href="https://app.beegen.co/signup?module=wa_agent" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="mod.cta_trial">Probar 14 días gratis</a>
       <p class="pricing-desc" style="margin:14px 0 0;text-align:center;font-size:13px;" data-i18n="mod.iva">IVA incluido</p>
     </div>
-    <p class="price-bundle-note reveal"><span data-i18n="lp_wa_agent.bundle_note">Incluido en Beegen Ventas ($499) y Beegen Negocio ($899).</span> <a href="/pricing.html" data-i18n="nav.all_modules">Todos los módulos y precios →</a></p>
+    <p class="price-bundle-note reveal"><span data-i18n="lp_wa_agent.bundle_note">Incluido en Beegen Ventas ($499) y Beegen Negocio ($899).</span> <a href="/pricing" data-i18n="nav.all_modules">Todos los módulos y precios →</a></p>
   </div>
 </section>
 
@@ -380,26 +419,26 @@
       <div class="footer-col">
         <h5 data-i18n="footer.modules">Módulos</h5>
         <div class="footer-links">
-          <a href="/crm.html" data-i18n="footer.crm">CRM gratis</a>
-          <a href="/sitio-web.html" data-i18n="footer.site">Sitio web</a>
-          <a href="/whatsapp.html" data-i18n="footer.wa_agent">Agente de WhatsApp</a>
-          <a href="/recordatorios.html" data-i18n="footer.reminders">Recordatorios</a>
-          <a href="/cobros.html" data-i18n="footer.payments">Cobros</a>
-          <a href="/facturacion.html" data-i18n="footer.invoicing">Facturación CFDI</a>
-          <a href="/resenas.html" data-i18n="footer.reviews">Reseñas Google</a>
-          <a href="/instagram-messenger.html" data-i18n="footer.social_channels">Instagram y Messenger</a>
-          <a href="/cotizaciones.html" data-i18n="footer.quotes">Cotizaciones</a>
-          <a href="/agencias.html" data-i18n="footer.agencies">Para agencias</a>
-          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/crm" data-i18n="footer.crm">CRM gratis</a>
+          <a href="/sitio-web" data-i18n="footer.site">Sitio web</a>
+          <a href="/whatsapp" data-i18n="footer.wa_agent">Agente de WhatsApp</a>
+          <a href="/recordatorios" data-i18n="footer.reminders">Recordatorios</a>
+          <a href="/cobros" data-i18n="footer.payments">Cobros</a>
+          <a href="/facturacion" data-i18n="footer.invoicing">Facturación CFDI</a>
+          <a href="/resenas" data-i18n="footer.reviews">Reseñas Google</a>
+          <a href="/instagram-messenger" data-i18n="footer.social_channels">Instagram y Messenger</a>
+          <a href="/cotizaciones" data-i18n="footer.quotes">Cotizaciones</a>
+          <a href="/agencias" data-i18n="footer.agencies">Para agencias</a>
+          <a href="/pricing" data-i18n="footer.pricing">Precios</a>
         </div>
       </div>
       <div class="footer-col">
         <h5 data-i18n="footer.product">Producto</h5>
         <div class="footer-links">
           <a href="/#how-it-works" data-i18n="footer.how_it_works">Cómo funciona</a>
-          <a href="/pricing.html" data-i18n="footer.pricing">Precios</a>
+          <a href="/pricing" data-i18n="footer.pricing">Precios</a>
           <a href="/blog/" data-i18n="footer.blog">Blog</a>
-          <a href="/contact.html" data-i18n="footer.contact">Contacto</a>
+          <a href="/contact" data-i18n="footer.contact">Contacto</a>
         </div>
       </div>
       <div class="footer-col">
@@ -412,9 +451,9 @@
       <div class="footer-col">
         <h5 data-i18n="footer.legal">Legal</h5>
         <div class="footer-links">
-          <a href="/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
-          <a href="/terms.html" data-i18n="footer.terms">Términos de Servicio</a>
-          <a href="/data-deletion.html" data-i18n="footer.data_deletion">Eliminación de datos</a>
+          <a href="/privacy" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terms" data-i18n="footer.terms">Términos de Servicio</a>
+          <a href="/data-deletion" data-i18n="footer.data_deletion">Eliminación de datos</a>
         </div>
       </div>
     </div>
