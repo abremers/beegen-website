@@ -1,0 +1,154 @@
+{
+  "slug": "leadsales",
+  "family": "comparar",
+  "author": "claude-code-session",
+  "prompt_version": "comparar-v1",
+  "facts_hash": "sha256:cbd2e8dbd58106b6403806a94fc1cb10641271586e1fa55502f49da6a0fc3911",
+  "blocks": {
+    "summary": [
+      {
+        "text": "Leadsales publica tres planes, Básico, Profesional y Avanzado, desde 97 USD al mes.",
+        "facts": [
+          "leadsales.price.basico",
+          "leadsales.price.profesional",
+          "leadsales.price.avanzado"
+        ]
+      },
+      {
+        "text": "En Beegen, el CRM es gratis con 1 usuario y el agente de WhatsApp cuesta $299 MXN al mes por número.",
+        "facts": [
+          "modules.crm.includedQuota.quantity",
+          "modules.wa_agent.priceMxn"
+        ]
+      },
+      {
+        "text": "Abajo comparamos precios, usuarios y la forma de conectar WhatsApp con los datos que cada empresa publica.",
+        "facts": [
+          "leadsales.channel.api_plans",
+          "leadsales.users.basico"
+        ]
+      }
+    ],
+    "beegen_fits": [
+      {
+        "text": "Si empiezas solo o con un equipo pequeño: el CRM no cuesta nada con 1 usuario y cada usuario extra cuesta $99 MXN al mes.",
+        "facts": [
+          "modules.crm.priceMxn",
+          "modules.crm.includedQuota.quantity"
+        ]
+      },
+      {
+        "text": "Si quieres que un agente de IA atienda por ti: el agente de WhatsApp responde, califica y agenda citas 24/7, con 200 conversaciones con IA incluidas al mes y $2 MXN por conversación extra.",
+        "facts": [
+          "modules.wa_agent.tagline",
+          "modules.wa_agent.meter.included",
+          "modules.wa_agent.meter.overageMxn"
+        ]
+      },
+      {
+        "text": "Si prefieres pagar en pesos y sin plazo forzoso: los precios de Beegen están en MXN con IVA incluido y sin contrato.",
+        "facts": [
+          "site.prices_mxn_iva"
+        ]
+      },
+      {
+        "text": "Si quieres probar antes de pagar: cada módulo tiene su propia prueba de 14 días, sin tarjeta.",
+        "facts": [
+          "trial.days",
+          "site.trial_no_card"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta Leadsales al mes?",
+        "a": [
+          {
+            "text": "Leadsales publica el plan Básico en 97 USD al mes, el Profesional en 133 USD y el Avanzado en 247 USD.",
+            "facts": [
+              "leadsales.price.basico",
+              "leadsales.price.profesional",
+              "leadsales.price.avanzado"
+            ]
+          },
+          {
+            "text": "Son precios en dólares, así que revisa la página de precios de Leadsales antes de decidir.",
+            "facts": [
+              "leadsales.price.basico"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Leadsales usa la API oficial de WhatsApp?",
+        "a": [
+          {
+            "text": "Según Leadsales, sus planes Profesional y Avanzado usan la API oficial de WhatsApp.",
+            "facts": [
+              "leadsales.channel.api_plans"
+            ]
+          },
+          {
+            "text": "En el plan Básico, WhatsApp se conecta escaneando un código QR.",
+            "facts": [
+              "leadsales.channel.basico_qr"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Cuántos usuarios incluye cada plan de Leadsales?",
+        "a": [
+          {
+            "text": "El plan Básico incluye 3 usuarios y hasta 5 embudos; el Profesional, 4 usuarios y hasta 10 embudos.",
+            "facts": [
+              "leadsales.users.basico",
+              "leadsales.users.profesional"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Leadsales cobra aparte las plantillas de WhatsApp?",
+        "a": [
+          {
+            "text": "Leadsales maneja las plantillas con créditos: cada plantilla de WhatsApp enviada a un contacto consume 1 crédito.",
+            "facts": [
+              "leadsales.templates.credits"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Qué pasa con mi historial si cambio a la API oficial en Leadsales?",
+        "a": [
+          {
+            "text": "Según Leadsales, conectar la API oficial toma unos 10 minutos y no conserva los contactos ni el historial previo.",
+            "facts": [
+              "leadsales.channel.api_no_history"
+            ]
+          },
+          {
+            "text": "Conviene exportar lo que necesites antes de hacer el cambio.",
+            "facts": [
+              "leadsales.channel.api_no_history"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Cuánto cuesta Beegen para un equipo de 3 personas?",
+        "a": [
+          {
+            "text": "Beegen Ventas cuesta $499 MXN al mes e incluye el agente de WhatsApp y 3 usuarios del CRM.",
+            "facts": [
+              "bundles.ventas.priceMxn",
+              "bundles.ventas.grants.wa_agent",
+              "bundles.ventas.grants.crm"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

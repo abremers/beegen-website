@@ -1,0 +1,5 @@
+# Tooling and internal documents: not part of the public site.
+seo/
+docs/
+.github/
+.claude/
