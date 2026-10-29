@@ -100,7 +100,9 @@
   "link_check_bot_blocked_hosts": {
     "description": "Hosts that answer 403 to automated requests. A 403 from them is reported as a note, not a failure; any other error still fails. A person opens these links during review.",
     "hosts": [
-      "leadsalescrm.zendesk.com"
+      "leadsalescrm.zendesk.com",
+      "callbellsupport.zendesk.com",
+      "www.bluehost.com"
     ]
   }
 }
