@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "updated_at": "2026-10-29",
+  "correction_email": "correcciones@beegen.co",
+  "max_claim_age_days": 60,
+  "competitors": [
+    {
+      "slug": "leadsales",
+      "name": "Leadsales",
+      "homepage": "https://leadsales.io/",
+      "category": "whatsapp_crm",
+      "framing": "alternativa",
+      "title_es": "Alternativa a Leadsales para vender por WhatsApp | Beegen",
+      "description_es": "Leadsales y Beegen comparados: precios, conexión de WhatsApp por QR o API oficial, usuarios y agente de IA. Cada dato con su fuente y fecha.",
+      "target_queries": [
+        "alternativa a leadsales",
+        "leadsales precios",
+        "leadsales vs",
+        "crm whatsapp mexico precio"
+      ],
+      "beegen_modules": ["crm", "wa_agent", "reminders", "payments"],
+      "when_competitor_fits_es": [
+        "Si tu equipo ya trabaja en embudos de Leadsales y envía mensajes masivos con plantillas desde cada etapa del embudo.",
+        "Si prefieres conectar tu número por código QR en lugar de la API oficial de WhatsApp.",
+        "Si manejas volúmenes de hasta 50,000 conversaciones activas en un solo plan."
+      ],
+      "indexable": false,
+      "approvals": { "founder": null, "lawyer": null },
+      "sources": [
+        { "id": "ls-pricing-en", "url": "https://leadsales.io/en/pricing/", "publisher": "Leadsales (oficial)", "kind": "official_pricing", "language": "en" },
+        { "id": "ls-pricing-es", "url": "https://leadsales.io/precios/", "publisher": "Leadsales (oficial)", "kind": "official_pricing", "language": "es" },
+        { "id": "ls-faq-precio", "url": "https://leadsales.io/test-2/", "publisher": "Leadsales (oficial)", "kind": "official_docs", "language": "es" },
+        { "id": "ls-help-qr", "url": "https://leadsalescrm.zendesk.com/hc/es-419/articles/37880898895643", "publisher": "Centro de ayuda de Leadsales", "kind": "official_docs", "language": "es" },
+        { "id": "ls-blog-coexistence", "url": "https://leadsales.io/blog/whatsapp-coexistence/", "publisher": "Leadsales (blog oficial)", "kind": "official_blog", "language": "es" },
+        { "id": "ls-blog-creditos", "url": "https://leadsales.io/blog/como-usar-creditos-de-plantillas-whatsapp-api/", "publisher": "Leadsales (blog oficial)", "kind": "official_blog", "language": "es" },
+        { "id": "ls-blog-migrar-api", "url": "https://leadsales.io/blog/como-migrar-a-whatsapp-api-sin-perder-numero/", "publisher": "Leadsales (blog oficial)", "kind": "official_blog", "language": "es" },
+        { "id": "ls-ai-agent", "url": "https://leadsales.io/en/ai-agent-whatsapp/", "publisher": "Leadsales (oficial)", "kind": "official_docs", "language": "en" },
+        { "id": "repo-crm-recon", "url": "https://github.com/abremers/beegen-platform/blob/main/docs/research/whatsapp-crms-recon.md", "publisher": "Beegen, investigación interna del 2026-10-19", "kind": "repo_research", "language": "en" }
+      ],
+      "claims": [
+        {
+          "id": "leadsales.price.basico",
+          "topic": "pricing",
+          "text_es": "El plan Básico de Leadsales cuesta 97 USD al mes.",
+          "value": 97,
+          "unit": "USD/mes",
+          "plan": "Básico",
+          "excludes_tax": true,
+          "evidence": [
+            { "source_id": "ls-pricing-es", "accessed_at": "2026-10-29", "method": "search_excerpt", "quote": "Básico: 97 USD/mes" },
+            { "source_id": "repo-crm-recon", "accessed_at": "2026-10-19", "method": "search_excerpt", "quote": "Básico | 97 | 2,362.92 | 3 | 5 | QR only, no API, no bulk" }
+          ],
+          "conflicts": "Older third-party pages cite 1,390 MXN and 83.99 USD; the official page is the only figure that may render.",
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.price.profesional",
+          "topic": "pricing",
+          "text_es": "El plan Profesional de Leadsales cuesta 133 USD al mes.",
+          "value": 133,
+          "unit": "USD/mes",
+          "plan": "Profesional",
+          "excludes_tax": true,
+          "evidence": [
+            { "source_id": "ls-pricing-es", "accessed_at": "2026-10-29", "method": "search_excerpt", "quote": "Profesional: 133 USD/mes" },
+            { "source_id": "repo-crm-recon", "accessed_at": "2026-10-19", "method": "search_excerpt", "quote": "Profesional | 133 | 3,239.88 | 4 | 10 | Cloud API, FB, IG" }
+          ],
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.price.avanzado",
+          "topic": "pricing",
+          "text_es": "El plan Avanzado de Leadsales cuesta 247 USD al mes.",
+          "value": 247,
+          "unit": "USD/mes",
+          "plan": "Avanzado",
+          "excludes_tax": true,
+          "evidence": [
+            { "source_id": "ls-pricing-es", "accessed_at": "2026-10-29", "method": "search_excerpt", "quote": "Avanzado: 247 USD/mes" },
+            { "source_id": "repo-crm-recon", "accessed_at": "2026-10-19", "method": "search_excerpt", "quote": "Avanzado | 247 | 6,016.92 | 5 | unlimited | Cloud API" }
+          ],
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.users.basico",
+          "topic": "users",
+          "text_es": "El plan Básico incluye 3 usuarios y hasta 5 embudos.",
+          "value": 3,
+          "unit": "usuarios",
+          "plan": "Básico",
+          "evidence": [
+            { "source_id": "ls-pricing-es", "accessed_at": "2026-10-29", "method": "search_excerpt", "quote": "Incluye 3 usuarios, hasta 5 embudos y 5,000 conversaciones activas." }
+          ],
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.users.profesional",
+          "topic": "users",
+          "text_es": "El plan Profesional incluye 4 usuarios y hasta 10 embudos.",
+          "value": 4,
+          "unit": "usuarios",
+          "plan": "Profesional",
+          "evidence": [
+            { "source_id": "ls-pricing-es", "accessed_at": "2026-10-29", "method": "search_excerpt", "quote": "Incluye 4 usuarios, hasta 10 embudos" }
+          ],
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.channel.basico_qr",
+          "topic": "whatsapp_connection",
+          "text_es": "En el plan Básico, WhatsApp se conecta escaneando un código QR, compatible con WhatsApp Business versión web y no con la API oficial.",
+          "value": "qr",
+          "plan": "Básico",
+          "evidence": [
+            { "source_id": "ls-help-qr", "accessed_at": "2026-10-19", "method": "search_excerpt", "quote": "compatible con WhatsApp Business versión web, no con API oficial" }
+          ],
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.channel.qr_disconnect_warning",
+          "topic": "whatsapp_connection",
+          "text_es": "El centro de ayuda de Leadsales recomienda mantener a Leadsales como único dispositivo vinculado para evitar desconexiones.",
+          "value": null,
+          "plan": "Básico",
+          "evidence": [
+            { "source_id": "ls-help-qr", "accessed_at": "2026-10-19", "method": "search_excerpt", "quote": "para evitar desconexiones" }
+          ],
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.channel.api_plans",
+          "topic": "whatsapp_connection",
+          "text_es": "Los planes Profesional y Avanzado usan la API oficial de WhatsApp.",
+          "value": "cloud_api",
+          "evidence": [
+            { "source_id": "ls-pricing-es", "accessed_at": "2026-10-29", "method": "search_excerpt", "quote": "Los planes Profesional y Avanzado funcionan sobre WhatsApp API oficial." }
+          ],
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.channel.api_no_history",
+          "topic": "whatsapp_connection",
+          "text_es": "Según Leadsales, conectar la API oficial toma unos 10 minutos y no conserva los contactos ni el historial previo.",
+          "value": null,
+          "evidence": [
+            { "source_id": "ls-blog-migrar-api", "accessed_at": "2026-10-19", "method": "search_excerpt", "quote": "el setup de Cloud API toma unos 10 minutos y no conserva contactos ni historial previo" }
+          ],
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.channel.coexistence",
+          "topic": "whatsapp_connection",
+          "text_es": "Leadsales ofrece Coexistence (la app de WhatsApp Business y la API en el mismo número) en México con la versión 2.24.17 o posterior de la app.",
+          "value": true,
+          "evidence": [
+            { "source_id": "ls-blog-coexistence", "accessed_at": "2026-10-19", "method": "search_excerpt", "quote": "Coexistence available for MX, BR, AR, CO with WhatsApp Business app 2.24.17 or later" }
+          ],
+          "conflicts": "The quote is the research file's English summary of the Spanish page; re-verify against the page's own wording before this claim renders.",
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.templates.credits",
+          "topic": "automation",
+          "text_es": "En Leadsales, cada plantilla de WhatsApp enviada a un contacto consume 1 crédito.",
+          "value": 1,
+          "unit": "crédito por plantilla y contacto",
+          "evidence": [
+            { "source_id": "ls-blog-creditos", "accessed_at": "2026-10-19", "method": "search_excerpt", "quote": "1 crédito equivale a 1 plantilla enviada a un contacto" }
+          ],
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.ai.lead_agent_price",
+          "topic": "ai",
+          "text_es": "El agente de IA de Leadsales (Lead Agent) es un complemento desde 87 USD al mes por 500 conversaciones, disponible en los planes con API.",
+          "value": 87,
+          "unit": "USD/mes",
+          "excludes_tax": true,
+          "evidence": [
+            { "source_id": "repo-crm-recon", "accessed_at": "2026-10-19", "method": "search_excerpt", "quote": "Lead Agent add-on | 87 / 297 / 793 | | | | API plans only | 500 / 2,000 / 6,000 conversations, 30 days free" }
+          ],
+          "conflicts": "Only the research summary of ls-pricing-en and ls-ai-agent was seen; needs a direct fetch of ls-ai-agent before it renders.",
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.trial.days",
+          "topic": "trial",
+          "text_es": "Leadsales ofrece una prueba de 14 días.",
+          "value": 14,
+          "unit": "días",
+          "evidence": [
+            { "source_id": "repo-crm-recon", "accessed_at": "2026-10-19", "method": "search_excerpt", "quote": "14-day trial (L1)" }
+          ],
+          "status": "draft"
+        },
+        {
+          "id": "leadsales.users.extra_price",
+          "topic": "users",
+          "text_es": "El precio por usuario adicional de Leadsales no es consistente entre sus páginas.",
+          "value": null,
+          "evidence": [
+            { "source_id": "ls-faq-precio", "accessed_at": "2026-10-19", "method": "search_excerpt", "quote": "Extra user 13 USD per the Spanish FAQ (L1 test-2); the English page says 10 USD" }
+          ],
+          "conflicts": "13 USD (Spanish FAQ) versus 10 USD (English pricing). Do not render a figure; drop the claim if a direct fetch cannot settle it.",
+          "status": "draft"
+        }
+      ],
+      "contrasts": [
+        {
+          "topic": "Precio de entrada al mes",
+          "competitor_claim_ids": ["leadsales.price.basico", "leadsales.price.profesional"],
+          "beegen_fact_refs": ["modules.crm.priceMxn", "modules.wa_agent.priceMxn", "bundles.ventas.priceMxn"],
+          "note_es": "Los precios de Leadsales están en USD antes de IVA; los de Beegen en MXN con IVA incluido."
+        },
+        {
+          "topic": "Conexión de WhatsApp",
+          "competitor_claim_ids": ["leadsales.channel.basico_qr", "leadsales.channel.api_plans"],
+          "beegen_fact_refs": ["modules.wa_agent.unitLabel"],
+          "note_es": "Beegen conecta solo por la API oficial de WhatsApp (Cloud API)."
+        },
+        {
+          "topic": "Usuarios incluidos",
+          "competitor_claim_ids": ["leadsales.users.basico", "leadsales.users.profesional"],
+          "beegen_fact_refs": ["modules.crm.includedQuota.quantity", "modules.crm.priceMxn", "bundles.ventas.grants.crm"]
+        },
+        {
+          "topic": "Agente de IA",
+          "competitor_claim_ids": ["leadsales.ai.lead_agent_price"],
+          "beegen_fact_refs": ["modules.wa_agent.priceMxn", "modules.wa_agent.meter.included", "modules.wa_agent.meter.overageMxn"]
+        },
+        {
+          "topic": "Prueba gratis",
+          "competitor_claim_ids": ["leadsales.trial.days"],
+          "beegen_fact_refs": ["trial.days"],
+          "note_es": "En Beegen cada módulo tiene su propia prueba, sin tarjeta."
+        }
+      ]
+    }
+  ]
+}
