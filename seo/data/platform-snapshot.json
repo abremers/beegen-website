@@ -13,6 +13,9 @@
       "id": "crm",
       "name": "CRM",
       "tagline": "Contactos, pipeline y tareas. 1 usuario gratis.",
+      "description": [
+        "Historial de cada contacto por canal"
+      ],
       "priceMxn": 99,
       "priceLabel": null,
       "unitLabel": "por asiento extra",
@@ -28,6 +31,10 @@
       "id": "site",
       "name": "Sitio web",
       "tagline": "Más sitios publicados, sin insignia de Beegen.",
+      "description": [
+        "Dominio propio y formularios al CRM",
+        "Hasta 100 ediciones con IA al mes"
+      ],
       "priceMxn": 149,
       "priceLabel": null,
       "unitLabel": "por sitio",
@@ -40,6 +47,10 @@
       "id": "wa_agent",
       "name": "Agente de WhatsApp",
       "tagline": "Responde, califica y agenda citas 24/7.",
+      "description": [
+        "Pasa la conversación a una persona",
+        "Llamadas entrantes se atienden por chat"
+      ],
       "priceMxn": 299,
       "priceLabel": null,
       "unitLabel": "por número",
@@ -61,6 +72,10 @@
       "id": "reminders",
       "name": "Recordatorios y seguimientos",
       "tagline": "Tus clientes llegan a su cita y pagan a tiempo.",
+      "description": [
+        "Recordatorios de cita y pago",
+        "Seguimiento a tratos que se enfrían"
+      ],
       "priceMxn": 99,
       "priceLabel": null,
       "unitLabel": null,
@@ -90,6 +105,10 @@
       "id": "payments",
       "name": "Cobros",
       "tagline": "Cobra desde el chat o desde un trato.",
+      "description": [
+        "Tarjeta, OXXO y SPEI",
+        "Más la comisión de Stripe; depósitos semanales"
+      ],
       "priceMxn": 0,
       "priceLabel": "Sin mensualidad · 2% por cobro",
       "unitLabel": null,
@@ -102,6 +121,10 @@
       "id": "invoicing",
       "name": "Facturación CFDI",
       "tagline": "El agente factura por ti.",
+      "description": [
+        "Pide RFC y datos fiscales al cliente",
+        "Timbra el CFDI; envía PDF y XML"
+      ],
       "priceMxn": 149,
       "priceLabel": null,
       "unitLabel": null,
@@ -123,6 +146,10 @@
       "id": "reviews",
       "name": "Reseñas Google",
       "tagline": "Más reseñas en Google sin pedirlas tú.",
+      "description": [
+        "Se pide tras cada cita o pago",
+        "Las quejas llegan primero a ti"
+      ],
       "priceMxn": 99,
       "priceLabel": null,
       "unitLabel": null,
@@ -135,6 +162,10 @@
       "id": "social_channels",
       "name": "Instagram y Messenger",
       "tagline": "El mismo agente y bandeja en Instagram y Messenger.",
+      "description": [
+        "Cada chat crea o actualiza un contacto",
+        "Usa la cuota de conversaciones del agente"
+      ],
       "priceMxn": 99,
       "priceLabel": null,
       "unitLabel": "por cuenta",
@@ -147,6 +178,10 @@
       "id": "quotes",
       "name": "Cotizaciones",
       "tagline": "Cotiza desde el chat y cierra con un link.",
+      "description": [
+        "PDF desde el chat o el trato",
+        "Aceptación en línea; pago con Cobros"
+      ],
       "priceMxn": 99,
       "priceLabel": null,
       "unitLabel": null,

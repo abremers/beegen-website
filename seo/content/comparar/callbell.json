@@ -1,0 +1,121 @@
+{
+  "slug": "callbell",
+  "family": "comparar",
+  "author": "claude-code-session",
+  "prompt_version": "comparar-v1",
+  "facts_hash": "sha256:0d633cb849f13542311dd5e4634302a77c1979c5ac136a0cc682822695cb86d1",
+  "blocks": {
+    "summary": [
+      {
+        "text": "Callbell cobra por usuario y suma los canales como complementos: WhatsApp desde 54 USD al mes e Instagram por 22 USD al mes.",
+        "facts": [
+          "callbell.price.user",
+          "callbell.wa.addon",
+          "callbell.ig.addon"
+        ]
+      },
+      {
+        "text": "En Beegen, el agente de WhatsApp cuesta $299 MXN al mes por número y el CRM es gratis con 1 usuario.",
+        "facts": [
+          "modules.wa_agent.priceMxn",
+          "modules.crm.includedQuota.quantity"
+        ]
+      },
+      {
+        "text": "Abajo comparamos cómo cobra cada uno y qué pasa con los cargos de Meta.",
+        "facts": [
+          "callbell.meta.budget",
+          "site.nothing_cut_off"
+        ]
+      }
+    ],
+    "beegen_fits": [
+      {
+        "text": "Si quieres el canal de WhatsApp con IA en un solo precio: el agente de Beegen incluye 200 conversaciones con IA al mes.",
+        "facts": [
+          "modules.wa_agent.meter.included"
+        ]
+      },
+      {
+        "text": "Si tu equipo crece poco a poco: cada usuario extra del CRM de Beegen cuesta $99 MXN al mes y el primero es gratis.",
+        "facts": [
+          "modules.crm.priceMxn",
+          "modules.crm.includedQuota.quantity"
+        ]
+      },
+      {
+        "text": "Si te preocupa quedarte sin servicio a media semana: en Beegen nada se corta al acabarse una cuota y el excedente se cobra al precio publicado.",
+        "facts": [
+          "site.nothing_cut_off"
+        ]
+      },
+      {
+        "text": "Si quieres probarlo con tus clientes reales: cada módulo trae 14 días de prueba sin tarjeta.",
+        "facts": [
+          "trial.days",
+          "site.trial_no_card"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo cobra Callbell?",
+        "a": [
+          {
+            "text": "Callbell cobra sus planes por usuario al mes y cobra aparte el canal de WhatsApp, desde 54 USD al mes.",
+            "facts": [
+              "callbell.price.user",
+              "callbell.wa.addon"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Callbell cubre las tarifas de Meta?",
+        "a": [
+          {
+            "text": "Según su centro de ayuda, si conectas WhatsApp por un proveedor (BSP), el plan cubre los cargos de Meta hasta 54 USD al mes por cada 10 agentes activos.",
+            "facts": [
+              "callbell.meta.budget"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Instagram tiene costo extra en Callbell?",
+        "a": [
+          {
+            "text": "Sí, Callbell cobra Instagram aparte, 22 USD al mes.",
+            "facts": [
+              "callbell.ig.addon"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Beegen tiene Instagram y Messenger?",
+        "a": [
+          {
+            "text": "Llegará próximamente como módulo de $99 MXN al mes por cuenta conectada.",
+            "facts": [
+              "modules.social_channels.priceMxn"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Qué incluye el agente de WhatsApp de Beegen?",
+        "a": [
+          {
+            "text": "Responde, califica y agenda citas 24/7, con 200 conversaciones con IA al mes y $2 MXN por conversación extra.",
+            "facts": [
+              "modules.wa_agent.tagline",
+              "modules.wa_agent.meter.included",
+              "modules.wa_agent.meter.overageMxn"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

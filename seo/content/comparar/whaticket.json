@@ -1,0 +1,125 @@
+{
+  "slug": "whaticket",
+  "family": "comparar",
+  "author": "claude-code-session",
+  "prompt_version": "comparar-v1",
+  "facts_hash": "sha256:cec74588bc2ce6ff1c2d1ec8cb3c41f65008e75d4e8d6f23b12f9008b2ca5ee8",
+  "blocks": {
+    "summary": [
+      {
+        "text": "Whaticket es una bandeja de WhatsApp con planes desde 49 USD al mes, y su precio cambia según las conexiones y los usuarios que contrates.",
+        "facts": [
+          "whaticket.price.from",
+          "whaticket.price.basis"
+        ]
+      },
+      {
+        "text": "Beegen junta un CRM gratis con un agente de WhatsApp de $299 MXN al mes por número.",
+        "facts": [
+          "modules.crm.priceMxn",
+          "modules.wa_agent.priceMxn"
+        ]
+      },
+      {
+        "text": "Esta página pone lado a lado lo que cada uno publica sobre precios, impuestos e inteligencia artificial.",
+        "facts": [
+          "whaticket.tax",
+          "whaticket.ai.openai"
+        ]
+      }
+    ],
+    "beegen_fits": [
+      {
+        "text": "Si no quieres sumar impuestos a la cuenta: en Beegen los precios ya traen el IVA y no hay contrato.",
+        "facts": [
+          "site.prices_mxn_iva"
+        ]
+      },
+      {
+        "text": "Si no tienes una clave de OpenAI: el agente de Beegen ya viene con 200 conversaciones con IA al mes y cada conversación extra cuesta $2 MXN.",
+        "facts": [
+          "modules.wa_agent.meter.included",
+          "modules.wa_agent.meter.overageMxn"
+        ]
+      },
+      {
+        "text": "Si te llaman al número de WhatsApp: el agente atiende esas llamadas por chat sin costo extra.",
+        "facts": [
+          "site.calls_included"
+        ]
+      },
+      {
+        "text": "Si buscas ventas y no solo conversaciones: el CRM de Beegen guarda contactos, pipeline y tareas, gratis con 1 usuario.",
+        "facts": [
+          "modules.crm.tagline",
+          "modules.crm.includedQuota.quantity"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta Whaticket?",
+        "a": [
+          {
+            "text": "Whaticket publica planes desde 49 USD al mes; según sus términos, el precio final depende de las conexiones de WhatsApp y los usuarios.",
+            "facts": [
+              "whaticket.price.from",
+              "whaticket.price.basis"
+            ]
+          },
+          {
+            "text": "Sus términos aclaran que esos precios no incluyen impuestos.",
+            "facts": [
+              "whaticket.tax"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Qué inteligencia artificial usa Whaticket?",
+        "a": [
+          {
+            "text": "Según su centro de ayuda, solo funciona con OpenAI y debes ingresar tu propia clave de API.",
+            "facts": [
+              "whaticket.ai.openai"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Las campañas de Whaticket vienen incluidas?",
+        "a": [
+          {
+            "text": "No; sus términos dicen que los créditos para campañas de mensajes se compran aparte de la suscripción.",
+            "facts": [
+              "whaticket.campaigns.extra"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Whaticket devuelve el dinero si cancelo?",
+        "a": [
+          {
+            "text": "Su centro de ayuda indica que no ofrece reembolsos ni créditos si cancelas antes de que termine el plazo.",
+            "facts": [
+              "whaticket.refunds"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Beegen tendrá recordatorios por WhatsApp?",
+        "a": [
+          {
+            "text": "Sí, Recordatorios y seguimientos llegará próximamente por $99 MXN al mes, con 200 mensajes de utilidad incluidos.",
+            "facts": [
+              "modules.reminders.priceMxn",
+              "modules.reminders.meter.included"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

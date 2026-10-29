@@ -1,0 +1,123 @@
+{
+  "slug": "hostinger-horizons",
+  "family": "comparar",
+  "author": "claude-code-session",
+  "prompt_version": "comparar-v1",
+  "facts_hash": "sha256:025de2894b01db62a581722ff56f389325341ba502bc411c2dada522d416d903",
+  "blocks": {
+    "summary": [
+      {
+        "text": "Hostinger Horizons vende planes por créditos de IA: el Explorer cuesta 6.99 USD al mes con pago anual e incluye 30 créditos, y cada mensaje con cambios de código consume 1.",
+        "facts": [
+          "hostingerhorizons.price.explorer",
+          "hostingerhorizons.credit.rule"
+        ]
+      },
+      {
+        "text": "El Sitio web de Beegen cuesta $149 MXN al mes por sitio, con hasta 100 ediciones con IA al mes.",
+        "facts": [
+          "modules.site.priceMxn",
+          "modules.site.description"
+        ]
+      },
+      {
+        "text": "Revisamos también qué pasa con el precio después del primer año.",
+        "facts": [
+          "hostingerhorizons.intro.price"
+        ]
+      }
+    ],
+    "beegen_fits": [
+      {
+        "text": "Si no quieres contar créditos: el sitio de Beegen trae hasta 100 ediciones con IA al mes en su precio.",
+        "facts": [
+          "modules.site.description"
+        ]
+      },
+      {
+        "text": "Si quieres un precio que no cambie al renovar: Beegen cobra mes a mes en pesos, con IVA incluido y sin contrato.",
+        "facts": [
+          "site.prices_mxn_iva"
+        ]
+      },
+      {
+        "text": "Si tu sitio es para conseguir clientes: trae formulario y botón de WhatsApp, y cada lead entra al CRM.",
+        "facts": [
+          "site.site_form_crm"
+        ]
+      },
+      {
+        "text": "Si prefieres pagar el año sin tarjeta: el plan anual cuesta 10 meses en lugar de 12 y se paga en OXXO o por SPEI.",
+        "facts": [
+          "site.annual_oxxo_spei"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta Hostinger Horizons?",
+        "a": [
+          {
+            "text": "Con pago anual, el Explorer cuesta 6.99 USD al mes, el Starter 13.99 USD y el Hustler 79.99 USD.",
+            "facts": [
+              "hostingerhorizons.price.explorer",
+              "hostingerhorizons.price.starter",
+              "hostingerhorizons.price.hustler"
+            ]
+          },
+          {
+            "text": "Con pago mensual, los planes van de 9.99 a 99.99 USD al mes.",
+            "facts": [
+              "hostingerhorizons.monthly.range"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Cómo funcionan los créditos de Hostinger Horizons?",
+        "a": [
+          {
+            "text": "Hostinger indica que cada mensaje que hace cambios de código consume 1 crédito de IA; el Starter incluye 70 créditos al mes.",
+            "facts": [
+              "hostingerhorizons.credit.rule",
+              "hostingerhorizons.price.starter"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿El precio de Hostinger Horizons se mantiene al renovar?",
+        "a": [
+          {
+            "text": "El precio anual es de introducción y solo aplica al primer periodo.",
+            "facts": [
+              "hostingerhorizons.intro.price"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Cuántas ediciones con IA incluye el sitio de Beegen?",
+        "a": [
+          {
+            "text": "Hasta 100 ediciones con IA al mes por sitio, además de dominio propio y formularios al CRM.",
+            "facts": [
+              "modules.site.description"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Cómo pago Beegen sin tarjeta?",
+        "a": [
+          {
+            "text": "Con el plan anual, que cuesta 10 meses en lugar de 12 y se puede pagar en OXXO o por SPEI.",
+            "facts": [
+              "site.annual_oxxo_spei"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
