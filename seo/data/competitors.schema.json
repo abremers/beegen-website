@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://beegen.co/seo/data/competitors.schema.json",
+  "title": "Beegen comparison pages: competitor facts",
+  "description": "Source of truth for every claim about a competitor on /comparar/ pages. A claim without a source URL and an access date cannot be rendered. Beegen's own prices and quotas never live here: they come from src/lib/modules.ts in abremers/beegen-platform at generation time.",
+  "type": "object",
+  "required": ["version", "updated_at", "correction_email", "competitors"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "updated_at": { "type": "string", "format": "date" },
+    "correction_email": {
+      "type": "string",
+      "format": "email",
+      "description": "Shown on every page next to the verification date."
+    },
+    "max_claim_age_days": {
+      "type": "integer",
+      "default": 60,
+      "description": "A claim whose last access is older than this fails validation and must be re-verified or removed."
+    },
+    "competitors": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/competitor" }
+    }
+  },
+  "$defs": {
+    "isoDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "source": {
+      "type": "object",
+      "required": ["id", "url", "publisher", "kind"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "publisher": { "type": "string", "description": "Who published the page, e.g. 'Leadsales (oficial)' or 'G2'." },
+        "kind": {
+          "enum": ["official_pricing", "official_docs", "official_blog", "official_terms", "app_store", "review_site", "press", "third_party_analysis", "repo_research"],
+          "description": "repo_research = a file in abremers/beegen-platform/docs/research; it can explain where a claim came from but never stands alone on a page that is indexable."
+        },
+        "language": { "enum": ["es", "en", "pt"] }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["source_id", "accessed_at", "method"],
+      "additionalProperties": false,
+      "properties": {
+        "source_id": { "type": "string" },
+        "accessed_at": { "$ref": "#/$defs/isoDate" },
+        "method": {
+          "enum": ["direct_fetch", "human_check", "search_excerpt"],
+          "description": "direct_fetch: the page was loaded and the quote found in it. human_check: a person opened the page and confirmed. search_excerpt: only a search-engine snippet was seen; allowed in drafts, blocks the page from going index."
+        },
+        "quote": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Shortest verbatim text from the source that supports the claim, in the source's language."
+        },
+        "archive_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Optional snapshot (web.archive.org) taken at access time."
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "required": ["id", "topic", "text_es", "evidence", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(\\.[a-z0-9_-]+)+$",
+          "description": "Stable fact id, e.g. 'leadsales.price.basico'. Generated text cites facts by this id."
+        },
+        "topic": {
+          "enum": ["pricing", "plans", "users", "channels", "whatsapp_connection", "ai", "automation", "payments", "invoicing", "reviews", "website", "support", "contract", "trial", "company", "complaint_theme"]
+        },
+        "text_es": {
+          "type": "string",
+          "maxLength": 240,
+          "description": "The claim as it may appear on the page, in es-MX, neutral and attributable. No adjectives about quality."
+        },
+        "value": {
+          "description": "Machine value for tables and the numeric-consistency validator.",
+          "type": ["number", "string", "boolean", "null"]
+        },
+        "unit": {
+          "type": "string",
+          "description": "e.g. 'USD/mes', 'usuarios', 'embudos', 'días'."
+        },
+        "plan": { "type": "string", "description": "Plan the claim applies to, when it is plan-specific." },
+        "excludes_tax": {
+          "type": "boolean",
+          "description": "True when the competitor's price is shown before IVA. Pages must say so when comparing with Beegen's IVA-included prices."
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/evidence" },
+          "description": "Most recent first. The page's 'Información verificada el' date is the oldest accessed_at among the claims it renders."
+        },
+        "conflicts": {
+          "type": "string",
+          "description": "Known disagreement between sources. A claim with an unresolved conflict renders only the official figure or is left out."
+        },
+        "status": {
+          "enum": ["draft", "verified", "expired", "removed"],
+          "description": "verified requires at least one evidence item with method direct_fetch or human_check inside max_claim_age_days."
+        }
+      }
+    },
+    "beegen_contrast": {
+      "type": "object",
+      "required": ["topic", "competitor_claim_ids", "beegen_fact_refs"],
+      "additionalProperties": false,
+      "description": "One row of the comparison table. Beegen's side is a reference into the platform registry, never a literal.",
+      "properties": {
+        "topic": { "type": "string" },
+        "competitor_claim_ids": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "beegen_fact_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^(modules|bundles|trial|site)\\.",
+            "description": "Path into seo/data/platform-snapshot.json, e.g. 'modules.wa_agent.priceMxn' or 'bundles.ventas.priceMxn'."
+          }
+        },
+        "note_es": { "type": "string", "maxLength": 200 }
+      }
+    },
+    "competitor": {
+      "type": "object",
+      "required": ["slug", "name", "category", "framing", "indexable", "approvals", "sources", "claims", "contrasts"],
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "URL segment: /comparar/<slug>." },
+        "name": { "type": "string", "description": "The competitor's name exactly as its owner writes it. Used as a word mark only, never a logo." },
+        "legal_owner": { "type": "string", "description": "Company behind the product, when sourced." },
+        "homepage": { "type": "string", "format": "uri" },
+        "category": { "enum": ["whatsapp_crm", "crm", "inbox", "website_builder", "platform_native"] },
+        "framing": {
+          "enum": ["alternativa", "vs", "complemento"],
+          "description": "alternativa: 'Alternativa a X'; vs: 'Beegen vs X' only when both products serve the same job; complemento: 'Beegen y X' (Meta Business Agent)."
+        },
+        "title_es": { "type": "string", "minLength": 30, "maxLength": 60 },
+        "description_es": { "type": "string", "minLength": 120, "maxLength": 155 },
+        "target_queries": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Queries the page is built for. Filled from Search Console once data exists; seeds before that."
+        },
+        "beegen_modules": {
+          "type": "array",
+          "items": { "enum": ["crm", "site", "wa_agent", "reminders", "payments", "invoicing", "reviews", "social_channels", "quotes"] },
+          "description": "Modules the page links to and builds UTM signup links for. 'voice' is hidden in the registry and never listed."
+        },
+        "when_competitor_fits_es": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "maxLength": 200 },
+          "description": "Honest cases where the competitor is the better choice. Required: a page without them reads as attack advertising."
+        },
+        "indexable": {
+          "type": "boolean",
+          "description": "The one-line flip. true is only valid when both approvals exist and their content_hash matches the rendered page."
+        },
+        "approvals": {
+          "type": "object",
+          "required": ["founder", "lawyer"],
+          "additionalProperties": false,
+          "properties": {
+            "founder": { "$ref": "#/$defs/approval" },
+            "lawyer": { "$ref": "#/$defs/approval" }
+          }
+        },
+        "sources": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/source" } },
+        "claims": { "type": "array", "minItems": 3, "items": { "$ref": "#/$defs/claim" } },
+        "contrasts": { "type": "array", "minItems": 3, "items": { "$ref": "#/$defs/beegen_contrast" } }
+      }
+    },
+    "approval": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "required": ["by", "at", "content_hash"],
+          "additionalProperties": false,
+          "properties": {
+            "by": { "type": "string" },
+            "at": { "$ref": "#/$defs/isoDate" },
+            "content_hash": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$",
+              "description": "Hash of the rendered main content (claims plus generated blocks) the approver read. Any later change voids the approval."
+            }
+          }
+        }
+      ]
+    }
+  }
+}
