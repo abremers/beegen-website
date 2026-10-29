@@ -4,8 +4,7 @@
   "redirects": [
     { "source": "/signup",    "destination": "https://app.beegen.co/signup",    "permanent": false },
     { "source": "/login",     "destination": "https://app.beegen.co/login",     "permanent": false },
-    { "source": "/dashboard", "destination": "https://app.beegen.co/dashboard", "permanent": false },
-    { "source": "/feature-membership", "destination": "/feature-membership", "permanent": false }
+    { "source": "/dashboard", "destination": "https://app.beegen.co/dashboard", "permanent": false }
   ],
   "headers": [
     {
