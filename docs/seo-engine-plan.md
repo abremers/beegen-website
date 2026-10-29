@@ -261,7 +261,7 @@ Copy rules applied by template and validator: no emojis, no em dashes, no "beege
 
 ## 7. Generator CLI
 
-Node 24, ES modules, no runtime dependencies. `package.json` exists only for dev dependencies the validators need: `ajv` and `ajv-formats` (schema validation), `lighthouse` (budgets). Playwright and Chromium are used from the CI image or the environment, not added as dependencies if avoidable. No build command on Vercel; generated HTML is committed.
+Node 24, ES modules, no runtime dependencies. `seo/package.json` (inside `seo/`, so Vercel never sees a root `package.json` and never runs an install) holds only the dev dependencies the validators need: `ajv` and `ajv-formats` (schema validation), `lighthouse` (budgets) and `playwright` (mobile layout, and the browser Lighthouse drives). No build command on Vercel; generated HTML is committed, and `.vercelignore` keeps `seo/`, `docs/` and `.github/` off the public site.
 
 ```
 node seo/cli.mjs snapshot                         read beegen-platform modules.ts and pricing.html, write platform-snapshot.json

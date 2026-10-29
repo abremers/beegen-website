@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://beegen.co/seo/data/content.schema.json",
+  "title": "Generated or hand-written unique blocks of one SEO page",
+  "description": "Every sentence lists the fact ids that support it: competitor claim ids from competitors.json, or Beegen references (modules.*, bundles.*, trial.*, site.*) resolved against platform-snapshot.json and site.json. The renderer never calls a model; this file is the only place unique prose lives.",
+  "type": "object",
+  "required": ["slug", "family", "author", "prompt_version", "facts_hash", "blocks"],
+  "additionalProperties": false,
+  "$defs": {
+    "sentence": {
+      "type": "object",
+      "required": ["text", "facts"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string", "minLength": 10, "maxLength": 320 },
+        "facts": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "paragraph": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/sentence" } }
+  },
+  "properties": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "family": { "enum": ["comparar", "para", "preguntas"] },
+    "author": {
+      "enum": ["claude-code-session", "claude-api", "human"],
+      "description": "Who wrote the blocks. Model identifiers are deliberately not recorded in the repository."
+    },
+    "prompt_version": { "type": "string" },
+    "facts_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "description": "Hash of the ids, texts and values of the facts this page cites, taken when the blocks were written. A mismatch means the facts changed and the prose must be re-read (node seo/cli.mjs rehash after checking)."
+    },
+    "blocks": {
+      "type": "object",
+      "required": ["summary", "beegen_fits", "faq"],
+      "additionalProperties": false,
+      "properties": {
+        "summary": { "$ref": "#/$defs/paragraph" },
+        "beegen_fits": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/sentence" } },
+        "faq": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "required": ["q", "a"],
+            "additionalProperties": false,
+            "properties": {
+              "q": { "type": "string", "minLength": 8, "maxLength": 120 },
+              "a": { "$ref": "#/$defs/paragraph" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "beegen-seo",
+  "private": true,
+  "type": "module",
+  "description": "Generator and validators for beegen.co SEO pages. Not deployed: Vercel serves the committed HTML.",
+  "engines": { "node": ">=22.18" },
+  "scripts": {
+    "snapshot": "node cli.mjs snapshot",
+    "render": "node cli.mjs render",
+    "check": "node cli.mjs check",
+    "browser": "node lib/browser-checks.mjs"
+  },
+  "devDependencies": {
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
+    "lighthouse": "13.5.0",
+    "playwright": "1.63.0"
+  }
+}

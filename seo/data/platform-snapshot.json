@@ -1,0 +1,191 @@
+{
+  "source": {
+    "repo": "abremers/beegen-platform",
+    "path": "src/lib/modules.ts",
+    "registry_sha256": "sha256:e97819b94e76a17f33f5ee4c5bd04af7c6835a1bbadf41d71ddac2bce5c55a9e",
+    "commit": "a27c3e893e2b7723c7653e7c413ef7f6497937f9"
+  },
+  "trial": {
+    "days": 14
+  },
+  "modules": {
+    "crm": {
+      "id": "crm",
+      "name": "CRM",
+      "tagline": "Contactos, pipeline y tareas. 1 usuario gratis.",
+      "priceMxn": 99,
+      "priceLabel": null,
+      "unitLabel": "por asiento extra",
+      "includedQuota": {
+        "quantity": 1,
+        "label": "1 asiento incluido"
+      },
+      "meter": null,
+      "extraMeters": [],
+      "trialable": false
+    },
+    "site": {
+      "id": "site",
+      "name": "Sitio web",
+      "tagline": "Más sitios publicados, sin insignia de Beegen.",
+      "priceMxn": 149,
+      "priceLabel": null,
+      "unitLabel": "por sitio",
+      "includedQuota": null,
+      "meter": null,
+      "extraMeters": [],
+      "trialable": true
+    },
+    "wa_agent": {
+      "id": "wa_agent",
+      "name": "Agente de WhatsApp",
+      "tagline": "Responde, califica y agenda citas 24/7.",
+      "priceMxn": 299,
+      "priceLabel": null,
+      "unitLabel": "por número",
+      "includedQuota": {
+        "quantity": 200,
+        "label": "200 conversaciones incluidas"
+      },
+      "meter": {
+        "metric": "conversations",
+        "included": 200,
+        "overageMxn": 2,
+        "unit": "conversación",
+        "label": "conversaciones con IA"
+      },
+      "extraMeters": [],
+      "trialable": true
+    },
+    "reminders": {
+      "id": "reminders",
+      "name": "Recordatorios y seguimientos",
+      "tagline": "Tus clientes llegan a su cita y pagan a tiempo.",
+      "priceMxn": 99,
+      "priceLabel": null,
+      "unitLabel": null,
+      "includedQuota": {
+        "quantity": 200,
+        "label": "200 mensajes incluidos"
+      },
+      "meter": {
+        "metric": "template_messages",
+        "included": 200,
+        "overageMxn": 1,
+        "unit": "mensaje",
+        "label": "mensajes de utilidad"
+      },
+      "extraMeters": [
+        {
+          "metric": "marketing_messages",
+          "included": 0,
+          "overageMxn": 1,
+          "unit": "mensaje",
+          "label": "mensajes de marketing"
+        }
+      ],
+      "trialable": true
+    },
+    "payments": {
+      "id": "payments",
+      "name": "Cobros",
+      "tagline": "Cobra desde el chat o desde un trato.",
+      "priceMxn": 0,
+      "priceLabel": "Sin mensualidad · 2% por cobro",
+      "unitLabel": null,
+      "includedQuota": null,
+      "meter": null,
+      "extraMeters": [],
+      "trialable": false
+    },
+    "invoicing": {
+      "id": "invoicing",
+      "name": "Facturación CFDI",
+      "tagline": "El agente factura por ti.",
+      "priceMxn": 149,
+      "priceLabel": null,
+      "unitLabel": null,
+      "includedQuota": {
+        "quantity": 50,
+        "label": "50 folios incluidos"
+      },
+      "meter": {
+        "metric": "folios",
+        "included": 50,
+        "overageMxn": 2,
+        "unit": "folio",
+        "label": "folios"
+      },
+      "extraMeters": [],
+      "trialable": true
+    },
+    "reviews": {
+      "id": "reviews",
+      "name": "Reseñas Google",
+      "tagline": "Más reseñas en Google sin pedirlas tú.",
+      "priceMxn": 99,
+      "priceLabel": null,
+      "unitLabel": null,
+      "includedQuota": null,
+      "meter": null,
+      "extraMeters": [],
+      "trialable": true
+    },
+    "social_channels": {
+      "id": "social_channels",
+      "name": "Instagram y Messenger",
+      "tagline": "El mismo agente y bandeja en Instagram y Messenger.",
+      "priceMxn": 99,
+      "priceLabel": null,
+      "unitLabel": "por cuenta",
+      "includedQuota": null,
+      "meter": null,
+      "extraMeters": [],
+      "trialable": true
+    },
+    "quotes": {
+      "id": "quotes",
+      "name": "Cotizaciones",
+      "tagline": "Cotiza desde el chat y cierra con un link.",
+      "priceMxn": 99,
+      "priceLabel": null,
+      "unitLabel": null,
+      "includedQuota": null,
+      "meter": null,
+      "extraMeters": [],
+      "trialable": true
+    }
+  },
+  "bundles": {
+    "ventas": {
+      "id": "ventas",
+      "name": "Beegen Ventas",
+      "description": "Todo para vender por WhatsApp y cobrar.",
+      "priceMxn": 499,
+      "grants": {
+        "wa_agent": 1,
+        "reminders": 1,
+        "payments": 1,
+        "reviews": 1,
+        "crm": 3
+      }
+    },
+    "negocio": {
+      "id": "negocio",
+      "name": "Beegen Negocio",
+      "description": "Todos los servicios disponibles en un solo plan.",
+      "priceMxn": 899,
+      "grants": {
+        "crm": 5,
+        "site": 1,
+        "wa_agent": 2,
+        "reminders": 1,
+        "payments": 1,
+        "invoicing": 1,
+        "reviews": 1,
+        "social_channels": 1,
+        "quotes": 1
+      }
+    }
+  }
+}

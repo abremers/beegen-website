@@ -1,0 +1,75 @@
+{
+  "description": "Hand-written pages listed in sitemap.xml, in order. render appends indexable generated pages after these.",
+  "pages": [
+    {
+      "path": "/",
+      "changefreq": "weekly",
+      "priority": "1.0"
+    },
+    {
+      "path": "/pricing",
+      "changefreq": "monthly",
+      "priority": "0.9"
+    },
+    {
+      "path": "/crm",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/sitio-web",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/whatsapp",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/recordatorios",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/cobros",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/facturacion",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/resenas",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/instagram-messenger",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/cotizaciones",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/agencias",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/contact",
+      "changefreq": "yearly",
+      "priority": "0.5"
+    },
+    {
+      "path": "/blog",
+      "changefreq": "weekly",
+      "priority": "0.8"
+    }
+  ]
+}

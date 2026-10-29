@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "site_url": "https://beegen.co",
+  "signup_url": "https://app.beegen.co/signup",
+  "availability": {
+    "crm": "available",
+    "site": "available",
+    "wa_agent": "available",
+    "reminders": "coming_soon",
+    "payments": "coming_soon",
+    "invoicing": "coming_soon",
+    "reviews": "coming_soon",
+    "social_channels": "coming_soon",
+    "quotes": "coming_soon"
+  },
+  "module_pages": {
+    "crm": "/crm",
+    "site": "/sitio-web",
+    "wa_agent": "/whatsapp",
+    "reminders": "/recordatorios",
+    "payments": "/cobros",
+    "invoicing": "/facturacion",
+    "reviews": "/resenas",
+    "social_channels": "/instagram-messenger",
+    "quotes": "/cotizaciones"
+  },
+  "beegen_claims": [
+    {
+      "id": "trial_no_card",
+      "text_es": "Cada módulo tiene su propia prueba de 14 días, sin tarjeta.",
+      "source": "pricing.html",
+      "quote": "Cada módulo tiene su propia prueba de 14 días, sin tarjeta."
+    },
+    {
+      "id": "prices_mxn_iva",
+      "text_es": "Precios en pesos con IVA incluido, sin contrato.",
+      "source": "pricing.html",
+      "quote": "Sin tarjeta. Sin contrato. Precios en pesos con IVA incluido."
+    },
+    {
+      "id": "nothing_cut_off",
+      "text_es": "Cuando se acaba una cuota incluida, el módulo sigue funcionando y el excedente se cobra al precio publicado.",
+      "source": "platform:docs/pricing-rules.md",
+      "quote": "Nothing is ever cut off when a quota\nis used up: the module keeps working and the units above the quota bill at\nthe overage price"
+    }
+  ],
+  "families": {
+    "comparar": {
+      "hub_path": "/comparar",
+      "hub_title_es": "Compara Beegen con otras herramientas | Beegen",
+      "hub_h1_es": "Compara Beegen con otras herramientas",
+      "hub_description_es": "Beegen frente a CRMs de WhatsApp, creadores de sitios web y Meta Business Agent: precios, planes y funciones publicadas, con fuente y fecha.",
+      "hub_intro_es": "Cada comparación usa solo datos publicados por cada empresa, con el enlace a la fuente y la fecha en que los revisamos. Si ves un dato incorrecto, escríbenos y lo corregimos.",
+      "hub_min_indexable_children": 3,
+      "groups": [
+        {
+          "category": "whatsapp_crm",
+          "title_es": "CRMs e inboxes de WhatsApp",
+          "categories": [
+            "whatsapp_crm",
+            "crm",
+            "inbox"
+          ]
+        },
+        {
+          "category": "website_builder",
+          "title_es": "Creadores de sitios web",
+          "categories": [
+            "website_builder"
+          ]
+        },
+        {
+          "category": "platform_native",
+          "title_es": "Herramientas de Meta",
+          "categories": [
+            "platform_native"
+          ]
+        }
+      ]
+    }
+  },
+  "link_check_bot_blocked_hosts": {
+    "description": "Hosts that answer 403 to automated requests. A 403 from them is reported as a note, not a failure; any other error still fails. A person opens these links during review.",
+    "hosts": [
+      "leadsalescrm.zendesk.com"
+    ]
+  }
+}

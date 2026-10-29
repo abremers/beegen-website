@@ -1,0 +1,77 @@
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img id="navLogo" src="/assets/logos/beegen-logo-white.svg" alt="Beegen">
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-link" type="button" aria-haspopup="true"><span data-i18n="nav.modules">Módulos</span><svg class="nav-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="/crm" data-i18n="nav.crm">CRM gratis</a>
+            <a href="/sitio-web" data-i18n="nav.site">Sitio web</a>
+            <a href="/whatsapp" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+            <a href="/recordatorios" data-i18n="nav.reminders">Recordatorios</a>
+            <a href="/cobros" data-i18n="nav.payments">Cobros</a>
+            <a href="/facturacion" data-i18n="nav.invoicing">Facturación CFDI</a>
+            <a href="/resenas" data-i18n="nav.reviews">Reseñas Google</a>
+            <a href="/instagram-messenger" data-i18n="nav.social_channels">Instagram y Messenger</a>
+            <a href="/cotizaciones" data-i18n="nav.quotes">Cotizaciones</a>
+            <a href="/agencias" data-i18n="nav.agencies">Para agencias</a>
+            <a href="/pricing" style="color:var(--teal);" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+          </div>
+        </div>
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.how_it_works">Cómo funciona</a>
+        <a href="/pricing" class="nav-link" data-i18n="nav.pricing">Precios</a>
+        <a href="/blog/" class="nav-link" data-i18n="nav.blog">Blog</a>
+        <a href="/contact" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://app.beegen.co/login" class="nav-link" data-i18n="nav.login">Iniciar sesión</a>
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Cambiar idioma / Switch language"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+        <a href="https://app.beegen.co/signup?module=crm" class="btn btn-secondary btn-sm" data-i18n="nav.start_free">Empieza gratis</a>
+        <button class="hamburger" data-i18n-aria="nav.open_menu" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="/assets/logos/beegen-logo-white.svg" alt="Beegen" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" data-i18n-aria="nav.close_menu" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" type="button" aria-expanded="false"><span data-i18n="nav.modules">Módulos</span><svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mobile-nav-sub">
+        <a href="/crm" data-i18n="nav.crm">CRM gratis</a>
+        <a href="/sitio-web" data-i18n="nav.site">Sitio web</a>
+        <a href="/whatsapp" data-i18n="nav.wa_agent">Agente de WhatsApp</a>
+        <a href="/recordatorios" data-i18n="nav.reminders">Recordatorios</a>
+        <a href="/cobros" data-i18n="nav.payments">Cobros</a>
+        <a href="/facturacion" data-i18n="nav.invoicing">Facturación CFDI</a>
+        <a href="/resenas" data-i18n="nav.reviews">Reseñas Google</a>
+        <a href="/instagram-messenger" data-i18n="nav.social_channels">Instagram y Messenger</a>
+        <a href="/cotizaciones" data-i18n="nav.quotes">Cotizaciones</a>
+        <a href="/agencias" data-i18n="nav.agencies">Para agencias</a>
+        <a href="/pricing" data-i18n="nav.all_modules">Todos los módulos y precios →</a>
+      </div>
+    </div>
+    <div class="mobile-nav-item"><a href="/#how-it-works" class="mobile-nav-link" data-i18n="nav.how_it_works">Cómo funciona</a></div>
+    <div class="mobile-nav-item"><a href="/pricing" class="mobile-nav-link" data-i18n="nav.pricing">Precios</a></div>
+    <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link" data-i18n="nav.blog">Blog</a></div>
+    <div class="mobile-nav-item"><a href="/contact" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></div>
+    <div class="mobile-nav-item"><a href="https://app.beegen.co/login" class="mobile-nav-link" data-i18n="nav.login">Iniciar sesión</a></div>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle" id="langToggleMobile" type="button" aria-label="Cambiar idioma / Switch language" style="margin-bottom:14px;width:100%;justify-content:center;"><span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span></button>
+    <a href="https://app.beegen.co/signup?module=crm" class="btn btn-primary" data-i18n="nav.start_free">Empieza gratis</a>
+  </div>
+</div>

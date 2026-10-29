@@ -1,0 +1,97 @@
+name: seo-validate
+
+# Validators 1 to 18 of docs/seo-engine-plan.md section 8. Any failure blocks the pull request.
+# Nothing here deploys: Vercel deploys main after a human merge.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - 'seo/**'
+      - 'sitemap.xml'
+      - 'llms.txt'
+      - 'vercel.json'
+      - 'css/**'
+      - 'js/**'
+      - '.github/workflows/seo-validate.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seo-validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      HAS_PLATFORM_TOKEN: ${{ secrets.PLATFORM_READ_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Check out the platform registry (read-only)
+        if: env.HAS_PLATFORM_TOKEN == 'true'
+        uses: actions/checkout@v5
+        with:
+          repository: abremers/beegen-platform
+          ref: main
+          path: .platform
+          token: ${{ secrets.PLATFORM_READ_TOKEN }}
+          sparse-checkout: |
+            src/lib/modules.ts
+            docs/pricing-rules.md
+          sparse-checkout-cone-mode: false
+
+      - name: Note a missing platform token
+        if: env.HAS_PLATFORM_TOKEN != 'true'
+        run: echo "::notice::PLATFORM_READ_TOKEN is not set; the snapshot drift check (validator 5) is skipped."
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: seo/package-lock.json
+
+      - name: Install validator dependencies
+        working-directory: seo
+        run: npm ci
+
+      - name: Install Chromium for the browser checks
+        working-directory: seo
+        run: npx playwright install --with-deps chromium
+
+      - name: Run validators
+        env:
+          SEO_BASE_REF: origin/${{ github.base_ref || 'main' }}
+          BEEGEN_PLATFORM_DIR: ${{ github.workspace }}/.platform
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SEO_GROUNDING_MODEL: ${{ vars.SEO_GROUNDING_MODEL }}
+        run: |
+          set -o pipefail
+          mkdir -p seo/.artifacts
+          node seo/cli.mjs check --browser --json seo/.artifacts/report.json | tee seo/.artifacts/report.txt
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo '### SEO validators'
+            echo '```'
+            cat seo/.artifacts/report.txt 2>/dev/null || echo 'no report'
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: seo-validate
+          path: seo/.artifacts/
+          if-no-files-found: ignore
+          include-hidden-files: true
+          retention-days: 14
