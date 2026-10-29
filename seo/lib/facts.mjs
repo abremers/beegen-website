@@ -104,6 +104,8 @@ export function beegenFact(ref, snapshot, site) {
         return { text: `${m.name}: incluye ${value} ${m.meter.label} al mes`, numbers: [value] }
       case 'meter.overageMxn':
         return { text: `${m.name}: ${mxn(value)} por ${m.meter.unit} extra`, numbers: [value] }
+      case 'description':
+        return { text: `${m.name}: ${value.join('; ')}`, numbers: numbersIn(value.join(' ')) }
       case 'tagline':
         return { text: `${m.name}: ${value}`, numbers: numbersIn(value) }
       case 'unitLabel':

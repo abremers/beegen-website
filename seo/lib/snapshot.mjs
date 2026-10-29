@@ -55,6 +55,7 @@ export async function buildSnapshot(dir = platformDir()) {
       id,
       name: es(m.name),
       tagline: es(m.tagline),
+      description: es(m.description) ?? [],
       priceMxn: m.priceMxn,
       priceLabel: es(m.priceLabel),
       unitLabel: es(m.unitLabel),

@@ -1,0 +1,126 @@
+{
+  "slug": "durable",
+  "family": "comparar",
+  "author": "claude-code-session",
+  "prompt_version": "comparar-v1",
+  "facts_hash": "sha256:1d10d876780e9fca6835584041b39308db9760f4fb36ae93b4b2237cd3497074",
+  "blocks": {
+    "summary": [
+      {
+        "text": "Durable combina sitio, CRM y cobros: su plan gratis incluye un CRM de hasta 10 clientes y el plan Launch cuesta 25 USD al mes.",
+        "facts": [
+          "durable.free.crm10",
+          "durable.price.launch"
+        ]
+      },
+      {
+        "text": "Beegen separa las piezas: el CRM es gratis con 1 usuario y el Sitio web cuesta $149 MXN al mes por sitio.",
+        "facts": [
+          "modules.crm.includedQuota.quantity",
+          "modules.site.priceMxn"
+        ]
+      },
+      {
+        "text": "Comparamos el costo, el CRM, los cobros y qué pasa con tu dominio.",
+        "facts": [
+          "durable.payments.fee",
+          "durable.domain.minimum"
+        ]
+      }
+    ],
+    "beegen_fits": [
+      {
+        "text": "Si quieres un CRM sin tope de 10 clientes: el de Beegen tiene contactos, pipeline y tareas, gratis con 1 usuario.",
+        "facts": [
+          "modules.crm.tagline",
+          "modules.crm.includedQuota.quantity",
+          "durable.free.crm10"
+        ]
+      },
+      {
+        "text": "Si tus clientes escriben por WhatsApp: el agente de Beegen cuesta $299 MXN al mes por número y responde 24/7.",
+        "facts": [
+          "modules.wa_agent.priceMxn",
+          "modules.wa_agent.tagline"
+        ]
+      },
+      {
+        "text": "Si quieres que el dominio sea tuyo desde el principio: el sitio de Beegen incluye dominio propio y formularios al CRM.",
+        "facts": [
+          "modules.site.description"
+        ]
+      },
+      {
+        "text": "Si vas a cobrar a clientes en México: Cobros llega próximamente, sin mensualidad y con 2% por cobro.",
+        "facts": [
+          "modules.payments.priceMxn"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta Durable?",
+        "a": [
+          {
+            "text": "Durable tiene un plan gratis y el plan Launch cuesta 25 USD al mes con pago mensual o 22 USD con pago anual.",
+            "facts": [
+              "durable.free.crm10",
+              "durable.price.launch"
+            ]
+          },
+          {
+            "text": "El precio del plan Grow no coincide entre las fuentes que revisamos, por eso no lo mostramos.",
+            "facts": [
+              "durable.price.launch"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Qué incluye el plan gratis de Durable?",
+        "a": [
+          {
+            "text": "Un subdominio durable.site y un CRM de hasta 10 clientes.",
+            "facts": [
+              "durable.free.crm10"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Cuánto cobra Durable por cada pago?",
+        "a": [
+          {
+            "text": "Durable cobra 2.9% + 0.30 USD por transacción en sus planes de pago.",
+            "facts": [
+              "durable.payments.fee"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Puedo llevarme mi dominio de Durable?",
+        "a": [
+          {
+            "text": "Según sus preguntas frecuentes, sacar un dominio toma un par de semanas y tiene un tiempo mínimo de suscripción.",
+            "facts": [
+              "durable.domain.minimum"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Qué incluye el sitio de Beegen?",
+        "a": [
+          {
+            "text": "Por $149 MXN al mes por sitio: dominio propio, formularios al CRM y hasta 100 ediciones con IA al mes.",
+            "facts": [
+              "modules.site.priceMxn",
+              "modules.site.description"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

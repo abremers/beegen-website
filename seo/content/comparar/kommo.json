@@ -1,0 +1,127 @@
+{
+  "slug": "kommo",
+  "family": "comparar",
+  "author": "claude-code-session",
+  "prompt_version": "comparar-v1",
+  "facts_hash": "sha256:57d037f86508f18fc507931db8c234c37ad2eb64d77044180776e19b04e12303",
+  "blocks": {
+    "summary": [
+      {
+        "text": "Kommo cobra por usuario: desde el 1 de septiembre de 2026, su plan Base cuesta 25 USD y el Advanced 35 USD al mes para clientes nuevos.",
+        "facts": [
+          "kommo.price.base",
+          "kommo.price.advanced"
+        ]
+      },
+      {
+        "text": "En Beegen, el primer usuario del CRM es gratis y el agente de WhatsApp cuesta $299 MXN al mes por número.",
+        "facts": [
+          "modules.crm.includedQuota.quantity",
+          "modules.wa_agent.priceMxn"
+        ]
+      },
+      {
+        "text": "Aquí ves en qué se parecen, en qué no y cuánto pagarías con cada uno.",
+        "facts": [
+          "kommo.price.base",
+          "modules.wa_agent.priceMxn"
+        ]
+      }
+    ],
+    "beegen_fits": [
+      {
+        "text": "Si quieres pagar mes con mes: Beegen cobra en pesos, con IVA incluido y sin contrato, mientras que Kommo pide al menos 6 meses.",
+        "facts": [
+          "site.prices_mxn_iva",
+          "kommo.contract.min6"
+        ]
+      },
+      {
+        "text": "Si solo una persona atiende a los clientes: ese primer usuario del CRM no cuesta nada, y cada persona extra suma $99 MXN al mes.",
+        "facts": [
+          "modules.crm.priceMxn",
+          "modules.crm.includedQuota.quantity"
+        ]
+      },
+      {
+        "text": "Si quieres un agente que conteste por ti: el de Beegen responde, califica y agenda citas 24/7, con 200 conversaciones con IA al mes incluidas.",
+        "facts": [
+          "modules.wa_agent.tagline",
+          "modules.wa_agent.meter.included"
+        ]
+      },
+      {
+        "text": "Si te conviene pagar un año en efectivo: el plan anual cuesta 10 meses en lugar de 12 y se paga en OXXO o por SPEI.",
+        "facts": [
+          "site.annual_oxxo_spei"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta Kommo en 2026?",
+        "a": [
+          {
+            "text": "Para clientes nuevos, Kommo cobra 25 USD por usuario al mes en el plan Base y 35 USD en el Advanced desde el 1 de septiembre de 2026.",
+            "facts": [
+              "kommo.price.base",
+              "kommo.price.advanced"
+            ]
+          },
+          {
+            "text": "Además, las tarifas de Meta por mensajes de WhatsApp se cobran aparte.",
+            "facts": [
+              "kommo.meta.fees"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Kommo tiene pago mensual?",
+        "a": [
+          {
+            "text": "No. Kommo indica que no ofrece pago mensual y que el periodo mínimo de suscripción es de 6 meses.",
+            "facts": [
+              "kommo.contract.min6"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Qué incluye WhatsApp Lite de Kommo?",
+        "a": [
+          {
+            "text": "Es la conexión por QR de Kommo; no incluye difusiones, plantillas de mensajes, automatizaciones ni acceso para varios usuarios.",
+            "facts": [
+              "kommo.wa.lite"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Hay que volver a conectar WhatsApp en Kommo?",
+        "a": [
+          {
+            "text": "Según su centro de ayuda, la cuenta de Facebook conectada debe volver a conectarse una vez al año.",
+            "facts": [
+              "kommo.wa.reauth"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Cuánto tiempo puedo probar Beegen?",
+        "a": [
+          {
+            "text": "Cada módulo de Beegen tiene su propia prueba de 14 días, sin tarjeta; Kommo también ofrece 14 días de prueba.",
+            "facts": [
+              "trial.days",
+              "site.trial_no_card",
+              "kommo.trial.days"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

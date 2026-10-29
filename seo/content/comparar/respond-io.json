@@ -1,0 +1,127 @@
+{
+  "slug": "respond-io",
+  "family": "comparar",
+  "author": "claude-code-session",
+  "prompt_version": "comparar-v1",
+  "facts_hash": "sha256:db9dde127ce21c18e2e47d96598f58f140b91a9bcc047d6b03556900bb7d7860",
+  "blocks": {
+    "summary": [
+      {
+        "text": "Respond.io arranca en 99 USD al mes con el plan Starter, que no incluye agentes de IA, y sube a 199 USD con el Growth.",
+        "facts": [
+          "respondio.price.starter",
+          "respondio.users.starter",
+          "respondio.price.growth"
+        ]
+      },
+      {
+        "text": "Beegen cobra $299 MXN al mes por número por un agente de WhatsApp con IA y deja el CRM gratis con 1 usuario.",
+        "facts": [
+          "modules.wa_agent.priceMxn",
+          "modules.crm.includedQuota.quantity"
+        ]
+      },
+      {
+        "text": "Comparamos precios, agentes de IA y cómo se cobra el uso extra en cada caso.",
+        "facts": [
+          "respondio.mac.overage",
+          "modules.wa_agent.meter.overageMxn"
+        ]
+      }
+    ],
+    "beegen_fits": [
+      {
+        "text": "Si quieres IA desde el plan más sencillo: el agente de Beegen ya trae 200 conversaciones con IA al mes.",
+        "facts": [
+          "modules.wa_agent.meter.included"
+        ]
+      },
+      {
+        "text": "Si buscas un costo extra fácil de calcular: cada conversación adicional del agente cuesta $2 MXN.",
+        "facts": [
+          "modules.wa_agent.meter.overageMxn"
+        ]
+      },
+      {
+        "text": "Si tu equipo es de 3 personas: Beegen Ventas cuesta $499 MXN al mes e incluye el agente y 3 usuarios del CRM.",
+        "facts": [
+          "bundles.ventas.priceMxn",
+          "bundles.ventas.grants.wa_agent",
+          "bundles.ventas.grants.crm"
+        ]
+      },
+      {
+        "text": "Si pagas en pesos: los precios de Beegen ya incluyen IVA y no hay contrato.",
+        "facts": [
+          "site.prices_mxn_iva"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta Respond.io?",
+        "a": [
+          {
+            "text": "El Starter cuesta 99 USD al mes con pago mensual o 79 USD con pago anual; el Growth, 199 USD o 159 USD.",
+            "facts": [
+              "respondio.price.starter",
+              "respondio.price.growth"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿El plan Starter de Respond.io tiene agentes de IA?",
+        "a": [
+          {
+            "text": "No. El Starter incluye 5 usuarios y contactos ilimitados, pero no agentes de IA.",
+            "facts": [
+              "respondio.users.starter"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Qué pasa si paso el límite de contactos en Respond.io?",
+        "a": [
+          {
+            "text": "En el Growth, cada bloque de 100 contactos activos extra cuesta 12 USD al final del ciclo.",
+            "facts": [
+              "respondio.mac.overage"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Quién cobra las tarifas de Meta?",
+        "a": [
+          {
+            "text": "Respond.io las cobra aparte y sin margen.",
+            "facts": [
+              "respondio.meta.passthrough"
+            ]
+          },
+          {
+            "text": "En Beegen, el agente incluye 200 conversaciones con IA al mes y cada conversación extra cuesta $2 MXN.",
+            "facts": [
+              "modules.wa_agent.meter.included",
+              "modules.wa_agent.meter.overageMxn"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Puedo probar Beegen sin tarjeta?",
+        "a": [
+          {
+            "text": "Sí. Cada módulo de Beegen se prueba 14 días gratis y sin tarjeta.",
+            "facts": [
+              "trial.days",
+              "site.trial_no_card"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

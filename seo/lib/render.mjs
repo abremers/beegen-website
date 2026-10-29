@@ -171,8 +171,9 @@ export function comparisonModel(data, comp) {
     .map((r) => ({ ...r, competitor_claim_ids: r.competitor_claim_ids.filter((id) => claimIds.has(id)) }))
     .filter((r) => r.competitor_claim_ids.length > 0)
   const usedInTable = new Set(contrasts.flatMap((r) => r.competitor_claim_ids))
-  // Plan-specific connection facts are shown under the price scenarios instead.
-  const connectionNotes = claims.filter((c) => c.topic === 'whatsapp_connection' && c.plan)
+  // Plan-specific connection facts are shown under the price scenarios, when the page has them.
+  const hasScenarios = claims.some((c) => c.topic === 'users' && c.plan)
+  const connectionNotes = hasScenarios ? claims.filter((c) => c.topic === 'whatsapp_connection' && c.plan) : []
   connectionNotes.forEach((c) => usedInTable.add(c.id))
   const otherClaims = claims.filter((c) => !usedInTable.has(c.id))
   const states = claims.map((c) => claimState(c, comp, data.today, maxAge))
@@ -249,7 +250,9 @@ export function renderComparison(data, comp) {
   const usdPrices = m.claims.some((x) => x.unit === 'USD/mes')
   if (usdPrices) notes.push(`${esc(name)} publica sus precios en dólares; los mostramos tal cual, sin convertir. Los precios de Beegen están en pesos mexicanos con IVA incluido.`)
 
-  const scenarios = scenarioRows(m, data)
+  // Seat-based price scenarios only make sense when the competitor publishes plans with user counts.
+  const scenarioData = m.claims.some((x) => x.topic === 'users' && x.plan) ? scenarioRows(m, data) : []
+  const scenarios = scenarioData
     .map((s) => `<tr><th scope="row">${s.n} ${s.n === 1 ? 'persona' : 'personas'}</th><td>${s.compText}</td><td class="compare-beegen">${esc(s.beegenText)}</td></tr>`)
     .join('\n')
   const connectionNotes = m.connectionNotes.map((x) => `<li>${claimHtml(x, m)}</li>`)
@@ -334,7 +337,7 @@ ${rows}
   </div>
 </section>
 
-<section class="section seo-section" id="escenarios" style="background:var(--cloud);">
+${scenarios ? `<section class="section seo-section" id="escenarios" style="background:var(--cloud);">
   <div class="container">
     <h2>Cuánto pagarías al mes según el tamaño de tu equipo</h2>
     <div class="compare-wrap">
@@ -349,7 +352,7 @@ ${scenarios}
     ${connectionNotes.length ? `<div class="seo-prose"><ul class="compare-note">\n${connectionNotes.join('\n')}\n</ul></div>` : ''}
   </div>
 </section>
-
+` : ''}
 ${other ? `<section class="section seo-section" id="otros-datos" style="background:#ffffff;">
   <div class="container"><div class="seo-prose">
     <h2>Otros datos que publica ${esc(name)}</h2>

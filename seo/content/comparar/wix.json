@@ -1,0 +1,128 @@
+{
+  "slug": "wix",
+  "family": "comparar",
+  "author": "claude-code-session",
+  "prompt_version": "comparar-v1",
+  "facts_hash": "sha256:3cf903d9efee7d16c9a5bc2b930b798dbcd781771aa8a40bc481bf11477dc068",
+  "blocks": {
+    "summary": [
+      {
+        "text": "Wix ofrece un plan gratis en un subdominio con anuncios y planes de pago desde 17 USD al mes con pago anual.",
+        "facts": [
+          "wix.free.ads",
+          "wix.price.light"
+        ]
+      },
+      {
+        "text": "El Sitio web de Beegen cuesta $149 MXN al mes por sitio e incluye dominio propio y formularios que llegan al CRM.",
+        "facts": [
+          "modules.site.priceMxn",
+          "modules.site.description"
+        ]
+      },
+      {
+        "text": "La diferencia está en qué pasa con cada cliente que te escribe desde la página.",
+        "facts": [
+          "site.site_form_crm"
+        ]
+      }
+    ],
+    "beegen_fits": [
+      {
+        "text": "Si tu negocio vende por WhatsApp: el sitio de Beegen trae formulario y botón de WhatsApp, y cada lead cae en el CRM.",
+        "facts": [
+          "site.site_form_crm"
+        ]
+      },
+      {
+        "text": "Si quieres editar con IA sin pagar créditos sueltos: el sitio incluye hasta 100 ediciones con IA al mes.",
+        "facts": [
+          "modules.site.description"
+        ]
+      },
+      {
+        "text": "Si quieres que alguien conteste a quien llega del sitio: el agente de WhatsApp responde, califica y agenda citas 24/7.",
+        "facts": [
+          "modules.wa_agent.tagline"
+        ]
+      },
+      {
+        "text": "Si prefieres precios en pesos: Beegen cobra en MXN con IVA incluido y sin contrato.",
+        "facts": [
+          "site.prices_mxn_iva"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Wix es gratis?",
+        "a": [
+          {
+            "text": "Tiene un plan gratuito, pero el sitio queda en un subdominio de Wix y muestra anuncios de Wix.",
+            "facts": [
+              "wix.free.ads"
+            ]
+          },
+          {
+            "text": "Con un plan Premium puedes conectar tu dominio y quitar los anuncios.",
+            "facts": [
+              "wix.premium.domain"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Cuánto cuestan los planes de Wix?",
+        "a": [
+          {
+            "text": "El plan Light cuesta 17 USD al mes con pago anual y el Business, 39 USD al mes.",
+            "facts": [
+              "wix.price.light",
+              "wix.price.business"
+            ]
+          },
+          {
+            "text": "No encontramos precios de Wix en pesos para México, por eso los mostramos en dólares.",
+            "facts": [
+              "wix.price.light"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Qué plan de Wix necesito para vender?",
+        "a": [
+          {
+            "text": "Para vender productos o servicios necesitas al menos el plan Core, de 29 USD al mes.",
+            "facts": [
+              "wix.price.core"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿El dominio viene gratis en Wix?",
+        "a": [
+          {
+            "text": "Algunos planes Premium incluyen un dominio gratis solo el primer año y con pago anual; después se paga la renovación.",
+            "facts": [
+              "wix.domain.free1y"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Cuánto cuesta el sitio de Beegen?",
+        "a": [
+          {
+            "text": "Cuesta $149 MXN al mes por sitio publicado, con dominio propio, formularios al CRM y hasta 100 ediciones con IA al mes.",
+            "facts": [
+              "modules.site.priceMxn",
+              "modules.site.description"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

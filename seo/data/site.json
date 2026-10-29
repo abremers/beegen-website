@@ -42,6 +42,24 @@
       "text_es": "Cuando se acaba una cuota incluida, el módulo sigue funcionando y el excedente se cobra al precio publicado.",
       "source": "platform:docs/pricing-rules.md",
       "quote": "Nothing is ever cut off when a quota\nis used up: the module keeps working and the units above the quota bill at\nthe overage price"
+    },
+    {
+      "id": "site_form_crm",
+      "text_es": "Tu sitio con formulario y botón de WhatsApp. Cada lead cae en el CRM.",
+      "source": "pricing.html",
+      "quote": "Tu sitio con formulario y botón de WhatsApp. Cada lead cae en el CRM."
+    },
+    {
+      "id": "annual_oxxo_spei",
+      "text_es": "Cualquier módulo o paquete anual cuesta 10 meses en lugar de 12 y se puede pagar en OXXO o por SPEI.",
+      "source": "pricing.html",
+      "quote": "Cualquier módulo o paquete anual cuesta 10 meses en lugar de 12. Puedes pagarlo en OXXO o por SPEI, sin tarjeta de la empresa."
+    },
+    {
+      "id": "calls_included",
+      "text_es": "Las llamadas a tu número de WhatsApp las atiende el agente por chat, incluido en el agente de WhatsApp sin costo extra.",
+      "source": "pricing.html",
+      "quote": "Las llamadas a tu número de WhatsApp las atiende el agente por chat. Va incluido en el agente de WhatsApp, sin costo extra."
     }
   ],
   "families": {

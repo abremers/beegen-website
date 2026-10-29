@@ -1,0 +1,118 @@
+{
+  "slug": "framer",
+  "family": "comparar",
+  "author": "claude-code-session",
+  "prompt_version": "comparar-v1",
+  "facts_hash": "sha256:673a8f0052b3140b36850625377fe782bfbfabebb7945435861c1b67c6fb1321",
+  "blocks": {
+    "summary": [
+      {
+        "text": "Framer cobra por sitio: el plan Basic cuesta 10 USD al mes con pago anual y el Pro 30 USD, y cada editor adicional suma 20 USD al mes.",
+        "facts": [
+          "framer.price.basic",
+          "framer.price.pro",
+          "framer.editors"
+        ]
+      },
+      {
+        "text": "El Sitio web de Beegen cuesta $149 MXN al mes por sitio y manda cada formulario al CRM.",
+        "facts": [
+          "modules.site.priceMxn",
+          "site.site_form_crm"
+        ]
+      },
+      {
+        "text": "Aquí comparamos lo que pagas y lo que recibe tu negocio con cada uno.",
+        "facts": [
+          "framer.free",
+          "modules.site.description"
+        ]
+      }
+    ],
+    "beegen_fits": [
+      {
+        "text": "Si tu sitio debe traer clientes más que premios de diseño: el de Beegen trae formulario y botón de WhatsApp, y cada lead llega al CRM.",
+        "facts": [
+          "site.site_form_crm"
+        ]
+      },
+      {
+        "text": "Si no quieres pagar por cada persona que edita: el sitio de Beegen no cobra por editor, y el CRM suma $99 MXN al mes por usuario extra.",
+        "facts": [
+          "modules.crm.priceMxn"
+        ]
+      },
+      {
+        "text": "Si quieres cambios con IA incluidos: cada sitio trae hasta 100 ediciones con IA al mes y dominio propio.",
+        "facts": [
+          "modules.site.description"
+        ]
+      },
+      {
+        "text": "Si quieres atender a quien llega del sitio: el agente de WhatsApp de Beegen cuesta $299 MXN al mes por número.",
+        "facts": [
+          "modules.wa_agent.priceMxn"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta Framer?",
+        "a": [
+          {
+            "text": "El Basic cuesta 10 USD al mes por sitio con pago anual o 15 USD con pago mensual; el Pro, 30 USD o 45 USD.",
+            "facts": [
+              "framer.price.basic",
+              "framer.price.pro"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Framer tiene plan gratis?",
+        "a": [
+          {
+            "text": "Sí, publica en un subdominio framer.website con el aviso Made in Framer y sin dominio propio.",
+            "facts": [
+              "framer.free"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Framer cobra por editor?",
+        "a": [
+          {
+            "text": "Sí, cada editor adicional cuesta 20 USD al mes.",
+            "facts": [
+              "framer.editors"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Cuánto cuesta el sitio de Beegen?",
+        "a": [
+          {
+            "text": "Son $149 MXN al mes por cada sitio publicado; incluye dominio propio, formularios que llegan al CRM y hasta 100 ediciones con IA.",
+            "facts": [
+              "modules.site.priceMxn",
+              "modules.site.description"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Los precios de Beegen incluyen IVA?",
+        "a": [
+          {
+            "text": "Sí, están en pesos con IVA incluido y sin contrato.",
+            "facts": [
+              "site.prices_mxn_iva"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

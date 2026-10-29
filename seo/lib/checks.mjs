@@ -166,9 +166,12 @@ export async function runChecks({ offline = false, browser = false } = {}) {
     const { default: addFormats } = await import('ajv-formats')
     const ajv = new Ajv({ allErrors: true, strict: false })
     addFormats(ajv)
+    // Compile each schema once: ajv refuses to register the same $id twice.
+    const compiled = new Map()
     const validate = (schemaFile, value, label) => {
-      const ok = ajv.validate(readJson(path.join(DATA_DIR, schemaFile)), value)
-      if (!ok) for (const e of ajv.errors) r.fail(`${label}${e.instancePath}: ${e.message}`)
+      if (!compiled.has(schemaFile)) compiled.set(schemaFile, ajv.compile(readJson(path.join(DATA_DIR, schemaFile))))
+      const fn = compiled.get(schemaFile)
+      if (!fn(value)) for (const e of fn.errors) r.fail(`${label}${e.instancePath}: ${e.message}`)
     }
     validate('competitors.schema.json', competitorsDoc, 'competitors.json')
     for (const [key, c] of Object.entries(data.content)) validate('content.schema.json', c, `content/${key}.json`)
@@ -429,7 +432,8 @@ export async function runChecks({ offline = false, browser = false } = {}) {
         const types = typesIn(parsed)
         for (const t of types) if (!allowed.has(t)) r.fail(`${p.file}: JSON-LD type ${t} is not allowed here`)
         if (!types.includes('Organization') || !types.includes('BreadcrumbList')) r.fail(`${p.file}: JSON-LD needs Organization and BreadcrumbList`)
-        const text = normalizeSpace(visibleText(p.html))
+        // Footnote markers sit between sentences on the page; the FAQ markup has none.
+        const text = normalizeSpace(visibleText(p.html.replace(/<sup>[\s\S]*?<\/sup>/g, '')))
         const faq = (parsed['@graph'] ?? []).find((n) => n['@type'] === 'FAQPage')
         if (faq) for (const q of faq.mainEntity) {
           if (!text.includes(normalizeSpace(q.name))) r.fail(`${p.file}: FAQ question "${q.name}" is not visible on the page`)

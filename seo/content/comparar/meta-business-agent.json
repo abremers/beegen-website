@@ -1,0 +1,121 @@
+{
+  "slug": "meta-business-agent",
+  "family": "comparar",
+  "author": "claude-code-session",
+  "prompt_version": "comparar-v1",
+  "facts_hash": "sha256:89f8b9dc4e0803c18e5a9de2cee02da3bc8ab17bdb89905b5bbb566f8c7c40c5",
+  "blocks": {
+    "summary": [
+      {
+        "text": "Meta Business Agent es el agente de IA que Meta presentó en Conversations 2026 para atender a los clientes 24/7, y empezar a usarlo es gratis.",
+        "facts": [
+          "metabusinessagent.launch",
+          "metabusinessagent.always.on",
+          "metabusinessagent.cost.free"
+        ]
+      },
+      {
+        "text": "Beegen trabaja de otra forma: un CRM gratis con 1 usuario y un agente de WhatsApp de $299 MXN al mes por número.",
+        "facts": [
+          "modules.crm.includedQuota.quantity",
+          "modules.wa_agent.priceMxn"
+        ]
+      },
+      {
+        "text": "Aquí explicamos qué hace cada uno, con datos de Meta y de Beegen.",
+        "facts": [
+          "metabusinessagent.availability",
+          "modules.wa_agent.tagline"
+        ]
+      }
+    ],
+    "beegen_fits": [
+      {
+        "text": "Si quieres guardar a cada cliente en un CRM: el de Beegen reúne contactos, pipeline y tareas, y el primer usuario es gratis.",
+        "facts": [
+          "modules.crm.tagline",
+          "modules.crm.includedQuota.quantity"
+        ]
+      },
+      {
+        "text": "Si tu sitio también trae clientes: el Sitio web de Beegen manda cada formulario al CRM.",
+        "facts": [
+          "site.site_form_crm"
+        ]
+      },
+      {
+        "text": "Si te llaman al WhatsApp del negocio: el agente de Beegen atiende las llamadas por chat sin costo extra.",
+        "facts": [
+          "site.calls_included"
+        ]
+      },
+      {
+        "text": "Si quieres saber cuánto pagarás: el agente incluye 200 conversaciones con IA al mes y cada conversación extra cuesta $2 MXN.",
+        "facts": [
+          "modules.wa_agent.meter.included",
+          "modules.wa_agent.meter.overageMxn"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Meta Business Agent es gratis?",
+        "a": [
+          {
+            "text": "Meta indica que empezar es gratis y que en los próximos meses lo ofrecerá por suscripciones de pago.",
+            "facts": [
+              "metabusinessagent.cost.free"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Dónde está disponible Meta Business Agent?",
+        "a": [
+          {
+            "text": "Según Meta, está disponible para negocios elegibles en mercados seleccionados, con más mercados próximamente.",
+            "facts": [
+              "metabusinessagent.availability"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Meta Business Agent se conecta con otros sistemas?",
+        "a": [
+          {
+            "text": "Meta indica que su Business Agent Platform permite conectarlo con un conjunto creciente de cientos de sistemas.",
+            "facts": [
+              "metabusinessagent.platform"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Qué agrega Beegen?",
+        "a": [
+          {
+            "text": "Un CRM con contactos, pipeline y tareas, un sitio web cuyos formularios llegan a ese CRM, y un agente de WhatsApp que responde, califica y agenda citas 24/7.",
+            "facts": [
+              "modules.crm.tagline",
+              "site.site_form_crm",
+              "modules.wa_agent.tagline"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Puedo probar Beegen antes de pagar?",
+        "a": [
+          {
+            "text": "Sí, cada módulo tiene su propia prueba de 14 días, sin tarjeta.",
+            "facts": [
+              "trial.days",
+              "site.trial_no_card"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
