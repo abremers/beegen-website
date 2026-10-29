@@ -111,7 +111,7 @@
   <div class="legal-hero">
     <div class="container">
       <h1>Privacy Policy</h1>
-      <p>Last updated: May 2026</p>
+      <p>Last updated: October 29, 2026</p>
     </div>
   </div>
 
@@ -120,7 +120,7 @@
       <div class="legal-content">
 
         <h2>1. Who We Are</h2>
-        <p>Beegen ("we", "us", "our") operates beegen.co and app.beegen.co. We provide AI-powered tools for local businesses, including a website builder and a WhatsApp AI assistant with appointment booking. If you have questions about this policy, contact us at <a href="mailto:hello@beegen.co">hello@beegen.co</a>.</p>
+        <p>Beegen ("we", "us", "our") operates beegen.co and app.beegen.co. We provide a modular sales system for small businesses in Mexico: a free CRM, a WhatsApp AI agent, and optional modules such as payment links (Cobros), CFDI invoicing, reminders, Google reviews, quotes, websites, and Instagram and Messenger. If you have questions about this policy, contact us at <a href="mailto:hello@beegen.co">hello@beegen.co</a>.</p>
 
         <h2>2. Information We Collect</h2>
         <p>We collect information you provide directly:</p>
@@ -128,21 +128,31 @@
           <li>Account information (email address, password) when you sign up</li>
           <li>Prompts and instructions you send to the AI builder</li>
           <li>Brand assets you upload (logos, colour preferences)</li>
-          <li>Payment information processed securely via our payment provider</li>
+          <li>Payment information for your Beegen subscription, processed by Stripe</li>
+        </ul>
+        <p>When you use specific modules we also process:</p>
+        <ul>
+          <li><strong>CRM data you import or create:</strong> your customers' contact details (name, phone, email), notes, tasks and deals. For this data Beegen acts as a processor on behalf of your business, which is the controller and is responsible for having a lawful basis and consent to hold it.</li>
+          <li><strong>Messages:</strong> the content of WhatsApp, Instagram and Messenger conversations (text, media, sender identifiers and timestamps), stored to show your inbox and to give the AI agent context. Customers' messages are processed on behalf of the business that connected the channel.</li>
+          <li><strong>Payments (Cobros):</strong> the payment link, amount, status, and the payer's name and phone number. We never see or store card data; it is entered on and processed by Stripe.</li>
+          <li><strong>Invoicing (CFDI):</strong> tax data of your business and of your customers (RFC, tax name, regime, postal code, invoice items and amounts), which we send to an authorized certification provider (PAC) to stamp the invoice.</li>
+          <li><strong>Google Business Profile (Reseñas):</strong> an access token that lets us read and reply to your business reviews, and the reviews themselves.</li>
+          <li><strong>Instagram and Messenger:</strong> access tokens for the accounts and pages you connect, and the messages exchanged through them.</li>
         </ul>
         <p>We also collect usage data automatically, including pages visited, features used, and device/browser information.</p>
 
         <h2>3. How We Use Your Information</h2>
         <ul>
-          <li>To provide and improve the Beegen service</li>
+          <li>To provide and improve the Beegen service and the modules you enable</li>
           <li>To process payments and manage your subscription</li>
           <li>To send transactional emails (receipts, account notices)</li>
           <li>To respond to support requests</li>
         </ul>
         <p>We do not sell your personal data to third parties.</p>
 
-        <h2>4. AI Processing</h2>
-        <p>Your prompts are sent to Anthropic's Claude API to generate website content. Anthropic's own privacy policy governs their handling of API data. We do not use your prompts or generated sites to train our own AI models.</p>
+        <h2>4. AI Processing and Service Providers</h2>
+        <p>Your prompts, and the WhatsApp, Instagram and Messenger messages the AI agent answers (together with the business knowledge base and CRM context needed to answer), are sent to Anthropic's Claude API to generate content and replies. Anthropic acts as our subprocessor and its own privacy policy governs its handling of API data. We do not use your content or your customers' messages to train our own AI models.</p>
+        <p>We also share data with other providers only as needed to run the service: Meta (WhatsApp, Instagram and Messenger delivery), Stripe (subscription billing and Cobros payments, under its own privacy policy), the authorized certification provider (PAC) that stamps CFDI invoices, Google (Calendar and Business Profile), and our hosting and email providers (Supabase, Vercel, Resend).</p>
 
         <h2>5. Google API Services and Calendar Data</h2>
         <p>Beegen integrates with Google Calendar to power the appointment booking feature in our WhatsApp AI product. When you choose to connect your Google Calendar:</p>
@@ -154,14 +164,16 @@
           <li><strong>Compliance:</strong> Beegen's use of data obtained via Google APIs complies with the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
         </ul>
 
+        <p>The Reseñas module similarly uses Google Business Profile access, with your consent, only to read your business reviews and publish the replies you approve. The same sharing, disconnection and Limited Use terms apply.</p>
+
         <h2>6. Data Retention</h2>
-        <p>We retain your account data for as long as your account is active. You may delete your account yourself from the dashboard (Settings → Delete my account) or request deletion at any time by emailing <a href="mailto:privacy@beegen.co">privacy@beegen.co</a>. Full instructions: <a href="/data-deletion.html">beegen.co/data-deletion</a>.</p>
+        <p>We retain your account data for as long as your account is active. You may delete your account yourself from the dashboard (Settings → Delete my account) or request deletion at any time by emailing <a href="mailto:privacy@beegen.co">privacy@beegen.co</a>. Full instructions: <a href="/data-deletion.html">beegen.co/data-deletion</a>. Invoice and tax records may be kept for the period required by Mexican law (typically 7 years).</p>
 
         <h2>7. Cookies</h2>
         <p>We use essential cookies to keep you logged in and remember your preferences. We do not use advertising or tracking cookies.</p>
 
         <h2>8. Your Rights</h2>
-        <p>Depending on your location, you may have rights to access, correct, or delete your personal data. Contact us at <a href="mailto:hello@beegen.co">hello@beegen.co</a> to exercise these rights.</p>
+        <p>Depending on your location, you may have rights to access, correct, or delete your personal data. Contact us at <a href="mailto:hello@beegen.co">hello@beegen.co</a> to exercise these rights. If you are a customer of a business that uses Beegen, send your request to that business first; we will help it respond.</p>
 
         <h2>9. Changes to This Policy</h2>
         <p>We may update this policy from time to time. We'll notify you of significant changes by email or via the app.</p>
