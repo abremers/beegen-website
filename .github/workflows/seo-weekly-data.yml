@@ -1,0 +1,67 @@
+name: seo-weekly-data
+
+# Weekly Search Console export (docs/seo-engine-plan.md section 10.2). Data only: results are
+# committed to the seo-data branch, never to main, so nothing on the site changes.
+
+on:
+  schedule:
+    - cron: '17 5 * * 1' # Mondays 05:17 UTC, before the weekly SEO task reads it
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seo-weekly-data
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: seo/package-lock.json
+
+      - name: Install dependencies
+        working-directory: seo
+        run: npm ci
+
+      - name: Export Search Console data
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ -z "$GSC_SERVICE_ACCOUNT_JSON" ]; then
+            echo "::error::GSC_SERVICE_ACCOUNT_JSON is not set in the repository secrets."
+            exit 1
+          fi
+          node seo/cli.mjs gsc --summary "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit to the seo-data branch
+        run: |
+          set -e
+          cp -r seo/metrics "$RUNNER_TEMP/metrics"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch --depth=1 origin seo-data 2>/dev/null; then
+            git checkout -B seo-data FETCH_HEAD
+          else
+            git checkout --orphan seo-data
+            git rm -rq --cached . || true
+            find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+            printf '# seo-data\n\nWeekly Search Console exports written by .github/workflows/seo-weekly-data.yml. Not deployed.\n' > README.md
+          fi
+          mkdir -p metrics
+          cp -r "$RUNNER_TEMP/metrics/." metrics/
+          git add README.md metrics
+          if git diff --cached --quiet; then
+            echo "No new data to commit."
+          else
+            git commit -m "Search Console export $(date -u +%F)"
+            git push origin seo-data
+          fi
