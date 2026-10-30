@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-10-29",
+  "updated_at": "2026-10-30",
   "correction_email": "correcciones@beegen.co",
   "max_claim_age_days": 60,
   "competitors": [
@@ -26,7 +26,7 @@
       ],
       "when_competitor_fits_es": [
         {
-          "text_es": "Si prefieres conectar tu número por código QR en lugar de la API oficial de WhatsApp, como en el plan Básico de Leadsales.",
+          "text_es": "Si no necesitas la API oficial de WhatsApp ni campañas, como en el plan Básico de Leadsales.",
           "facts": [
             "leadsales.channel.basico_qr"
           ]
@@ -125,6 +125,12 @@
           "evidence": [
             {
               "source_id": "ls-pricing-es",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Plan Básico Ordena a tu equipo de ventas. Sin WhatsApp API ni campañas $ 2,362.92 MXN / mes $ 97 USD / mes"
+            },
+            {
+              "source_id": "ls-pricing-es",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Básico: 97 USD/mes"
@@ -136,7 +142,7 @@
               "quote": "Básico | 97 | 2,362.92 | 3 | 5 | QR only, no API, no bulk"
             }
           ],
-          "status": "draft",
+          "status": "verified",
           "notes": "Older third-party pages cite 1,390 MXN and 83.99 USD; the official pricing page wins."
         },
         {
@@ -147,6 +153,12 @@
           "unit": "USD/mes",
           "plan": "Profesional",
           "evidence": [
+            {
+              "source_id": "ls-pricing-es",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Plan Profesional Escala con campañas e IA. WhatsApp API oficial Campañas Lead Agent $ 3,239.88 MXN / mes $ 133 USD / mes"
+            },
             {
               "source_id": "ls-pricing-es",
               "accessed_at": "2026-10-29",
@@ -160,7 +172,7 @@
               "quote": "Profesional | 133 | 3,239.88 | 4 | 10 | Cloud API, FB, IG"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "leadsales.price.avanzado",
@@ -170,6 +182,12 @@
           "unit": "USD/mes",
           "plan": "Avanzado",
           "evidence": [
+            {
+              "source_id": "ls-pricing-es",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Plan Avanzado Para operaciones de alto volumen. WhatsApp API oficial Campañas Lead Agent $ 6,016.92 MXN / mes $ 247 USD / mes"
+            },
             {
               "source_id": "ls-pricing-es",
               "accessed_at": "2026-10-29",
@@ -183,7 +201,7 @@
               "quote": "Avanzado | 247 | 6,016.92 | 5 | unlimited | Cloud API"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "leadsales.users.basico",
@@ -195,12 +213,18 @@
           "evidence": [
             {
               "source_id": "ls-pricing-es",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Usuarios incluidos Con la opción de agregar usuarios adicionales. 3 Embudos"
+            },
+            {
+              "source_id": "ls-pricing-es",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Incluye 3 usuarios, hasta 5 embudos y 5,000 conversaciones activas."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "leadsales.users.profesional",
@@ -212,20 +236,33 @@
           "evidence": [
             {
               "source_id": "ls-pricing-es",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Usuarios incluidos Con la opción de agregar usuarios adicionales. 4 Embudos"
+            },
+            {
+              "source_id": "ls-pricing-es",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Incluye 4 usuarios, hasta 10 embudos"
             }
           ],
-          "status": "draft"
+          "status": "verified",
+          "notes": "Funnel counts (5, 10, unlimited) follow each \"Embudos\" label on the same page."
         },
         {
           "id": "leadsales.channel.basico_qr",
           "topic": "whatsapp_connection",
-          "text_es": "En el plan Básico, WhatsApp se conecta escaneando un código QR, compatible con WhatsApp Business versión web y no con la API oficial.",
-          "value": "qr",
+          "text_es": "El plan Básico de Leadsales no incluye la API oficial de WhatsApp ni campañas.",
+          "value": "no_api",
           "plan": "Básico",
           "evidence": [
+            {
+              "source_id": "ls-pricing-es",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Plan Básico Ordena a tu equipo de ventas. Sin WhatsApp API ni campañas"
+            },
             {
               "source_id": "ls-help-qr",
               "accessed_at": "2026-10-19",
@@ -233,7 +270,8 @@
               "quote": "compatible con WhatsApp Business versión web, no con API oficial"
             }
           ],
-          "status": "draft"
+          "status": "verified",
+          "notes": "Was: QR connection, from the help center (403 to automated requests). The pricing page states the plan has no API; the QR detail needs a human check to come back."
         },
         {
           "id": "leadsales.channel.qr_disconnect_warning",
@@ -249,7 +287,8 @@
               "quote": "para evitar desconexiones"
             }
           ],
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: source is the help center, which answers 403 to automated requests; restore only after a human check."
         },
         {
           "id": "leadsales.channel.api_plans",
@@ -259,12 +298,18 @@
           "evidence": [
             {
               "source_id": "ls-pricing-es",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Los planes Profesional y Avanzado funcionan sobre WhatsApp API oficial."
+            },
+            {
+              "source_id": "ls-pricing-es",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Los planes Profesional y Avanzado funcionan sobre WhatsApp API oficial."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "leadsales.channel.api_no_history",
@@ -279,14 +324,21 @@
               "quote": "el setup de Cloud API toma unos 10 minutos y no conserva contactos ni historial previo"
             }
           ],
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: the cited article now says migration keeps the number and conversations (\"Cómo migrar a WhatsApp API sin perder el número ni conversaciones\"); the claim is outdated."
         },
         {
           "id": "leadsales.channel.coexistence",
           "topic": "whatsapp_connection",
-          "text_es": "Leadsales ofrece Coexistence (la app de WhatsApp Business y la API en el mismo número) en México con la versión 2.24.17 o posterior de la app.",
+          "text_es": "Leadsales ofrece Coexistence (la app de WhatsApp Business y la API en el mismo número) para números de países habilitados como México, con la versión 2.24.17 o superior de la app.",
           "value": true,
           "evidence": [
+            {
+              "source_id": "ls-blog-coexistence",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Tener un número telefónico de un país habilitado (por ejemplo, México, Brasil, Argentina o Colombia). Usar la versión 2.24.17 o superior de WhatsApp Business App."
+            },
             {
               "source_id": "ls-blog-coexistence",
               "accessed_at": "2026-10-19",
@@ -294,8 +346,7 @@
               "quote": "Coexistence available for MX, BR, AR, CO with WhatsApp Business app 2.24.17 or later"
             }
           ],
-          "conflicts": "The quote is the research file's English summary of the Spanish page; re-verify against the page's own wording before this claim renders.",
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "leadsales.templates.credits",
@@ -306,12 +357,18 @@
           "evidence": [
             {
               "source_id": "ls-blog-creditos",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "1 crédito equivale a 1 plantilla enviada a un contacto desde Leadsales"
+            },
+            {
+              "source_id": "ls-blog-creditos",
               "accessed_at": "2026-10-19",
               "method": "search_excerpt",
               "quote": "1 crédito equivale a 1 plantilla enviada a un contacto"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "leadsales.ai.lead_agent_price",
@@ -328,7 +385,8 @@
             }
           ],
           "conflicts": "Only the research summary of ls-pricing-en and ls-ai-agent was seen; needs a direct fetch of ls-ai-agent before it renders.",
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: the AI agent page now says \"Try it at no cost for the first 30 days, after which the cost adjusts to your usage\"; no fixed price is published."
         },
         {
           "id": "leadsales.trial.days",
@@ -338,13 +396,19 @@
           "unit": "días",
           "evidence": [
             {
+              "source_id": "ls-pricing-en",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Start 14-day trial"
+            },
+            {
               "source_id": "repo-crm-recon",
               "accessed_at": "2026-10-19",
               "method": "search_excerpt",
               "quote": "14-day trial (L1)"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "leadsales.users.extra_price",
@@ -360,7 +424,8 @@
             }
           ],
           "conflicts": "13 USD (Spanish FAQ) versus 10 USD (English pricing). Do not render a figure; drop the claim if a direct fetch cannot settle it.",
-          "status": "draft"
+          "status": "removed",
+          "notes": " 2026-10-30: the FAQ page now returns 404 and the pricing page only says extra users cost extra, without a figure."
         }
       ],
       "contrasts": [
@@ -417,7 +482,7 @@
       "category": "crm",
       "framing": "alternativa",
       "title_es": "Alternativa a Kommo para vender por WhatsApp | Beegen",
-      "description_es": "Kommo y Beegen comparados: precio por usuario, plazo mínimo de pago, conexión de WhatsApp y prueba gratis. Datos con fuente y fecha de consulta.",
+      "description_es": "Kommo y Beegen comparados: precio por usuario, periodos de pago, prueba gratis y tarifas de Meta por WhatsApp. Datos con fuente y fecha de consulta.",
       "target_queries": [
         "alternativa a kommo",
         "kommo precios",
@@ -431,7 +496,7 @@
       ],
       "when_competitor_fits_es": [
         {
-          "text_es": "Si tu empresa prefiere pagar por adelantado y le acomoda el periodo mínimo de 6 meses que pide Kommo.",
+          "text_es": "Si tu empresa prefiere pagar por adelantado en periodos de 6 meses o más, como cobra Kommo.",
           "facts": [
             "kommo.contract.min6"
           ]
@@ -443,9 +508,9 @@
           ]
         },
         {
-          "text_es": "Si te basta conectar WhatsApp por QR con WhatsApp Lite y trabajas sin difusiones, plantillas ni varios usuarios.",
+          "text_es": "Si quieres un CRM con plan Pro y muchas funciones de IA, y tu equipo ya trabaja con Kommo.",
           "facts": [
-            "kommo.wa.lite"
+            "kommo.price.advanced"
           ]
         }
       ],
@@ -495,12 +560,18 @@
         {
           "id": "kommo.price.base",
           "topic": "pricing",
-          "text_es": "Desde el 1 de septiembre de 2026, el plan Base de Kommo cuesta 25 USD por usuario al mes para clientes nuevos.",
-          "value": 25,
+          "text_es": "En su página de precios para Latinoamérica, el plan Básico de Kommo cuesta 20 USD por usuario al mes, cobrados por 6 meses (120 USD por usuario).",
+          "value": 20,
           "unit": "USD/usuario/mes",
-          "plan": "Base",
-          "notes": "Third-party pages still show the pre-increase 15 USD.",
+          "plan": "Básico",
+          "notes": "The 2026-09-01 blog post announced 25 USD for new customers; the live Spanish (Latin America) pricing page shows 20. Prices vary by billing country.",
           "evidence": [
+            {
+              "source_id": "kommo-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Para equipos pequeños que buscan funciones de IA básicas 20 Por usuario/mes ¿Cuál es el costo total? Billed $120/user for 6 months"
+            },
             {
               "source_id": "kommo-update",
               "accessed_at": "2026-10-29",
@@ -508,16 +579,22 @@
               "quote": "The Base plan goes to $25/mo & the Advanced plan to $35/mo from September 1, 2026"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "kommo.price.advanced",
           "topic": "pricing",
-          "text_es": "Desde el 1 de septiembre de 2026, el plan Advanced de Kommo cuesta 35 USD por usuario al mes para clientes nuevos.",
-          "value": 35,
+          "text_es": "En la misma página, el plan Avanzado de Kommo cuesta 30 USD por usuario al mes, cobrados por 6 meses (180 USD por usuario).",
+          "value": 30,
           "unit": "USD/usuario/mes",
-          "plan": "Advanced",
+          "plan": "Avanzado",
           "evidence": [
+            {
+              "source_id": "kommo-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Avanzado Para equipos en desarrollo que buscan automatizar con IA 30 Por usuario/mes ¿Cuál es el costo total? Billed $180/user for 6 months"
+            },
             {
               "source_id": "kommo-update",
               "accessed_at": "2026-10-29",
@@ -525,16 +602,23 @@
               "quote": "The Base plan goes to $25/mo & the Advanced plan to $35/mo from September 1, 2026"
             }
           ],
-          "status": "draft"
+          "status": "verified",
+          "notes": "The blog announced 35 USD; the live Latin America page shows 30."
         },
         {
           "id": "kommo.contract.min6",
           "topic": "contract",
-          "text_es": "Kommo no ofrece pago mensual: el periodo mínimo de suscripción es de 6 meses.",
+          "text_es": "La página de precios de Kommo ofrece periodos de pago de 6 meses, 9 meses, 1 año o 2 años; no muestra pago mensual.",
           "value": 6,
           "unit": "meses",
           "notes": "One older source says 12 months; the pricing page says 6.",
           "evidence": [
+            {
+              "source_id": "kommo-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Gratis durante 14 días, no necesitas tarjeta de crédito. 6 meses 9 meses 1 año 2 años"
+            },
             {
               "source_id": "kommo-pricing",
               "accessed_at": "2026-10-29",
@@ -542,15 +626,21 @@
               "quote": "Monthly payment is not currently available. The minimum subscription period is 6 months."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "kommo.trial.days",
           "topic": "trial",
-          "text_es": "Kommo ofrece una prueba gratis de 14 días en todos sus planes.",
+          "text_es": "Kommo ofrece una prueba gratis de 14 días, sin tarjeta de crédito.",
           "value": 14,
           "unit": "días",
           "evidence": [
+            {
+              "source_id": "kommo-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "pruébalo gratis durante 14 días, sin necesidad de tarjeta de crédito"
+            },
             {
               "source_id": "kommo-pricing",
               "accessed_at": "2026-10-29",
@@ -558,7 +648,7 @@
               "quote": "All plans include a 14-day free trial"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "kommo.wa.lite",
@@ -573,7 +663,8 @@
               "quote": "It lacks broadcasts, message templates, automations, and multi-user access."
             }
           ],
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: the WhatsApp Lite URL now opens a general \"WhatsApp Business overview\" page without the quoted limits."
         },
         {
           "id": "kommo.wa.reauth",
@@ -588,7 +679,8 @@
               "quote": "the Facebook account must be reconnected once a year"
             }
           ],
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: the connection guide no longer says the account must be reconnected once a year."
         },
         {
           "id": "kommo.meta.fees",
@@ -598,17 +690,23 @@
           "evidence": [
             {
               "source_id": "kommo-wa-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Meta charges these fees directly and separately from your Kommo subscription."
+            },
+            {
+              "source_id": "kommo-wa-pricing",
               "accessed_at": "2026-10-19",
               "method": "search_excerpt",
               "quote": "directly and separately from your Kommo subscription"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         }
       ],
       "contrasts": [
         {
-          "topic": "Precio",
+          "topic": "Precio por usuario",
           "competitor_claim_ids": [
             "kommo.price.base",
             "kommo.price.advanced"
@@ -714,6 +812,27 @@
           "publisher": "Centro de ayuda de Whaticket",
           "kind": "official_docs",
           "language": "es"
+        },
+        {
+          "id": "wt-precios",
+          "url": "https://whaticket.com/precios/",
+          "publisher": "Whaticket (oficial)",
+          "kind": "official_pricing",
+          "language": "es"
+        },
+        {
+          "id": "wt-ai-blog",
+          "url": "https://whaticket.com/blog/crear-chatbot-inteligencia-artificial/",
+          "publisher": "Whaticket (blog oficial)",
+          "kind": "official_blog",
+          "language": "es"
+        },
+        {
+          "id": "wt-qr",
+          "url": "https://help.whaticket.com/es/articles/20785-por-que-aparece-la-alerta-esperando-el-mensaje",
+          "publisher": "Centro de ayuda de Whaticket",
+          "kind": "official_docs",
+          "language": "es"
         }
       ],
       "claims": [
@@ -727,12 +846,24 @@
           "evidence": [
             {
               "source_id": "wt-home",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Whaticket ofrece planes personalizables desde US$49 al mes"
+            },
+            {
+              "source_id": "wt-precios",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Facturación mensual de US$ 49.00"
+            },
+            {
+              "source_id": "wt-home",
               "accessed_at": "2026-10-19",
               "method": "search_excerpt",
               "quote": "desde US$49 al mes"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "whaticket.price.basis",
@@ -742,12 +873,18 @@
           "evidence": [
             {
               "source_id": "wt-terms",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "determinado en función del número de conexiones (números de WhatsApp) y usuarios de la solución WHATICKET contratados"
+            },
+            {
+              "source_id": "wt-terms",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "determinado en función del número de conexiones (números de WhatsApp) y usuarios de la solución"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "whaticket.tax",
@@ -757,12 +894,18 @@
           "evidence": [
             {
               "source_id": "wt-terms",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Los precios mostrados no incluyen impuestos ni retenciones, que son responsabilidad exclusiva del CLIENTE."
+            },
+            {
+              "source_id": "wt-terms",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Los precios mostrados no incluyen impuestos ni retenciones"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "whaticket.campaigns.extra",
@@ -772,12 +915,18 @@
           "evidence": [
             {
               "source_id": "wt-terms",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Cualquier compra de créditos para la funcionalidad de campaña de mensajería se realizará de forma totalmente independiente y adicional"
+            },
+            {
+              "source_id": "wt-terms",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Cualquier compra de créditos para la funcionalidad de campaña de mensajería se realizará de forma totalmente independiente y adicional."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "whaticket.ai.openai",
@@ -786,20 +935,38 @@
           "value": true,
           "evidence": [
             {
+              "source_id": "wt-ai-blog",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Actualmente, solo está disponible OpenAI . En la sección de \"Key API\" debes ingresar tu clave de API de OpenAI."
+            },
+            {
+              "source_id": "wt-precios",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "IA de Whaticket, requiere tokens de OpenAI no incluidos en el plan"
+            },
+            {
               "source_id": "wt-help",
               "accessed_at": "2026-10-19",
               "method": "search_excerpt",
               "quote": "solo está disponible OpenAI"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "whaticket.qr.reconnect",
           "topic": "whatsapp_connection",
-          "text_es": "El centro de ayuda de Whaticket indica desvincular la conexión y volver a escanear el código QR cuando se queda esperando mensajes.",
+          "text_es": "El centro de ayuda de Whaticket indica que, si una conexión por código QR se queda en \"Esperando el mensaje\", hay que desconectarla y volver a leer el código QR.",
           "value": true,
           "evidence": [
+            {
+              "source_id": "wt-qr",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "haz clic en Desconectar y confirma. Tendrás que volver a leer el código QR."
+            },
             {
               "source_id": "wt-help",
               "accessed_at": "2026-10-19",
@@ -807,14 +974,20 @@
               "quote": "Desvincular la conexión actual. Volver a conectar el número escaneando el código QR nuevamente."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "whaticket.refunds",
           "topic": "contract",
-          "text_es": "Whaticket no ofrece reembolsos ni créditos si cancelas antes de que termine el plazo de tu suscripción.",
+          "text_es": "Los términos de Whaticket indican que no hay reembolsos ni créditos si terminas el contrato antes del final del plazo.",
           "value": true,
           "evidence": [
+            {
+              "source_id": "wt-terms",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "No se proporcionarán reembolsos ni créditos por Tarifas si elige rescindir este Acuerdo antes del final de su Plazo."
+            },
             {
               "source_id": "wt-help",
               "accessed_at": "2026-10-19",
@@ -822,7 +995,23 @@
               "quote": "no ofrece reembolsos ni créditos en caso de que decidas cancelar tu suscripción antes de que finalice su plazo"
             }
           ],
-          "status": "draft"
+          "status": "verified"
+        },
+        {
+          "id": "whaticket.users.min3",
+          "topic": "users",
+          "text_es": "En la página de precios de Whaticket, cada plan requiere un mínimo de 3 usuarios.",
+          "value": 3,
+          "unit": "usuarios",
+          "evidence": [
+            {
+              "source_id": "wt-precios",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Número de usuarios (mínimo 3 usuarios)"
+            }
+          ],
+          "status": "verified"
         }
       ],
       "contrasts": [
@@ -875,7 +1064,7 @@
       "category": "inbox",
       "framing": "alternativa",
       "title_es": "Alternativa a Callbell para atender WhatsApp | Beegen",
-      "description_es": "Callbell y Beegen comparados: cobro por usuario, canal de WhatsApp e Instagram como complementos y tarifas de Meta. Datos con su fuente y fecha.",
+      "description_es": "Callbell y Beegen comparados: precio por usuario, WhatsApp e Instagram como complementos y prueba gratis. Datos con su fuente y fecha de consulta.",
       "target_queries": [
         "alternativa a callbell",
         "callbell precios",
@@ -888,9 +1077,9 @@
       ],
       "when_competitor_fits_es": [
         {
-          "text_es": "Si tu equipo usa un proveedor de WhatsApp (BSP) y te sirve que el plan cubra parte de los cargos de Meta.",
+          "text_es": "Si quieres probar una bandeja compartida durante 7 días antes de decidir, como ofrece Callbell.",
           "facts": [
-            "callbell.meta.budget"
+            "callbell.trial.days"
           ]
         },
         {
@@ -932,10 +1121,16 @@
         {
           "id": "callbell.price.user",
           "topic": "pricing",
-          "text_es": "Callbell cobra sus planes por usuario al mes.",
-          "value": true,
-          "notes": "Third parties cite 15 USD and 12 EUR per user; not rendered until read on the page.",
+          "text_es": "El plan Multiagent Chat de Callbell cuesta 15 USD por usuario al mes, y el Multiagent Chat Plus, 20 USD.",
+          "value": 15,
+          "notes": "Plus: \"MULTIAGENT CHAT PLUS 20 Per user / per month\".",
           "evidence": [
+            {
+              "source_id": "cb-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "MULTIAGENT CHAT 15 Per user / per month"
+            },
             {
               "source_id": "cb-pricing",
               "accessed_at": "2026-10-29",
@@ -943,16 +1138,23 @@
               "quote": "per user per month"
             }
           ],
-          "status": "draft"
+          "status": "verified",
+          "unit": "USD/usuario/mes"
         },
         {
           "id": "callbell.wa.addon",
           "topic": "pricing",
-          "text_es": "En Callbell, el canal de WhatsApp se cobra aparte, desde 54 USD al mes.",
-          "value": 54,
+          "text_es": "En Callbell, el canal de WhatsApp se cobra aparte, desde 22 USD al mes en créditos de consumo.",
+          "value": 22,
           "unit": "USD/mes",
-          "notes": "Third parties cite 22 USD; the official page says from 54 USD.",
+          "notes": "Earlier search excerpts said 54 USD; the live pricing page says from 22 USD.",
           "evidence": [
+            {
+              "source_id": "cb-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "WhatsApp ( from 22 $ / month)* *of consumables credits"
+            },
             {
               "source_id": "cb-pricing",
               "accessed_at": "2026-10-29",
@@ -960,7 +1162,7 @@
               "quote": "WhatsApp from $54"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "callbell.ig.addon",
@@ -971,12 +1173,18 @@
           "evidence": [
             {
               "source_id": "cb-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Instagram Direct ( 22 $ / month)"
+            },
+            {
+              "source_id": "cb-pricing",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Instagram at $22 per month"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "callbell.meta.budget",
@@ -992,7 +1200,30 @@
               "quote": "the plan covers WhatsApp's charges up to a maximum budget of €50 (or $54) per month for every 10 active agents"
             }
           ],
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: the help-center article answers 403 to automated requests; restore only after a human check."
+        },
+        {
+          "id": "callbell.trial.days",
+          "topic": "trial",
+          "text_es": "Callbell ofrece una prueba de 7 días, sin tarjeta de crédito.",
+          "value": 7,
+          "unit": "días",
+          "evidence": [
+            {
+              "source_id": "cb-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "No credit card required - MULTIAGENT CHAT 15 Per user / per month"
+            },
+            {
+              "source_id": "cb-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Try It for 7 Days"
+            }
+          ],
+          "status": "verified"
         }
       ],
       "contrasts": [
@@ -1025,12 +1256,12 @@
           ]
         },
         {
-          "topic": "Tarifas de Meta",
+          "topic": "Prueba gratis",
           "competitor_claim_ids": [
-            "callbell.meta.budget"
+            "callbell.trial.days"
           ],
           "beegen_fact_refs": [
-            "site.nothing_cut_off"
+            "site.trial_no_card"
           ]
         }
       ]
@@ -1054,7 +1285,7 @@
       ],
       "when_competitor_fits_es": [
         {
-          "text_es": "Si tu equipo es de hasta 5 personas y quiere contactos ilimitados en el plan Starter, aunque no incluya agentes de IA.",
+          "text_es": "Si tu equipo contesta todo a mano y no necesita agentes de IA, que en Respond.io empiezan en el plan Growth.",
           "facts": [
             "respondio.users.starter"
           ]
@@ -1104,12 +1335,24 @@
           "evidence": [
             {
               "source_id": "rio-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "starter $ 79 /month $1,188 $948/yr (billed yearly)"
+            },
+            {
+              "source_id": "rio-blog",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Starter ($99/month) for small teams"
+            },
+            {
+              "source_id": "rio-pricing",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Month to month, the same plans cost $99, $199 and $349."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "respondio.price.growth",
@@ -1121,21 +1364,37 @@
           "evidence": [
             {
               "source_id": "rio-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "growth $ 159 /month $2,388 $1,908/yr (billed yearly)"
+            },
+            {
+              "source_id": "rio-blog",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Growth ($199/month) for scaling with AI Agents"
+            },
+            {
+              "source_id": "rio-pricing",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Starter, Growth and Advanced start at $79, $159 and $279 a month when paid for a full year upfront."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "respondio.users.starter",
-          "topic": "users",
-          "text_es": "El plan Starter incluye 5 usuarios y contactos ilimitados, sin agentes de IA.",
-          "value": 5,
-          "unit": "usuarios",
-          "plan": "Starter",
+          "topic": "ai",
+          "text_es": "En Respond.io, los agentes de IA empiezan en el plan Growth; el Starter no los incluye.",
+          "value": true,
           "evidence": [
+            {
+              "source_id": "rio-blog",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "the Growth plan adds AI Agents and advanced automation and integrations"
+            },
             {
               "source_id": "rio-pricing",
               "accessed_at": "2026-10-29",
@@ -1143,7 +1402,8 @@
               "quote": "Starter includes unlimited contacts but no AI Agents"
             }
           ],
-          "status": "draft"
+          "status": "verified",
+          "notes": "Was: \"5 users\" in Starter, which neither page states (the 7-day trial mentions 5 users on Growth)."
         },
         {
           "id": "respondio.mac.overage",
@@ -1153,20 +1413,32 @@
           "unit": "USD por 100 contactos",
           "evidence": [
             {
+              "source_id": "rio-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "You will be charged $12 per 100 MACs on Growth"
+            },
+            {
               "source_id": "rio-blog",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "$12 per 100 on Growth"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "respondio.meta.passthrough",
           "topic": "pricing",
-          "text_es": "Respond.io cobra las tarifas de Meta por WhatsApp aparte, sin margen.",
+          "text_es": "Respond.io no cobra cuota por conectar el número ni margen por mensaje de WhatsApp: con la API solo pagas las tarifas de Meta.",
           "value": true,
           "evidence": [
+            {
+              "source_id": "rio-blog",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "respond.io charges no WhatsApp number connection fees or per-message markups. Businesses using WhatsApp API only pay Meta's WhatsApp message fees"
+            },
             {
               "source_id": "rio-blog",
               "accessed_at": "2026-10-29",
@@ -1174,7 +1446,7 @@
               "quote": "Meta's messaging fees are billed separately, passed through with no markup."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         }
       ],
       "contrasts": [
@@ -1230,7 +1502,7 @@
       ],
       "when_competitor_fits_es": [
         {
-          "text_es": "Si quieres empezar gratis y no te importa publicar en un subdominio de Wix con anuncios.",
+          "text_es": "Si quieres empezar gratis y no te importan los anuncios de Wix ni usar su dirección en lugar de tu dominio.",
           "facts": [
             "wix.free.ads"
           ]
@@ -1299,19 +1571,31 @@
           "evidence": [
             {
               "source_id": "wix-support-premium",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "La compra de un plan Premium o Wix Studio te permite conectar tu propio dominio (ya sea comprado en Wix o en otro host de dominio), eliminar los anuncios de Wix y mucho más"
+            },
+            {
+              "source_id": "wix-support-premium",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "La compra de un plan Premium o Wix Studio te permite conectar tu propio dominio (ya sea comprado en Wix o en otro host de dominio), eliminar los anuncios de Wix y mucho más."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "wix.free.ads",
           "topic": "website",
-          "text_es": "En el plan gratuito de Wix, el sitio queda en un subdominio de Wix y muestra anuncios de Wix.",
+          "text_es": "El plan gratis de Wix muestra anuncios de Wix y no permite usar tu propio dominio.",
           "value": true,
           "evidence": [
+            {
+              "source_id": "wix-expertmarket",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Wix offers a forever-free plan , but it comes with visible Wix ads and no custom URL."
+            },
             {
               "source_id": "wix-bluehost",
               "accessed_at": "2026-10-29",
@@ -1319,7 +1603,8 @@
               "quote": "Web pages created under this plan operate on a Wix subdomain and display Wix ads."
             }
           ],
-          "status": "draft"
+          "status": "verified",
+          "notes": "Was sourced to a Bluehost post that answers 403 to automated requests."
         },
         {
           "id": "wix.price.light",
@@ -1332,12 +1617,18 @@
           "evidence": [
             {
               "source_id": "wix-wbe",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Light See Pricing Starting from $17/month"
+            },
+            {
+              "source_id": "wix-wbe",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Light at $17/month"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "wix.price.core",
@@ -1348,13 +1639,25 @@
           "plan": "Core",
           "evidence": [
             {
+              "source_id": "wix-wbe",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "You'll need at least the Core plan ($29 per month)"
+            },
+            {
+              "source_id": "wix-expertmarket",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "the $29 per month Core plan being the cheapest plan for selling online"
+            },
+            {
               "source_id": "wix-expertmarket",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "you'll need at least the Core plan ($29 per month) if you plan on selling products or services"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "wix.price.business",
@@ -1366,12 +1669,18 @@
           "evidence": [
             {
               "source_id": "wix-wbe",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Business See Pricing Starting from $39/month"
+            },
+            {
+              "source_id": "wix-wbe",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Business at $39/month"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "wix.domain.free1y",
@@ -1381,12 +1690,18 @@
           "evidence": [
             {
               "source_id": "wix-impulsa",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "el dominio será gratuito sólo durante el primer año de tu suscripción"
+            },
+            {
+              "source_id": "wix-impulsa",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "el dominio será gratuito sólo durante el primer año de tu suscripción"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         }
       ],
       "contrasts": [
@@ -1422,16 +1737,16 @@
     },
     {
       "slug": "hostinger-horizons",
-      "name": "Hostinger Horizons",
-      "homepage": "https://www.hostinger.com/horizons",
+      "name": "Creador con IA de Hostinger",
+      "homepage": "https://www.hostinger.com/mx/ai-builder",
       "category": "website_builder",
       "framing": "alternativa",
-      "title_es": "Alternativa a Hostinger Horizons para tu negocio | Beegen",
-      "description_es": "Hostinger Horizons y Beegen comparados: planes por créditos de IA, precio de introducción y renovación, y qué incluye cada sitio. Con fuente y fecha.",
+      "title_es": "Alternativa a Hostinger Horizons (Creador con IA) | Beegen",
+      "description_es": "El Creador con IA de Hostinger, antes Horizons, y Beegen comparados: precios en pesos, plazo de 48 meses, renovación, créditos de IA y dominio.",
       "target_queries": [
         "alternativa a hostinger horizons",
-        "hostinger horizons precios",
-        "creador de sitios con ia"
+        "hostinger creador con ia precio",
+        "hostinger ai builder mexico"
       ],
       "beegen_modules": [
         "site",
@@ -1440,21 +1755,21 @@
       ],
       "when_competitor_fits_es": [
         {
-          "text_es": "Si haces pocos cambios al mes y te basta un plan por créditos, como el Explorer con 30 créditos.",
+          "text_es": "Si puedes pagar 48 meses por adelantado para obtener el precio de oferta del plan Premium.",
           "facts": [
-            "hostingerhorizons.price.explorer"
+            "hostingerhorizons.premium.price"
           ]
         },
         {
-          "text_es": "Si puedes pagar un año por adelantado para obtener el precio de introducción del primer periodo.",
+          "text_es": "Si quieres varios sitios en una sola cuenta: el plan Premium permite hasta 3 sitios web.",
           "facts": [
-            "hostingerhorizons.intro.price"
+            "hostingerhorizons.premium.sites"
           ]
         },
         {
-          "text_es": "Si necesitas muchas iteraciones con IA: el plan Hustler incluye 400 créditos al mes.",
+          "text_es": "Si te da tranquilidad una garantía de reembolso de 30 días al contratar.",
           "facts": [
-            "hostingerhorizons.price.hustler"
+            "hostingerhorizons.refund"
           ]
         }
       ],
@@ -1484,6 +1799,13 @@
           "publisher": "Vibe Your Website",
           "kind": "third_party_analysis",
           "language": "en"
+        },
+        {
+          "id": "hh-mx",
+          "url": "https://www.hostinger.com/mx/ai-builder",
+          "publisher": "Hostinger México (oficial)",
+          "kind": "official_pricing",
+          "language": "es"
         }
       ],
       "claims": [
@@ -1502,7 +1824,8 @@
               "quote": "Explorer: $6.99/month billed annually, 30 credits/month"
             }
           ],
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: hostinger.com/horizons now redirects to /ai-builder; the Explorer, Starter and Hustler credit plans are no longer offered."
         },
         {
           "id": "hostingerhorizons.price.starter",
@@ -1519,7 +1842,8 @@
               "quote": "Starter: $13.99/month billed annually, 70 credits/month"
             }
           ],
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: hostinger.com/horizons now redirects to /ai-builder; the Explorer, Starter and Hustler credit plans are no longer offered."
         },
         {
           "id": "hostingerhorizons.price.hustler",
@@ -1536,7 +1860,8 @@
               "quote": "Hustler: $79.99/month billed annually, 400 credits/month"
             }
           ],
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: hostinger.com/horizons now redirects to /ai-builder; the Explorer, Starter and Hustler credit plans are no longer offered."
         },
         {
           "id": "hostingerhorizons.credit.rule",
@@ -1551,7 +1876,8 @@
               "quote": "1 message (prompt) = 1 AI credit if coding changes were done"
             }
           ],
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: the support page now says credits are deducted dynamically per request, \"not a fixed per-message fee\"."
         },
         {
           "id": "hostingerhorizons.intro.price",
@@ -1566,7 +1892,8 @@
               "quote": "the intro price only holds for the first term"
             }
           ],
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: hostinger.com/horizons now redirects to /ai-builder; the Explorer, Starter and Hustler credit plans are no longer offered."
         },
         {
           "id": "hostingerhorizons.monthly.range",
@@ -1581,37 +1908,143 @@
               "quote": "Standard monthly prices for each plan range from $9.99 to $99.99 per month."
             }
           ],
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: hostinger.com/horizons now redirects to /ai-builder; the Explorer, Starter and Hustler credit plans are no longer offered."
+        },
+        {
+          "id": "hostingerhorizons.premium.price",
+          "topic": "pricing",
+          "plan": "Premium",
+          "unit": "MXN/mes",
+          "text_es": "En México, el plan Premium del Creador con IA de Hostinger se anuncia en MXN 34.99 al mes, pagando 48 meses por adelantado (MXN 1,679.52).",
+          "value": 34.99,
+          "evidence": [
+            {
+              "source_id": "hh-mx",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Premium Crea tu primer sitio web, desde portafolios y currículums hasta blogs y páginas de enlace en la bio MXN 174.99 MXN 34.99 /mes Elegir plan Hoy pagas MXN 1,679.52 durante 48 meses"
+            }
+          ],
+          "notes": "Promotional price during a year-end sale; re-verify often.",
+          "status": "verified"
+        },
+        {
+          "id": "hostingerhorizons.premium.renewal",
+          "topic": "pricing",
+          "plan": "Premium",
+          "unit": "MXN/mes",
+          "text_es": "Al renovar, el plan Premium cuesta MXN 149.99 al mes por el mismo plazo.",
+          "value": 149.99,
+          "evidence": [
+            {
+              "source_id": "hh-mx",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Se renueva automáticamente a MXN 149.99/mes/mes por el mismo plazo."
+            }
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "hostingerhorizons.premium.sites",
+          "topic": "website",
+          "plan": "Premium",
+          "text_es": "El plan Premium permite crear hasta 3 sitios web e incluye dominio personalizado gratis durante 1 año.",
+          "value": 3,
+          "evidence": [
+            {
+              "source_id": "hh-mx",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Crea hasta 3 sitios web 2 buzones por sitio web, gratis durante 1 año Dominio personalizado gratis durante 1 año"
+            }
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "hostingerhorizons.unlimited.price",
+          "topic": "pricing",
+          "plan": "Unlimited",
+          "unit": "MXN/mes",
+          "text_es": "El plan Unlimited se anuncia en MXN 54.99 al mes con pago de 48 meses (MXN 2,639.52) y se renueva a MXN 299.99 al mes.",
+          "value": 54.99,
+          "evidence": [
+            {
+              "source_id": "hh-mx",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "MXN 319.99 MXN 54.99 /mes Elegir plan Hoy pagas MXN 2,639.52 durante 48 meses"
+            },
+            {
+              "source_id": "hh-mx",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Se renueva automáticamente a MXN 299.99/mes/mes por el mismo plazo."
+            }
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "hostingerhorizons.refund",
+          "topic": "contract",
+          "text_es": "Hostinger ofrece una garantía de reembolso de 30 días.",
+          "value": 30,
+          "unit": "días",
+          "evidence": [
+            {
+              "source_id": "hh-mx",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Garantía de reembolso de 30 días"
+            }
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "hostingerhorizons.credits.dynamic",
+          "topic": "ai",
+          "text_es": "Hostinger indica que su Creador con IA descuenta créditos de forma dinámica en cada solicitud, no con una tarifa fija por mensaje.",
+          "value": true,
+          "evidence": [
+            {
+              "source_id": "hh-support",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Credits are deducted for each request based on the current credit-usage calculation, not a fixed per-message fee."
+            }
+          ],
+          "status": "verified"
         }
       ],
       "contrasts": [
         {
-          "topic": "Precio de entrada",
+          "topic": "Precio al mes",
           "competitor_claim_ids": [
-            "hostingerhorizons.price.explorer",
-            "hostingerhorizons.monthly.range"
+            "hostingerhorizons.premium.price",
+            "hostingerhorizons.premium.renewal"
           ],
           "beegen_fact_refs": [
             "modules.site.priceMxn"
           ]
         },
         {
-          "topic": "Ediciones con IA",
+          "topic": "Forma de pago",
           "competitor_claim_ids": [
-            "hostingerhorizons.credit.rule"
-          ],
-          "beegen_fact_refs": [
-            "modules.site.description"
-          ]
-        },
-        {
-          "topic": "Renovación",
-          "competitor_claim_ids": [
-            "hostingerhorizons.intro.price"
+            "hostingerhorizons.premium.price"
           ],
           "beegen_fact_refs": [
             "site.prices_mxn_iva",
             "site.annual_oxxo_spei"
+          ]
+        },
+        {
+          "topic": "Ediciones con IA",
+          "competitor_claim_ids": [
+            "hostingerhorizons.credits.dynamic"
+          ],
+          "beegen_fact_refs": [
+            "modules.site.description"
           ]
         }
       ]
@@ -1623,7 +2056,7 @@
       "category": "website_builder",
       "framing": "vs",
       "title_es": "Beegen vs Durable: sitio web y CRM para tu negocio | Beegen",
-      "description_es": "Durable y Beegen comparados: plan gratis, plan Launch, CRM incluido, comisión por cobro y salida del dominio. Datos con su fuente y fecha de consulta.",
+      "description_es": "Durable y Beegen comparados: plan gratis, planes Launch y Grow, CRM incluido, créditos de IA y salida del dominio. Datos con su fuente y fecha.",
       "target_queries": [
         "durable alternativa",
         "durable ai precios",
@@ -1643,13 +2076,13 @@
           ]
         },
         {
-          "text_es": "Si necesitas cobrar con tarjeta desde hoy, con la comisión que publica Durable en sus planes de pago.",
+          "text_es": "Si quieres un equipo sin límite de usuarios y más uso de IA, como en el plan Grow de Durable.",
           "facts": [
-            "durable.payments.fee"
+            "durable.price.grow"
           ]
         },
         {
-          "text_es": "Si te sirve un asistente con 1,000 mensajes al mes incluido en el plan Launch.",
+          "text_es": "Si te sirven 1,000 créditos de IA al mes incluidos en el plan Launch.",
           "facts": [
             "durable.launch.features"
           ]
@@ -1686,12 +2119,24 @@
           "evidence": [
             {
               "source_id": "dur-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "CRM Add up to 10 customers"
+            },
+            {
+              "source_id": "dur-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Free subdomain (*.durable.site)"
+            },
+            {
+              "source_id": "dur-pricing",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "durable.site subdomain and CRM for up to 10 customers"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "durable.price.launch",
@@ -1702,23 +2147,46 @@
           "plan": "Launch",
           "evidence": [
             {
+              "source_id": "dur-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Launch $22/m"
+            },
+            {
+              "source_id": "dur-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "$25/m Everything you need to get found, booked, and paid."
+            },
+            {
               "source_id": "dur-toolworthy",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Launch is $25/month monthly or $22/month annually"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "durable.price.grow",
           "topic": "pricing",
-          "text_es": "Precio del plan Grow de Durable.",
-          "value": 99,
+          "text_es": "El plan Grow de Durable cuesta 49 USD al mes, o 41 USD al mes con pago anual.",
+          "value": 49,
           "unit": "USD/mes",
           "plan": "Grow",
-          "conflicts": "Toolworthy says 99 USD; cocowork.fr and stork.ai say 41 to 49 USD. Not rendered until read on durable.com/pricing.",
           "evidence": [
+            {
+              "source_id": "dur-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "$49/m Grow faster with agents handling more on autopilot."
+            },
+            {
+              "source_id": "dur-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Grow $41/m"
+            },
             {
               "source_id": "dur-toolworthy",
               "accessed_at": "2026-10-29",
@@ -1726,16 +2194,23 @@
               "quote": "Grow at $99/month monthly or $85/month annually"
             }
           ],
-          "status": "draft"
+          "status": "verified",
+          "notes": "Toolworthy (2026-04-28) said 99 USD; the official page now says 49 and 41."
         },
         {
           "id": "durable.launch.features",
           "topic": "ai",
-          "text_es": "El plan Launch de Durable incluye dominio propio y 1,000 mensajes al mes con su asistente AI Partner.",
+          "text_es": "El plan Launch de Durable incluye 1,000 créditos de IA al mes.",
           "value": 1000,
           "unit": "mensajes/mes",
           "plan": "Launch",
           "evidence": [
+            {
+              "source_id": "dur-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "1000 AI credits/mo"
+            },
             {
               "source_id": "dur-pricing",
               "accessed_at": "2026-10-29",
@@ -1743,7 +2218,8 @@
               "quote": "1,000 AI Partner messages per month"
             }
           ],
-          "status": "draft"
+          "status": "verified",
+          "notes": "Was \"1,000 AI Partner messages\"; the page now says AI credits."
         },
         {
           "id": "durable.payments.fee",
@@ -1759,7 +2235,8 @@
               "quote": "standard processing fee of 2.9% + $0.30 per transaction"
             }
           ],
-          "status": "draft"
+          "status": "removed",
+          "notes": "2026-10-30: the pricing page no longer shows the 2.9% + 0.30 USD processing fee."
         },
         {
           "id": "durable.domain.minimum",
@@ -1769,12 +2246,18 @@
           "evidence": [
             {
               "source_id": "dur-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "to transfer over and has a minimum subscription time"
+            },
+            {
+              "source_id": "dur-pricing",
               "accessed_at": "2026-10-19",
               "method": "search_excerpt",
               "quote": "takes a couple of weeks to transfer over and has a minimum subscription time"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         }
       ],
       "contrasts": [
@@ -1798,18 +2281,18 @@
           ]
         },
         {
-          "topic": "Cobros",
-          "competitor_claim_ids": [
-            "durable.payments.fee"
-          ],
-          "beegen_fact_refs": [
-            "modules.payments.priceMxn"
-          ]
-        },
-        {
           "topic": "Tu dominio",
           "competitor_claim_ids": [
             "durable.domain.minimum"
+          ],
+          "beegen_fact_refs": [
+            "modules.site.description"
+          ]
+        },
+        {
+          "topic": "Asistente de IA",
+          "competitor_claim_ids": [
+            "durable.launch.features"
           ],
           "beegen_fact_refs": [
             "modules.site.description"
@@ -1886,12 +2369,18 @@
           "evidence": [
             {
               "source_id": "meta-blog",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Conversations 2026: Introducing Meta Business Agent on WhatsApp"
+            },
+            {
+              "source_id": "meta-blog",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Conversations 2026: Introducing Meta Business Agent on WhatsApp"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "metabusinessagent.cost.free",
@@ -1901,12 +2390,18 @@
           "evidence": [
             {
               "source_id": "meta-blog",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Getting started with the Business Agent is free. In the coming months, businesses will access the agent through our paid subscription offerings"
+            },
+            {
+              "source_id": "meta-blog",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Getting started with the Business Agent is free. In the coming months, businesses will access the agent through our paid subscription offerings."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "metabusinessagent.always.on",
@@ -1916,12 +2411,18 @@
           "evidence": [
             {
               "source_id": "meta-blog",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Respond to Customers 24/7"
+            },
+            {
+              "source_id": "meta-blog",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Deliver personalized customer experiences, 24/7, with Meta Business Agent."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "metabusinessagent.availability",
@@ -1931,12 +2432,18 @@
           "evidence": [
             {
               "source_id": "meta-product",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Available to eligible businesses in select markets, with additional markets launching soon."
+            },
+            {
+              "source_id": "meta-product",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Available to eligible businesses in select markets, with additional markets launching soon."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "metabusinessagent.search",
@@ -1946,12 +2453,18 @@
           "evidence": [
             {
               "source_id": "meta-blog",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "people will be able to find businesses by typing their name in the Search bar"
+            },
+            {
+              "source_id": "meta-blog",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "people will be able to find businesses by typing their name in the Search bar"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "metabusinessagent.platform",
@@ -1961,12 +2474,18 @@
           "evidence": [
             {
               "source_id": "meta-blog",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "It allows businesses to connect to a growing suite of hundreds of systems like Shopify and Zendesk"
+            },
+            {
+              "source_id": "meta-blog",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "It allows businesses to connect to a growing suite of hundreds of systems."
             }
           ],
-          "status": "draft"
+          "status": "verified"
         }
       ],
       "contrasts": [
@@ -2065,11 +2584,23 @@
         {
           "id": "framer.price.basic",
           "topic": "pricing",
-          "text_es": "El plan Basic de Framer cuesta 10 USD al mes por sitio con pago anual, o 15 USD con pago mensual.",
+          "text_es": "El plan Basic de Framer cuesta 10 USD al mes por sitio con facturación anual.",
           "value": 10,
           "unit": "USD/mes por sitio",
           "plan": "Basic",
           "evidence": [
+            {
+              "source_id": "fr-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Basic Creative personal sites $10 per month"
+            },
+            {
+              "source_id": "fr-siter",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Basic is $10 a month billed yearly"
+            },
             {
               "source_id": "fr-siter",
               "accessed_at": "2026-10-29",
@@ -2077,16 +2608,23 @@
               "quote": "Basic at $10 a month billed yearly"
             }
           ],
-          "status": "draft"
+          "status": "verified",
+          "notes": "The month-to-month price sits behind a toggle and is not in the page text; not rendered."
         },
         {
           "id": "framer.price.pro",
           "topic": "pricing",
-          "text_es": "El plan Pro de Framer cuesta 30 USD al mes por sitio con pago anual, o 45 USD con pago mensual.",
+          "text_es": "El plan Pro de Framer cuesta 30 USD al mes por sitio con facturación anual.",
           "value": 30,
           "unit": "USD/mes por sitio",
           "plan": "Pro",
           "evidence": [
+            {
+              "source_id": "fr-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Pro Growing professional sites $30 per month"
+            },
             {
               "source_id": "fr-siter",
               "accessed_at": "2026-10-29",
@@ -2094,7 +2632,7 @@
               "quote": "Pro at $30"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "framer.free",
@@ -2104,12 +2642,24 @@
           "evidence": [
             {
               "source_id": "fr-siter",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Framer is free on a framer.website subdomain with a Made in Framer banner"
+            },
+            {
+              "source_id": "fr-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Free Framer domain"
+            },
+            {
+              "source_id": "fr-siter",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "free on a framer.website subdomain with a Made in Framer banner and no custom domain"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         },
         {
           "id": "framer.editors",
@@ -2120,13 +2670,19 @@
           "notes": "Content-only editors are cited at 10 USD; not rendered.",
           "evidence": [
             {
+              "source_id": "fr-pricing",
+              "accessed_at": "2026-10-30",
+              "method": "direct_fetch",
+              "quote": "Additional editors are $20 / month, and viewers are free."
+            },
+            {
               "source_id": "fr-siter",
               "accessed_at": "2026-10-29",
               "method": "search_excerpt",
               "quote": "Editors are an add-on"
             }
           ],
-          "status": "draft"
+          "status": "verified"
         }
       ],
       "contrasts": [

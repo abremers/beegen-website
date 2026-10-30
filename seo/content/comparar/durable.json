@@ -3,7 +3,7 @@
   "family": "comparar",
   "author": "claude-code-session",
   "prompt_version": "comparar-v1",
-  "facts_hash": "sha256:1d10d876780e9fca6835584041b39308db9760f4fb36ae93b4b2237cd3497074",
+  "facts_hash": "sha256:823f6149b282e4fe6592daa1ab904a474aa956f37dd26f985adb5607aec9773d",
   "blocks": {
     "summary": [
       {
@@ -21,9 +21,9 @@
         ]
       },
       {
-        "text": "Comparamos el costo, el CRM, los cobros y qué pasa con tu dominio.",
+        "text": "Comparamos el costo, el CRM, la IA incluida y qué pasa con tu dominio.",
         "facts": [
-          "durable.payments.fee",
+          "durable.launch.features",
           "durable.domain.minimum"
         ]
       }
@@ -62,16 +62,11 @@
         "q": "¿Cuánto cuesta Durable?",
         "a": [
           {
-            "text": "Durable tiene un plan gratis y el plan Launch cuesta 25 USD al mes con pago mensual o 22 USD con pago anual.",
+            "text": "Durable tiene un plan gratis; el Launch cuesta 25 USD al mes o 22 USD con pago anual, y el Grow 49 USD al mes o 41 USD con pago anual.",
             "facts": [
               "durable.free.crm10",
-              "durable.price.launch"
-            ]
-          },
-          {
-            "text": "El precio del plan Grow no coincide entre las fuentes que revisamos, por eso no lo mostramos.",
-            "facts": [
-              "durable.price.launch"
+              "durable.price.launch",
+              "durable.price.grow"
             ]
           }
         ]
@@ -88,12 +83,12 @@
         ]
       },
       {
-        "q": "¿Cuánto cobra Durable por cada pago?",
+        "q": "¿Cuánta IA incluye el plan Launch de Durable?",
         "a": [
           {
-            "text": "Durable cobra 2.9% + 0.30 USD por transacción en sus planes de pago.",
+            "text": "El plan Launch incluye 1,000 créditos de IA al mes.",
             "facts": [
-              "durable.payments.fee"
+              "durable.launch.features"
             ]
           }
         ]

@@ -3,11 +3,11 @@
   "family": "comparar",
   "author": "claude-code-session",
   "prompt_version": "comparar-v1",
-  "facts_hash": "sha256:0d633cb849f13542311dd5e4634302a77c1979c5ac136a0cc682822695cb86d1",
+  "facts_hash": "sha256:5f3f4029e13594c52ef2501f5cfce9312be0b77d0427d6b77be22ac3b99eb8f5",
   "blocks": {
     "summary": [
       {
-        "text": "Callbell cobra por usuario y suma los canales como complementos: WhatsApp desde 54 USD al mes e Instagram por 22 USD al mes.",
+        "text": "Callbell cobra 15 USD por usuario al mes en su plan Multiagent Chat y suma los canales como complementos: WhatsApp desde 22 USD al mes en créditos e Instagram por 22 USD al mes.",
         "facts": [
           "callbell.price.user",
           "callbell.wa.addon",
@@ -22,10 +22,10 @@
         ]
       },
       {
-        "text": "Abajo comparamos cómo cobra cada uno y qué pasa con los cargos de Meta.",
+        "text": "Abajo comparamos cómo cobra cada uno y cuánto dura la prueba gratis.",
         "facts": [
-          "callbell.meta.budget",
-          "site.nothing_cut_off"
+          "callbell.trial.days",
+          "site.trial_no_card"
         ]
       }
     ],
@@ -62,7 +62,7 @@
         "q": "¿Cómo cobra Callbell?",
         "a": [
           {
-            "text": "Callbell cobra sus planes por usuario al mes y cobra aparte el canal de WhatsApp, desde 54 USD al mes.",
+            "text": "El plan Multiagent Chat cuesta 15 USD por usuario al mes, y el canal de WhatsApp se cobra aparte, desde 22 USD al mes en créditos de consumo.",
             "facts": [
               "callbell.price.user",
               "callbell.wa.addon"
@@ -71,12 +71,14 @@
         ]
       },
       {
-        "q": "¿Callbell cubre las tarifas de Meta?",
+        "q": "¿Cuánto dura la prueba de Callbell?",
         "a": [
           {
-            "text": "Según su centro de ayuda, si conectas WhatsApp por un proveedor (BSP), el plan cubre los cargos de Meta hasta 54 USD al mes por cada 10 agentes activos.",
+            "text": "Callbell ofrece 7 días de prueba sin tarjeta; en Beegen, cada módulo trae su propia prueba de 14 días.",
             "facts": [
-              "callbell.meta.budget"
+              "callbell.trial.days",
+              "trial.days",
+              "site.trial_no_card"
             ]
           }
         ]

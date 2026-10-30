@@ -3,41 +3,41 @@
   "family": "comparar",
   "author": "claude-code-session",
   "prompt_version": "comparar-v1",
-  "facts_hash": "sha256:025de2894b01db62a581722ff56f389325341ba502bc411c2dada522d416d903",
+  "facts_hash": "sha256:849832880a7cb47ca28aae2b4c132ed2fd21fbc5f1dd63fab27ff5f4830d9b8b",
   "blocks": {
     "summary": [
       {
-        "text": "Hostinger Horizons vende planes por créditos de IA: el Explorer cuesta 6.99 USD al mes con pago anual e incluye 30 créditos, y cada mensaje con cambios de código consume 1.",
+        "text": "Hostinger Horizons ahora se llama Creador con IA de Hostinger: en México, su plan Premium se anuncia en MXN 34.99 al mes pagando 48 meses por adelantado, y se renueva a MXN 149.99 al mes.",
         "facts": [
-          "hostingerhorizons.price.explorer",
-          "hostingerhorizons.credit.rule"
+          "hostingerhorizons.premium.price",
+          "hostingerhorizons.premium.renewal"
         ]
       },
       {
-        "text": "El Sitio web de Beegen cuesta $149 MXN al mes por sitio, con hasta 100 ediciones con IA al mes.",
+        "text": "El Sitio web de Beegen cuesta $149 MXN al mes por sitio, con pago mes a mes y hasta 100 ediciones con IA al mes.",
         "facts": [
           "modules.site.priceMxn",
           "modules.site.description"
         ]
       },
       {
-        "text": "Revisamos también qué pasa con el precio después del primer año.",
+        "text": "Comparamos lo que pagas hoy, lo que pagarás al renovar y cómo se cobra la IA.",
         "facts": [
-          "hostingerhorizons.intro.price"
+          "hostingerhorizons.credits.dynamic"
         ]
       }
     ],
     "beegen_fits": [
       {
-        "text": "Si no quieres contar créditos: el sitio de Beegen trae hasta 100 ediciones con IA al mes en su precio.",
+        "text": "Si no quieres pagar varios años por adelantado: el sitio de Beegen se paga mes a mes, en pesos, con IVA incluido y sin contrato.",
         "facts": [
-          "modules.site.description"
+          "site.prices_mxn_iva"
         ]
       },
       {
-        "text": "Si quieres un precio que no cambie al renovar: Beegen cobra mes a mes en pesos, con IVA incluido y sin contrato.",
+        "text": "Si quieres saber cuánto IA tienes cada mes: el sitio de Beegen incluye hasta 100 ediciones con IA al mes, sin créditos variables.",
         "facts": [
-          "site.prices_mxn_iva"
+          "modules.site.description"
         ]
       },
       {
@@ -55,43 +55,54 @@
     ],
     "faq": [
       {
-        "q": "¿Cuánto cuesta Hostinger Horizons?",
+        "q": "¿Qué pasó con Hostinger Horizons?",
         "a": [
           {
-            "text": "Con pago anual, el Explorer cuesta 6.99 USD al mes, el Starter 13.99 USD y el Hustler 79.99 USD.",
+            "text": "La página de Horizons ahora lleva al Creador con IA de Hostinger, con planes como Premium y Unlimited.",
             "facts": [
-              "hostingerhorizons.price.explorer",
-              "hostingerhorizons.price.starter",
-              "hostingerhorizons.price.hustler"
+              "hostingerhorizons.premium.price",
+              "hostingerhorizons.unlimited.price"
+            ]
+          }
+        ]
+      },
+      {
+        "q": "¿Cuánto cuesta el Creador con IA de Hostinger en México?",
+        "a": [
+          {
+            "text": "El Premium se anuncia en MXN 34.99 al mes pagando 48 meses (MXN 1,679.52) y el Unlimited en MXN 54.99 al mes pagando 48 meses (MXN 2,639.52).",
+            "facts": [
+              "hostingerhorizons.premium.price",
+              "hostingerhorizons.unlimited.price"
             ]
           },
           {
-            "text": "Con pago mensual, los planes van de 9.99 a 99.99 USD al mes.",
+            "text": "Al renovar, el Premium cuesta MXN 149.99 al mes y el Unlimited MXN 299.99 al mes.",
             "facts": [
-              "hostingerhorizons.monthly.range"
+              "hostingerhorizons.premium.renewal",
+              "hostingerhorizons.unlimited.price"
             ]
           }
         ]
       },
       {
-        "q": "¿Cómo funcionan los créditos de Hostinger Horizons?",
+        "q": "¿Cómo cobra Hostinger los créditos de IA?",
         "a": [
           {
-            "text": "Hostinger indica que cada mensaje que hace cambios de código consume 1 crédito de IA; el Starter incluye 70 créditos al mes.",
+            "text": "Hostinger indica que los créditos se descuentan de forma dinámica en cada solicitud, no con una tarifa fija por mensaje.",
             "facts": [
-              "hostingerhorizons.credit.rule",
-              "hostingerhorizons.price.starter"
+              "hostingerhorizons.credits.dynamic"
             ]
           }
         ]
       },
       {
-        "q": "¿El precio de Hostinger Horizons se mantiene al renovar?",
+        "q": "¿Cuántos sitios incluye el plan Premium de Hostinger?",
         "a": [
           {
-            "text": "El precio anual es de introducción y solo aplica al primer periodo.",
+            "text": "Hasta 3 sitios web, con dominio personalizado gratis durante 1 año.",
             "facts": [
-              "hostingerhorizons.intro.price"
+              "hostingerhorizons.premium.sites"
             ]
           }
         ]
@@ -103,17 +114,6 @@
             "text": "Hasta 100 ediciones con IA al mes por sitio, además de dominio propio y formularios al CRM.",
             "facts": [
               "modules.site.description"
-            ]
-          }
-        ]
-      },
-      {
-        "q": "¿Cómo pago Beegen sin tarjeta?",
-        "a": [
-          {
-            "text": "Con el plan anual, que cuesta 10 meses en lugar de 12 y se puede pagar en OXXO o por SPEI.",
-            "facts": [
-              "site.annual_oxxo_spei"
             ]
           }
         ]

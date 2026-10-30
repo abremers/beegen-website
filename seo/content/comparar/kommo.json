@@ -3,11 +3,11 @@
   "family": "comparar",
   "author": "claude-code-session",
   "prompt_version": "comparar-v1",
-  "facts_hash": "sha256:57d037f86508f18fc507931db8c234c37ad2eb64d77044180776e19b04e12303",
+  "facts_hash": "sha256:247120ff39e0ed87d8cb251911b002d29b20bcaf4e15a6cb37893e5f025e9783",
   "blocks": {
     "summary": [
       {
-        "text": "Kommo cobra por usuario: desde el 1 de septiembre de 2026, su plan Base cuesta 25 USD y el Advanced 35 USD al mes para clientes nuevos.",
+        "text": "Kommo cobra por usuario: en su página de precios para Latinoamérica, el plan Básico cuesta 20 USD y el Avanzado 30 USD al mes, cobrados por 6 meses.",
         "facts": [
           "kommo.price.base",
           "kommo.price.advanced"
@@ -30,7 +30,7 @@
     ],
     "beegen_fits": [
       {
-        "text": "Si quieres pagar mes con mes: Beegen cobra en pesos, con IVA incluido y sin contrato, mientras que Kommo pide al menos 6 meses.",
+        "text": "Si quieres pagar mes con mes: Beegen cobra en pesos, con IVA incluido y sin contrato, mientras que Kommo cobra periodos de al menos 6 meses.",
         "facts": [
           "site.prices_mxn_iva",
           "kommo.contract.min6"
@@ -59,17 +59,17 @@
     ],
     "faq": [
       {
-        "q": "¿Cuánto cuesta Kommo en 2026?",
+        "q": "¿Cuánto cuesta Kommo?",
         "a": [
           {
-            "text": "Para clientes nuevos, Kommo cobra 25 USD por usuario al mes en el plan Base y 35 USD en el Advanced desde el 1 de septiembre de 2026.",
+            "text": "En su página de precios para Latinoamérica, el plan Básico cuesta 20 USD por usuario al mes y el Avanzado 30 USD, cobrados por 6 meses.",
             "facts": [
               "kommo.price.base",
               "kommo.price.advanced"
             ]
           },
           {
-            "text": "Además, las tarifas de Meta por mensajes de WhatsApp se cobran aparte.",
+            "text": "Además, las tarifas de Meta por mensajes de WhatsApp se cobran aparte de la suscripción.",
             "facts": [
               "kommo.meta.fees"
             ]
@@ -80,7 +80,7 @@
         "q": "¿Kommo tiene pago mensual?",
         "a": [
           {
-            "text": "No. Kommo indica que no ofrece pago mensual y que el periodo mínimo de suscripción es de 6 meses.",
+            "text": "Su página de precios ofrece periodos de 6 meses, 9 meses, 1 año o 2 años, y no muestra pago mensual.",
             "facts": [
               "kommo.contract.min6"
             ]
@@ -88,23 +88,31 @@
         ]
       },
       {
-        "q": "¿Qué incluye WhatsApp Lite de Kommo?",
+        "q": "¿Kommo incluye las tarifas de WhatsApp?",
         "a": [
           {
-            "text": "Es la conexión por QR de Kommo; no incluye difusiones, plantillas de mensajes, automatizaciones ni acceso para varios usuarios.",
+            "text": "No. Kommo indica que Meta cobra las tarifas de WhatsApp directamente y por separado de la suscripción.",
             "facts": [
-              "kommo.wa.lite"
+              "kommo.meta.fees"
             ]
           }
         ]
       },
       {
-        "q": "¿Hay que volver a conectar WhatsApp en Kommo?",
+        "q": "¿Cuánto paga un equipo de 3 personas en Kommo?",
         "a": [
           {
-            "text": "Según su centro de ayuda, la cuenta de Facebook conectada debe volver a conectarse una vez al año.",
+            "text": "Con el plan Básico, cada usuario cuesta 20 USD al mes y se cobran 120 USD por usuario por 6 meses.",
             "facts": [
-              "kommo.wa.reauth"
+              "kommo.price.base"
+            ]
+          },
+          {
+            "text": "En Beegen, Beegen Ventas cuesta $499 MXN al mes e incluye el agente de WhatsApp y 3 usuarios del CRM.",
+            "facts": [
+              "bundles.ventas.priceMxn",
+              "bundles.ventas.grants.wa_agent",
+              "bundles.ventas.grants.crm"
             ]
           }
         ]
