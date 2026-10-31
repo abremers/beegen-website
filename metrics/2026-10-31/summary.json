@@ -1,0 +1,30 @@
+{
+  "property": "sc-domain:beegen.co",
+  "run_date": "2026-10-31",
+  "ranges": {
+    "last28": [
+      "2026-10-01",
+      "2026-10-28"
+    ],
+    "last7": [
+      "2026-10-22",
+      "2026-10-28"
+    ]
+  },
+  "country": "mex",
+  "totals_28d": {
+    "clicks": 0,
+    "impressions": 0,
+    "queries": 0,
+    "pages": 0
+  },
+  "totals_7d": {
+    "clicks": 0,
+    "impressions": 0
+  },
+  "inspection": {
+    "inspected": 25,
+    "indexed": 11,
+    "errors": 0
+  }
+}

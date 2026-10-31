@@ -1,0 +1,252 @@
+[
+  {
+    "url": "https://beegen.co/",
+    "verdict": "PASS",
+    "coverageState": "Enviada e indexada",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-10-27T19:22:34Z",
+    "googleCanonical": "https://beegen.co/",
+    "userCanonical": "https://beegen.co/"
+  },
+  {
+    "url": "https://beegen.co/pricing",
+    "verdict": "NEUTRAL",
+    "coverageState": "Rastreada: actualmente sin indexar",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-08-07T12:41:57Z",
+    "googleCanonical": "https://beegen.co/pricing",
+    "userCanonical": "https://beegen.co/pricing"
+  },
+  {
+    "url": "https://beegen.co/crm",
+    "verdict": "PASS",
+    "coverageState": "Enviada e indexada",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-10-30T20:32:18Z",
+    "googleCanonical": "https://beegen.co/crm",
+    "userCanonical": "https://beegen.co/crm"
+  },
+  {
+    "url": "https://beegen.co/sitio-web",
+    "verdict": "PASS",
+    "coverageState": "Enviada e indexada",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-10-27T14:17:51Z",
+    "googleCanonical": "https://beegen.co/sitio-web",
+    "userCanonical": "https://beegen.co/sitio-web.html"
+  },
+  {
+    "url": "https://beegen.co/whatsapp",
+    "verdict": "NEUTRAL",
+    "coverageState": "Rastreada: actualmente sin indexar",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-10-31T04:02:17Z",
+    "googleCanonical": "https://beegen.co/whatsapp",
+    "userCanonical": "https://beegen.co/whatsapp"
+  },
+  {
+    "url": "https://beegen.co/recordatorios",
+    "verdict": "NEUTRAL",
+    "coverageState": "Google no reconoce esta URL",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "lastCrawlTime": null,
+    "googleCanonical": null,
+    "userCanonical": null
+  },
+  {
+    "url": "https://beegen.co/cobros",
+    "verdict": "PASS",
+    "coverageState": "Enviada e indexada",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-10-28T15:20:10Z",
+    "googleCanonical": "https://beegen.co/cobros",
+    "userCanonical": "https://beegen.co/cobros.html"
+  },
+  {
+    "url": "https://beegen.co/facturacion",
+    "verdict": "PASS",
+    "coverageState": "Enviada e indexada",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-10-29T03:27:02Z",
+    "googleCanonical": "https://beegen.co/facturacion",
+    "userCanonical": "https://beegen.co/facturacion.html"
+  },
+  {
+    "url": "https://beegen.co/resenas",
+    "verdict": "PASS",
+    "coverageState": "Enviada e indexada",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-10-28T05:57:22Z",
+    "googleCanonical": "https://beegen.co/resenas",
+    "userCanonical": "https://beegen.co/resenas.html"
+  },
+  {
+    "url": "https://beegen.co/instagram-messenger",
+    "verdict": "PASS",
+    "coverageState": "Enviada e indexada",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-10-30T16:47:18Z",
+    "googleCanonical": "https://beegen.co/instagram-messenger",
+    "userCanonical": "https://beegen.co/instagram-messenger"
+  },
+  {
+    "url": "https://beegen.co/cotizaciones",
+    "verdict": "PASS",
+    "coverageState": "Enviada e indexada",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-10-28T14:05:11Z",
+    "googleCanonical": "https://beegen.co/cotizaciones",
+    "userCanonical": "https://beegen.co/cotizaciones"
+  },
+  {
+    "url": "https://beegen.co/agencias",
+    "verdict": "PASS",
+    "coverageState": "Enviada e indexada",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-10-30T04:48:56Z",
+    "googleCanonical": "https://beegen.co/agencias",
+    "userCanonical": "https://beegen.co/agencias"
+  },
+  {
+    "url": "https://beegen.co/contact",
+    "verdict": "PASS",
+    "coverageState": "Enviada e indexada",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-10-31T05:17:19Z",
+    "googleCanonical": "https://beegen.co/contact",
+    "userCanonical": "https://beegen.co/contact"
+  },
+  {
+    "url": "https://beegen.co/blog",
+    "verdict": "PASS",
+    "coverageState": "Enviada e indexada",
+    "indexingState": "INDEXING_ALLOWED",
+    "robotsTxtState": "ALLOWED",
+    "lastCrawlTime": "2026-10-30T06:37:20Z",
+    "googleCanonical": "https://beegen.co/blog",
+    "userCanonical": "https://beegen.co/blog"
+  },
+  {
+    "url": "https://beegen.co/comparar/leadsales",
+    "verdict": "NEUTRAL",
+    "coverageState": "Google no reconoce esta URL",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "lastCrawlTime": null,
+    "googleCanonical": null,
+    "userCanonical": null
+  },
+  {
+    "url": "https://beegen.co/comparar/kommo",
+    "verdict": "NEUTRAL",
+    "coverageState": "Google no reconoce esta URL",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "lastCrawlTime": null,
+    "googleCanonical": null,
+    "userCanonical": null
+  },
+  {
+    "url": "https://beegen.co/comparar/whaticket",
+    "verdict": "NEUTRAL",
+    "coverageState": "Google no reconoce esta URL",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "lastCrawlTime": null,
+    "googleCanonical": null,
+    "userCanonical": null
+  },
+  {
+    "url": "https://beegen.co/comparar/callbell",
+    "verdict": "NEUTRAL",
+    "coverageState": "Google no reconoce esta URL",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "lastCrawlTime": null,
+    "googleCanonical": null,
+    "userCanonical": null
+  },
+  {
+    "url": "https://beegen.co/comparar/respond-io",
+    "verdict": "NEUTRAL",
+    "coverageState": "Google no reconoce esta URL",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "lastCrawlTime": null,
+    "googleCanonical": null,
+    "userCanonical": null
+  },
+  {
+    "url": "https://beegen.co/comparar/wix",
+    "verdict": "NEUTRAL",
+    "coverageState": "Google no reconoce esta URL",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "lastCrawlTime": null,
+    "googleCanonical": null,
+    "userCanonical": null
+  },
+  {
+    "url": "https://beegen.co/comparar/hostinger-horizons",
+    "verdict": "NEUTRAL",
+    "coverageState": "Google no reconoce esta URL",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "lastCrawlTime": null,
+    "googleCanonical": null,
+    "userCanonical": null
+  },
+  {
+    "url": "https://beegen.co/comparar/durable",
+    "verdict": "NEUTRAL",
+    "coverageState": "Google no reconoce esta URL",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "lastCrawlTime": null,
+    "googleCanonical": null,
+    "userCanonical": null
+  },
+  {
+    "url": "https://beegen.co/comparar/meta-business-agent",
+    "verdict": "NEUTRAL",
+    "coverageState": "Google no reconoce esta URL",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "lastCrawlTime": null,
+    "googleCanonical": null,
+    "userCanonical": null
+  },
+  {
+    "url": "https://beegen.co/comparar/framer",
+    "verdict": "NEUTRAL",
+    "coverageState": "Google no reconoce esta URL",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "lastCrawlTime": null,
+    "googleCanonical": null,
+    "userCanonical": null
+  },
+  {
+    "url": "https://beegen.co/comparar",
+    "verdict": "NEUTRAL",
+    "coverageState": "Google no reconoce esta URL",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "lastCrawlTime": null,
+    "googleCanonical": null,
+    "userCanonical": null
+  }
+]
