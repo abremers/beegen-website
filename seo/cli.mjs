@@ -7,6 +7,8 @@
 //   index --slug S                   flip a comparison page to index (refuses unless approvals and claims allow it)
 //   verify [--slug S]                list claims that need a direct fetch or a human check
 //   rehash --slug S                  record that the page's prose was re-read after its facts changed
+//   gsc [--summary F]                export Search Console data to seo/metrics/<date>/ (needs GSC_SERVICE_ACCOUNT_JSON)
+import fs from 'node:fs'
 import path from 'node:path'
 import { DATA_DIR, CONTENT_DIR, readJson, writeJson, today } from './lib/util.mjs'
 import { writeSnapshot } from './lib/snapshot.mjs'
@@ -127,8 +129,16 @@ async function main() {
       console.log(`facts_hash updated for ${opts.slug}`)
       break
     }
+    case 'gsc': {
+      const { exportSearchConsole, summaryMarkdown } = await import('./lib/gsc.mjs')
+      const result = await exportSearchConsole()
+      const md = summaryMarkdown(result)
+      console.log(md)
+      if (typeof opts.summary === 'string') fs.appendFileSync(opts.summary, md + '\n')
+      break
+    }
     default:
-      console.log('Commands: snapshot, render, check, approve, index, verify, rehash. See the header of seo/cli.mjs.')
+      console.log('Commands: snapshot, render, check, approve, index, verify, rehash, gsc. See the header of seo/cli.mjs.')
       process.exit(command ? 1 : 0)
   }
 }
