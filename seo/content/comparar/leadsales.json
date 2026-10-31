@@ -3,7 +3,7 @@
   "family": "comparar",
   "author": "claude-code-session",
   "prompt_version": "comparar-v1",
-  "facts_hash": "sha256:cbd2e8dbd58106b6403806a94fc1cb10641271586e1fa55502f49da6a0fc3911",
+  "facts_hash": "sha256:ad96be3a099d64b6b2790423808ebb302dbe0dfe18b9486ba68330629ada0e40",
   "blocks": {
     "summary": [
       {
@@ -89,7 +89,7 @@
             ]
           },
           {
-            "text": "En el plan Básico, WhatsApp se conecta escaneando un código QR.",
+            "text": "El plan Básico no incluye la API oficial de WhatsApp ni campañas.",
             "facts": [
               "leadsales.channel.basico_qr"
             ]
@@ -120,18 +120,18 @@
         ]
       },
       {
-        "q": "¿Qué pasa con mi historial si cambio a la API oficial en Leadsales?",
+        "q": "¿Puedo usar la app de WhatsApp Business y Leadsales en el mismo número?",
         "a": [
           {
-            "text": "Según Leadsales, conectar la API oficial toma unos 10 minutos y no conserva los contactos ni el historial previo.",
+            "text": "Leadsales ofrece Coexistence, que mantiene la app de WhatsApp Business y la API en el mismo número, para países habilitados como México.",
             "facts": [
-              "leadsales.channel.api_no_history"
+              "leadsales.channel.coexistence"
             ]
           },
           {
-            "text": "Conviene exportar lo que necesites antes de hacer el cambio.",
+            "text": "Pide la versión 2.24.17 o superior de la app.",
             "facts": [
-              "leadsales.channel.api_no_history"
+              "leadsales.channel.coexistence"
             ]
           }
         ]

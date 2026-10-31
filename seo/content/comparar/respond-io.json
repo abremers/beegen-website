@@ -3,11 +3,11 @@
   "family": "comparar",
   "author": "claude-code-session",
   "prompt_version": "comparar-v1",
-  "facts_hash": "sha256:db9dde127ce21c18e2e47d96598f58f140b91a9bcc047d6b03556900bb7d7860",
+  "facts_hash": "sha256:3191869fba5c41a3c5dcaf10c7f3b286fbee1e24a9693ad0bd8c5e231b57ff08",
   "blocks": {
     "summary": [
       {
-        "text": "Respond.io arranca en 99 USD al mes con el plan Starter, que no incluye agentes de IA, y sube a 199 USD con el Growth.",
+        "text": "Respond.io arranca en 99 USD al mes con el plan Starter, que no incluye agentes de IA, y sube a 199 USD con el Growth, donde empiezan.",
         "facts": [
           "respondio.price.starter",
           "respondio.users.starter",
@@ -74,7 +74,7 @@
         "q": "¿El plan Starter de Respond.io tiene agentes de IA?",
         "a": [
           {
-            "text": "No. El Starter incluye 5 usuarios y contactos ilimitados, pero no agentes de IA.",
+            "text": "No. Según Respond.io, los agentes de IA llegan con el plan Growth.",
             "facts": [
               "respondio.users.starter"
             ]
@@ -96,7 +96,7 @@
         "q": "¿Quién cobra las tarifas de Meta?",
         "a": [
           {
-            "text": "Respond.io las cobra aparte y sin margen.",
+            "text": "Respond.io no cobra margen por mensaje: con la API solo pagas las tarifas de Meta.",
             "facts": [
               "respondio.meta.passthrough"
             ]

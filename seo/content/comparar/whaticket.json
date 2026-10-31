@@ -3,7 +3,7 @@
   "family": "comparar",
   "author": "claude-code-session",
   "prompt_version": "comparar-v1",
-  "facts_hash": "sha256:cec74588bc2ce6ff1c2d1ec8cb3c41f65008e75d4e8d6f23b12f9008b2ca5ee8",
+  "facts_hash": "sha256:1a60bd4b16683553adea560a9dd59a7d71386f3dd5e84e8b433541d480a7aa1b",
   "blocks": {
     "summary": [
       {
@@ -79,9 +79,15 @@
         "q": "¿Qué inteligencia artificial usa Whaticket?",
         "a": [
           {
-            "text": "Según su centro de ayuda, solo funciona con OpenAI y debes ingresar tu propia clave de API.",
+            "text": "Según Whaticket, solo funciona con OpenAI: ingresas tu propia clave de API y los tokens no están incluidos en el plan.",
             "facts": [
               "whaticket.ai.openai"
+            ]
+          },
+          {
+            "text": "Además, cada plan pide un mínimo de 3 usuarios.",
+            "facts": [
+              "whaticket.users.min3"
             ]
           }
         ]
@@ -101,7 +107,7 @@
         "q": "¿Whaticket devuelve el dinero si cancelo?",
         "a": [
           {
-            "text": "Su centro de ayuda indica que no ofrece reembolsos ni créditos si cancelas antes de que termine el plazo.",
+            "text": "Sus términos indican que no hay reembolsos ni créditos si terminas el contrato antes del final del plazo.",
             "facts": [
               "whaticket.refunds"
             ]

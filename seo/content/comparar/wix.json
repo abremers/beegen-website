@@ -3,11 +3,11 @@
   "family": "comparar",
   "author": "claude-code-session",
   "prompt_version": "comparar-v1",
-  "facts_hash": "sha256:3cf903d9efee7d16c9a5bc2b930b798dbcd781771aa8a40bc481bf11477dc068",
+  "facts_hash": "sha256:42949c39b7ecef5a9b9e71f091ef8d8f35477e88c4527fe6bb7ea79dfd8a4d1e",
   "blocks": {
     "summary": [
       {
-        "text": "Wix ofrece un plan gratis en un subdominio con anuncios y planes de pago desde 17 USD al mes con pago anual.",
+        "text": "Wix ofrece un plan gratis con anuncios y sin dominio propio, y planes de pago desde 17 USD al mes con pago anual.",
         "facts": [
           "wix.free.ads",
           "wix.price.light"
@@ -58,7 +58,7 @@
         "q": "¿Wix es gratis?",
         "a": [
           {
-            "text": "Tiene un plan gratuito, pero el sitio queda en un subdominio de Wix y muestra anuncios de Wix.",
+            "text": "Tiene un plan gratis, pero muestra anuncios de Wix y no permite usar tu propio dominio.",
             "facts": [
               "wix.free.ads"
             ]

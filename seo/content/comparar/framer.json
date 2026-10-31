@@ -3,7 +3,7 @@
   "family": "comparar",
   "author": "claude-code-session",
   "prompt_version": "comparar-v1",
-  "facts_hash": "sha256:673a8f0052b3140b36850625377fe782bfbfabebb7945435861c1b67c6fb1321",
+  "facts_hash": "sha256:52f4180ffdca305126fd2e2c42ab36733f8485d95e7d76ff5d422b29dfe55596",
   "blocks": {
     "summary": [
       {
@@ -60,7 +60,7 @@
         "q": "¿Cuánto cuesta Framer?",
         "a": [
           {
-            "text": "El Basic cuesta 10 USD al mes por sitio con pago anual o 15 USD con pago mensual; el Pro, 30 USD o 45 USD.",
+            "text": "Con facturación anual, el Basic cuesta 10 USD al mes por sitio y el Pro 30 USD al mes por sitio.",
             "facts": [
               "framer.price.basic",
               "framer.price.pro"

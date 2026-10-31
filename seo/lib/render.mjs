@@ -165,7 +165,9 @@ export function comparisonModel(data, comp) {
   const cite = (claimId) => {
     const claim = comp.claims.find((c) => c.id === claimId)
     const st = claimState(claim, comp, data.today, maxAge)
-    return st.publicEvidence.map((e) => e.source_id).filter((v, i, a) => a.indexOf(v) === i).map(sourceNum)
+    // A verified claim cites only the pages it was verified on; older search excerpts stay in the data as history.
+    const strong = st.publicEvidence.filter((e) => e.method === 'direct_fetch' || e.method === 'human_check')
+    return (strong.length ? strong : st.publicEvidence).map((e) => e.source_id).filter((v, i, a) => a.indexOf(v) === i).map(sourceNum)
   }
   const contrasts = comp.contrasts
     .map((r) => ({ ...r, competitor_claim_ids: r.competitor_claim_ids.filter((id) => claimIds.has(id)) }))

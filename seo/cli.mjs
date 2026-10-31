@@ -103,6 +103,7 @@ async function main() {
       for (const comp of data.competitors.competitors) {
         if (opts.slug && comp.slug !== opts.slug) continue
         for (const claim of comp.claims) {
+          if (claim.status === 'removed') continue
           const st = claimState(claim, comp, data.today, maxAge)
           if (st.verified && st.ageDays <= maxAge - 15) continue
           const reason = !st.verified ? 'not verified by direct fetch or human check' : `expires in ${maxAge - st.ageDays} days`
